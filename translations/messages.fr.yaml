@@ -1,0 +1,13 @@
+
+menu.toggle_nav: Toggle_nav
+menu.homepage: Homepage
+menu.admin: Admin
+menu.search: Search
+menu.user: User
+menu.logout: Logout
+menu.choose_language: Choose_language
+mit_license: MIT License
+
+# _about
+help.app_description: App description
+help.more_information: More information
