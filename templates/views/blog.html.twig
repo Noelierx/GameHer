@@ -1,0 +1,13 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block body_id 'index' %}
+
+{% block main %}
+    {% for post in posts %}
+        {{ post.title }}
+    {% endfor %}
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+{% endblock %}

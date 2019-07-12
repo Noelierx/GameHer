@@ -2,6 +2,7 @@
 menu.toggle_nav: Toggle_nav
 menu.homepage: Homepage
 menu.admin: Admin
+menu.blog: Blog
 menu.search: Search
 menu.user: User
 menu.logout: Logout
