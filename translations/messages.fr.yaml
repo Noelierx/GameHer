@@ -2,8 +2,20 @@
 menu.toggle_nav: Toggle_nav
 menu.homepage: Homepage
 menu.admin: Admin
-menu.blog: Blog
-menu.search: Search
+menu.blog: News & Article
+menu.esport: Esport
+menu.webtv: WebTV
+menu.tournaments: Tournois
+menu.partners: Partenaires
+menu.donations: Donation
+menu.team.header: La Team
+menu.team.about: A propos
+menu.team.contact: Contact
+menu.team.media: Media
+menu.team.achievements: Achievements
+menu.team.recruitment: Recrutement
+menu.team.presskit: Media kit
+
 menu.user: User
 menu.login: Login
 menu.logout: Logout

@@ -13,59 +13,82 @@
             </button>
 
             <div class="navbar-collapse collapse">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav ml-auto">
 
                     {% block header_navigation_links %}
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('index') }}">
-                                <i class="fa fa-home" aria-hidden="true"></i> {{ 'menu.homepage'|trans }}
+                            <a class="nav-link" href="{{ path('blog') }}">
+                                {{ 'menu.blog'|trans }}
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('blog') }}">
-                                <i class="fa fa-pencil" aria-hidden="true"></i> {{ 'menu.blog'|trans }}
+                            <a class="nav-link" href="{{ path('esport') }}">{{ 'menu.esport'|trans }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('webtv') }}">{{ 'menu.webtv'|trans }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('tournaments') }}">{{ 'menu.tournaments'|trans }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('partners') }}">{{ 'menu.partners'|trans }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('donations') }}">{{ 'menu.donations'|trans }}</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="team">
+                                {{ 'menu.team.header'|trans }} <span class="caret"></span>
                             </a>
+                            <ul class="dropdown-menu team" role="menu" aria-labelledby="team">
+                                <li class="dropdown-item">
+                                    <a href="{{ path('index') }}">{{ 'menu.team.about'|trans }}</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="{{ path('index') }}">{{ 'menu.team.contact'|trans }}</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="{{ path('index') }}">{{ 'menu.team.media'|trans }}</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="{{ path('index') }}">{{ 'menu.team.achievements'|trans }}</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="{{ path('index') }}">{{ 'menu.team.recruitment'|trans }}</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="{{ path('index') }}">{{ 'menu.team.presskit'|trans }}</a>
+                                </li>
+                            </ul>
                         </li>
 
                         {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('index') }}">
-                                <i class="fa fa-lock" aria-hidden="true"></i> {{ 'menu.admin'|trans }}
-                            </a>
+                            <a class="nav-link" href="{{ path('index') }}">{{ 'menu.admin'|trans }}</a>
                         </li>
                         {% endif %}
+                        {% if app.user %}
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="user">
+                                    {{ app.user.displayName }}
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu user" role="menu" aria-labelledby="user">
+                                    <li class="dropdown-item">
+                                        <a href="{{ path('index') }}">{{ 'menu.user'|trans }}</a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li class="dropdown-item">
+                                        <a href="{{ path('index') }}">{{ 'menu.logout'|trans }}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a href="{{ path('connect_discord') }}" class="nav-link">{{ 'menu.login'|trans }}</a>
+                            </li>
+                        {% endif %}
                     {% endblock %}
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('index') }}"> <i class="fa fa-search"></i> {{ 'menu.search'|trans }}</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    {% if app.user %}
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="user">
-                                <i class="fa fa-user" aria-hidden="true"></i> {{ app.user.displayName }}
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu user" role="menu" aria-labelledby="user">
-                                <li class="dropdown-item">
-                                    <a href="{{ path('index') }}">
-                                        <i class="fa fa-edit" aria-hidden="true"></i> {{ 'menu.user'|trans }}
-                                    </a>
-                                </li>
-                                <li class="dropdown-divider"></li>
-                                <li class="dropdown-item">
-                                    <a href="{{ path('index') }}">
-                                        <i class="fa fa-sign-out" aria-hidden="true"></i> {{ 'menu.logout'|trans }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a href="{{ path('login') }}" class="nav-link"><i class="fa fa-power-on"></i> {{ 'menu.login'|trans }}</a>
-                        </li>
-                    {% endif %}
                 </ul>
             </div>
         </div>

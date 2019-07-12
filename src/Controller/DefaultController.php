@@ -29,6 +29,47 @@ class DefaultController extends AbstractController
     }
 
 	/**
+	 * @Route("/esport", name="esport")
+	 */
+	public function esport()
+	{
+		return $this->render('views/esport.html.twig');
+	}
+
+	/**
+	 * @Route("/webtv", name="webtv")
+	 */
+	public function webtv()
+	{
+		return $this->render('views/webtv.html.twig');
+	}
+
+	/**
+	 * @Route("/tournaments", name="tournaments")
+	 */
+	public function tournaments()
+	{
+		return $this->render('views/tournaments.html.twig');
+	}
+
+	/**
+	 * @Route("/partners", name="partners")
+	 */
+	public function partners()
+	{
+		return $this->render('views/partners.html.twig');
+	}
+
+	/**
+	 * @Route("/donations", name="donations")
+	 */
+	public function donations()
+	{
+		return $this->render('views/donations.html.twig');
+	}
+
+
+	/**
 	 * @Route("/login", name="login")
 	 */
 	public function login(Security $security)

@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{% block title %}GameHer{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 
@@ -22,53 +22,31 @@
 
 {% block header %}{{ include('partials/_navbar.html.twig') }}{% endblock %}
 
-<div class="container body-container">
-    {% block body %}
-        <div class="row">
-            <div id="main" class="col-sm-9">
-                {{ include('partials/_flash_messages.html.twig') }}
-
-                {% block main %}{% endblock %}
-            </div>
-
-            <div id="sidebar" class="col-sm-3">
-                {% block sidebar %}
-                    {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', {
-                        'template': 'partials/_about.html.twig',
-                        'sharedAge': 600,
-                        '_locale': app.request.locale
-                    })) }}
-                {% endblock %}
-            </div>
-        </div>
-    {% endblock %}
-</div>
-
-{% block footer %}
-    <footer>
-        <div class="container">
+<main class="wrapper">
+    <div class="container body-container">
+        {% block body %}
             <div class="row">
-                <div id="footer-copyright" class="col-md-6">
-                    <p>&copy; {{ 'now'|date('Y') }} - The Symfony Project</p>
-                    <p>{{ 'mit_license'|trans }}</p>
+                <div id="main" class="col-sm-9">
+                    {{ include('partials/_flash_messages.html.twig') }}
+
+                    {% block main %}{% endblock %}
                 </div>
-                <div id="footer-resources" class="col-md-6">
-                    <p>
-                        <a href="https://twitter.com/symfony" title="Symfony Twitter">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.facebook.com/SensioLabs" title="SensioLabs Facebook">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://symfony.com/blog/" title="Symfony Blog">
-                            <i class="fa fa-rss" aria-hidden="true"></i>
-                        </a>
-                    </p>
+
+                <div id="sidebar" class="col-sm-3">
+                    {% block sidebar %}
+                        {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', {
+                            'template': 'partials/_about.html.twig',
+                            'sharedAge': 600,
+                            '_locale': app.request.locale
+                        })) }}
+                    {% endblock %}
                 </div>
             </div>
-        </div>
-    </footer>
-{% endblock %}
+        {% endblock %}
+    </div>
+
+    {% block footer %}{{ include('partials/_footer.html.twig') }}{% endblock %}
+</main>
 
 {% block javascripts %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
