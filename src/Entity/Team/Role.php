@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\Team;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Ramsey\Uuid\Uuid;
@@ -12,13 +13,18 @@ use Ramsey\Uuid\UuidInterface;
  * @ORM\Entity
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
  */
-class Partner
+class Role
 {
+    const CATEGORY_DIRECTION = 'direction';
+    const CATEGORY_ADMINISTRATION = 'administration';
+    const CATEGORY_MEMBERS = 'members';
+    const CATEGORY_ESPORT = 'esport';
+
     /**
      * @var int
+     * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
-     * @ORM\Column(type="integer")
      */
     protected $id;
 
@@ -32,42 +38,19 @@ class Partner
      * @var string
      * @ORM\Column(type="string")
      */
+    protected $category;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
     protected $name;
 
     /**
-     * @var string
-     * @ORM\Column(type="text")
+     * @var ArrayCollection|Member[]
+     * @ORM\OneToMany(targetEntity="App\Entity\Team\Member", mappedBy="role")
      */
-    protected $description;
-
-    /**
-     * @var string
-     */
-    protected $logo;
-
-    /**
-     * @var string
-     * @ORM\Column(type="string")
-     */
-    protected $website;
-
-    /**
-     * @var string
-     * @ORM\Column(type="string")
-     */
-    protected $twitter;
-
-    /**
-     * @var string
-     * @ORM\Column(type="string")
-     */
-    protected $facebook;
-
-    /**
-     * @var string
-     * @ORM\Column(type="string")
-     */
-    protected $instagram;
+    protected $members;
 
     /**
      * @var DateTime

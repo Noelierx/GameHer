@@ -9,16 +9,21 @@ use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
 /**
- * Class Post.
- *
  * @ORM\Entity
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
  */
 class Post
 {
     /**
-     * @var UuidInterface
+     * @var int
      * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(type="integer")
+     */
+    protected $id;
+
+    /**
+     * @var UuidInterface
      * @ORM\Column(type="uuid")
      */
     protected $uuid;
@@ -64,12 +69,12 @@ class Post
 
     /**
      * @var DateTime
-	 * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     protected $deletedAt;
 
-	public function __construct()
-	{
-		$this->uuid = Uuid::uuid4();
-	}
+    public function __construct()
+    {
+        $this->uuid = Uuid::uuid4();
+    }
 }

@@ -15,34 +15,41 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface
 {
-	const ROLE_DEFAULT = 'ROLE_USER';
-	const ROLE_ADMIN = 'ROLE_ADMIN';
-	const ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
+    const ROLE_DEFAULT = 'ROLE_USER';
+    const ROLE_ADMIN = 'ROLE_ADMIN';
+    const ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
+
+    /**
+     * @var int
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(type="integer")
+     */
+    protected $id;
 
     /**
      * @var UuidInterface
-     * @ORM\Id()
      * @ORM\Column(type="uuid", unique=true)
      */
     private $uuid;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string")
-	 */
-	private $email;
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    private $email;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string")
-	 */
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
     private $displayName;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=true)
-	 */
-	protected $discordId;
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $discordId;
 
     /**
      * @var array
@@ -50,31 +57,31 @@ class User implements UserInterface
      */
     private $roles = [];
 
-	/**
-	 * @var DateTime
-	 * @Gedmo\Timestampable(on="create")
-	 * @ORM\Column(type="datetime")
-	 */
-	protected $createdAt;
+    /**
+     * @var DateTime
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    protected $createdAt;
 
-	/**
-	 * @var DateTime
-	 * @Gedmo\Timestampable(on="update")
-	 * @ORM\Column(type="datetime")
-	 */
-	protected $updatedAt;
+    /**
+     * @var DateTime
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime")
+     */
+    protected $updatedAt;
 
-	/**
-	 * @var DateTime
-	 * @ORM\Column(type="datetime", nullable=true)
-	 */
-	protected $deletedAt;
+    /**
+     * @var DateTime
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    protected $deletedAt;
 
-	public function __construct()
-	{
-		$this->roles = array();
-		$this->uuid = Uuid::uuid4();
-	}
+    public function __construct()
+    {
+        $this->roles = [];
+        $this->uuid = Uuid::uuid4();
+    }
 
     public function getUuid(): ?UuidInterface
     {
@@ -82,9 +89,9 @@ class User implements UserInterface
     }
 
     public function __toString(): string
-	{
-		return (string) $this->getUsername();
-	}
+    {
+        return (string) $this->getUsername();
+    }
 
     public function getUsername(): string
     {
@@ -110,43 +117,51 @@ class User implements UserInterface
         return $this;
     }
 
-	public function getPassword() {}
-    public function getSalt() {}
-    public function eraseCredentials() {}
+    public function getPassword()
+    {
+    }
 
-	public function getDisplayName(): string
-	{
-		return $this->displayName;
-	}
+    public function getSalt()
+    {
+    }
 
-	public function setDisplayName(string $displayName): self
-	{
-		$this->displayName = $displayName;
+    public function eraseCredentials()
+    {
+    }
 
-		return $this;
-	}
+    public function getDisplayName(): string
+    {
+        return $this->displayName;
+    }
 
-	public function getEmail(): string
-	{
-		return $this->email;
-	}
+    public function setDisplayName(string $displayName): self
+    {
+        $this->displayName = $displayName;
 
-	public function setEmail(string $email): self
-	{
-		$this->email = $email;
+        return $this;
+    }
 
-		return $this;
-	}
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
 
-	public function getDiscordId(): string
-	{
-		return $this->discordId;
-	}
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
-	public function setDiscordId(string $discordId): self
-	{
-		$this->discordId = $discordId;
+        return $this;
+    }
 
-		return $this;
-	}
+    public function getDiscordId(): string
+    {
+        return $this->discordId;
+    }
+
+    public function setDiscordId(string $discordId): self
+    {
+        $this->discordId = $discordId;
+
+        return $this;
+    }
 }

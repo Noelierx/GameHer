@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\Team;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
@@ -12,13 +12,13 @@ use Ramsey\Uuid\UuidInterface;
  * @ORM\Entity
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
  */
-class Partner
+class Member
 {
     /**
      * @var int
+     * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
-     * @ORM\Column(type="integer")
      */
     protected $id;
 
@@ -32,24 +32,31 @@ class Partner
      * @var string
      * @ORM\Column(type="string")
      */
-    protected $name;
-
-    /**
-     * @var string
-     * @ORM\Column(type="text")
-     */
-    protected $description;
-
-    /**
-     * @var string
-     */
-    protected $logo;
+    protected $nickname;
 
     /**
      * @var string
      * @ORM\Column(type="string")
      */
-    protected $website;
+    protected $firstname;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    protected $lastname;
+
+    /**
+     * @var Role
+     * @ORM\ManyToOne(targetEntity="App\Entity\Team\Role", inversedBy="members")
+     */
+    protected $role;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    protected $twitch;
 
     /**
      * @var string
