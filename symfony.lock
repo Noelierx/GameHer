@@ -102,8 +102,32 @@
     "gedmo/doctrine-extensions": {
         "version": "v2.4.37"
     },
+    "guzzlehttp/guzzle": {
+        "version": "6.3.3"
+    },
+    "guzzlehttp/promises": {
+        "version": "v1.3.1"
+    },
+    "guzzlehttp/psr7": {
+        "version": "1.6.1"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
+    },
+    "knpuniversity/oauth2-client-bundle": {
+        "version": "1.20",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.20",
+            "ref": "80acc9223a205cbf5d9828fd616c82a374d281dd"
+        },
+        "files": [
+            "./config/packages/knpu_oauth2_client.yaml"
+        ]
+    },
+    "league/oauth2-client": {
+        "version": "2.4.1"
     },
     "nikic/php-parser": {
         "version": "v4.2.2"
@@ -123,8 +147,14 @@
     "psr/container": {
         "version": "1.0.0"
     },
+    "psr/http-message": {
+        "version": "1.0.1"
+    },
     "psr/log": {
         "version": "1.1.0"
+    },
+    "ralouphie/getallheaders": {
+        "version": "3.0.3"
     },
     "ramsey/uuid": {
         "version": "3.8.0"
@@ -368,6 +398,9 @@
             "./templates/base.html.twig"
         ]
     },
+    "symfony/var-dumper": {
+        "version": "v4.3.2"
+    },
     "symfony/var-exporter": {
         "version": "v4.3.2"
     },
@@ -394,6 +427,9 @@
     },
     "twig/twig": {
         "version": "v2.11.3"
+    },
+    "wohali/oauth2-discord-new": {
+        "version": "v1.0.0"
     },
     "zendframework/zend-code": {
         "version": "3.3.1"

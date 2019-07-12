@@ -4,4 +4,9 @@ stof_doctrine_extensions:
     default_locale: en_US
     orm:
         default:
+            timestampable: true
+            tree:          false
+            sluggable:     true
+            translatable:  false
+            loggable:      false
             softdeleteable: true

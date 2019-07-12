@@ -8,7 +8,7 @@ security:
         # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
             entity:
-                class: App\Entity\User
+                class: App\Entity\User\User
                 property: uuid
     firewalls:
         dev:
@@ -16,6 +16,9 @@ security:
             security: false
         main:
             anonymous: true
+            guard:
+                authenticators:
+                    - App\Security\DiscordAuthenticator
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

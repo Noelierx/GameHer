@@ -5,6 +5,7 @@ namespace App\Entity\Blog;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
 /**
@@ -18,7 +19,6 @@ class Post
     /**
      * @var UuidInterface
      * @ORM\Id
-     * @ORM\GeneratedValue()
      * @ORM\Column(type="uuid")
      */
     protected $uuid;
@@ -64,7 +64,12 @@ class Post
 
     /**
      * @var DateTime
-     * @ORM\Column(type="datetime")
+	 * @ORM\Column(type="datetime", nullable=true)
      */
     protected $deletedAt;
+
+	public function __construct()
+	{
+		$this->uuid = Uuid::uuid4();
+	}
 }

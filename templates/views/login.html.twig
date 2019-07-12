@@ -3,10 +3,6 @@
 {% block body_id 'index' %}
 
 {% block main %}
-    <p>Index</p>
-    {{ app.user }}
-{% endblock %}
-
-{% block sidebar %}
-    {{ parent() }}
+    <p>Login</p>
+    <a href="{{ path('connect_discord') }}">Connect with discord</a>
 {% endblock %}

@@ -4,6 +4,8 @@ namespace App\Entity\User;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -13,13 +15,34 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface
 {
+	const ROLE_DEFAULT = 'ROLE_USER';
+	const ROLE_ADMIN = 'ROLE_ADMIN';
+	const ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
+
     /**
      * @var UuidInterface
      * @ORM\Id()
-     * @ORM\GeneratedValue()
      * @ORM\Column(type="uuid", unique=true)
      */
     private $uuid;
+
+	/**
+	 * @var string
+	 * @ORM\Column(type="string")
+	 */
+	private $email;
+
+	/**
+	 * @var string
+	 * @ORM\Column(type="string")
+	 */
+    private $displayName;
+
+	/**
+	 * @var string
+	 * @ORM\Column(type="string", nullable=true)
+	 */
+	protected $discordId;
 
     /**
      * @var array
@@ -27,35 +50,42 @@ class User implements UserInterface
      */
     private $roles = [];
 
-    /**
-     * @var string
-     * @ORM\Column(type="string")
-     */
-    private $password;
+	/**
+	 * @var DateTime
+	 * @Gedmo\Timestampable(on="create")
+	 * @ORM\Column(type="datetime")
+	 */
+	protected $createdAt;
 
-    /**
-     * @var DateTime
-     * @ORM\Column(type="datetime")
-     */
-    protected $deletedAt;
+	/**
+	 * @var DateTime
+	 * @Gedmo\Timestampable(on="update")
+	 * @ORM\Column(type="datetime")
+	 */
+	protected $updatedAt;
+
+	/**
+	 * @var DateTime
+	 * @ORM\Column(type="datetime", nullable=true)
+	 */
+	protected $deletedAt;
+
+	public function __construct()
+	{
+		$this->roles = array();
+		$this->uuid = Uuid::uuid4();
+	}
 
     public function getUuid(): ?UuidInterface
     {
         return $this->uuid;
     }
 
-    public function setUuid(UuidInterface $uuid): self
-    {
-        $this->uuid = $uuid;
+    public function __toString(): string
+	{
+		return (string) $this->getUsername();
+	}
 
-        return $this;
-    }
-
-    /**
-     * A visual identifier that represents this user.
-     *
-     * @see UserInterface
-     */
     public function getUsername(): string
     {
         return $this->uuid->toString();
@@ -80,35 +110,43 @@ class User implements UserInterface
         return $this;
     }
 
-    /**
-     * @see UserInterface
-     */
-    public function getPassword(): string
-    {
-        return (string) $this->password;
-    }
+	public function getPassword() {}
+    public function getSalt() {}
+    public function eraseCredentials() {}
 
-    public function setPassword(string $password): self
-    {
-        $this->password = $password;
+	public function getDisplayName(): string
+	{
+		return $this->displayName;
+	}
 
-        return $this;
-    }
+	public function setDisplayName(string $displayName): self
+	{
+		$this->displayName = $displayName;
 
-    /**
-     * @see UserInterface
-     */
-    public function getSalt()
-    {
-        // not needed when using the "bcrypt" algorithm in security.yaml
-    }
+		return $this;
+	}
 
-    /**
-     * @see UserInterface
-     */
-    public function eraseCredentials()
-    {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
-    }
+	public function getEmail(): string
+	{
+		return $this->email;
+	}
+
+	public function setEmail(string $email): self
+	{
+		$this->email = $email;
+
+		return $this;
+	}
+
+	public function getDiscordId(): string
+	{
+		return $this->discordId;
+	}
+
+	public function setDiscordId(string $discordId): self
+	{
+		$this->discordId = $discordId;
+
+		return $this;
+	}
 }

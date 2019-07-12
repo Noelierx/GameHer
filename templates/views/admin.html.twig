@@ -3,10 +3,5 @@
 {% block body_id 'index' %}
 
 {% block main %}
-    <p>Index</p>
-    {{ app.user }}
-{% endblock %}
-
-{% block sidebar %}
-    {{ parent() }}
+    {{ dump(app.user) }}
 {% endblock %}
