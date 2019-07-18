@@ -3,14 +3,13 @@
 namespace App\Controller;
 
 use App\Repository\Blog\PostRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/", name="index", methods={"GET"})
      */
     public function index()
     {
@@ -18,7 +17,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/blog", name="blog")
+     * @Route("/blog", name="blog", methods={"GET"})
      */
     public function blog(PostRepository $postRepository)
     {
@@ -28,7 +27,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/esport", name="esport")
+     * @Route("/esport", name="esport", methods={"GET"})
      */
     public function esport()
     {
@@ -36,7 +35,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/webtv", name="webtv")
+     * @Route("/webtv", name="webtv", methods={"GET"})
      */
     public function webtv()
     {
@@ -44,7 +43,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/tournaments", name="tournaments")
+     * @Route("/tournaments", name="tournaments", methods={"GET"})
      */
     public function tournaments()
     {
@@ -52,7 +51,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/partners", name="partners")
+     * @Route("/partners", name="partners", methods={"GET"})
      */
     public function partners()
     {
@@ -60,19 +59,10 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/donations", name="donations")
+     * @Route("/donations", name="donations", methods={"GET"})
      */
     public function donations()
     {
         return $this->render('views/donations.html.twig');
-    }
-
-    /**
-     * @Route("/admin", name="admin")
-     * @IsGranted("ROLE_USER")
-     */
-    public function admin()
-    {
-        return $this->render('views/admin.html.twig');
     }
 }

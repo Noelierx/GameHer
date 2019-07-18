@@ -1,0 +1,19 @@
+
+default.action.show: Voir
+default.action.add: Ajouter
+default.action.edit: Editer
+default.action.delete: Supprimer
+default.action.save: Sauvegarder
+
+partners.index.title: Partenaires
+partners.index.no_results: Aucun partenaire trouvé
+partners.index.label.name: Nom
+partners.index.label.updated_at: Modifié le
+partners.index.label.actions: Actions
+
+partners.flash_message.success.create:
+partners.flash_message.success.edit:
+partners.flash_message.success.delete:
+partners.flash_message.fail.create:
+partners.flash_message.fail.edit:
+partners.flash_message.fail.delete:

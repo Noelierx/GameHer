@@ -23,12 +23,13 @@
 {% block header %}{{ include('partials/_navbar.html.twig') }}{% endblock %}
 
 <main class="wrapper">
+    <div class="container-fluid p-0">
+        {{ include('partials/_flash_messages.html.twig') }}
+    </div>
     <div class="container body-container">
         {% block body %}
             <div class="row">
                 <div id="main" class="col-sm-9">
-                    {{ include('partials/_flash_messages.html.twig') }}
-
                     {% block main %}{% endblock %}
                 </div>
 
@@ -39,6 +40,8 @@
                             'sharedAge': 600,
                             '_locale': app.request.locale
                         })) }}
+
+                        {{ show_source_code(_self) }}
                     {% endblock %}
                 </div>
             </div>

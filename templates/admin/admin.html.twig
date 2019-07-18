@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html.twig' %}
+{% trans_default_domain 'admin' %}
+
+{% block body_id 'admin' %}
+
+{% block main %}
+ <p>Test</p>
+ {% if is_granted('ROLE_ADMIN') %}
+   <a href="{{ path('admin_partners_index') }}">Partenaires</a>
+ {% endif %}
+ {% if is_granted('ROLE_REDACTEUR') %}
+ <a href="{{ path('partners') }}">Articles</a>
+ {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block main %}
+    <h2>Ajouter un partenaire</h2>
+
+    {{ form(form) }}
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        <a href="{{ path('admin_partners_index') }}" class="btn btn-lg btn-block btn-danger">
+            <i class="fa fa-return" aria-hidden="true"></i> Back
+        </a>
+    </div>
+
+    {{ parent() }}
+{% endblock %}

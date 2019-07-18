@@ -64,7 +64,7 @@
 
                         {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('index') }}">{{ 'menu.admin'|trans }}</a>
+                            <a class="nav-link" href="{{ path('admin') }}">{{ 'menu.admin'|trans }}</a>
                         </li>
                         {% endif %}
                         {% if app.user %}
@@ -75,7 +75,7 @@
                                 </a>
                                 <ul class="dropdown-menu user" role="menu" aria-labelledby="user">
                                     <li class="dropdown-item">
-                                        <a href="{{ path('index') }}">{{ 'menu.user'|trans }}</a>
+                                        <a href="{{ path('display_profile') }}">{{ 'menu.user'|trans }}</a>
                                     </li>
                                     <li class="dropdown-divider"></li>
                                     <li class="dropdown-item">
