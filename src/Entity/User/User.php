@@ -57,40 +57,40 @@ class User implements UserInterface
      */
     private $roles = [];
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=true)
-	 */
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
     protected $twitter;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=true)
-	 */
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
     protected $facebook;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=true)
-	 */
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
     protected $youtube;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=true)
-	 */
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
     protected $twitch;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=true)
-	 */
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
     protected $discord;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=true)
-	 */
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
     protected $instagram;
 
     /**
@@ -127,16 +127,16 @@ class User implements UserInterface
     public function __toString(): string
     {
         return serialize([
-        	$this->uuid->toString(),
-			$this->displayName,
-			$this->email,
-			$this->discord,
-			$this->twitter,
-			$this->twitch,
-			$this->instagram,
-			$this->youtube,
-			$this->facebook,
-		]);
+            $this->uuid->toString(),
+            $this->displayName,
+            $this->email,
+            $this->discord,
+            $this->twitter,
+            $this->twitch,
+            $this->instagram,
+            $this->youtube,
+            $this->facebook,
+        ]);
     }
 
     public function getUsername(): string
@@ -163,9 +163,17 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getPassword() {}
-    public function getSalt() {}
-    public function eraseCredentials() {}
+    public function getPassword()
+    {
+    }
+
+    public function getSalt()
+    {
+    }
+
+    public function eraseCredentials()
+    {
+    }
 
     public function getDisplayName(): string
     {
@@ -203,75 +211,75 @@ class User implements UserInterface
         return $this;
     }
 
-	public function getTwitter(): ?string
-	{
-		return $this->twitter;
-	}
+    public function getTwitter(): ?string
+    {
+        return $this->twitter;
+    }
 
-	public function setTwitter(string $twitter): self
-	{
-		$this->twitter = $twitter;
+    public function setTwitter(string $twitter): self
+    {
+        $this->twitter = $twitter;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFacebook(): ?string
-	{
-		return $this->facebook;
-	}
+    public function getFacebook(): ?string
+    {
+        return $this->facebook;
+    }
 
-	public function setFacebook(string $facebook): self
-	{
-		$this->facebook = $facebook;
+    public function setFacebook(string $facebook): self
+    {
+        $this->facebook = $facebook;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getYoutube(): ?string
-	{
-		return $this->youtube;
-	}
+    public function getYoutube(): ?string
+    {
+        return $this->youtube;
+    }
 
-	public function setYoutube(string $youtube): self
-	{
-		$this->youtube = $youtube;
+    public function setYoutube(string $youtube): self
+    {
+        $this->youtube = $youtube;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTwitch(): ?string
-	{
-		return $this->twitch;
-	}
+    public function getTwitch(): ?string
+    {
+        return $this->twitch;
+    }
 
-	public function setTwitch(string $twitch): self
-	{
-		$this->twitch = $twitch;
+    public function setTwitch(string $twitch): self
+    {
+        $this->twitch = $twitch;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDiscord(): ?string
-	{
-		return $this->discord;
-	}
+    public function getDiscord(): ?string
+    {
+        return $this->discord;
+    }
 
-	public function setDiscord(string $discord): self
-	{
-		$this->discord = $discord;
+    public function setDiscord(string $discord): self
+    {
+        $this->discord = $discord;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getInstagram(): ?string
-	{
-		return $this->instagram;
-	}
+    public function getInstagram(): ?string
+    {
+        return $this->instagram;
+    }
 
-	public function setInstagram(string $instagram): self
-	{
-		$this->instagram = $instagram;
+    public function setInstagram(string $instagram): self
+    {
+        $this->instagram = $instagram;
 
-		return $this;
-	}
+        return $this;
+    }
 }

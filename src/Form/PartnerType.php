@@ -12,34 +12,34 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class PartnerType extends AbstractType
 {
-	/**
-	 * @var TranslatorInterface
-	 */
-	private $translator;
+    /**
+     * @var TranslatorInterface
+     */
+    private $translator;
 
-	public function __construct(TranslatorInterface $translator)
-	{
-		$this->translator = $translator;
-	}
+    public function __construct(TranslatorInterface $translator)
+    {
+        $this->translator = $translator;
+    }
 
-	public function buildForm(FormBuilderInterface $builder, array $options)
-	{
-		$builder
-			->add('name', TextType::class)
-			->add('description', TextType::class)
-			->add('logo', FileType::class, [
-				'mapped' => false,
-				'required' => false,
-				'constraints' => [
-					new Image([ 'maxSize' => '2048k' ])
-				]
-			])
-			->add('website', TextType::class, ['required' => false])
-			->add('twitter', TextType::class, ['required' => false])
-			->add('facebook', TextType::class, ['required' => false])
-			->add('instagram', TextType::class, ['required' => false])
-			->add('save', SubmitType::class, [
-				'label' => $this->translator->trans('default.action.save', [], 'admin')
-			]);
-	}
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('name', TextType::class)
+            ->add('description', TextType::class)
+            ->add('logo', FileType::class, [
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new Image(['maxSize' => '2048k']),
+                ],
+            ])
+            ->add('website', TextType::class, ['required' => false])
+            ->add('twitter', TextType::class, ['required' => false])
+            ->add('facebook', TextType::class, ['required' => false])
+            ->add('instagram', TextType::class, ['required' => false])
+            ->add('save', SubmitType::class, [
+                'label' => $this->translator->trans('default.action.save', [], 'admin'),
+            ]);
+    }
 }

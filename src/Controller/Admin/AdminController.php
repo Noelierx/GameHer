@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Controller\Admin;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -13,11 +12,11 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AdminController extends AbstractController
 {
-	/**
-	 * @Route("/", name="admin")
-	 */
-	public function admin()
-	{
-		return $this->render('admin/admin.html.twig');
-	}
+    /**
+     * @Route("/", name="admin")
+     */
+    public function admin()
+    {
+        return $this->render('admin/admin.html.twig');
+    }
 }

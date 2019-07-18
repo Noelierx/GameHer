@@ -22,4 +22,5 @@ yarn-error.log
 
 ###> custom ignores ###
 .idea
+public/uploads/*
 ###< custom ignores ###
