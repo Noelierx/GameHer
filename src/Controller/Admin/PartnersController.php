@@ -41,7 +41,7 @@ class PartnersController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             if (($logo = $form['logo']->getData())) {
-                $partner->setLogo($fileUploader->upload($logo));
+				$partner->setLogo($fileUploader->upload($logo, $this->getParameter('partners_logo_directory')));
             }
             $em = $this->getDoctrine()->getManager();
             $em->persist($partner);
@@ -59,7 +59,8 @@ class PartnersController extends AbstractController
     }
 
     /**
-     * @Route("/{uuid}", name="admin_partners_show", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
+     * @Route("/{uuid}", name="admin_partners_show_slug", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
+     * @Route("/{slug}", name="admin_partners_show_slug", methods={"GET"})
      */
     public function show(Partner $partner): Response
     {
@@ -70,6 +71,7 @@ class PartnersController extends AbstractController
 
     /**
      * @Route("/{uuid}/edit", name="admin_partners_edit", methods={"GET", "POST"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
+     * @Route("/{slug}/edit", name="admin_partners_edit_slug", methods={"GET", "POST"})
      */
     public function edit(Request $request, Partner $partner, FileUploader $fileUploader): Response
     {
@@ -78,7 +80,7 @@ class PartnersController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             if (($logo = $form['logo']->getData())) {
-                $partner->setLogo($fileUploader->upload($logo));
+                $partner->setLogo($fileUploader->upload($logo, $this->getParameter('partners_logo_directory')));
             }
             $this->getDoctrine()->getManager()->flush();
 

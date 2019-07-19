@@ -17,3 +17,16 @@ partners.flash_message.success.delete:
 partners.flash_message.fail.create:
 partners.flash_message.fail.edit:
 partners.flash_message.fail.delete:
+
+members.flash_message.success.create:
+members.flash_message.success.edit:
+members.flash_message.success.delete:
+members.flash_message.fail.create:
+members.flash_message.fail.edit:
+members.flash_message.fail.delete:
+
+members.index.title: Membres
+members.index.no_results: Aucun membre trouvé
+members.index.label.name: Nom
+members.index.label.updated_at: Modifié le
+members.index.label.actions: Actions
