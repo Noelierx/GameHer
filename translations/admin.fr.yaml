@@ -30,3 +30,17 @@ members.index.no_results: Aucun membre trouvé
 members.index.label.name: Nom
 members.index.label.updated_at: Modifié le
 members.index.label.actions: Actions
+
+roles.index.title: Roles
+roles.index.no_results: Aucun role trouvé
+roles.index.label.name: Nom
+roles.index.label.category: Catégorie
+roles.index.label.updated_at: Modifié le
+roles.index.label.actions: Actions
+
+roles.flash_message.success.create:
+roles.flash_message.success.edit:
+roles.flash_message.success.delete:
+roles.flash_message.fail.create:
+roles.flash_message.fail.edit:
+roles.flash_message.fail.delete:

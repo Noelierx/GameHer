@@ -4,6 +4,8 @@
 namespace App\Form\Team;
 
 
+use App\Entity\Team\Role;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -36,6 +38,10 @@ class MemberType extends AbstractType
 				'constraints' => [
 					new Image(['maxSize' => '2048k']),
 				],
+			])
+			->add('role', EntityType::class, [
+				'class' => Role::class,
+				'choice_label' => 'name',
 			])
 			->add('twitch', TextType::class, ['required' => false])
 			->add('twitter', TextType::class, ['required' => false])

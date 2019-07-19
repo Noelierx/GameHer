@@ -6,8 +6,15 @@
 {% block main %}
  <p>Test</p>
  {% if is_granted('ROLE_ADMIN') %}
-   <a href="{{ path('admin_partners_index') }}">Partenaires</a>
-   <a href="{{ path('admin_members_index') }}">Membres</a>
+	 <div class="col">
+		 <a href="{{ path('admin_partners_index') }}">Partenaires</a>
+	 </div>
+	 <div class="col col-6">
+		 <a href="{{ path('admin_members_index') }}">Membres</a>
+	 </div>
+	 <div class="col col-6">
+		 <a href="{{ path('admin_roles_index') }}">Roles</a>
+	 </div>
  {% endif %}
  {% if is_granted('ROLE_REDACTEUR') %}
  <a href="{{ path('partners') }}">Articles</a>

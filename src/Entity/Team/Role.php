@@ -2,6 +2,7 @@
 
 namespace App\Entity\Team;
 
+use App\Entity\StringUuidTrait;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -15,6 +16,8 @@ use Ramsey\Uuid\UuidInterface;
  */
 class Role
 {
+	use StringUuidTrait;
+
     const CATEGORY_DIRECTION = 'direction';
     const CATEGORY_ADMINISTRATION = 'administration';
     const CATEGORY_MEMBERS = 'members';
@@ -36,13 +39,13 @@ class Role
 
     /**
      * @var string
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=false)
      */
     protected $category;
 
     /**
      * @var string
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=false)
      */
     protected $name;
 
@@ -76,4 +79,55 @@ class Role
     {
         $this->uuid = Uuid::uuid4();
     }
+
+	public static function getAvailableCategories()
+	{
+		return [
+			self::CATEGORY_ADMINISTRATION,
+			self::CATEGORY_DIRECTION,
+			self::CATEGORY_ESPORT,
+			self::CATEGORY_MEMBERS,
+		];
+	}
+
+	public function getCategory(): string
+	{
+		return $this->category;
+	}
+
+	public function setCategory(string $category): self
+	{
+		$this->category = $category;
+
+		return $this;
+	}
+
+	public function getName(): string
+	{
+		return $this->name;
+	}
+
+	public function setName(string $name): self
+	{
+		$this->name = $name;
+
+		return $this;
+	}
+
+	public function getMembers()
+	{
+		return $this->members;
+	}
+
+	public function setMembers($members): self
+	{
+		$this->members = $members;
+
+		return $this;
+	}
+
+	public function getUpdatedAt(): DateTime
+	{
+		return $this->updatedAt;
+	}
 }
