@@ -33,18 +33,23 @@ class Partner
     /**
      * @var string
      * @ORM\Column(type="string")
+     * @Assert\NotNull
+     * @Assert\NotBlank
      */
     protected $name;
 
     /**
      * @var string
      * @ORM\Column(type="text")
+     * @Assert\NotNull
+     * @Assert\NotBlank
      */
     protected $description;
 
     /**
      * @var string
      * @ORM\Column(type="string", nullable=false)
+     * @Assert\NotNull
      */
     protected $logo;
 

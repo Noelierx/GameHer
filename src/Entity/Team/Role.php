@@ -40,12 +40,16 @@ class Role
     /**
      * @var string
      * @ORM\Column(type="string", nullable=false)
+     * @Assert\NotNull
+     * @Assert\NotBlank
      */
     protected $category;
 
     /**
      * @var string
      * @ORM\Column(type="string", nullable=false)
+     * @Assert\NotNull
+     * @Assert\NotBlank
      */
     protected $name;
 
