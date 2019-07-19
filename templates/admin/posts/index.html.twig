@@ -1,0 +1,60 @@
+{% extends 'admin/admin.html.twig' %}
+{% trans_default_domain 'admin' %}
+
+{% block main %}
+    <h2>{{ 'posts.index.title'|trans }}</h2>
+
+    <table class="table table-striped table-middle-aligned">
+    <thead>
+    <tr>
+        <th scope="col">{{ 'posts.index.label.name'|trans }}</th>
+        <th scope="col">{{ 'posts.index.label.tags'|trans }}</th>
+        <th scope="col"><i class="fa fa-pencil" aria-hidden="true"></i> {{ 'posts.index.label.published_at'|trans }}</th>
+        <th scope="col" class="text-center"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'posts.index.label.actions'|trans }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for post in posts %}
+        <tr>
+            <td>{{ post.title }}</td>
+            <td>{% for tag in post.tags %}{{ tag.name }}{% endfor %}</td>
+						{% if post.publishedAt %}
+            <td>{{ post.publishedAt| date }}</td>
+					{% else %}
+							<td>{{ 'posts.index.not_published'|trans }}</td>
+						{% endif %}
+            <td class="text-right">
+                <div class="item-actions">
+                    <a href="{{ path('admin_posts_show', {uuid: post.uuidAsString}) }}" class="btn btn-sm btn-primary">
+                        <i class="fa fa-eye" aria-hidden="true"></i> {{ 'default.action.show'|trans }}
+                    </a>
+                    <a href="{{ path('admin_posts_index', {uuid: post.uuidAsString}) }}" class="btn btn-sm btn-info">
+                        <i class="fa fa-edit" aria-hidden="true"></i> {{ 'default.action.edit'|trans }}
+                    </a>
+                    <form action="{{ url('admin_posts_index', {uuid: post.uuidAsString}) }}" method="post" data-confirmation="true" id="delete-form" style="display:inline-block">
+                        <input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            <i class="fa fa-trash" aria-hidden="true"></i> {{ 'default.action.delete'|trans }}
+                        </button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="4" align="center">{{ 'posts.index.no_results'|trans }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        <a href="{{ path('admin_posts_new') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus" aria-hidden="true"></i> {{ 'default.action.add'|trans }}
+        </a>
+    </div>
+
+    {{ parent() }}
+{% endblock %}

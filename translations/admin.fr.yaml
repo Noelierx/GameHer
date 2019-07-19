@@ -5,6 +5,21 @@ default.action.edit: Editer
 default.action.delete: Supprimer
 default.action.save: Sauvegarder
 
+posts.index.title: Articles
+posts.index.no_results: Aucun articles trouvé
+posts.index.label.name: Nom
+posts.index.label.tags: Tags
+posts.index.label.published_at: Publié le
+posts.index.label.actions: Actions
+posts.index.not_published: Non publié
+
+posts.flash_message.success.create:
+posts.flash_message.success.edit:
+posts.flash_message.success.delete:
+posts.flash_message.fail.create:
+posts.flash_message.fail.edit:
+posts.flash_message.fail.delete:
+
 partners.index.title: Partenaires
 partners.index.no_results: Aucun partenaire trouvé
 partners.index.label.name: Nom

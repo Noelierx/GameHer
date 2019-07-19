@@ -2,7 +2,11 @@
 
 namespace App\Entity\User;
 
+use App\Entity\Blog\Comment;
+use App\Entity\Blog\Post;
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Ramsey\Uuid\Uuid;
@@ -93,6 +97,18 @@ class User implements UserInterface
      */
     protected $instagram;
 
+	/**
+	 * @var Collection|Post[]
+	 * @ORM\OneToMany(targetEntity="App\Entity\Blog\Post", mappedBy="author")
+	 */
+    protected $posts;
+
+	/**
+	 * @var Collection|Comment[]
+	 * @ORM\OneToMany(targetEntity="App\Entity\Blog\Comment", mappedBy="author")
+	 */
+	protected $comments;
+
     /**
      * @var DateTime
      * @Gedmo\Timestampable(on="create")
@@ -117,6 +133,8 @@ class User implements UserInterface
     {
         $this->roles = [];
         $this->uuid = Uuid::uuid4();
+        $this->posts = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     public function getUuid(): ?UuidInterface
@@ -282,4 +300,56 @@ class User implements UserInterface
 
         return $this;
     }
+
+	public function getPosts(): Collection
+	{
+		return $this->posts;
+	}
+
+	public function setPosts($posts): self
+	{
+		$this->posts = $posts;
+
+		return $this;
+	}
+
+	public function addPost(Post $post): self
+	{
+		$this->posts->add($post);
+
+		return $this;
+	}
+
+	public function removePost(Post $post): self
+	{
+		$this->posts->$this->remove($post);
+
+		return $this;
+	}
+
+	public function getComments(): Collection
+	{
+		return $this->comments;
+	}
+
+	public function setComments($comments): self
+	{
+		$this->comments = $comments;
+
+		return $this;
+	}
+
+	public function addComment(Comment $comment): self
+	{
+		$this->comments->add($comment);
+
+		return $this;
+	}
+
+	public function removeComment(Comment $comment): self
+	{
+		$this->comments->$this->remove($comment);
+
+		return $this;
+	}
 }

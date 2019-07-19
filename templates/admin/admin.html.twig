@@ -17,6 +17,6 @@
 	 </div>
  {% endif %}
  {% if is_granted('ROLE_REDACTEUR') %}
- <a href="{{ path('partners') }}">Articles</a>
+ <a href="{{ path('admin_posts_index') }}">Articles</a>
  {% endif %}
 {% endblock %}

@@ -6,6 +6,7 @@
 parameters:
     partners_logo_directory: '%kernel.project_dir%/public/uploads/partners'
     members_pictures_directory: '%kernel.project_dir%/public/uploads/members'
+    post_pictures_directory: '%kernel.project_dir%/public/uploads/posts'
 
 services:
     # default configuration for services in *this* file
@@ -26,4 +27,4 @@ services:
         tags: ['controller.service_arguments']
 
     # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    # please note that last  definitions always *replace* previous ones
