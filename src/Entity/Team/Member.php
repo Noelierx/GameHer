@@ -15,7 +15,7 @@ use Ramsey\Uuid\UuidInterface;
  */
 class Member
 {
-	use StringUuidTrait;
+    use StringUuidTrait;
 
     /**
      * @var int
@@ -50,9 +50,9 @@ class Member
     protected $lastname;
 
     /**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=true)
-	 */
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
     protected $picture;
 
     /**
@@ -110,116 +110,116 @@ class Member
         $this->uuid = Uuid::uuid4();
     }
 
-	public function getNickname(): string
-	{
-		return $this->nickname;
-	}
+    public function getNickname(): string
+    {
+        return $this->nickname;
+    }
 
-	public function setNickname(string $nickname): self
-	{
-		$this->nickname = $nickname;
+    public function setNickname(string $nickname): self
+    {
+        $this->nickname = $nickname;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFirstname(): ?string
-	{
-		return $this->firstname;
-	}
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
 
-	public function setFirstname(string $firstname): self
-	{
-		$this->firstname = $firstname;
+    public function setFirstname(string $firstname): self
+    {
+        $this->firstname = $firstname;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getLastname(): ?string
-	{
-		return $this->lastname;
-	}
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
 
-	public function setLastname(string $lastname): self
-	{
-		$this->lastname = $lastname;
+    public function setLastname(string $lastname): self
+    {
+        $this->lastname = $lastname;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getRole(): ?Role
-	{
-		return $this->role;
-	}
+    public function getRole(): ?Role
+    {
+        return $this->role;
+    }
 
-	public function setRole(Role $role): self
-	{
-		$this->role = $role;
+    public function setRole(Role $role): self
+    {
+        $this->role = $role;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTwitch(): ?string
-	{
-		return $this->twitch;
-	}
+    public function getTwitch(): ?string
+    {
+        return $this->twitch;
+    }
 
-	public function setTwitch(string $twitch): self
-	{
-		$this->twitch = $twitch;
+    public function setTwitch(string $twitch): self
+    {
+        $this->twitch = $twitch;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTwitter(): ?string
-	{
-		return $this->twitter;
-	}
+    public function getTwitter(): ?string
+    {
+        return $this->twitter;
+    }
 
-	public function setTwitter(string $twitter): self
-	{
-		$this->twitter = $twitter;
+    public function setTwitter(string $twitter): self
+    {
+        $this->twitter = $twitter;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFacebook(): ?string
-	{
-		return $this->facebook;
-	}
+    public function getFacebook(): ?string
+    {
+        return $this->facebook;
+    }
 
-	public function setFacebook(string $facebook): self
-	{
-		$this->facebook = $facebook;
+    public function setFacebook(string $facebook): self
+    {
+        $this->facebook = $facebook;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getInstagram(): ?string
-	{
-		return $this->instagram;
-	}
+    public function getInstagram(): ?string
+    {
+        return $this->instagram;
+    }
 
-	public function setInstagram(string $instagram): self
-	{
-		$this->instagram = $instagram;
+    public function setInstagram(string $instagram): self
+    {
+        $this->instagram = $instagram;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPicture(): string
-	{
-		return $this->picture;
-	}
+    public function getPicture(): string
+    {
+        return $this->picture;
+    }
 
-	public function setPicture(string $picture): self
-	{
-		$this->picture = $picture;
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getUpdatedAt(): DateTime
-	{
-		return $this->updatedAt;
-	}
+    public function getUpdatedAt(): DateTime
+    {
+        return $this->updatedAt;
+    }
 }

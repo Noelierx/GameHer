@@ -41,7 +41,7 @@ class PartnersController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             if (($logo = $form['logo']->getData())) {
-				$partner->setLogo($fileUploader->upload($logo, $this->getParameter('partners_logo_directory')));
+                $partner->setLogo($fileUploader->upload($logo, $this->getParameter('partners_logo_directory')));
             }
             $em = $this->getDoctrine()->getManager();
             $em->persist($partner);

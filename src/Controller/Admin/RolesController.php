@@ -4,7 +4,6 @@ namespace App\Controller\Admin;
 
 use App\Entity\Team\Role;
 use App\Form\Team\RoleType;
-use App\Service\FileUploader;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -57,7 +56,7 @@ class RolesController extends AbstractController
 
     /**
      * @Route("/{uuid}", name="admin_roles_show", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
-	 * @Route("/{slug}", name="admin_roles_show_slug", methods={"GET"})
+     * @Route("/{slug}", name="admin_roles_show_slug", methods={"GET"})
      */
     public function show(Role $role): Response
     {
@@ -68,7 +67,7 @@ class RolesController extends AbstractController
 
     /**
      * @Route("/{uuid}/edit", name="admin_roles_edit", methods={"GET", "POST"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
-	 * @Route("/{slug}/edit", name="admin_roles_edit_slug", methods={"GET", "POST"})
+     * @Route("/{slug}/edit", name="admin_roles_edit_slug", methods={"GET", "POST"})
      */
     public function edit(Request $request, Role $role): Response
     {

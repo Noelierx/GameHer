@@ -40,7 +40,7 @@ class MembersController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             if (($picture = $form['picture']->getData())) {
-				$member->setPicture($fileUploader->upload($picture, $this->getParameter('members_pictures_directory')));
+                $member->setPicture($fileUploader->upload($picture, $this->getParameter('members_pictures_directory')));
             }
             $em = $this->getDoctrine()->getManager();
             $em->persist($member);
@@ -59,7 +59,7 @@ class MembersController extends AbstractController
 
     /**
      * @Route("/{uuid}", name="admin_members_show", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
-	 * @Route("/{slug}", name="admin_members_show_slug", methods={"GET"})
+     * @Route("/{slug}", name="admin_members_show_slug", methods={"GET"})
      */
     public function show(Member $member): Response
     {
@@ -70,7 +70,7 @@ class MembersController extends AbstractController
 
     /**
      * @Route("/{uuid}/edit", name="admin_members_edit", methods={"GET", "POST"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
-	 * @Route("/{slug}/edit", name="admin_members_edit_slug", methods={"GET", "POST"})
+     * @Route("/{slug}/edit", name="admin_members_edit_slug", methods={"GET", "POST"})
      */
     public function edit(Request $request, Member $member, FileUploader $fileUploader): Response
     {

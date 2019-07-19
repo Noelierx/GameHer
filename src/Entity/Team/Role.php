@@ -16,7 +16,7 @@ use Ramsey\Uuid\UuidInterface;
  */
 class Role
 {
-	use StringUuidTrait;
+    use StringUuidTrait;
 
     const CATEGORY_DIRECTION = 'direction';
     const CATEGORY_ADMINISTRATION = 'administration';
@@ -80,54 +80,54 @@ class Role
         $this->uuid = Uuid::uuid4();
     }
 
-	public static function getAvailableCategories()
-	{
-		return [
-			self::CATEGORY_ADMINISTRATION,
-			self::CATEGORY_DIRECTION,
-			self::CATEGORY_ESPORT,
-			self::CATEGORY_MEMBERS,
-		];
-	}
+    public static function getAvailableCategories()
+    {
+        return [
+            self::CATEGORY_ADMINISTRATION,
+            self::CATEGORY_DIRECTION,
+            self::CATEGORY_ESPORT,
+            self::CATEGORY_MEMBERS,
+        ];
+    }
 
-	public function getCategory(): string
-	{
-		return $this->category;
-	}
+    public function getCategory(): string
+    {
+        return $this->category;
+    }
 
-	public function setCategory(string $category): self
-	{
-		$this->category = $category;
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getName(): string
-	{
-		return $this->name;
-	}
+    public function getName(): string
+    {
+        return $this->name;
+    }
 
-	public function setName(string $name): self
-	{
-		$this->name = $name;
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getMembers()
-	{
-		return $this->members;
-	}
+    public function getMembers()
+    {
+        return $this->members;
+    }
 
-	public function setMembers($members): self
-	{
-		$this->members = $members;
+    public function setMembers($members): self
+    {
+        $this->members = $members;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getUpdatedAt(): DateTime
-	{
-		return $this->updatedAt;
-	}
+    public function getUpdatedAt(): DateTime
+    {
+        return $this->updatedAt;
+    }
 }
