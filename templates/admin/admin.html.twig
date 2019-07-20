@@ -2,21 +2,67 @@
 {% trans_default_domain 'admin' %}
 
 {% block body_id 'admin' %}
+{% set route = app.request.attributes.get('_route') %}
 
-{% block main %}
- <p>Test</p>
- {% if is_granted('ROLE_ADMIN') %}
-	 <div class="col">
-		 <a href="{{ path('admin_partners_index') }}">Partenaires</a>
-	 </div>
-	 <div class="col col-6">
-		 <a href="{{ path('admin_members_index') }}">Membres</a>
-	 </div>
-	 <div class="col col-6">
-		 <a href="{{ path('admin_roles_index') }}">Roles</a>
-	 </div>
- {% endif %}
- {% if is_granted('ROLE_REDACTEUR') %}
- <a href="{{ path('admin_posts_index') }}">Articles</a>
- {% endif %}
+{% macro activeLink(path) %}
+	{% if app.request.attributes.get('_route') starts with path %}active{% endif %}
+{%  endmacro %}
+
+{% block header %}
+	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Administration GameHer</a>
+		<ul class="navbar-nav px-3">
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path('index') }}"><i class="fa fa-reply"></i> Retour au site</a>
+			</li>
+			<li class="nav-item text-nowrap">
+				<a class="nav-link" href="{{ path('logout') }}"><i class="fa fa-power-off"></i> Sign out</a>
+			</li>
+		</ul>
+	</nav>
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+			<div class="sidebar-sticky">
+				<ul class="nav flex-column">
+					<li class="nav-item">
+						<a class="nav-link {% if route == 'admin' %}active{% endif %}" href="{{ path('admin') }}"><i class="fa fa-fw fa-home mr-2 fa-2x"></i> Accueil</a>
+					</li>
+					{% if is_granted('ROLE_REDACTEUR') %}
+					<li class="nav-item">
+						<a class="nav-link {{ _self.activeLink('admin_posts') }}" href="{{ path('admin_posts_index') }}"><i class="fa fa-fw fa-book mr-2 fa-2x"></i> Articles</a>
+					</li>
+					{% endif %}
+					{% if is_granted('ROLE_ADMIN') %}
+					<li class="nav-item">
+						<a class="nav-link {{ _self.activeLink('admin_partners') }}" href="{{ path('admin_partners_index') }}"><i class="fa fa-fw fa-handshake mr-2 fa-2x"></i> Partenaires</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link {{ _self.activeLink('admin_members') }}" href="{{ path('admin_members_index') }}"><i class="fa fa-fw fa-users mr-2 fa-2x"></i> Membres</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link {{ _self.activeLink('admin_roles') }}" href="{{ path('admin_roles_index') }}"><i class="fa fa-fw fa-sitemap mr-2 fa-2x"></i> Roles</a>
+					</li>
+					{% endif %}
+				</ul>
+			</div>
+		</nav>
+		<main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+			{% block main %}{% endblock %}
+		</main>
+	</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('admin') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin') }}
 {% endblock %}

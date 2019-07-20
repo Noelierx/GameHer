@@ -5,8 +5,10 @@ namespace App\Controller\Admin;
 use App\Entity\Partner;
 use App\Form\PartnerType;
 use App\Service\FileUploader;
+use Exception;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -40,16 +42,24 @@ class PartnersController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if (($logo = $form['logo']->getData())) {
-                $partner->setLogo($fileUploader->upload($logo, $this->getParameter('post_pictures_directory')));
-            }
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($partner);
-            $em->flush();
+			try {
+				if (($logo = $form['logo']->getData())) {
+					$partner->setLogo($fileUploader->upload($logo, $this->getParameter('partners_logo_directory')));
+				}
+				$em = $this->getDoctrine()->getManager();
+				$em->persist($partner);
+				$em->flush();
 
-            $this->addFlash('success', 'partners.flash_message.success.create');
+				$this->addFlash('success', 'partners.flash_message.success.create');
 
-            return $this->redirectToRoute('admin_partners_index');
+				return $this->redirectToRoute('admin_partners_index');
+			} catch (Exception $e) {
+				$this->addFlash('danger', 'partners.flash_message.fail.create');
+				return $this->render('admin/partners/new.html.twig', [
+					'partner' => $partner,
+					'form' => $form->createView(),
+				]);
+			}
         }
 
         return $this->render('admin/partners/new.html.twig', [
@@ -59,7 +69,7 @@ class PartnersController extends AbstractController
     }
 
     /**
-     * @Route("/{uuid}", name="admin_partners_show_slug", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
+     * @Route("/{uuid}", name="admin_partners_show", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
      * @Route("/{slug}", name="admin_partners_show_slug", methods={"GET"})
      */
     public function show(Partner $partner): Response
@@ -79,14 +89,22 @@ class PartnersController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if (($logo = $form['logo']->getData())) {
-                $partner->setLogo($fileUploader->upload($logo, $this->getParameter('post_pictures_directory')));
-            }
-            $this->getDoctrine()->getManager()->flush();
+        	try {
+				if (($logo = $form['logo']->getData())) {
+					$partner->setLogo($fileUploader->upload($logo, $this->getParameter('partners_logo_directory')));
+				}
+				$this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'partners.flash_message.success.edit');
+				$this->addFlash('success', 'partners.flash_message.success.edit');
 
-            return $this->redirectToRoute('admin_partners_edit', ['uuid' => $partner->getUuidAsString()]);
+				return $this->redirectToRoute('admin_partners_edit', ['uuid' => $partner->getUuidAsString()]);
+			} catch (Exception $e) {
+        		$this->addFlash('danger', 'partners.flash_message.fail.delete');
+        		return $this->render('admin/partners/edit.html.twig', [
+					'form' => $form->createView(),
+					'partner' => $partner,
+				]);
+			}
         }
 
         return $this->render('admin/partners/edit.html.twig', [

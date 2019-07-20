@@ -10,6 +10,7 @@ posts.index.no_results: Aucun articles trouvé
 posts.index.label.name: Nom
 posts.index.label.tags: Tags
 posts.index.label.published_at: Publié le
+posts.index.label.created_at: Créé le
 posts.index.label.actions: Actions
 posts.index.not_published: Non publié
 

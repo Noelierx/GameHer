@@ -61,8 +61,6 @@ class Post
     /**
      * @var string
      * @ORM\Column(type="string", nullable=true)
-     * @Assert\NotNull
-     * @Assert\NotBlank
      */
     protected $picture;
 
@@ -75,7 +73,6 @@ class Post
     /**
      * @var UserInterface
      * @ORM\ManyToOne(targetEntity="App\Entity\User\User", inversedBy="posts")
-     * @Assert\NotNull
      */
     protected $author;
 
@@ -88,7 +85,6 @@ class Post
     /**
      * @var Collection|Tag[]
      * @ORM\ManyToMany(targetEntity="App\Entity\Blog\Tag", inversedBy="posts")
-     * @Assert\NotNull
      */
     protected $tags;
 
@@ -185,6 +181,16 @@ class Post
         return $this;
     }
 
+	public function getCreatedAt(): DateTime
+	{
+		return $this->createdAt;
+	}
+
+	public function getUpdatedAt(): DateTime
+	{
+		return $this->updatedAt;
+	}
+
     public function getTags(): Collection
     {
         return $this->tags;
@@ -257,6 +263,9 @@ class Post
     public function setPublished(bool $published): self
     {
         $this->published = $published;
+        if ($published === true) {
+        	$this->setPublishedAt(new DateTime());
+		}
 
         return $this;
     }

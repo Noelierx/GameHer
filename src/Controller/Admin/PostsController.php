@@ -24,7 +24,7 @@ class PostsController extends AbstractController
     public function index()
     {
         return $this->render('admin/posts/index.html.twig', [
-            'posts' => $this->getDoctrine()->getRepository(Post::class)->findAll(),
+            'posts' => $this->getDoctrine()->getRepository(Post::class)->findBy([], ['publishedAt' => 'ASC', 'createdAt' => 'DESC']),
         ]);
     }
 
@@ -70,4 +70,48 @@ class PostsController extends AbstractController
             'post' => $post,
         ]);
     }
+
+	/**
+	 * @Route("/{uuid}/edit", name="admin_posts_edit", methods={"GET", "POST"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
+	 * @Route("/{slug}/edit", name="admin_posts_edit_slug", methods={"GET", "POST"})
+	 */
+	public function edit(Request $request, Post $post, FileUploader $fileUploader): Response
+	{
+		$form = $this->createForm(PostType::class, $post);
+		$form->handleRequest($request);
+
+		if ($form->isSubmitted() && $form->isValid()) {
+			if (($picture = $form['picture']->getData())) {
+				$post->setPicture($fileUploader->upload($picture, $this->getParameter('posts_pictures_directory')));
+			}
+			$this->getDoctrine()->getManager()->flush();
+
+			$this->addFlash('success', 'posts.flash_message.success.edit');
+
+			return $this->redirectToRoute('admin_posts_edit', ['uuid' => $post->getUuidAsString()]);
+		}
+
+		return $this->render('admin/posts/edit.html.twig', [
+			'form' => $form->createView(),
+			'post' => $post,
+		]);
+	}
+
+	/**
+	 * @Route("/{uuid}/delete", methods={"POST"}, name="admin_posts_delete")
+	 */
+	public function delete(Request $request, Post $post): Response
+	{
+		if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
+			return $this->redirectToRoute('admin_posts_index');
+		}
+
+		$em = $this->getDoctrine()->getManager();
+		$em->remove($post);
+		$em->flush();
+
+		$this->addFlash('success', 'posts.flash_message.success.delete');
+
+		return $this->redirectToRoute('admin_posts_index');
+	}
 }
