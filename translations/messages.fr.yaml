@@ -24,3 +24,8 @@ mit_license: MIT License
 # _about
 help.app_description: App description
 help.more_information: More information
+
+# donations
+donations:
+  title: Soutenir Game'Her
+  subtitle: "Pourquoi et comment nous soutenir ?"

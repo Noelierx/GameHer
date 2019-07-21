@@ -1,5 +1,7 @@
+@import "component/main.css";
+
 body {
-    background-color: lightgray;
+    background-color: white;
 }
 .wrapper {
     height: calc(100vh - 3.5rem);
@@ -10,5 +12,39 @@ body {
     flex-grow: 1;
 }
 .body-footer {
-    background-color: darkgray;
+    border-top: 3px solid #001724 !important;
+}
+.primary {
+    color: #c92f4b;
+}
+nav a, nav ul a {
+    color: #011724 !important;
+    font-family: FoundationSans-Roman;
+}
+.nav-wrapper {
+    border-bottom: 3px solid #001724;
+}
+@font-face {
+    font-family: 'headingcompressedpro-extbd';
+    src: url('fonts/headingcompressedpro-extbd-webfont.woff2') format('woff2'),
+    url('fonts/headingcompressedpro-extbd-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FoundationSans-Roman';
+    src: url('fonts/FoundationSans-Roman-webfont.woff2') format('woff2'),
+    url('fonts/FoundationSans-Roman-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+h1{
+    font-family: 'headingcompressedpro-extbd';
+    font-size: 111px;
+}
+h2{
+    font-family: "FoundationSans-Roman";
+    font-size: 30px;
 }

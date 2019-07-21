@@ -1,0 +1,115 @@
+/*** HEADER BANNIERE DONATION / RECRUTEMENT ***/
+.separateBanner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #c92f4b;
+    height: 492px;
+}
+.separateBanner__picture {
+    text-align: left;
+    align-self: center;
+}
+.separateBanner .separateBanner__image {
+    max-width: 630px;
+    width: 100%;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    bottom: 0;
+}
+.separateBanner__content p, .separateBanner__content li, .separateBanner__content .separateBanner__contentText {
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    font-family: 'FoundationSans-Roman';
+    color: #fff;
+    font-weight: 700;
+}
+.separateBanner__title {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+@media only screen and (max-width: 767px) {
+    .separateBanner {
+        flex-direction: column;
+    }
+    .separateBanner__picture {
+        display: none;
+    }
+    .separateBanner__content {
+        max-width: 100%;
+        align-self: center;
+    }
+    .separateBanner__title {
+        margin: 24px 0 16px 0;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .separateBanner {
+        flex-direction: column;
+    }
+    .separateBanner__picture {
+        margin: auto;
+    }
+    .separateBanner .separateBanner__image {
+        max-width: 551px;
+        width: 100%;
+        max-height: 350px;
+    }
+    .separateBanner__content {
+        max-width: 450px;
+        margin-top: 35px;
+    }
+    .separateBanner__title {
+        margin: 24px 0 16px 0;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .separateBanner {
+        flex-direction: row;
+    }
+    .separateBanner__picture {
+        margin: inherit;
+    }
+    .separateBanner .separateBanner__image {
+        max-width: 551px;
+        width: 100%;
+        max-height: 350px;
+    }
+    .separateBanner__content {
+        max-width: 40%;
+    }
+    .separateBanner__title {
+        margin: 0 0 16px 0;
+    }
+}
+@media only screen and (min-width: 960px) {
+    .separateBanner {
+        flex-direction: row;
+    }
+    .separateBanner__picture {
+        margin: inherit;
+    }
+    .separateBanner .separateBanner__image {
+        max-width: 800px;
+        width: 100%;
+        min-height: 492px;
+    }
+    .separateBanner__content {
+        width: 50%;
+    }
+    .separateBanner .separateBanner__picture {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .separateBanner .separateBanner__picture {
+        display:none;
+    }
+    .separateBanner__content {
+        max-width: 100%;
+        margin-top: 35px;
+    }
+}

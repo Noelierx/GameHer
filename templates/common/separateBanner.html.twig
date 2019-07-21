@@ -1,0 +1,18 @@
+{% set _hasLink = link is defined %}
+
+<section class="separateBanner {{ className | default('') }}">
+    <div class="separateBanner__content {{ contentClassName | default('') }}">
+        {% if mainTitle is defined %}
+            <h1 class="separateBanner__title {{ titleClassName | default('') }}">{{ mainTitle | raw }}</h1>
+        {% endif %}
+        <h2 class="separateBanner__contentText {{ contentTextClassName | default('') }}">
+            {{ content | raw }}
+        </h2>
+        {% if _hasLink %}
+            <a href="{{ link }}" class="button button--alternative">{{ link_label }}</a>
+        {% endif %}
+    </div>
+    <div class="separateBanner__picture {{ pictureClassName | default('') }}">
+        <img src="{{ image_url }}" alt="{{ image_alt | default('') }}" class="{{ imageClassName | default('separateBanner__image') }}">
+    </div>
+</section>

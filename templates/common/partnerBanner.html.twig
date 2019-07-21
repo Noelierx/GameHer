@@ -1,0 +1,11 @@
+<section class="partnerBanner {{ partnerBanner_class | default('') }}">
+    <div class="container">
+        <div class="partnerBanner__table">
+            {% for partner in partners %}
+                <div class="partnerBanner__col">
+                    <a href="{{ partner.url }}"><img src="{{ partner.logo_url }}" class="partnerBanner__image {{ partnerBanner_classImage | default('') }}" alt="{{ partner.logo_alt | default('') }}" /></a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

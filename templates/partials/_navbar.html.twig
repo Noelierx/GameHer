@@ -1,96 +1,56 @@
-
 <header>
-    <div class="navbar navbar-default navbar-expand-md navbar-static-top bg-light" role="navigation">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{{ path('index') }}">GameHer</a>
-            <button class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="sr-only">{{ 'menu.toggle_nav'|trans }}</span>
-                <i class="fa fa-bars"></i>
-            </button>
-
-            <div class="navbar-collapse collapse">
-                <ul class="navbar-nav ml-auto">
-
-                    {% block header_navigation_links %}
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('blog') }}">
-                                {{ 'menu.blog'|trans }}
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('esport') }}">{{ 'menu.esport'|trans }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('webtv') }}">{{ 'menu.webtv'|trans }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('tournaments') }}">{{ 'menu.tournaments'|trans }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('partners') }}">{{ 'menu.partners'|trans }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('donations') }}">{{ 'menu.donations'|trans }}</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="team">
-                                {{ 'menu.team.header'|trans }} <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu team" role="menu" aria-labelledby="team">
-                                <li class="dropdown-item">
-                                    <a href="{{ path('index') }}">{{ 'menu.team.about'|trans }}</a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a href="{{ path('index') }}">{{ 'menu.team.contact'|trans }}</a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a href="{{ path('index') }}">{{ 'menu.team.media'|trans }}</a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a href="{{ path('index') }}">{{ 'menu.team.achievements'|trans }}</a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a href="{{ path('index') }}">{{ 'menu.team.recruitment'|trans }}</a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a href="{{ path('index') }}">{{ 'menu.team.presskit'|trans }}</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        {% if is_granted('ROLE_ADMIN') %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin') }}">{{ 'menu.admin'|trans }}</a>
-                        </li>
-                        {% endif %}
-                        {% if app.user %}
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="user">
-                                    {{ app.user.displayName }}
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu user" role="menu" aria-labelledby="user">
-                                    <li class="dropdown-item">
-                                        <a href="{{ path('display_profile') }}">{{ 'menu.user'|trans }}</a>
-                                    </li>
-                                    <li class="dropdown-divider"></li>
-                                    <li class="dropdown-item">
-                                        <a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        {% else %}
-                            <li class="nav-item">
-                                <a href="{{ path('connect_discord') }}" class="nav-link">{{ 'menu.login'|trans }}</a>
-                            </li>
-                        {% endif %}
-                    {% endblock %}
-                </ul>
-            </div>
+    {% block header_navigation_links %}
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{{ path('index') }}">{{ 'menu.team.about'|trans }}</a></li>
+        <li><a href="{{ path('index') }}">{{ 'menu.team.contact'|trans }}</a></li>
+        <li><a href="{{ path('index') }}">{{ 'menu.team.media'|trans }}</a></li>
+        <li><a href="{{ path('index') }}">{{ 'menu.team.achievements'|trans }}</a></li>
+        <li><a href="{{ path('index') }}">{{ 'menu.team.recruitment'|trans }}</a></li>
+        <li><a href="{{ path('index') }}">{{ 'menu.team.presskit'|trans }}</a></li>
+    </ul>
+    <ul id="dropdown2" class="dropdown-content">
+        <li><a href="{{ path('display_profile') }}">{{ 'menu.user'|trans }}</a></li>
+        <li><a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a></li>
+    </ul>
+    <nav>
+        <div class="nav-wrapper white">
+            <a href="{{ path('index') }}" class="brand-logo"><img src="../../assets/img/logo.png"></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{ path('blog') }}">{{ 'menu.blog'|trans }}</a></li>
+                <li><a href="{{ path('esport') }}">{{ 'menu.esport'|trans }}</a></li>
+                <li><a href="{{ path('webtv') }}">{{ 'menu.webtv'|trans }}</a></li>
+                <li><a href="{{ path('tournaments') }}">{{ 'menu.tournaments'|trans }}</a></li>
+                <li><a href="{{ path('partners') }}">{{ 'menu.partners'|trans }}</a></li>
+                <li><a href="{{ path('donations') }}">{{ 'menu.donations'|trans }}</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">La Team<i class="material-icons right">arrow_drop_down</i></a></li>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a class="nav-link" href="{{ path('admin') }}">{{ 'menu.admin'|trans }}</a></li>
+                {% endif %}
+                {% if app.user %}
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">{{ app.user.displayName }} <i class="material-icons right">arrow_drop_down</i></a></li>
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{{ path('connect_discord') }}" class="nav-link">{{ 'menu.login'|trans }}</a>
+                    </li>
+                {% endif %}
+            </ul>
         </div>
-    </div>
+    </nav>
+    {% endblock %}
 </header>
+<script>
+    $( document ).ready(function() {
+        $('.dropdown-trigger').dropdown({
+                inDuration: 300,
+                outDuration: 225,
+                constrain_width: false, // Does not change width of dropdown to that of the activator
+                hover: false, // Activate on click
+                alignment: 'left', // Aligns dropdown to left or right edge (works with constrain_width)
+                gutter: 0, // Spacing from edge
+                belowOrigin: false // Displays dropdown below the button
+            }
+        );
+    });
+</script>

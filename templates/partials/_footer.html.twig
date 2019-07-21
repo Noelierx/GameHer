@@ -1,11 +1,37 @@
-<footer class="body-footer">
+<footer class="body-footer page-footer white">
+    {% include "common/partnerBanner.html.twig" with {
+        partnerBanner_classImage: "partnerBanner_footer",
+        partners : [
+            {
+                logo_url: "../assets/img/BE-QUIPE.png",
+                logo_alt: "BEQUIPE",
+                url: "https://bequipe.com/",
+            },
+            {
+                logo_url: "NEWGOTRAVEL.png",
+                logo_alt: "NewgoTravel",
+                url: "https://newgotravel.com/",
+            },
+            {
+                logo_url: "TheGLAB.png",
+                logo_alt: "TheGLab",
+                url: "https://the-g-lab.tech/",
+            },
+            {
+                logo_url: "LMN8.png",
+                logo_alt: "LMN8",
+                url: "https://eliminate.fr/",
+            }
+        ]
+    } only %}
+    <hr style="background-color: #001724; width: 500px; height:3px;">
     <div class="container">
         <div class="row">
-            <div class="col-3">
-                GameHer Logo
+            <div class="col l3 s12">
+                <p class="grey-text text-lighten-4">L'image de la mascotte ici</p>
             </div>
-            <div class="col-3">
-                <h5>GameHer</h5>
+            <div class="col l3 s12">
+                <h5 class="primary">Game'Her</h5>
                 <ul>
                     <li><a href="{{ path('blog') }}">{{ 'menu.blog'|trans }}</a></li>
                     <li><a href="{{ path('esport') }}">{{ 'menu.esport'|trans }}</a></li>
@@ -14,8 +40,8 @@
                     <li><a href="#">{{ 'menu.team.about'|trans }}</a></li>
                 </ul>
             </div>
-            <div class="col-3">
-                <h5>Site Links</h5>
+            <div class="col l3 s12">
+                <h5 class="primary">Liens utiles</h5>
                 <ul>
                     <li><a href="#">{{ 'menu.team.presskit'|trans }}</a></li>
                     <li><a href="{{ path('partners') }}">{{ 'menu.partners'|trans }}</a></li>
@@ -23,9 +49,8 @@
                     <li><a href="#">Mentions Légales</a></li>
                 </ul>
             </div>
-            <div class="col-3">
-                <h5>Follow</h5>
-                <p>Contact</p>
+            <div class="col l3 s12">
+                <h5 class="primary">Nous suivre</h5>
                 <p>
                     <a href="https://twitter.com/GameHer" title="GameHer Twitter">
                         <i class="fab fa-twitter" aria-hidden="true"></i>
