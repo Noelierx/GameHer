@@ -15,7 +15,7 @@
     </ul>
     <nav>
         <div class="nav-wrapper white">
-            <a href="{{ path('index') }}" class="brand-logo"><img src="../../assets/img/logo.png"></a>
+            <a href="{{ path('index') }}" class="brand-logo"><img src="{{ asset('assets/img/logo.png') }}"></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ path('blog') }}">{{ 'menu.blog'|trans }}</a></li>
                 <li><a href="{{ path('esport') }}">{{ 'menu.esport'|trans }}</a></li>
@@ -40,17 +40,3 @@
     </nav>
     {% endblock %}
 </header>
-<script>
-    $( document ).ready(function() {
-        $('.dropdown-trigger').dropdown({
-                inDuration: 300,
-                outDuration: 225,
-                constrain_width: false, // Does not change width of dropdown to that of the activator
-                hover: false, // Activate on click
-                alignment: 'left', // Aligns dropdown to left or right edge (works with constrain_width)
-                gutter: 0, // Spacing from edge
-                belowOrigin: false // Displays dropdown below the button
-            }
-        );
-    });
-</script>
