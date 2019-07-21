@@ -11,6 +11,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -18,7 +19,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class Post
 {
-	use StringUuidTrait;
+    use StringUuidTrait;
 
     /**
      * @var int
@@ -37,6 +38,8 @@ class Post
     /**
      * @var string
      * @ORM\Column(type="string", nullable=false)
+     * @Assert\NotNull
+     * @Assert\NotBlank
      */
     protected $title;
 
@@ -50,38 +53,40 @@ class Post
     /**
      * @var string
      * @ORM\Column(type="text", nullable=false)
+     * @Assert\NotNull
+     * @Assert\NotBlank
      */
     protected $content;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=true)
-	 */
-	protected $picture;
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $picture;
 
-	/**
-	 * @var bool
-	 * @ORM\Column(type="boolean")
-	 */
-	protected $published = false;
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean")
+     */
+    protected $published = false;
 
-	/**
-	 * @var UserInterface
-	 * @ORM\ManyToOne(targetEntity="App\Entity\User\User", inversedBy="posts")
-	 */
+    /**
+     * @var UserInterface
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\User", inversedBy="posts")
+     */
     protected $author;
 
-	/**
-	 * @var Collection|Comment[]
-	 * @ORM\OneToMany(targetEntity="App\Entity\Blog\Comment", mappedBy="post")
-	 */
-	protected $comments;
+    /**
+     * @var Collection|Comment[]
+     * @ORM\OneToMany(targetEntity="App\Entity\Blog\Comment", mappedBy="post")
+     */
+    protected $comments;
 
-	/**
-	 * @var Collection|Tag[]
-	 * @ORM\ManyToMany(targetEntity="App\Entity\Blog\Tag", inversedBy="posts")
-	 */
-	protected $tags;
+    /**
+     * @var Collection|Tag[]
+     * @ORM\ManyToMany(targetEntity="App\Entity\Blog\Tag", inversedBy="posts")
+     */
+    protected $tags;
 
     /**
      * @var DateTime
@@ -112,143 +117,156 @@ class Post
     public function __construct()
     {
         $this->uuid = Uuid::uuid4();
-		$this->tags = new ArrayCollection();
-		$this->comments = new ArrayCollection();
+        $this->tags = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
-	public function getTitle(): string
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getSlug(): string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getContent(): string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): self
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    public function getAuthor(): UserInterface
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(UserInterface $author): self
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    public function getPublishedAt(): ?DateTime
+    {
+        return $this->publishedAt;
+    }
+
+    public function setPublishedAt(DateTime $publishedAt): self
+    {
+        $this->publishedAt = $publishedAt;
+
+        return $this;
+    }
+
+	public function getCreatedAt(): DateTime
 	{
-		return $this->title;
+		return $this->createdAt;
 	}
 
-	public function setTitle(string $title): self
+	public function getUpdatedAt(): DateTime
 	{
-		$this->title = $title;
-
-		return $this;
+		return $this->updatedAt;
 	}
 
-	public function getSlug(): string
-	{
-		return $this->slug;
-	}
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
 
-	public function setSlug(string $slug): self
-	{
-		$this->slug = $slug;
+    public function setTags($tags): self
+    {
+        $this->tags = $tags;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getContent(): string
-	{
-		return $this->content;
-	}
+    public function addTag(Tag $tag): self
+    {
+        $this->tags->add($tag);
 
-	public function setContent(string $content): self
-	{
-		$this->content = $content;
+        return $this;
+    }
 
-		return $this;
-	}
+    public function removeTag(Tag $tag): self
+    {
+        $this->tags->$this->remove($tag);
 
-	public function getAuthor(): UserInterface
-	{
-		return $this->author;
-	}
+        return $this;
+    }
 
-	public function setAuthor(UserInterface $author): self
-	{
-		$this->author = $author;
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
 
-		return $this;
-	}
+    public function setComments($comments): self
+    {
+        $this->comments = $comments;
 
-	public function getPublishedAt(): ?DateTime
-	{
-		return $this->publishedAt;
-	}
+        return $this;
+    }
 
-	public function setPublishedAt(DateTime $publishedAt): self
-	{
-		$this->publishedAt = $publishedAt;
+    public function addComment(Comment $comment): self
+    {
+        $this->comments->add($comment);
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTags(): Collection
-	{
-		return $this->tags;
-	}
+    public function removeComment(Comment $comment): self
+    {
+        $this->comments->$this->remove($comment);
 
-	public function setTags($tags): self
-	{
-		$this->tags = $tags;
+        return $this;
+    }
 
-		return $this;
-	}
+    public function getPicture(): string
+    {
+        return $this->picture;
+    }
 
-	public function addTag(Tag $tag): self
-	{
-		$this->tags->add($tag);
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function removeTag(Tag $tag): self
-	{
-		$this->tags->$this->remove($tag);
+    public function isPublished(): bool
+    {
+        return $this->published;
+    }
 
-		return $this;
-	}
+    public function setPublished(bool $published): self
+    {
+        $this->published = $published;
+        if ($published === true) {
+        	$this->setPublishedAt(new DateTime());
+		}
 
-	public function getComments(): Collection
-	{
-		return $this->comments;
-	}
-
-	public function setComments($comments): self
-	{
-		$this->comments = $comments;
-
-		return $this;
-	}
-
-	public function addComment(Comment $comment): self
-	{
-		$this->comments->add($comment);
-
-		return $this;
-	}
-
-	public function removeComment(Comment $comment): self
-	{
-		$this->comments->$this->remove($comment);
-
-		return $this;
-	}
-
-	public function getPicture(): string
-	{
-		return $this->picture;
-	}
-
-	public function setPicture(string $picture): self
-	{
-		$this->picture = $picture;
-
-		return $this;
-	}
-
-	public function isPublished(): bool
-	{
-		return $this->published;
-	}
-
-	public function setPublished(bool $published): self
-	{
-		$this->published = $published;
-
-		return $this;
-	}
+        return $this;
+    }
 }

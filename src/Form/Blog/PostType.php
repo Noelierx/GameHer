@@ -16,39 +16,39 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class PostType extends AbstractType
 {
-	/**
-	 * @var TranslatorInterface
-	 */
-	private $translator;
+    /**
+     * @var TranslatorInterface
+     */
+    private $translator;
 
-	public function __construct(TranslatorInterface $translator)
-	{
-		$this->translator = $translator;
-	}
+    public function __construct(TranslatorInterface $translator)
+    {
+        $this->translator = $translator;
+    }
 
-	public function buildForm(FormBuilderInterface $builder, array $options)
-	{
-		$builder
-			->add('title', TextType::class)
-			->add('content', CKEditorType::class, [
-				'required' => true,
-				])
-			->add('picture', FileType::class, [
-				'mapped' => false,
-				'required' => false,
-				'constraints' => [
-					new Image(['maxSize' => '2048k']),
-				],
-			])
-			->add('tags', EntityType::class, [
-				'class' => Tag::class,
-				'choice_label' => 'name',
-				'multiple' => true,
-				'required' => false,
-			])
-			->add('published', CheckboxType::class, ['required' => false])
-			->add('save', SubmitType::class, [
-				'label' => $this->translator->trans('default.action.save', [], 'admin'),
-			]);
-	}
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('title', TextType::class)
+            ->add('content', CKEditorType::class, [
+                'required' => true,
+                ])
+            ->add('picture', FileType::class, [
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new Image(['maxSize' => '2048k']),
+                ],
+            ])
+            ->add('tags', EntityType::class, [
+                'class' => Tag::class,
+                'choice_label' => 'name',
+                'multiple' => true,
+                'required' => false,
+            ])
+            ->add('published', CheckboxType::class, ['required' => false])
+            ->add('save', SubmitType::class, [
+                'label' => $this->translator->trans('default.action.save', [], 'admin'),
+            ]);
+    }
 }

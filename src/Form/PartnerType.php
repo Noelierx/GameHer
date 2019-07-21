@@ -27,7 +27,9 @@ class PartnerType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
-            ->add('description', TextareaType::class)
+            ->add('description', TextareaType::class, [
+            	'attr' => ['rows' => 5]
+			])
             ->add('logo', FileType::class, [
                 'mapped' => false,
                 'required' => false,
@@ -35,10 +37,22 @@ class PartnerType extends AbstractType
                     new Image(['maxSize' => '2048k']),
                 ],
             ])
-            ->add('website', TextType::class, ['required' => false])
-            ->add('twitter', TextType::class, ['required' => false])
-            ->add('facebook', TextType::class, ['required' => false])
-            ->add('instagram', TextType::class, ['required' => false])
+            ->add('website', TextType::class, [
+            	'required' => false,
+				'attr' => [],
+			])
+            ->add('twitter', TextType::class, [
+            	'required' => false,
+				'attr' => [],
+			])
+            ->add('facebook', TextType::class, [
+            	'required' => false,
+				'attr' => [],
+			])
+            ->add('instagram', TextType::class, [
+            	'required' => false,
+				'attr' => [],
+			])
             ->add('save', SubmitType::class, [
                 'label' => $this->translator->trans('default.action.save', [], 'admin'),
             ]);

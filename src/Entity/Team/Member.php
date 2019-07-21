@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -34,6 +35,8 @@ class Member
     /**
      * @var string
      * @ORM\Column(type="string")
+     * @Assert\NotNull
+     * @Assert\NotBlank
      */
     protected $nickname;
 
@@ -58,6 +61,7 @@ class Member
     /**
      * @var Role
      * @ORM\ManyToOne(targetEntity="App\Entity\Team\Role", inversedBy="members")
+     * @Assert\NotNull
      */
     protected $role;
 

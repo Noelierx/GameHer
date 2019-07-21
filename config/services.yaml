@@ -6,7 +6,7 @@
 parameters:
     partners_logo_directory: '%kernel.project_dir%/public/uploads/partners'
     members_pictures_directory: '%kernel.project_dir%/public/uploads/members'
-    post_pictures_directory: '%kernel.project_dir%/public/uploads/posts'
+    posts_pictures_directory: '%kernel.project_dir%/public/uploads/posts'
 
 services:
     # default configuration for services in *this* file

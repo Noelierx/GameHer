@@ -12,6 +12,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\User\UserRepository")
@@ -46,6 +47,8 @@ class User implements UserInterface
     /**
      * @var string
      * @ORM\Column(type="string")
+     * @Assert\NotNull
+     * @Assert\NotBlank
      */
     private $displayName;
 
@@ -97,17 +100,17 @@ class User implements UserInterface
      */
     protected $instagram;
 
-	/**
-	 * @var Collection|Post[]
-	 * @ORM\OneToMany(targetEntity="App\Entity\Blog\Post", mappedBy="author")
-	 */
+    /**
+     * @var Collection|Post[]
+     * @ORM\OneToMany(targetEntity="App\Entity\Blog\Post", mappedBy="author")
+     */
     protected $posts;
 
-	/**
-	 * @var Collection|Comment[]
-	 * @ORM\OneToMany(targetEntity="App\Entity\Blog\Comment", mappedBy="author")
-	 */
-	protected $comments;
+    /**
+     * @var Collection|Comment[]
+     * @ORM\OneToMany(targetEntity="App\Entity\Blog\Comment", mappedBy="author")
+     */
+    protected $comments;
 
     /**
      * @var DateTime
@@ -301,55 +304,55 @@ class User implements UserInterface
         return $this;
     }
 
-	public function getPosts(): Collection
-	{
-		return $this->posts;
-	}
+    public function getPosts(): Collection
+    {
+        return $this->posts;
+    }
 
-	public function setPosts($posts): self
-	{
-		$this->posts = $posts;
+    public function setPosts($posts): self
+    {
+        $this->posts = $posts;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function addPost(Post $post): self
-	{
-		$this->posts->add($post);
+    public function addPost(Post $post): self
+    {
+        $this->posts->add($post);
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function removePost(Post $post): self
-	{
-		$this->posts->$this->remove($post);
+    public function removePost(Post $post): self
+    {
+        $this->posts->$this->remove($post);
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getComments(): Collection
-	{
-		return $this->comments;
-	}
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
 
-	public function setComments($comments): self
-	{
-		$this->comments = $comments;
+    public function setComments($comments): self
+    {
+        $this->comments = $comments;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function addComment(Comment $comment): self
-	{
-		$this->comments->add($comment);
+    public function addComment(Comment $comment): self
+    {
+        $this->comments->add($comment);
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function removeComment(Comment $comment): self
-	{
-		$this->comments->$this->remove($comment);
+    public function removeComment(Comment $comment): self
+    {
+        $this->comments->$this->remove($comment);
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -3,7 +3,71 @@
 {% block main %}
     <h2>Ajouter un partenaire</h2>
 
-    {{ form(form) }}
+		{{ form_start(form) }}
+		<div class="form-row">
+			<div class="col">
+				{{ form_row(form.name) }}
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col col-4">
+				{{ form_label(form.logo) }}
+				{{ form_row(form.logo) }}
+			</div>
+			<div class="col col-8">
+				<div class="form-row">
+					<div class="col">
+						{{ form_row(form.description) }}
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col col-6">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<div class="input-group-text"><i class="fa fa-fw fa-globe"></i></div>
+							</div>
+							{{ form_widget(form.website)}}
+						</div>
+					</div>
+
+					<div class="form-group col col-6">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<div class="input-group-text"><i class="fab fa-fw fa-twitter"></i></div>
+							</div>
+							{{ form_widget(form.twitter)}}
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col col-6">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<div class="input-group-text"><i class="fab fa-fw fa-facebook-square"></i></div>
+							</div>
+							{{ form_widget(form.facebook)}}
+						</div>
+					</div>
+
+					<div class="form-group col col-6">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<div class="input-group-text"><i class="fab fa-fw fa-instagram"></i></div>
+							</div>
+							{{ form_widget(form.instagram)}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-row float-right">
+			<div class="col">
+				{{ form_row(form.save) }}
+			</div>
+		</div>
+		{{ form_end(form) }}
 {% endblock %}
 
 {% block sidebar %}
