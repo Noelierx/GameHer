@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\Blog\PostRepository;
+use App\Repository\PartnerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -45,9 +46,11 @@ class DefaultController extends AbstractController
     /**
      * @Route("/partners", name="partners", methods={"GET"})
      */
-    public function partners()
+    public function partners(PartnerRepository $partnersRepository)
     {
-        return $this->render('views/partners.html.twig');
+        return $this->render('views/partners.html.twig', [
+        	'partners' => $partnersRepository->findAll(),
+		]);
     }
 
     /**
