@@ -1,7 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block body_id 'index' %}
+{% block body_id 'esport' %}
 
 {% block main %}
-    Partners
+	{% include "common/titleBanner.html.twig" with {
+		mainTitle: "partners.title" | trans,
+		content: "partners.subtitle" | trans,
+		color: 'var(--gh-pink)',
+	} only %}
+
+	{% for partner in partners %}
+	<section class="partner {{ loop.index is odd ? 'white' : 'dark' }}">
+		<div class="container">
+			<div class="row">
+				<div class="col s6 partner__image">
+					<img src="{{ asset('uploads/partners/' ~ partner.logo) }}" alt="{{ partner.name }}" class="partner__logo">
+				</div>
+				<div class="col s6 partner__content">
+					<h3 class="partner__name">{{ partner.name }}</h3>
+					<p class="partner__description">{{ partner.description }}</p>
+					<p class="partner__social">
+						<i class="fa fa-globe"></i>
+						<i class="fab fa-twitter"></i>
+						<i class="fab fa-instagram"></i>
+						<i class="fab fa-facebook-square"></i>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% endfor %}
 {% endblock %}

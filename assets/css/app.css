@@ -1,5 +1,6 @@
 @import "component/main.css";
 @import "esport.css";
+@import "partner.css";
 
 :root {
 	--gh-blue: #001724;
@@ -25,7 +26,6 @@
 	url('../fonts/FoundationSans-Roman-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
-
 }
 
 body {
@@ -49,11 +49,15 @@ nav a, nav ul a {
 .nav-wrapper {
     border-bottom: 3px solid var(--gh-blue);
 }
-h1{
+h1 {
 		font-family: 'headingcompressedpro-extbd', sans-serif;
     font-size: 111px;
 }
-h2{
+h2 {
     font-family: "FoundationSans-Roman", sans-serif;
     font-size: 30px;
+}
+h3 {
+	font-family: 'headingcompressedpro-extbd', sans-serif;
+	font-size: 28px;
 }

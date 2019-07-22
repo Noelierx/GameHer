@@ -1,0 +1,46 @@
+.partner {
+	border-bottom: 2px solid var(--gh-red);
+
+	.row {
+		margin: 0;
+		padding: 2rem 0;
+		display: flex;
+	}
+
+	&.dark {
+		background-color: var(--gh-blue);
+		color: var(--gh-white);
+
+		.row {flex-direction: row-reverse;}
+		.partner__image {text-align: right;}
+	}
+	&.white {
+		background-color: var(--gh-white);
+		color: var(--gh-blue);
+	}
+}
+
+.partner__content {
+	display: flex;
+	flex-direction: column;
+}
+
+.partner__logo {
+	max-height: 12rem;
+}
+
+.partner__name {
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.partner__description {
+	font-family: 'FoundationSans-Roman', sans-serif;
+	font-size: 1.5rem;
+	flex-grow: 1;
+}
+
+.partner__social {
+	font-size: 1.2rem;
+	svg { margin-right: .5rem;}
+}
