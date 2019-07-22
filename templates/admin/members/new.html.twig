@@ -1,9 +1,40 @@
 {% extends 'admin/admin.html.twig' %}
 
 {% block main %}
-    <h2>Ajouter un member</h2>
+    <h2>Ajouter un membre</h2>
 
-    {{ form(form) }}
+		{{ form_start(form) }}
+			<div class="row">
+				<div class="input-field col s4">{{ form_row(form.firstname) }}</div>
+				<div class="input-field col s4">{{ form_row(form.nickname) }}</div>
+				<div class="input-field col s4">{{ form_row(form.lastname) }}</div>
+			</div>
+			<div class="row">
+				<div class="file-field input-field col s6">
+					<div class="btn primary"><span>File</span> {{ form_widget(form.picture) }}</div>
+					<div class="file-path-wrapper"><input class="file-path" type="text"></div>
+				</div>
+				<div class="input-field col s6">{{ form_row(form.role) }}</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s3">
+					<i class="fab fa-twitter prefix"></i>
+					{{ form_widget(form.twitter) }}
+				</div>
+				<div class="input-field col s3">
+					<i class="fab fa-twitch prefix"></i>
+					{{ form_widget(form.twitch) }}
+				</div>
+				<div class="input-field col s3">
+					<i class="fab fa-facebook prefix"></i>
+					{{ form_widget(form.facebook) }}
+				</div>
+				<div class="input-field col s3">
+					<i class="fab fa-instagram prefix"></i>
+					{{ form_widget(form.instagram) }}
+				</div>
+			</div>
+		{{ form_end(form) }}
 {% endblock %}
 
 {% block sidebar %}

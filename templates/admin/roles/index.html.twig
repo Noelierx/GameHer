@@ -2,7 +2,15 @@
 {% trans_default_domain 'admin' %}
 
 {% block main %}
-    <h2>{{ 'roles.index.title'|trans }}</h2>
+    <h2>
+			{{ 'roles.index.title'|trans }}
+			<span class="right">
+				<a href="{{ path('admin_roles_new') }}" class="btn green">
+					{{ 'default.action.add'|trans }}
+					<i class="fa fa-plus" aria-hidden="true"></i>
+				</a>
+			</span>
+		</h2>
 
     <table class="table table-striped table-middle-aligned">
     <thead>
@@ -10,7 +18,7 @@
         <th scope="col">{{ 'roles.index.label.name'|trans }}</th>
         <th scope="col">{{ 'roles.index.label.category'|trans }}</th>
         <th scope="col"><i class="fa fa-pencil" aria-hidden="true"></i> {{ 'roles.index.label.updated_at'|trans }}</th>
-        <th scope="col" class="text-center"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'roles.index.label.actions'|trans }}</th>
+        <th scope="col" class="center-align"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'roles.index.label.actions'|trans }}</th>
     </tr>
     </thead>
     <tbody>
@@ -19,18 +27,21 @@
             <td>{{ role.name }}</td>
             <td>{{ role.category }}</td>
             <td>{{ role.updatedAt| date }}</td>
-            <td class="text-right">
+            <td class="right-align">
                 <div class="item-actions">
-                    <a href="{{ path('admin_roles_show', {uuid: role.uuidAsString}) }}" class="btn btn-sm btn-primary">
-                        <i class="fa fa-eye" aria-hidden="true"></i> {{ 'default.action.show'|trans }}
+                    <a href="{{ path('admin_roles_show', {uuid: role.uuidAsString}) }}" class="btn pink">
+											{{ 'default.action.show'|trans }}
+											<i class="fa fa-eye" aria-hidden="true"></i>
                     </a>
-                    <a href="{{ path('admin_roles_edit', {uuid: role.uuidAsString}) }}" class="btn btn-sm btn-info">
-                        <i class="fa fa-edit" aria-hidden="true"></i> {{ 'default.action.edit'|trans }}
+                    <a href="{{ path('admin_roles_edit', {uuid: role.uuidAsString}) }}" class="btn teal">
+											{{ 'default.action.edit'|trans }}
+											<i class="fa fa-edit" aria-hidden="true"></i>
                     </a>
                     <form action="{{ url('admin_roles_delete', {uuid: role.uuidAsString}) }}" method="post" data-confirmation="true" id="delete-form" style="display:inline-block">
                         <input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
-                        <button type="submit" class="btn btn-sm btn-danger">
-                            <i class="fa fa-trash" aria-hidden="true"></i> {{ 'default.action.delete'|trans }}
+                        <button type="submit" class="btn red">
+													{{ 'default.action.delete'|trans }}
+													<i class="fa fa-trash" aria-hidden="true"></i>
                         </button>
                     </form>
                 </div>
