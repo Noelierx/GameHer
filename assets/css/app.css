@@ -1,4 +1,32 @@
 @import "component/main.css";
+@import "esport.css";
+
+:root {
+	--gh-blue: #001724;
+	--gh-white: #fff;
+	--gh-red: #c92e4b;
+	--gh-pink: #e7677f;
+	--gh-orange: #ef900d;
+	--gh-yellow: #fbf3ab;
+	--gh-gray: #a4a4a4;
+}
+
+@font-face {
+	font-family: 'headingcompressedpro-extbd';
+	src: url('../fonts/headingcompressedpro-extbd-webfont.woff2') format('woff2'),
+	url('../fonts/headingcompressedpro-extbd-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'FoundationSans-Roman';
+	src: url('../fonts/FoundationSans-Roman-webfont.woff2') format('woff2'),
+	url('../fonts/FoundationSans-Roman-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
 
 body {
     background-color: white;
@@ -11,40 +39,21 @@ body {
 .body-container {
     flex-grow: 1;
 }
-.body-footer {
-    border-top: 3px solid #001724 !important;
-}
 .primary {
-    color: #c92f4b;
+    color: var(--gh-red);
 }
 nav a, nav ul a {
-    color: #011724 !important;
-    font-family: FoundationSans-Roman;
+    color: var(--gh-blue);
+    font-family: "FoundationSans-Roman", sans-serif;
 }
 .nav-wrapper {
-    border-bottom: 3px solid #001724;
-}
-@font-face {
-    font-family: 'headingcompressedpro-extbd';
-    src: url('fonts/headingcompressedpro-extbd-webfont.woff2') format('woff2'),
-    url('fonts/headingcompressedpro-extbd-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'FoundationSans-Roman';
-    src: url('fonts/FoundationSans-Roman-webfont.woff2') format('woff2'),
-    url('fonts/FoundationSans-Roman-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+    border-bottom: 3px solid var(--gh-blue);
 }
 h1{
-    font-family: 'headingcompressedpro-extbd';
+		font-family: 'headingcompressedpro-extbd', sans-serif;
     font-size: 111px;
 }
 h2{
-    font-family: "FoundationSans-Roman";
+    font-family: "FoundationSans-Roman", sans-serif;
     font-size: 30px;
 }

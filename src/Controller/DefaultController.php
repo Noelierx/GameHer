@@ -27,14 +27,6 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/esport", name="esport", methods={"GET"})
-     */
-    public function esport()
-    {
-        return $this->render('views/esport.html.twig');
-    }
-
-    /**
      * @Route("/webtv", name="webtv", methods={"GET"})
      */
     public function webtv()

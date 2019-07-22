@@ -1,0 +1,11 @@
+{% set _hasLink = link is defined %}
+
+<section class="titleBanner {{ className | default('') }}">
+	{% if mainTitle is defined %}
+		<h1 class="titleBanner__title {{ titleClassName | default('') }}">{{ mainTitle | raw }}</h1>
+	{% endif %}
+	<h2 class="titleBanner__subtitle {{ subtitleClassName | default('') }}">{{ content | raw }}</h2>
+	{% if _hasLink %}
+		<a href="{{ link }}" class="button button--alternative">{{ link_label }}</a>
+	{% endif %}
+</section>

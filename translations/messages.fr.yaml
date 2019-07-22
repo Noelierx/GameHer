@@ -29,3 +29,11 @@ help.more_information: More information
 donations:
   title: Soutenir Game'Her
   subtitle: "Pourquoi et comment nous soutenir ?"
+esport:
+  title: Nos equipes esport
+  subtitle: les joueurs et le personnel encadrant
+  league:
+    title: League Of Legends
+    main_team: Equipe principale
+    academy_team: Equipe académique
+    show_team: Voir

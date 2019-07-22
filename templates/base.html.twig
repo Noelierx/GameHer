@@ -23,25 +23,10 @@
 {% block header %}{{ include('partials/_navbar.html.twig') }}{% endblock %}
 
 <main>
-    <div class="container-fluid p-0">
+    <div class="container-fluid">
         {{ include('partials/_flash_messages.html.twig') }}
     </div>
-    <div>
-        {% block body %}
-            {% block main %}{% endblock %}
-                     {# <div id="sidebar" class="col-sm-3">
-                     {% block sidebar %}
-                         {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', {
-                             'template': 'partials/_about.html.twig',
-                             'sharedAge': 600,
-                             '_locale': app.request.locale
-                         })) }}
-
-                         {{ show_source_code(_self) }}
-                     {% endblock %}
-                 </div>#}
-        {% endblock %}
-    </div>
+		{% block main %}{% endblock %}
 
 {% block footer %}{{ include('partials/_footer.html.twig') }}{% endblock %}
 </main>

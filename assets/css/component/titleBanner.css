@@ -1,0 +1,49 @@
+/*** HEADER BANNIERE DONATION / RECRUTEMENT ***/
+.titleBanner {
+	display: flex;
+	background-color: var(--gh-blue);
+	height: 492px;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-bottom: 2px solid var(--gh-red);
+}
+.titleBanner__title {
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0;
+	font-size: 8rem;
+}
+.titleBanner__subtitle {
+	font-family: 'FoundationSans-Roman', sans-serif;
+	text-transform: uppercase;
+	color: var(--gh-orange);
+	font-size: 2rem;
+	line-height: 2.5rem;
+	margin-top: 0;
+	font-weight: lighter;
+}
+
+@media only screen and (max-width: 767px) {
+	.titleBanner {
+		height: 270px;
+	}
+	.titleBanner__title {
+		font-size: 5rem;
+	}
+	.titleBanner__subtitle {
+		font-size: 1.4rem;
+	}
+}
+@media only screen and (max-width: 960px) {
+	.titleBanner {
+		height: 300px;
+	}
+	.titleBanner__title {
+		font-size: 6rem;
+	}
+	.titleBanner__subtitle {
+		font-size: 1.7rem;
+	}
+}

@@ -1,0 +1,77 @@
+.esportToggled {
+	display: none;
+}
+.leagueTeams {
+	display: flex;
+	background-image:
+		linear-gradient(rgba(0, 23, 36, 0.8), rgba(0, 23, 36, 0.8)),
+		url("../img/esport/leagueoflegends.jpg");
+	background-position: center 30%;
+	background-color: var(--gh-blue);
+	background-repeat: no-repeat;
+	align-items: center;
+	border-bottom: 5px solid var(--gh-red);
+	margin: 0;
+	padding: 5rem 0;
+	transition: background-position 200ms ease-in;
+	&.opened {
+		background-position: center top;
+	}
+}
+
+
+.leagueTeams__title {
+	font-size: 5rem;
+	color: var(--gh-orange);
+	text-transform: uppercase;
+	font-family: "headingcompressedpro-extbd", sans-serif;
+}
+.leagueTeams__description {
+	color: var(--gh-white);
+}
+
+.leagueTeams__team {
+	text-align: center;
+}
+
+.leagueTeams__teamName {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	font-family: 'FoundationSans-Roman', sans-serif;
+	margin-bottom: .5rem;
+}
+
+.leagueTeams__button {
+	background-color: var(--gh-blue);
+	border: 1px solid var(--gh-orange);
+	&:hover, &:focus, &:active {
+		 background-color: #000;
+	 }
+}
+.leaguePlayer {
+	margin-bottom: 3rem;
+	p { margin: 0; }
+}
+.leaguePlayer__image img {
+	max-width: 100%;
+}
+.leaguePlayer__name {
+	color: var(--gh-white);
+	font-size: 2rem;
+	font-family: "headingcompressedpro-extbd", sans-serif;
+}
+.leaguePlayer__nickname {
+	color: var(--gh-orange);
+	text-transform: uppercase;
+}
+.leaguePlayer__role {
+	color: var(--gh-orange);
+	font-family: 'FoundationSans-Roman', sans-serif;
+}
+.leaguePlayer__social {
+	display: flex;
+	justify-content: space-evenly;
+	color: var(--gh-white);
+	padding-top: .5rem;
+}
