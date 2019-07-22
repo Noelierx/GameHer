@@ -61,3 +61,12 @@ h3 {
 	font-family: 'headingcompressedpro-extbd', sans-serif;
 	font-size: 28px;
 }
+
+@media only screen and (min-width: 601px) {
+	nav {height: 5rem;line-height: 5rem;}
+}
+nav .brand-logo {
+	padding: 1rem;
+	height: 5rem;
+	img {max-height: 3rem;}
+}
