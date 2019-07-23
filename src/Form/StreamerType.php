@@ -11,7 +11,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class PartnerType extends AbstractType
+class StreamerType extends AbstractType
 {
     /**
      * @var TranslatorInterface
@@ -27,32 +27,16 @@ class PartnerType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
-            ->add('description', TextareaType::class, [
+            ->add('channel', TextareaType::class, [
             	'attr' => ['rows' => 5]
 			])
-            ->add('logo', FileType::class, [
+            ->add('picture', FileType::class, [
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
                     new Image(['maxSize' => '2048k']),
                 ],
             ])
-            ->add('website', TextType::class, [
-            	'required' => false,
-				'attr' => [],
-			])
-            ->add('twitter', TextType::class, [
-            	'required' => false,
-				'attr' => [],
-			])
-            ->add('facebook', TextType::class, [
-            	'required' => false,
-				'attr' => [],
-			])
-            ->add('instagram', TextType::class, [
-            	'required' => false,
-				'attr' => [],
-			])
             ->add('save', SubmitType::class, [
                 'label' => $this->translator->trans('default.action.save', [], 'admin'),
 				'attr' => [ 'class' => 'btn right']

@@ -60,3 +60,10 @@ roles.flash_message.success.delete:
 roles.flash_message.fail.create:
 roles.flash_message.fail.edit:
 roles.flash_message.fail.delete:
+
+streamers.flash_message.success.create:
+streamers.flash_message.success.edit:
+streamers.flash_message.success.delete:
+streamers.flash_message.fail.create:
+streamers.flash_message.fail.edit:
+streamers.flash_message.fail.delete:
