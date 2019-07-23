@@ -1,0 +1,28 @@
+.textBanner {
+	text-align: center;
+	padding: 3rem 0;
+	&.--red {
+		background-color: var(--gh-red);
+		.textBanner__subtitle {color: var(--gh-blue);}
+	}
+	&.--blue {
+		background-color: var(--gh-blue);
+		.textBanner__subtitle {color: var(--gh-white);}
+	}
+}
+
+.textBanner__title {
+	font-family: 'headingcompressedpro-extbd', sans-serif;
+	font-size: 111px;
+	color: var(--gh-white);
+	text-transform: uppercase;
+}
+
+.textBanner__subtitle {
+	text-transform: uppercase;
+	a {color: var(--gh-yellow);}
+}
+
+.twitchExtension h3 {
+
+}

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\Blog\PostRepository;
 use App\Repository\PartnerRepository;
+use App\Repository\StreamerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -30,9 +31,11 @@ class DefaultController extends AbstractController
     /**
      * @Route("/webtv", name="webtv", methods={"GET"})
      */
-    public function webtv()
+    public function webtv(StreamerRepository $streamerRepository)
     {
-        return $this->render('views/webtv.html.twig');
+        return $this->render('views/webtv.html.twig', [
+        	'streamers' => $streamerRepository->findAll(),
+		]);
     }
 
     /**

@@ -3,5 +3,57 @@
 {% block body_id 'index' %}
 
 {% block main %}
-    WebTv
+	<section class="container-fluid">
+		<div class="col s10">
+			<div id="twitch-embed" style="height: 720px"></div>
+		</div>
+		<div class="col s2"></div>
+	</section>
+
+	<section class="textBanner --red">
+		<div class="container">
+			<h3 class="textBanner__title">Ne manquez plus un live</h3>
+			<h4 class="textBanner__subtitle">Installez notre <a href="#">extension</a></h4>
+		</div>
+	</section>
+
+	<section class="twitchExtension">
+		<div class="container">
+			<div class="col s6">
+				<h3>L'extension</h3>
+				<p></p>
+			</div>
+			<div class="col s6">
+				<img src="{{ asset('build/ckeditor/plugins/smiley/images/omg_smile.png') }}" alt="">
+			</div>
+		</div>
+	</section>
+
+	<section class="textBanner --blue">
+		<div class="container">
+			<h3 class="textBanner__title">Nos streamers</h3>
+			<h4 class="textBanner__subtitle">Visitez <a href="#">leur chaine</a></h4>
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			{% for streamer in streamers %}
+			<div class="col s3">
+
+			</div>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="https://embed.twitch.tv/embed/v1.js"></script>
+	<script type="text/javascript">
+		new Twitch.Embed("twitch-embed", {
+			channel: "gamehertv",
+			width: '100%',
+			height: '720px'
+		});
+	</script>
 {% endblock %}

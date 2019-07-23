@@ -3,12 +3,7 @@
 @import "partner.css";
 @import "recruitment.css";
 @import "homepage.css";
-
-html {
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
+@import "webtv.css";
 
 :root {
 	--gh-blue: #001724;
@@ -34,6 +29,12 @@ html {
 	url('../fonts/FoundationSans-Roman-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
 body {
@@ -69,6 +70,11 @@ h2 {
 h3 {
 	font-family: 'headingcompressedpro-extbd', sans-serif;
 	font-size: 28px;
+}
+
+h4 {
+	font-family: 'FoundationSans-Roman', sans-serif;
+	font-size: 2rem;
 }
 
 @media only screen and (min-width: 601px) {
