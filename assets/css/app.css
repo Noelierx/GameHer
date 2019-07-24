@@ -48,9 +48,10 @@ nav a, nav ul a {
 }
 .nav-wrapper {
     border-bottom: 3px solid var(--gh-blue);
+	z-index: 1030;
 }
 h1 {
-		font-family: 'headingcompressedpro-extbd', sans-serif;
+	font-family: 'headingcompressedpro-extbd', sans-serif;
     font-size: 111px;
 }
 h2 {
@@ -68,5 +69,5 @@ h3 {
 nav .brand-logo {
 	padding: 1rem;
 	height: 5rem;
-	img {max-height: 3rem;}
 }
+nav img {max-height: 3rem;}

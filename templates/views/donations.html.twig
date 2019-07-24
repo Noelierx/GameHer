@@ -4,29 +4,30 @@
 
 {% block main %}
     {% include "common/separateBanner.html.twig" with {
+        className: "sectionRed",
         mainTitle: "donations.title" | trans,
         content: "donations.subtitle" | trans,
-        image_url: "https://images.pexels.com/photos/1640769/pexels-photo-1640769.jpeg",
+        image_url: "build/img/donations/IMAGE.png",
     } only %}
     {% include "common/partnerBanner.html.twig" with {
         partners : [
             {
-                logo_url: "https://i.imgur.com/tWg1pTf.png",
+                logo_url: "build/img/donations/UTIP.png",
                 logo_alt: "Utip",
                 url: "https://utip.io/gameher",
             },
             {
-                logo_url: "https://fr.tipeee.com/img/tipeee-logo-com.png",
+                logo_url: "build/img/donations/TIPEEE.png",
                 logo_alt: "Tipeee",
                 url: "https://fr.tipeee.com/gameher",
             },
             {
-                logo_url: "https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_74x46.jpg",
+                logo_url: "build/img/donations/PAYPAL.png",
                 logo_alt: "Paypal",
                 url: "https://www.paypal.me/gameheroff",
             },
             {
-                logo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Twitch_logo.svg/1280px-Twitch_logo.svg.png",
+                logo_url: "build/img/donations/TWITCH.png",
                 logo_alt: "Twitch",
                 url: "https://www.tipeeestream.com/gamehertv/tip",
             }
