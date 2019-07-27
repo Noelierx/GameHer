@@ -60,4 +60,11 @@ class DefaultController extends AbstractController
     {
         return $this->render('views/donations.html.twig');
     }
+    /**
+     * @Route("/recruitment", name="recruitment", methods={"GET"})
+     */
+    public function recrutement()
+    {
+        return $this->render('views/recruitment.html.twig');
+    }
 }

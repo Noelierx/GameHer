@@ -28,7 +28,11 @@ help.more_information: More information
 # donations
 donations:
   title: Soutenir Game'Her
-  subtitle: "Pourquoi et comment nous soutenir ?"
+  subtitle: Pourquoi et comment nous soutenir ?
+recruitment:
+  title: Recrutement
+  subtitle: Comment devenir bénévole ?
+  explanation: Nos différents pôles
 esport:
   title: Nos equipes esport
   subtitle: les joueurs et le personnel encadrant

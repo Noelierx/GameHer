@@ -1,6 +1,14 @@
 @import "component/main.css";
 @import "esport.css";
 @import "partner.css";
+@import "recruitment.css";
+@import "homepage.css";
+
+html {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
 
 :root {
 	--gh-blue: #001724;
@@ -29,7 +37,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: var(--gh-white);
 }
 .wrapper {
     height: calc(100vh - 3.5rem);
@@ -71,3 +79,9 @@ nav .brand-logo {
 	height: 5rem;
 }
 nav img {max-height: 3rem;}
+
+.sectionBlue{
+	background-color: var(--gh-blue);
+	color: var(--gh-white);
+	margin-top: -35px;
+}

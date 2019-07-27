@@ -1,18 +1,19 @@
 {% set _hasLink = link is defined %}
 
-<section class="separateBanner {{ className | default('') }}">
-    <div class="separateBanner__content {{ contentClassName | default('') }}">
-        {% if mainTitle is defined %}
-            <h1 class="separateBanner__title {{ titleClassName | default('') }}">{{ mainTitle | raw }}</h1>
-        {% endif %}
-        <h2 class="separateBanner__contentText {{ contentTextClassName | default('') }}">
-            {{ content | raw }}
-        </h2>
-        {% if _hasLink %}
-            <a href="{{ link }}" class="button button--alternative">{{ link_label }}</a>
-        {% endif %}
+<div class="page-header page-header--big sectionRed">
+    <div class="page-header__wrapper">
+        <div class="page-header__content">
+            <div class="page-header__content-wrapper">
+                {% if mainTitle is defined %}
+                <h1 class="page-header__title">{{ mainTitle | raw }}</h1>
+                {% endif %}
+                <div class="page-header__desc editor-content">
+                    <p><span>{{ content | raw }}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="page-header__img-wrapper" style="background-image: url({{ image_url }})">
+        </div>
+
     </div>
-    <div class="separateBanner__picture {{ pictureClassName | default('') }}">
-        <img src="{{ image_url }}" alt="{{ image_alt | default('') }}" class="{{ imageClassName | default('separateBanner__image') }}">
-    </div>
-</section>
+</div>
