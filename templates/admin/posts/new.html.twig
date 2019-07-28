@@ -3,8 +3,42 @@
 {% block content %}
     <h2>Ajouter un post</h2>
 
-		<div class="quill-editor"></div>
-    {{ form(form) }}
+	{{ form_start(form) }}
+	<div class="row">
+		<div class="input-field col s12">
+			{{ form_label(form.title) }}
+			{{ form_widget(form.title) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+			{{ form_label(form.content) }}
+			{{ form_widget(form.content) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="file-field input-field col s6">
+			<label for="file-placeholder" class="active">Picture</label>
+			<div class="btn"><span>File</span> {{ form_widget(form.picture) }}</div>
+			<div class="file-path-wrapper"><input class="file-path" type="text" id="file-placeholder"></div>
+		</div>
+		<div class="input-field col s6">
+			{{ form_label(form.publishedAt) }}
+			{{ form_widget(form.publishedAt) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+			{{ form_label(form.tags) }}
+			{{ form_widget(form.tags) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field">
+			{{ form_row(form.save) }}
+		</div>
+	</div>
+	{{ form_end(form) }}
 {% endblock %}
 
 {% block sidebar %}

@@ -181,15 +181,15 @@ class Post
         return $this;
     }
 
-	public function getCreatedAt(): DateTime
-	{
-		return $this->createdAt;
-	}
+    public function getCreatedAt(): DateTime
+    {
+        return $this->createdAt;
+    }
 
-	public function getUpdatedAt(): DateTime
-	{
-		return $this->updatedAt;
-	}
+    public function getUpdatedAt(): DateTime
+    {
+        return $this->updatedAt;
+    }
 
     public function getTags(): Collection
     {
@@ -264,8 +264,8 @@ class Post
     {
         $this->published = $published;
         if ($published === true) {
-        	$this->setPublishedAt(new DateTime());
-		}
+            $this->setPublishedAt(new DateTime());
+        }
 
         return $this;
     }

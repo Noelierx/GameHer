@@ -34,8 +34,8 @@ class DefaultController extends AbstractController
     public function webtv(StreamerRepository $streamerRepository)
     {
         return $this->render('views/webtv.html.twig', [
-        	'streamers' => $streamerRepository->findAll(),
-		]);
+            'streamers' => $streamerRepository->findAll(),
+        ]);
     }
 
     /**
@@ -52,8 +52,8 @@ class DefaultController extends AbstractController
     public function partners(PartnerRepository $partnersRepository)
     {
         return $this->render('views/partners.html.twig', [
-        	'partners' => $partnersRepository->findAll(),
-		]);
+            'partners' => $partnersRepository->findAll(),
+        ]);
     }
 
     /**

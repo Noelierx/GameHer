@@ -13,6 +13,9 @@
 		<li>
 			<a class="nav-link {{ _self.activeLink('admin_posts') }}" href="{{ path('admin_posts_index') }}"><i class="fa fa-fw fa-book mr-2 fa-2x"></i> Articles</a>
 		</li>
+		<li>
+			<a href="" class="nav-link {{ _self.activeLink('admin_tags') }}"><i class="fa fa-fw fa-tags mr-2 fa-2x"></i> Tags</a>
+		</li>
 	{% endif %}
 	{% if is_granted('ROLE_ADMIN') %}
 		<li>

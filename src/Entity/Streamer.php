@@ -15,105 +15,105 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Streamer
 {
-	use StringUuidTrait;
+    use StringUuidTrait;
 
-	/**
-	 * @var int
-	 * @ORM\Id
-	 * @ORM\GeneratedValue(strategy="IDENTITY")
-	 * @ORM\Column(type="integer")
-	 */
-	protected $id;
+    /**
+     * @var int
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(type="integer")
+     */
+    protected $id;
 
-	/**
-	 * @var UuidInterface
-	 * @ORM\Column(type="uuid")
-	 */
-	protected $uuid;
+    /**
+     * @var UuidInterface
+     * @ORM\Column(type="uuid")
+     */
+    protected $uuid;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string")
-	 * @Assert\NotNull
-	 * @Assert\NotBlank
-	 */
-	protected $name;
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     * @Assert\NotNull
+     * @Assert\NotBlank
+     */
+    protected $name;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=false)
-	 */
-	protected $picture;
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=false)
+     */
+    protected $picture;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=false)
-	 */
-	protected $channel;
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=false)
+     */
+    protected $channel;
 
-	/**
-	 * @var DateTime
-	 * @ORM\Column(type="datetime")
-	 * @Gedmo\Timestampable(on="create")
-	 */
-	protected $createdAt;
+    /**
+     * @var DateTime
+     * @ORM\Column(type="datetime")
+     * @Gedmo\Timestampable(on="create")
+     */
+    protected $createdAt;
 
-	/**
-	 * @var DateTime
-	 * @ORM\Column(type="datetime")
-	 * @Gedmo\Timestampable(on="update")
-	 */
-	protected $updatedAt;
+    /**
+     * @var DateTime
+     * @ORM\Column(type="datetime")
+     * @Gedmo\Timestampable(on="update")
+     */
+    protected $updatedAt;
 
-	/**
-	 * @var DateTime
-	 * @ORM\Column(type="datetime", nullable=true)
-	 */
-	protected $deletedAt;
+    /**
+     * @var DateTime
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    protected $deletedAt;
 
-	public function __construct()
-	{
-		$this->uuid = Uuid::uuid4();
-	}
+    public function __construct()
+    {
+        $this->uuid = Uuid::uuid4();
+    }
 
-	public function getName(): string
-	{
-		return $this->name;
-	}
+    public function getName(): string
+    {
+        return $this->name;
+    }
 
-	public function setName(string $name): self
-	{
-		$this->name = $name;
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPicture(): string
-	{
-		return $this->picture;
-	}
+    public function getPicture(): string
+    {
+        return $this->picture;
+    }
 
-	public function setPicture(string $picture): self
-	{
-		$this->picture = $picture;
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getChannel(): string
-	{
-		return $this->channel;
-	}
+    public function getChannel(): string
+    {
+        return $this->channel;
+    }
 
-	public function setChannel(string $channel): self
-	{
-		$this->channel = $channel;
+    public function setChannel(string $channel): self
+    {
+        $this->channel = $channel;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getCreatedAt(): DateTime
-	{
-		return $this->createdAt;
-	}
+    public function getCreatedAt(): DateTime
+    {
+        return $this->createdAt;
+    }
 }

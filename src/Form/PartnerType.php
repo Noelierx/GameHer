@@ -28,37 +28,37 @@ class PartnerType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('description', TextareaType::class, [
-            	'attr' => ['rows' => 5, 'class' => 'materialize-textarea']
-			])
+                'attr' => ['rows' => 5, 'class' => 'materialize-textarea']
+            ])
             ->add('logo', FileType::class, [
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
                     new Image(['maxSize' => '2048k']),
                 ],
-				'attr' => [
-					'accept' => 'image/*',
-				]
+                'attr' => [
+                    'accept' => 'image/*',
+                ]
             ])
             ->add('website', TextType::class, [
-            	'required' => false,
-				'attr' => [],
-			])
+                'required' => false,
+                'attr' => [],
+            ])
             ->add('twitter', TextType::class, [
-            	'required' => false,
-				'attr' => [],
-			])
+                'required' => false,
+                'attr' => [],
+            ])
             ->add('facebook', TextType::class, [
-            	'required' => false,
-				'attr' => [],
-			])
+                'required' => false,
+                'attr' => [],
+            ])
             ->add('instagram', TextType::class, [
-            	'required' => false,
-				'attr' => [],
-			])
+                'required' => false,
+                'attr' => [],
+            ])
             ->add('save', SubmitType::class, [
                 'label' => $this->translator->trans('default.action.save', [], 'admin'),
-				'attr' => [ 'class' => 'btn right']
+                'attr' => [ 'class' => 'btn right']
             ]);
     }
 }

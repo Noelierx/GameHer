@@ -32,11 +32,11 @@ class RoleType extends AbstractType
                     return ucfirst($value);
                 },
                 'required' => true,
-				'label_attr' => ['class' => 'active']
+                'label_attr' => ['class' => 'active']
             ])
             ->add('save', SubmitType::class, [
                 'label' => $this->translator->trans('default.action.save', [], 'admin'),
-				'attr' => [ 'class' => 'btn right']
+                'attr' => [ 'class' => 'btn right']
             ]);
     }
 }

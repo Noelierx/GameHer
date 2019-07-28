@@ -34,13 +34,13 @@ class StreamerType extends AbstractType
                 'constraints' => [
                     new Image(['maxSize' => '2048k']),
                 ],
-				'attr' => [
-					'accept' => 'image/*',
-				]
+                'attr' => [
+                    'accept' => 'image/*',
+                ]
             ])
             ->add('save', SubmitType::class, [
                 'label' => $this->translator->trans('default.action.save', [], 'admin'),
-				'attr' => [ 'class' => 'btn right']
+                'attr' => [ 'class' => 'btn right']
             ]);
     }
 }
