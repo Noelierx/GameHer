@@ -3,7 +3,23 @@
 {% block content %}
     <h2>Ajouter un role</h2>
 
-    {{ form(form) }}
+		{{ form_start(form) }}
+		<div class="row">
+			<div class="input-field col s6">
+				{{ form_label(form.name) }}
+				{{ form_widget(form.name) }}
+			</div>
+			<div class="input-field col s6">
+				{{ form_label(form.category) }}
+				{{ form_widget(form.category) }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field">
+				{{ form_row(form.save) }}
+			</div>
+		</div>
+		{{ form_end(form) }}
 {% endblock %}
 
 {% block sidebar %}

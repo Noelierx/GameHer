@@ -43,6 +43,7 @@ class MemberType extends AbstractType
             ->add('role', EntityType::class, [
                 'class' => Role::class,
                 'choice_label' => 'name',
+				'label_attr' => ['class' => 'active']
             ])
             ->add('twitch', TextType::class, ['required' => false])
             ->add('twitter', TextType::class, ['required' => false])
@@ -50,6 +51,7 @@ class MemberType extends AbstractType
             ->add('instagram', TextType::class, ['required' => false])
             ->add('save', SubmitType::class, [
                 'label' => $this->translator->trans('default.action.save', [], 'admin'),
+				'attr' => [ 'class' => 'btn right']
             ]);
     }
 }

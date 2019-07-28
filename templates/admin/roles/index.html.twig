@@ -17,7 +17,6 @@
     <tr>
         <th scope="col">{{ 'roles.index.label.name'|trans }}</th>
         <th scope="col">{{ 'roles.index.label.category'|trans }}</th>
-        <th scope="col"><i class="fa fa-pencil-alt" aria-hidden="true"></i> {{ 'roles.index.label.updated_at'|trans }}</th>
         <th scope="col" class="center-align"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'roles.index.label.actions'|trans }}</th>
     </tr>
     </thead>
@@ -26,7 +25,6 @@
         <tr>
             <td>{{ role.name }}</td>
             <td>{{ role.category }}</td>
-            <td>{{ role.updatedAt| date }}</td>
             <td class="right-align">
                 <div class="item-actions">
                     <a href="{{ path('admin_roles_show', {uuid: role.uuidAsString}) }}" class="btn pink">

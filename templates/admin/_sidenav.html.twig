@@ -1,0 +1,36 @@
+{% set route = app.request.attributes.get('_route') %}
+
+{% macro activeLink(path) %}
+	{% if app.request.attributes.get('_route') starts with path %}active{% endif %}
+{%  endmacro %}
+
+{% spaceless %}
+<ul class="sidenav sidenav-fixed">
+	<li class="logo">
+		<a href="{{ path('admin') }}" class="brand-logo"><img src="{{ asset('build/img/logo.png') }}" alt="GameHer"></a>
+	</li>
+	{% if is_granted('ROLE_REDACTEUR') %}
+		<li>
+			<a class="nav-link {{ _self.activeLink('admin_posts') }}" href="{{ path('admin_posts_index') }}"><i class="fa fa-fw fa-book mr-2 fa-2x"></i> Articles</a>
+		</li>
+	{% endif %}
+	{% if is_granted('ROLE_ADMIN') %}
+		<li>
+			<a class="nav-link {{ _self.activeLink('admin_partners') }}" href="{{ path('admin_partners_index') }}"><i class="fa fa-fw fa-handshake mr-2 fa-2x"></i> Partenaires</a>
+		</li>
+		<li>
+			<a class="nav-link {{ _self.activeLink('admin_members') }}" href="{{ path('admin_members_index') }}"><i class="fa fa-fw fa-users mr-2 fa-2x"></i> Membres</a>
+		</li>
+		<li>
+			<a class="nav-link {{ _self.activeLink('admin_roles') }}" href="{{ path('admin_roles_index') }}"><i class="fa fa-fw fa-sitemap mr-2 fa-2x"></i> Roles</a>
+		</li>
+		<li>
+			<a class="nav-link {{ _self.activeLink('admin_streamers') }}" href="{{ path('admin_streamers_index') }}"><i class="fab fa-fw fa-twitch mr-2 fa-2x"></i> Streamers</a>
+		</li>
+	{% endif %}
+	<li class="filler"></li>
+	<li>
+		<a href="{{ path('index') }}" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i>Retour au site</a>
+	</li>
+</ul>
+{% endspaceless %}
