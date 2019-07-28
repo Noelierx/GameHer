@@ -50,11 +50,11 @@ class PartnersController extends AbstractController
 				$em->persist($partner);
 				$em->flush();
 
-				$this->addFlash('success', 'partners.flash_message.success.create');
+				$this->addFlash('success', 'partners.success.create');
 
 				return $this->redirectToRoute('admin_partners_index');
 			} catch (Exception $e) {
-				$this->addFlash('danger', 'partners.flash_message.fail.create');
+				$this->addFlash('danger', 'partners.fail.create');
 				return $this->render('admin/partners/new.html.twig', [
 					'partner' => $partner,
 					'form' => $form->createView(),
@@ -95,11 +95,11 @@ class PartnersController extends AbstractController
 				}
 				$this->getDoctrine()->getManager()->flush();
 
-				$this->addFlash('success', 'partners.flash_message.success.edit');
+				$this->addFlash('success', 'partners.success.edit');
 
 				return $this->redirectToRoute('admin_partners_edit', ['uuid' => $partner->getUuidAsString()]);
 			} catch (Exception $e) {
-        		$this->addFlash('danger', 'partners.flash_message.fail.delete');
+        		$this->addFlash('danger', 'partners.fail.delete');
         		return $this->render('admin/partners/edit.html.twig', [
 					'form' => $form->createView(),
 					'partner' => $partner,
@@ -126,7 +126,7 @@ class PartnersController extends AbstractController
         $em->remove($partner);
         $em->flush();
 
-        $this->addFlash('success', 'partners.flash_message.success.delete');
+        $this->addFlash('success', 'partners.success.delete');
 
         return $this->redirectToRoute('admin_partners_index');
     }

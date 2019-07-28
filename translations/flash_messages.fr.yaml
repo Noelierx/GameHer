@@ -1,0 +1,34 @@
+posts.success.create: Article créé !
+posts.success.edit: Succès !
+posts.success.delete: Succès !
+posts.fail.create: Une erreur s'est produite
+posts.fail.edit: Une erreur s'est produite
+posts.fail.delete: Une erreur s'est produite
+
+partners.success.create: Partenaire créé !
+partners.success.edit: Succès !
+partners.success.delete: Succès !
+partners.fail.create: Une erreur s'est produite
+partners.fail.edit: Une erreur s'est produite
+partners.fail.delete: Une erreur s'est produite
+
+members.success.create: Membre créé !
+members.success.edit: Succès !
+members.success.delete: Succès !
+members.fail.create: Une erreur s'est produite
+members.fail.edit: Une erreur s'est produite
+members.fail.delete: Une erreur s'est produite
+
+roles.success.create: Role créé !
+roles.success.edit: Succès !
+roles.success.delete: Succès !
+roles.fail.create: Une erreur s'est produite
+roles.fail.edit: Une erreur s'est produite
+roles.fail.delete: Une erreur s'est produite
+
+streamers.success.create: Streamer créé !
+streamers.success.edit: Succès !
+streamers.success.delete: Succès !
+streamers.fail.create: Une erreur s'est produite
+streamers.fail.edit: Une erreur s'est produite
+streamers.fail.delete: Une erreur s'est produite

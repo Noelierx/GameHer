@@ -3,7 +3,23 @@
 {% block content %}
     <h2>Ajouter un streamer</h2>
 
-    {{ form(form) }}
+	{{ form_start(form) }}
+		<div class="input-field">
+			{{ form_label(form.name) }}
+			{{ form_widget(form.name) }}
+		</div>
+	<div class="input-field">
+		{{ form_label(form.channel) }}
+		{{ form_widget(form.channel) }}
+	</div>
+	<div class="file-field input-field">
+		<div class="btn"><span>File</span> {{ form_widget(form.picture) }}</div>
+		<div class="file-path-wrapper"><input class="file-path" type="text" placeholder="Picture"</div>
+	</div>
+	<div class="input-field">
+		{{ form_row(form.save) }}
+	</div>
+	{{ form_end(form) }}
 {% endblock %}
 
 {% block sidebar %}

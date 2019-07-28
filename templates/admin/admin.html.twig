@@ -29,10 +29,18 @@
 				<a class="nav-link {{ _self.activeLink('admin_roles') }}" href="{{ path('admin_roles_index') }}"><i class="fa fa-fw fa-sitemap mr-2 fa-2x"></i> Roles</a>
 			</li>
 			<li>
-				<a class="nav-link {{ _self.activeLink('admin_streamers') }}" href="{{ path('admin_streamers_index') }}"><i class="fa fa-fw fa-sitemap mr-2 fa-2x"></i> Roles</a>
+				<a class="nav-link {{ _self.activeLink('admin_streamers') }}" href="{{ path('admin_streamers_index') }}"><i class="fab fa-fw fa-twitch mr-2 fa-2x"></i> Streamers</a>
 			</li>
 		{% endif %}
 	</ul>
+{% endblock %}
+
+{% block flash_messages %}
+	<div style="padding-left: 300px;">
+		<div class="container-fluid">
+			{{ include('partials/_flash_messages.html.twig') }}
+		</div>
+	</div>
 {% endblock %}
 
 {% block main %}

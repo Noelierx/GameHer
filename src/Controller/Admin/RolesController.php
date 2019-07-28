@@ -43,7 +43,7 @@ class RolesController extends AbstractController
             $em->persist($role);
             $em->flush();
 
-            $this->addFlash('success', 'roles.flash_message.success.create');
+            $this->addFlash('success', 'roles.success.create');
 
             return $this->redirectToRoute('admin_roles_index');
         }
@@ -77,7 +77,7 @@ class RolesController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'roles.flash_message.success.edit');
+            $this->addFlash('success', 'roles.success.edit');
 
             return $this->redirectToRoute('admin_roles_edit', ['uuid' => $role->getUuidAsString()]);
         }
@@ -101,7 +101,7 @@ class RolesController extends AbstractController
         $em->remove($role);
         $em->flush();
 
-        $this->addFlash('success', 'roles.flash_message.success.delete');
+        $this->addFlash('success', 'roles.success.delete');
 
         return $this->redirectToRoute('admin_roles_index');
     }

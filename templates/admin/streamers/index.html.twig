@@ -16,8 +16,8 @@
     <thead>
     <tr>
         <th scope="col">{{ 'streamers.index.label.name'|trans }}</th>
-        <th scope="col">{{ 'streamers.index.label.category'|trans }}</th>
-        <th scope="col"><i class="fa fa-pencil" aria-hidden="true"></i> {{ 'streamers.index.label.updated_at'|trans }}</th>
+        <th scope="col"><i class="fab fa-twitch" aria-hidden="true"></i> {{ 'streamers.index.label.channel'|trans }}</th>
+        <th scope="col"><i class="fa fa-pencil-alt" aria-hidden="true"></i> {{ 'streamers.index.label.updated_at'|trans }}</th>
         <th scope="col" class="center-align"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'streamers.index.label.actions'|trans }}</th>
     </tr>
     </thead>
@@ -25,8 +25,8 @@
     {% for streamer in streamers %}
         <tr>
             <td>{{ streamer.name }}</td>
-            <td>{{ streamer.category }}</td>
-            <td>{{ streamer.updatedAt| date }}</td>
+            <td>{{ streamer.channel }}</td>
+            <td>{{ streamer.createdAt| date }}</td>
             <td class="right-align">
                 <div class="item-actions">
                     <a href="{{ path('admin_streamers_show', {uuid: streamer.uuidAsString}) }}" class="btn pink">

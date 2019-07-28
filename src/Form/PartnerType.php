@@ -36,6 +36,9 @@ class PartnerType extends AbstractType
                 'constraints' => [
                     new Image(['maxSize' => '2048k']),
                 ],
+				'attr' => [
+					'accept' => 'image/*',
+				]
             ])
             ->add('website', TextType::class, [
             	'required' => false,

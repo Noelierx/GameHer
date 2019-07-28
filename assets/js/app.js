@@ -7,10 +7,15 @@ require('../css/app.css');
 const $ = require('jquery');
 
 
-$('.leagueTeams__button').click(function (event) {
-	event.preventDefault();
+$('.leagueTeams__button').click(function ($event) {
+	$event.preventDefault();
 	$('.esportToggled').slideToggle();
 	$('.leagueTeams').toggleClass('opened')
 });
 
 $('.dropdown-trigger').dropdown();
+
+$('.dismiss').click(function ($event) {
+	$event.preventDefault();
+	$(this).parent().fadeOut();
+});

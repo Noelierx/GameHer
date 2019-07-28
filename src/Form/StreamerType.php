@@ -27,15 +27,16 @@ class StreamerType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
-            ->add('channel', TextareaType::class, [
-            	'attr' => ['rows' => 5]
-			])
+            ->add('channel', TextType::class)
             ->add('picture', FileType::class, [
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
                     new Image(['maxSize' => '2048k']),
                 ],
+				'attr' => [
+					'accept' => 'image/*',
+				]
             ])
             ->add('save', SubmitType::class, [
                 'label' => $this->translator->trans('default.action.save', [], 'admin'),

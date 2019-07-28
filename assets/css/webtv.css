@@ -23,6 +23,53 @@
 	a {color: var(--gh-yellow);}
 }
 
-.twitchExtension h3 {
+.streamPanels {
+	background-color: #0f0e11;
 
 }
+
+.twitchExtension .row {
+	display: flex;
+}
+
+.twitchExtension, .streamersGH, .streamPanels {
+	padding: 4rem 0;
+}
+
+.streamersGH {
+	border-bottom: 5px solid var(--gh-blue);
+}
+
+.streamer {
+	position: relative;
+	font-family: 'headingcompressedpro-extbd', sans-serif;
+
+	p {margin: 0;line-height: 1;}
+
+	.footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		display: flex;
+
+		.links {
+			flex-grow: 1;
+			padding: .5rem;
+
+			.name {
+				font-size: 1.6rem;
+				color: var(--gh-red);
+			}
+			.channel {
+				font-size: 1.8rem;
+				color: var(--gh-white);
+				text-transform: uppercase;
+			}
+		}
+		.fleche {
+			transition: all 200ms ease-in-out;
+			&:hover {filter: saturate(0.5);}
+		}
+	}
+}
+

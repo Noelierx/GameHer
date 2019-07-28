@@ -49,7 +49,7 @@ class PostsController extends AbstractController
             $em->persist($post);
             $em->flush();
 
-            $this->addFlash('success', 'posts.flash_message.success.create');
+            $this->addFlash('success', 'posts.success.create');
 
             return $this->redirectToRoute('admin_posts_index');
         }
@@ -86,7 +86,7 @@ class PostsController extends AbstractController
 			}
 			$this->getDoctrine()->getManager()->flush();
 
-			$this->addFlash('success', 'posts.flash_message.success.edit');
+			$this->addFlash('success', 'posts.success.edit');
 
 			return $this->redirectToRoute('admin_posts_edit', ['uuid' => $post->getUuidAsString()]);
 		}
@@ -110,7 +110,7 @@ class PostsController extends AbstractController
 		$em->remove($post);
 		$em->flush();
 
-		$this->addFlash('success', 'posts.flash_message.success.delete');
+		$this->addFlash('success', 'posts.success.delete');
 
 		return $this->redirectToRoute('admin_posts_index');
 	}

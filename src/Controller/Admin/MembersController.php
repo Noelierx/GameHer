@@ -46,7 +46,7 @@ class MembersController extends AbstractController
             $em->persist($member);
             $em->flush();
 
-            $this->addFlash('success', 'members.flash_message.success.create');
+            $this->addFlash('success', 'members.success.create');
 
             return $this->redirectToRoute('admin_members_index');
         }
@@ -83,7 +83,7 @@ class MembersController extends AbstractController
             }
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'members.flash_message.success.edit');
+            $this->addFlash('success', 'members.success.edit');
 
             return $this->redirectToRoute('admin_members_edit', ['uuid' => $member->getUuidAsString()]);
         }
@@ -107,7 +107,7 @@ class MembersController extends AbstractController
         $em->remove($member);
         $em->flush();
 
-        $this->addFlash('success', 'members.flash_message.success.delete');
+        $this->addFlash('success', 'members.success.delete');
 
         return $this->redirectToRoute('admin_members_index');
     }

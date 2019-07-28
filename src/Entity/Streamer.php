@@ -111,4 +111,9 @@ class Streamer
 
 		return $this;
 	}
+
+	public function getCreatedAt(): DateTime
+	{
+		return $this->createdAt;
+	}
 }

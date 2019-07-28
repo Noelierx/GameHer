@@ -36,6 +36,9 @@ class MemberType extends AbstractType
                 'constraints' => [
                     new Image(['maxSize' => '2048k']),
                 ],
+				'attr' => [
+					'accept' => 'image/*',
+				]
             ])
             ->add('role', EntityType::class, [
                 'class' => Role::class,

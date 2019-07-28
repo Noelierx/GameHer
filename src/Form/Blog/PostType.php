@@ -39,6 +39,9 @@ class PostType extends AbstractType
                 'constraints' => [
                     new Image(['maxSize' => '2048k']),
                 ],
+				'attr' => [
+					'accept' => 'image/*',
+				]
             ])
             ->add('tags', EntityType::class, [
                 'class' => Tag::class,
