@@ -13,6 +13,12 @@ posts.index.label.created_at: Dernière modif.
 posts.index.label.actions: Actions
 posts.index.not_published: Non publié
 
+tags.index.title: Tags
+tags.index.no_results: Aucun tag trouvé
+tags.index.label.name: Nom
+tags.index.label.posts: Posts
+tags.index.label.actions: Actions
+
 partners.index.title: Partenaires
 partners.index.no_results: Aucun partenaire trouvé
 partners.index.label.name: Nom

@@ -34,3 +34,5 @@ main {
 .filler {
 	flex-grow: 1;
 }
+
+.badge + .badge {margin-left: .25rem;}

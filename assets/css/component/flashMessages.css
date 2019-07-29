@@ -4,6 +4,9 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	.btn {
+		min-width: 40px;
+	}
 }
 
 .message-success {
@@ -15,7 +18,7 @@
 }
 .message-danger {
 	color: #ffffffe6;
-	background-color: #F44336;
+	background-color: #f44336;
 
 	.btn-danger {
 		background-color: #D32F2F;

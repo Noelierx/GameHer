@@ -1,0 +1,66 @@
+{% extends 'admin/admin.html.twig' %}
+{% trans_default_domain 'admin' %}
+
+{% block content %}
+	<div class="row">
+		<h2>{{ 'tags.index.title'|trans }}</h2>
+	</div>
+
+	<div class="row">
+		<h5>Tags existants:</h5>
+		<table>
+			<thead>
+			<tr>
+				<th scope="col">{{ 'tags.index.label.name'|trans }}</th>
+				<th scope="col">{{ 'tags.index.label.posts'|trans }}</th>
+				<th scope="col" class="right-align"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'tags.index.label.actions'|trans }}</th>
+			</tr>
+			</thead>
+			<tbody>
+			{% for tag in tags %}
+				<tr>
+					<td>{{ tag.name }}</td>
+					<td class="center-align">{{ tag.posts.count }}</td>
+					<td class="right-align">
+						<div class="item-actions">
+							<form action="{{ url('admin_tags_delete', {uuid: tag.uuidAsString}) }}" method="post" data-confirmation="true" id="delete-form" style="display:inline-block">
+								<input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
+								<button type="submit" class="btn red">
+									{{ 'default.action.delete'|trans }}
+									<i class="fa fa-trash" aria-hidden="true"></i>
+								</button>
+							</form>
+						</div>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="3" align="center">{{ 'tags.index.no_results'|trans }}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+	<div class="row">
+		<h5>Ajouter un tag :</h5>
+		{{ form_start(form) }}
+		<div class="input-field col s6">
+			{{ form_label(form.name) }}
+			{{ form_widget(form.name) }}
+			{{ form_label(form.save) }}
+			{{ form_widget(form.save) }}
+		</div>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}
+
+{% block sidebar %}
+	<div class="section actions">
+		<a href="{{ path('admin_tags_new') }}" class="btn btn-lg btn-block btn-success">
+			<i class="fa fa-plus" aria-hidden="true"></i> {{ 'default.action.add'|trans }}
+		</a>
+	</div>
+
+	{{ parent() }}
+{% endblock %}

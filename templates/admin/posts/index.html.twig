@@ -28,7 +28,7 @@
 			{% for post in posts %}
 				<tr>
 					<td>{{ post.title }}</td>
-					<td>{% for tag in post.tags %}{{ tag.name }}{% endfor %}</td>
+					<td>{% for tag in post.tags %}<span class="badge teal new" data-badge-caption="">{{ tag.name }}</span>{% endfor %}</td>
 					{% if post.publishedAt %}
 						<td>{{ post.publishedAt| date }}</td>
 					{% else %}
@@ -37,18 +37,15 @@
 					<td>{{ post.createdAt| date }}</td>
 					<td class="right-align">
 						<div class="item-actions">
-							<a href="{{ path('admin_posts_show', {uuid: post.uuidAsString}) }}" class="btn pink">
-								{{ 'default.action.show'|trans }}
+							<a href="{{ path('admin_posts_show', {uuid: post.uuidAsString}) }}" class="btn btn-floating pink" title="{{ 'default.action.show'|trans }}">
 								<i class="fa fa-eye" aria-hidden="true"></i>
 							</a>
-							<a href="{{ path('admin_posts_edit', {uuid: post.uuidAsString}) }}" class="btn purple">
-								{{ 'default.action.edit'|trans }}
+							<a href="{{ path('admin_posts_edit', {uuid: post.uuidAsString}) }}" class="btn btn-floating purple" title="{{ 'default.action.edit'|trans }}">
 								<i class="fa fa-edit" aria-hidden="true"></i>
 							</a>
 							<form action="{{ url('admin_posts_delete', {uuid: post.uuidAsString}) }}" method="post" data-confirmation="true" id="delete-form" style="display:inline-block">
 								<input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
-								<button type="submit" class="btn red">
-									{{ 'default.action.delete'|trans }}
+								<button type="submit" class="btn btn-floating red" title="{{ 'default.action.delete'|trans }}">
 									<i class="fa fa-trash" aria-hidden="true"></i>
 								</button>
 							</form>

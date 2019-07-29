@@ -16,7 +16,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class PostType extends AbstractType
+class TagType extends AbstractType
 {
     /**
      * @var TranslatorInterface
@@ -31,28 +31,9 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', TextType::class)
-            ->add('content', CKEditorType::class, [
-                'required' => true,
-                'label_attr' => ['style' => 'transform: translateY(-14px) scale(0.8);transform-origin: 0 0;']
-                ])
-            ->add('picture', FileType::class, [
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [ new Image(['maxSize' => '2048k']) ],
-                'attr' => [ 'accept' => 'image/*' ]
-            ])
-            ->add('tags', EntityType::class, [
-                'class' => Tag::class,
-                'choice_label' => 'name',
-                'multiple' => true,
-                'required' => false,
-            ])
-            ->add('publishedAt', TextType::class, [
-                'required' => false,
-                'attr' => ['class' => 'datepicker'],
-                'label' => 'Date de publication'
-                ])
+            ->add('name', TextType::class, [
+				'required' => true,
+			])
             ->add('save', SubmitType::class, [
                 'label' => $this->translator->trans('default.action.save', [], 'admin'),
 				'attr' => [ 'class' => 'btn right']
