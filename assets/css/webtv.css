@@ -67,7 +67,10 @@
 			}
 		}
 		.fleche {
+			margin: auto 0 0;
 			transition: all 200ms ease-in-out;
+			min-width: 60px;
+			max-width: 60px;
 			&:hover {filter: saturate(0.5);}
 		}
 	}
