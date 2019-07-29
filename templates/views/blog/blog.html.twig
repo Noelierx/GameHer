@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'index' %}
+
+{% block main %}
+	<div class="container">
+
+		<div class="row news">
+			<div class="col s9">
+				<h1 class="news__title">News & Articles</h1>
+				<h2 class="news__subtitle">Nos articles sur le monde du jeu vidéo</h2>
+			</div>
+			<div class="col s3">
+				<input type="text" placeholder="Recherche" class="news__search">
+				<select name="categories" id="categories">
+					<option value="" disabled selected>All categories</option>
+					{% for tag in tags %}
+						<option value="{{ tag.name }}">{{ tag.name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+
+		<div class="row posts">
+			{% for article in paginator.results %}
+			<div class="col s4">
+				<div class="article">
+					<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
+					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
+						<div class="links">
+							<p class="tag">{% for tag in article.tags %}{{ tag.name }}{% endfor %}</p>
+							<p class="channel">{{ article.title }}</p>
+						</div>
+						<div class="fleche">
+							<img src="{{ asset('build/img/blog/fleche.png') }}" alt="{{ article.title }}">
+						</div>
+					</a>
+				</div>
+			</div>
+			{% else %}
+				<div class="col s12">No posts</div>
+			{% endfor %}
+
+		</div>
+		<div class="row pagination">
+			<div class="col">
+				{% include 'views/blog/_pagination.html.twig' %}
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid" style="border-bottom: 3px solid var(--gh-blue);"></div>
+{% endblock %}

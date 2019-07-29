@@ -6,6 +6,7 @@ require('@fortawesome/fontawesome-free/js/all.min.js');
 require('../css/app.css');
 const $ = require('jquery');
 
+$('select').formSelect();
 
 $('.leagueTeams__button').click(function ($event) {
 	$event.preventDefault();

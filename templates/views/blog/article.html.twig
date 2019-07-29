@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'index' %}
+
+{% block main %}
+	<div class="container-fluid">
+		<div class="row article__row">
+			<div class="article__header">
+				<img src="{{ asset('build/img/blog/entete.png') }}" alt="{{ article.slug }}">
+			</div>
+			<h1 class="article__title">{{ article.title }}</h1>
+		</div>
+	</div>
+
+	{% set tags = [] %}
+	{% for tag in article.tags %}
+		{% set tags = tags|merge([tag.name]) %}
+	{% endfor %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h2 class="article__second_title">{{ article.title }}</h2>
+				<p class="article__metadata">
+					Posté par <span class="article__author">{{ article.author.displayName }}</span> le {{ article.publishedAt |date('d M Y') }} dans<span>
+						{% for tag in article.tags %}<a href="{{ path('blog', {tag: tag.name}) }}" class="article__tag">{{ tag.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+					</span>
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
