@@ -3,10 +3,160 @@
 {% block body_id 'index' %}
 
 {% block main %}
-<section style="border-bottom: 3px solid var(--gh-blue);">
-    <p>Homepage en cours de construction</p>
+    {% include "common/separateBanner.html.twig" with {
+        className: "sectionRed",
+        mainTitle: "homepage.title" | trans,
+        content: "homepage.subtitle" | trans,
+        classNameContent: "withBackgroundImage",
+        contentClass: "contentClass",
+        image_url: "build/img/homepage/PHOTOGRAPHIE.png",
+    } only %}
+    {% include "common/separateBanner.html.twig" with {
+        className: "sectionRed",
+        titleClass: 'titleHomepage',
+        secondTitle: "homepage.second_title" | trans,
+        contenu: "Bonjour",
+    } only %}
+<section class="sectionRed slideshow">
+    <main class="main-content">
+            <div class="slideshow-inner">
+                <div class="slides">
+                    <div class="slide is-active ">
+                        <div class="slide-content">
+                            <div class="caption">
+                                <div class="title">Devenir bénévole</div>
+                                <div class="text">
+                                    <p><b>Vous souhaitez vous investir au sein de Game'Her en mettant à profit votre temps et vos compétences ?</b></p>
+                                    <p>Chez Game'Her, nous recrutons des streamers, des graphistes, des administrateurs et modérateurs tournois, des rédacteurs et éditeurs, des community manager, mais aussi des joueurs esport.</p>
+                                    <p>Nous travaillons exclusivement sur Discord, donc vous n'avez aucune contrainte physique ! Et nous essayons au maximum d'organiser des rencontres IRL entre les membres de l'association dès que nous le pouvons.</p>
+                                </div>
+                                <a href="#" class="btn">
+                                    <span class="btn-inner">Learn More</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://www.alixbdanthenay.fr/wp-content/uploads/2015/07/Indispensable-1.jpg" alt="" class="image" />
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="caption">
+                                <div class="title">Slide title 2</div>
+                                <div class="text">
+                                    <p>Slide description 2</p>
+                                </div>
+                                <a href="#" class="btn">
+                                    <span class="btn-inner">Learn More</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://www.alixbdanthenay.fr/wp-content/uploads/2015/07/Indispensable-4-1.jpg" alt="" class="image" />
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="caption">
+                                <div class="title">Slide title 3</div>
+                                <div class="text">
+                                    <p>Slide description 3</p>
+                                </div>
+                                <a href="#" class="btn">
+                                    <span class="btn-inner">Learn More</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://www.alixbdanthenay.fr/wp-content/uploads/2016/11/11.jpg" alt="" class="image" />
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="caption">
+                                <div class="title">Slide title 4</div>
+                                <div class="text">
+                                    <p>Slide description 4</p>
+                                </div>
+                                <a href="#" class="btn">
+                                    <span class="btn-inner">Learn More</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://www.alixbdanthenay.fr/wp-content/uploads/2016/11/20mars17-sans-typo.jpg" alt="" class="image" />
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <div class="item is-active">
+                        <span class="icon">1</span>
+                    </div>
+                    <div class="item">
+                        <span class="icon">2</span>
+                    </div>
+                    <div class="item">
+                        <span class="icon">3</span>
+                    </div>
+                    <div class="item">
+                        <span class="icon">4</span>
+                    </div>
+                </div>
+                <div class="arrows">
+                    <div class="arrow prev">
+          <span class="svg svg-arrow-left">
+            <svg version="1.1" id="svg4-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z"/> </svg>
+            <span class="alt sr-only"></span>
+          </span>
+                    </div>
+                    <div class="arrow next">
+          <span class="svg svg-arrow-right">
+            <svg version="1.1" id="svg5-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-0.391-1.023,0-1.414C0.488,0.098,0.744,0,1,0z"/> </svg>
+            <span class="alt sr-only"></span>
+          </span>
+                    </div>
+                </div>
+            </div>
+    </main>
 </section>
+    {% include "common/dataList.html.twig" with {
+        element_class: "sectionBlue",
+        explanation: "recruitment.explanation" | trans,
+        elements : [
+            {
+                logo_url: "build/img/recrutement/PICTO_ESPORT.png",
+                title: "Pôle Esport",
+                content: "texte pole",
+            },
+            {
+                logo_url: "build/img/recrutement/PICTO_COMMUCATION.png",
+                title: "Pôle Communication",
+                content: "texte pôle",
+            },
+            {
+                logo_url: "build/img/recrutement/PICTO_TOURNOIS.png",
+                title: "Pôle Tournois",
+                content: "texte pole",
+            },
+            {
+                logo_url: "build/img/recrutement/PICTO_TWITCH.png",
+                title: "Pôle Streaming",
+                content: "texte pole",
+            },
+            {
+                logo_url: "build/img/recrutement/PICTO_GRAPHISME.png",
+                title: "Pôle Graphisme",
+                content: "texte pole",
+            },
+            {
+                logo_url: "build/img/recrutement/PICTO_PRESSE.png",
+                title: "Pôle Presse",
+                content: "texte pole",
+            }
+        ]
+    } only %}
     {{ app.user }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 {% endblock %}
 
 {% block sidebar %}

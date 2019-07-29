@@ -10,7 +10,6 @@
 	background-color: var(--gh-blue);
 	background-repeat: no-repeat;
 	align-items: center;
-	border-bottom: 5px solid var(--gh-red);
 	margin: 0;
 	padding: 5rem 0;
 	transition: background-position 200ms ease-in;

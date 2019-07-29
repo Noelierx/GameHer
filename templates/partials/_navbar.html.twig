@@ -13,8 +13,27 @@
         <li><a href="{{ path('display_profile') }}">{{ 'menu.user'|trans }}</a></li>
         <li><a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a></li>
     </ul>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{ path('blog') }}">{{ 'menu.blog'|trans }}</a></li>
+            <li><a href="{{ path('esport') }}">{{ 'menu.esport'|trans }}</a></li>
+            <li><a href="{{ path('webtv') }}">{{ 'menu.webtv'|trans }}</a></li>
+            <li><a href="{{ path('tournaments') }}">{{ 'menu.tournaments'|trans }}</a></li>
+            <li><a href="{{ path('partners') }}">{{ 'menu.partners'|trans }}</a></li>
+            <li><a href="{{ path('donations') }}">{{ 'menu.donations'|trans }}</a></li>
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">La Team <i class="fa fa-caret-down"></i></a></li>
+            {% if is_granted('ROLE_ADMIN') %}
+                <li><a class="nav-link" href="{{ path('admin') }}">{{ 'menu.admin'|trans }}</a></li>
+            {% endif %}
+            {% if app.user %}
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">{{ app.user.displayName }} <i class="fa fa-caret-down"></i></a></li>
+            {% else %}
+                <li class="nav-item"><a href="{{ path('connect_discord') }}" class="nav-link">{{ 'menu.login'|trans }}</a></li>
+            {% endif %}
+        </ul>
     <nav>
         <div class="nav-wrapper white">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 					<ul class="right hide-on-med-and-down">
 						<li><a href="{{ path('blog') }}">{{ 'menu.blog'|trans }}</a></li>
 						<li><a href="{{ path('esport') }}">{{ 'menu.esport'|trans }}</a></li>
