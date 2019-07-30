@@ -28,7 +28,7 @@ class PartnerType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('description', TextareaType::class, [
-                'attr' => ['rows' => 5, 'class' => 'materialize-textarea']
+                'attr' => ['rows' => 5, 'class' => 'materialize-textarea'],
             ])
             ->add('logo', FileType::class, [
                 'mapped' => false,
@@ -38,7 +38,7 @@ class PartnerType extends AbstractType
                 ],
                 'attr' => [
                     'accept' => 'image/*',
-                ]
+                ],
             ])
             ->add('website', TextType::class, [
                 'required' => false,
@@ -58,7 +58,7 @@ class PartnerType extends AbstractType
             ])
             ->add('save', SubmitType::class, [
                 'label' => $this->translator->trans('default.action.save', [], 'admin'),
-                'attr' => [ 'class' => 'btn right']
+                'attr' => ['class' => 'btn right'],
             ]);
     }
 }

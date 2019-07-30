@@ -74,6 +74,7 @@ input[type="text"].news__search {
 }
 
 .article__title {
+	width: 75%;
 	color: var(--gh-white);
 	display: table;
 	position: absolute;
@@ -101,6 +102,14 @@ input[type="text"].news__search {
 .article__tag {
 	color: var(--gh-orange);
 	&:hover {text-decoration: underline;}
+}
+.article__content {
+	h3 {
+		font-family: "headingcompressedpro-extbd", sans-serif;
+		color: var(--gh-orange);
+		text-transform: uppercase;
+		font-size: 1.8rem;
+	}
 }
 
 .followUs {

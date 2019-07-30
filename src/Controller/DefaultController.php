@@ -3,12 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Blog\Post;
-use App\Entity\Blog\Tag;
 use App\Repository\Blog\PostRepository;
 use App\Repository\Blog\TagRepository;
 use App\Repository\PartnerRepository;
 use App\Repository\StreamerRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,32 +24,32 @@ class DefaultController extends AbstractController
 
     /**
      * @Route("/blog", name="blog", methods={"GET"}, defaults={"page": 1})
-	 * @Route("/page/{page<[1-9]\d*>}", methods={"GET"}, name="blog_paginated")
+     * @Route("/page/{page<[1-9]\d*>}", methods={"GET"}, name="blog_paginated")
      */
     public function blog(Request $request, int $page, PostRepository $posts, TagRepository $tags): Response
     {
-		$tag = null;
-		if ($request->query->has('tag')) {
-			$tag = $tags->findOneBy(['name' => $request->query->get('tag')]);
-		}
-    	$posts = $posts->findLatest($page, $tag);
+        $tag = null;
+        if ($request->query->has('tag')) {
+            $tag = $tags->findOneBy(['name' => $request->query->get('tag')]);
+        }
+        $posts = $posts->findLatest($page, $tag);
 
         return $this->render('views/blog/blog.html.twig', [
             'paginator' => $posts,
-			'tags' => $tags->findAll(),
+            'tags' => $tags->findAll(),
         ]);
     }
 
-	/**
-	 * @Route("/blog/{slug}", name="show_article_slug", methods={"GET"})
-	 * @Route("/blog/{uuid}", name="show_article_uuid", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
-	 */
-	public function article(Post $post)
-	{
-		return $this->render('views/blog/article.html.twig', [
-			'article' => $post
-		]);
-	}
+    /**
+     * @Route("/blog/{slug}", name="show_article_slug", methods={"GET"})
+     * @Route("/blog/{uuid}", name="show_article_uuid", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
+     */
+    public function article(Post $post)
+    {
+        return $this->render('views/blog/article.html.twig', [
+            'article' => $post,
+        ]);
+    }
 
     /**
      * @Route("/webtv", name="webtv", methods={"GET"})
@@ -88,6 +86,7 @@ class DefaultController extends AbstractController
     {
         return $this->render('views/donations.html.twig');
     }
+
     /**
      * @Route("/recruitment", name="recruitment", methods={"GET"})
      */

@@ -55,6 +55,7 @@ class StreamersController extends AbstractController
             } catch (Exception $e) {
                 die(dump($e));
                 $this->addFlash('danger', 'streamers.fail.create');
+
                 return $this->render('admin/streamers/new.html.twig', [
                     'streamer' => $streamer,
                     'form' => $form->createView(),
@@ -100,6 +101,7 @@ class StreamersController extends AbstractController
                 return $this->redirectToRoute('admin_streamers_edit', ['uuid' => $streamer->getUuidAsString()]);
             } catch (Exception $e) {
                 $this->addFlash('danger', 'streamers.fail.delete');
+
                 return $this->render('admin/streamers/edit.html.twig', [
                     'form' => $form->createView(),
                     'streamer' => $streamer,

@@ -54,12 +54,3 @@
     </table>
 {% endblock %}
 
-{% block sidebar %}
-    <div class="section actions">
-        <a href="{{ path('admin_streamers_new') }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-plus" aria-hidden="true"></i> {{ 'default.action.add'|trans }}
-        </a>
-    </div>
-
-    {{ parent() }}
-{% endblock %}

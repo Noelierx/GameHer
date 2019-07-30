@@ -27,15 +27,35 @@ partners.index.label.updated_at: Modifié le
 partners.index.label.actions: Actions
 
 members.index.title: Membres
+members.index.esport_title: Membres esport
 members.index.no_results: Aucun membre trouvé
 members.index.label.name: Nom
+members.index.label.role: Role
+members.index.label.category: Catégorie
+members.index.label.team: Equipe
 members.index.label.updated_at: Modifié le
 members.index.label.actions: Actions
+
+members.role.category.direction: Direction
+members.role.category.administration: Administration
+members.role.category.members: Membres
+
+members.esport.team.team_main: Principale
+members.esport.team.team_academy: Académie
+members.esport.role.10_top: Top
+members.esport.role.20_jungle: Jungle
+members.esport.role.30_mid: Mid
+members.esport.role.40_adc: Adc
+members.esport.role.50_support: Support
+members.esport.role.60_coach: Coach
+members.esport.role.70_manager: Manager
+members.esport.role.80_project_manager: Chef de projet
 
 roles.index.title: Roles
 roles.index.no_results: Aucun role trouvé
 roles.index.label.name: Nom
 roles.index.label.category: Catégorie
+roles.index.label.members: Membres
 roles.index.label.updated_at: Modifié le
 roles.index.label.actions: Actions
 

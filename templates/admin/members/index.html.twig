@@ -2,36 +2,32 @@
 {% trans_default_domain 'admin' %}
 
 {% block content %}
-    <h2>
-			{{ 'members.index.title'|trans }}
-			<span class="right">
-				<a href="{{ path('admin_members_new') }}" class="btn green">
-					{{ 'default.action.add'|trans }}
-					<i class="fa fa-plus" aria-hidden="true"></i>
-				</a>
-			</span>
+    <h2>{{ 'members.index.title'|trans }}
+			<a href="{{ path('admin_members_new') }}" class="btn green right">
+				{{ 'default.action.add'|trans }}
+				<i class="fa fa-plus" aria-hidden="true"></i>
+			</a>
 		</h2>
 
     <table class="table table-striped table-middle-aligned">
     <thead>
     <tr>
-        <th scope="col">{{ 'members.index.label.name'|trans }}</th>
-        <th scope="col"><i class="fa fa-pencil-alt" aria-hidden="true"></i> {{ 'members.index.label.updated_at'|trans }}</th>
-        <th scope="col" class="center-align"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'members.index.label.actions'|trans }}</th>
+			<th scope="col">{{ 'members.index.label.name'|trans }}</th>
+			<th scope="col">{{ 'members.index.label.role'|trans }}</th>
+			<th scope="col">{{ 'members.index.label.category'|trans }}</th>
+			<th scope="col"><i class="fa fa-pencil-alt" aria-hidden="true"></i> {{ 'members.index.label.updated_at'|trans }}</th>
+			<th scope="col" class="center-align"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'members.index.label.actions'|trans }}</th>
     </tr>
     </thead>
     <tbody>
     {% for member in members %}
         <tr>
             <td>{{ member.nickname }}</td>
+            <td>{{ member.role.name }}</td>
+            <td>{{ ('members.role.category.' ~ member.role.category) |trans }}</td>
             <td>{{ member.updatedAt| date }}</td>
             <td class="right-align">
                 <div class="item-actions">
-                    <a href="{{ path('admin_members_show', {uuid: member.uuidAsString}) }}" class="btn pink">
-											{{ 'default.action.show'|trans }}
-											<i class="fa fa-eye" aria-hidden="true"></i>
-                    </a>
-
                     <a href="{{ path('admin_members_edit', {uuid: member.uuidAsString}) }}" class="btn teal">
 											{{ 'default.action.edit'|trans }}
 											<i class="fa fa-edit" aria-hidden="true"></i>
@@ -48,19 +44,11 @@
         </tr>
     {% else %}
         <tr>
-            <td colspan="3" align="center">{{ 'members.index.no_results'|trans }}</td>
+            <td colspan="4" align="center">{{ 'members.index.no_results'|trans }}</td>
         </tr>
     {% endfor %}
     </tbody>
     </table>
-{% endblock %}
 
-{% block sidebar %}
-    <div class="section actions">
-        <a href="{{ path('admin_members_new') }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-plus" aria-hidden="true"></i> {{ 'default.action.add'|trans }}
-        </a>
-    </div>
-
-    {{ parent() }}
+		{% include('admin/members/esport/_index.html.twig') %}
 {% endblock %}

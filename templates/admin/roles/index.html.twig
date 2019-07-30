@@ -17,6 +17,7 @@
     <tr>
         <th scope="col">{{ 'roles.index.label.name'|trans }}</th>
         <th scope="col">{{ 'roles.index.label.category'|trans }}</th>
+        <th scope="col">{{ 'roles.index.label.members'|trans }}</th>
         <th scope="col" class="center-align"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'roles.index.label.actions'|trans }}</th>
     </tr>
     </thead>
@@ -24,7 +25,8 @@
     {% for role in roles %}
         <tr>
             <td>{{ role.name }}</td>
-            <td>{{ role.category }}</td>
+            <td>{{ ('members.role.category.' ~ role.category) |trans }}</td>
+            <td>{{ role.members.count }}</td>
             <td class="right-align">
                 <div class="item-actions">
                     <a href="{{ path('admin_roles_show', {uuid: role.uuidAsString}) }}" class="btn pink">
@@ -54,12 +56,3 @@
     </table>
 {% endblock %}
 
-{% block sidebar %}
-    <div class="section actions">
-        <a href="{{ path('admin_roles_new') }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-plus" aria-hidden="true"></i> {{ 'default.action.add'|trans }}
-        </a>
-    </div>
-
-    {{ parent() }}
-{% endblock %}

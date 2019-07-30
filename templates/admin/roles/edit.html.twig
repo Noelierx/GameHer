@@ -22,12 +22,3 @@
 	{{ form_end(form) }}
 {% endblock %}
 
-{% block sidebar %}
-    <div class="section actions">
-        <a href="{{ path('admin_roles_index') }}" class="btn btn-lg btn-block btn-danger">
-            <i class="fa fa-return" aria-hidden="true"></i> Back
-        </a>
-    </div>
-
-    {{ parent() }}
-{% endblock %}

@@ -29,14 +29,14 @@ class RoleType extends AbstractType
             ->add('category', ChoiceType::class, [
                 'choices' => Role::getAvailableCategories(),
                 'choice_label' => function ($choice, $key, $value) {
-                    return ucfirst($value);
+                    return $this->translator->trans('members.role.category.'.$value, [], 'admin');
                 },
                 'required' => true,
-                'label_attr' => ['class' => 'active']
+                'label_attr' => ['class' => 'active'],
             ])
             ->add('save', SubmitType::class, [
                 'label' => $this->translator->trans('default.action.save', [], 'admin'),
-                'attr' => [ 'class' => 'btn right']
+                'attr' => ['class' => 'btn right'],
             ]);
     }
 }

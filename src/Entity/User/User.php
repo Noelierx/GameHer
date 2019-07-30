@@ -52,17 +52,17 @@ class User implements UserInterface
      */
     protected $displayName;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string")
-	 */
-	protected $firstName;
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    protected $firstName;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string")
-	 */
-	protected $lastName;
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    protected $lastName;
 
     /**
      * @var string
@@ -220,29 +220,29 @@ class User implements UserInterface
         return $this;
     }
 
-	public function getFirstName(): string
-	{
-		return $this->firstName;
-	}
+    public function getFirstName(): string
+    {
+        return $this->firstName;
+    }
 
-	public function setFirstName(string $firstName): self
-	{
-		$this->firstName = $firstName;
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getLastName(): string
-	{
-		return $this->lastName;
-	}
+    public function getLastName(): string
+    {
+        return $this->lastName;
+    }
 
-	public function setLastName(string $lastName): self
-	{
-		$this->lastName = $lastName;
+    public function setLastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
 
-		return $this;
-	}
+        return $this;
+    }
 
     public function getEmail(): string
     {

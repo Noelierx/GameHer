@@ -8,7 +8,6 @@ use App\Service\FileUploader;
 use Exception;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -55,6 +54,7 @@ class PartnersController extends AbstractController
                 return $this->redirectToRoute('admin_partners_index');
             } catch (Exception $e) {
                 $this->addFlash('danger', 'partners.fail.create');
+
                 return $this->render('admin/partners/new.html.twig', [
                     'partner' => $partner,
                     'form' => $form->createView(),
@@ -100,6 +100,7 @@ class PartnersController extends AbstractController
                 return $this->redirectToRoute('admin_partners_edit', ['uuid' => $partner->getUuidAsString()]);
             } catch (Exception $e) {
                 $this->addFlash('danger', 'partners.fail.delete');
+
                 return $this->render('admin/partners/edit.html.twig', [
                     'form' => $form->createView(),
                     'partner' => $partner,

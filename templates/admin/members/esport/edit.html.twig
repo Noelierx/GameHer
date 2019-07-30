@@ -34,7 +34,11 @@
 			<div class="btn"><span>File</span> {{ form_widget(form.picture) }}</div>
 			<div class="file-path-wrapper"><input class="file-path" type="text" id="file-placeholder"></div>
 		</div>
-		<div class="input-field col s6">
+		<div class="input-field col s3">
+			{{ form_label(form.team) }}
+			{{ form_widget(form.team) }}
+		</div>
+		<div class="input-field col s3">
 			{{ form_label(form.role) }}
 			{{ form_widget(form.role) }}
 		</div>
@@ -67,5 +71,4 @@
 		</div>
 	</div>
 	{{ form_end(form) }}
-
 {% endblock %}

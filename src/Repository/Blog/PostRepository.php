@@ -4,9 +4,9 @@ namespace App\Repository\Blog;
 
 use App\Entity\Blog\Post;
 use App\Entity\Blog\Tag;
+use App\Pagination\Paginator;
 use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use App\Pagination\Paginator;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -22,20 +22,20 @@ class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
-	public function findLatest(int $page = 1, Tag $tag = null): Paginator
-	{
-		$qb = $this->createQueryBuilder('p')
-			->addSelect('a', 't')
-			->innerJoin('p.author', 'a')
-			->leftJoin('p.tags', 't')
-			->where('p.publishedAt <= :now')
-			->orderBy('p.publishedAt', 'DESC')
-			->setParameter('now', new DateTime());
+    public function findLatest(int $page = 1, Tag $tag = null): Paginator
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->addSelect('a', 't')
+            ->innerJoin('p.author', 'a')
+            ->leftJoin('p.tags', 't')
+            ->where('p.publishedAt <= :now')
+            ->orderBy('p.publishedAt', 'DESC')
+            ->setParameter('now', new DateTime());
 
-		if (null !== $tag) {
-			$qb->andWhere(':tag MEMBER OF p.tags')->setParameter('tag', $tag);
-		}
+        if (null !== $tag) {
+            $qb->andWhere(':tag MEMBER OF p.tags')->setParameter('tag', $tag);
+        }
 
-		return (new Paginator($qb))->paginate($page);
-	}
+        return (new Paginator($qb))->paginate($page);
+    }
 }

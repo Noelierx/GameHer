@@ -264,7 +264,7 @@ class Post
     public function setPublished(bool $published): self
     {
         $this->published = $published;
-        if ($published === true) {
+        if (true === $published) {
             $this->setPublishedAt(new DateTime());
         }
 

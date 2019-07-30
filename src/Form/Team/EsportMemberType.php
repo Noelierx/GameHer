@@ -2,9 +2,9 @@
 
 namespace App\Form\Team;
 
-use App\Entity\Team\Role;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\Team\EsportMember;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -12,7 +12,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class MemberType extends AbstractType
+class EsportMemberType extends AbstractType
 {
     /**
      * @var TranslatorInterface
@@ -40,9 +40,20 @@ class MemberType extends AbstractType
                     'accept' => 'image/*',
                 ],
             ])
-            ->add('role', EntityType::class, [
-                'class' => Role::class,
-                'choice_label' => 'name',
+            ->add('team', ChoiceType::class, [
+                'choices' => EsportMember::getAvailableTeams(),
+                'choice_label' => function ($choice, $key, $value) {
+                    return $this->translator->trans('members.esport.team.'.$value, [], 'admin');
+                },
+                'required' => true,
+                'label_attr' => ['class' => 'active'],
+            ])
+            ->add('role', ChoiceType::class, [
+                'choices' => EsportMember::getAvailableRoles(),
+                'choice_label' => function ($choice, $key, $value) {
+                    return $this->translator->trans('members.esport.role.'.$value, [], 'admin');
+                },
+                'required' => true,
                 'label_attr' => ['class' => 'active'],
             ])
             ->add('twitch', TextType::class, ['required' => false])
