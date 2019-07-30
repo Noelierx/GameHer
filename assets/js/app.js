@@ -20,3 +20,9 @@ $('.dismiss').click(function ($event) {
 	$event.preventDefault();
 	$(this).parent().fadeOut();
 });
+
+$('#news__categories').change(function ($event) {
+	$event.preventDefault();
+	console.log(window.location);
+	window.location.href = window.location.origin + window.location.pathname + '?tag=' + $(this).val().toLowerCase();
+});

@@ -11,9 +11,11 @@
 				<h2 class="news__subtitle">Nos articles sur le monde du jeu vidéo</h2>
 			</div>
 			<div class="col s3">
-				<input type="text" placeholder="Recherche" class="news__search">
-				<select name="categories" id="categories">
-					<option value="" disabled selected>All categories</option>
+				<form action="{{ path('blog') }}" method="get" class="news__form">
+					<input type="text" placeholder="Recherche" class="news__search" name="query">
+				</form>
+				<select name="categories" id="news__categories">
+					<option value="" disabled selected>Sélectionner une catégorie</option>
 					{% for tag in tags %}
 						<option value="{{ tag.name }}">{{ tag.name }}</option>
 					{% endfor %}
