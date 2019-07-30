@@ -20,6 +20,37 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.whoAreWe {
+    margin: 6rem auto 3rem;
+    border-bottom: 3px solid var(--gh-red);
+    padding-bottom: 2rem;
+}
+
+.whoAreWe__title {
+    font-size: 1.6rem;
+    font-family: "headingcompressedpro-extbd", sans-serif;
+    text-transform: uppercase;
+}
+.whoAreWe__illustration {
+    position: relative;
+}
+.whoAreWe__picture {
+    margin: 0 auto;
+    max-height: 50vh;
+}
+.whoAreWe__sideblock {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    width: 40%;
+    background-color: var(--gh-red);
+    color: var(--gh-white);
+    padding: 1.5rem 1rem;
+}
+
+
+
+
 .btn {
     display: inline-block;
     padding: 13px 20px;

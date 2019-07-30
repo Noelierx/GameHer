@@ -19,7 +19,7 @@
         </div>
         <div class="page-header__img-wrapper" style="background-image: url({{ image_url | default('https://www.fundermax.at/fileadmin/redakteure/_processed_/2/0/csm_0085_1c4866d798.jpg') }})">
             {% if _hasContenu %}
-                <p>{{ contenu | trans }}</p>
+                {{ contenu | raw }}
             {% endif %}
         </div>
 
