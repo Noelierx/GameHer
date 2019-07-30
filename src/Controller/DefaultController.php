@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Blog\Post;
+use App\Entity\Team\EsportMember;
 use App\Repository\Blog\PostRepository;
 use App\Repository\Blog\TagRepository;
 use App\Repository\PartnerRepository;
@@ -17,7 +18,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="index", methods={"GET"})
      */
-    public function index()
+    public function index(): Response
     {
         return $this->render('views/index.html.twig');
     }
@@ -44,17 +45,30 @@ class DefaultController extends AbstractController
      * @Route("/blog/{slug}", name="show_article_slug", methods={"GET"})
      * @Route("/blog/{uuid}", name="show_article_uuid", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
      */
-    public function article(Post $post)
+    public function article(Post $post): Response
     {
         return $this->render('views/blog/article.html.twig', [
             'article' => $post,
         ]);
     }
 
+	/**
+	 * @Route("/esport", name="esport", methods={"GET"})
+	 */
+	public function esport(): Response
+	{
+		return $this->render('views/esport.html.twig', [
+			'main_team' => $this->getDoctrine()->getRepository(EsportMember::class)
+				->findBy(['team' => EsportMember::MAIN_TEAM], ['role' => 'asc']),
+			'academy' => $this->getDoctrine()->getRepository(EsportMember::class)
+				->findBy(['team' => EsportMember::ACADEMY_TEAM], ['role' => 'asc']),
+		]);
+	}
+
     /**
      * @Route("/webtv", name="webtv", methods={"GET"})
      */
-    public function webtv(StreamerRepository $streamerRepository)
+    public function webtv(StreamerRepository $streamerRepository): Response
     {
         return $this->render('views/webtv.html.twig', [
             'streamers' => $streamerRepository->findAll(),
@@ -62,17 +76,17 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/tournaments", name="tournaments", methods={"GET"})
+     * @Route("/tournois", name="tournaments", methods={"GET"})
      */
-    public function tournaments()
+    public function tournaments(): Response
     {
         return $this->render('views/tournaments.html.twig');
     }
 
     /**
-     * @Route("/partners", name="partners", methods={"GET"})
+     * @Route("/partenaires", name="partners", methods={"GET"})
      */
-    public function partners(PartnerRepository $partnersRepository)
+    public function partners(PartnerRepository $partnersRepository): Response
     {
         return $this->render('views/partners.html.twig', [
             'partners' => $partnersRepository->findAll(),
@@ -82,16 +96,8 @@ class DefaultController extends AbstractController
     /**
      * @Route("/donations", name="donations", methods={"GET"})
      */
-    public function donations()
+    public function donations(): Response
     {
         return $this->render('views/donations.html.twig');
-    }
-
-    /**
-     * @Route("/recruitment", name="recruitment", methods={"GET"})
-     */
-    public function recrutement()
-    {
-        return $this->render('views/recruitment.html.twig');
     }
 }

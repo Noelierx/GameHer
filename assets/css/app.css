@@ -1,11 +1,12 @@
 @import "~normalize.css/normalize.css";
 @import "component/main.css";
+@import "homepage.css";
+@import "blog.css";
 @import "esport.css";
+@import "webtv.css";
 @import "partner.css";
 @import "recruitment.css";
-@import "homepage.css";
-@import "webtv.css";
-@import "blog.css";
+@import "about.css";
 
 :root {
 	--gh-blue: #001724;

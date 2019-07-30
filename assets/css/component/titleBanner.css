@@ -9,7 +9,7 @@
 	border-bottom: 2px solid var(--gh-red);
 }
 .titleBanner__title {
-	color: #fff;
+	color: var(--gh-white);
 	text-transform: uppercase;
 	text-align: center;
 	margin: 0;

@@ -41,7 +41,7 @@ class MembersEsportController extends AbstractController
             $this->addFlash('success', 'members.success.create');
 
             return $this->redirectToRoute('admin_members_index');
-        } elseif (!$form->isValid()) {
+        } elseif ($form->isSubmitted() && !$form->isValid()) {
             foreach ($form->getErrors() as $error) {
                 $this->addFlash('danger', $error->getMessage().$error->getCause());
             }
