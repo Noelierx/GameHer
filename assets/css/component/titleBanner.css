@@ -7,6 +7,12 @@
 	justify-content: center;
 	flex-direction: column;
 	border-bottom: 2px solid var(--gh-red);
+
+	&.--orange {
+		background-color: var(--gh-orange);
+		.titleBanner__title {color: var(--gh-blue);}
+		.titleBanner__subtitle {color: var(--gh-yellow);}
+	}
 }
 .titleBanner__title {
 	color: var(--gh-white);

@@ -54,11 +54,12 @@ img {
     color: var(--gh-red);
 }
 nav a, nav ul a {
-    color: var(--gh-blue);
-    font-family: "FoundationSans-Roman", sans-serif;
+	color: var(--gh-blue);
+	font-family: "FoundationSans-Roman", sans-serif;
+	&.active {color: var(--gh-pink);}
 }
 .nav-wrapper {
-    border-bottom: 3px solid var(--gh-blue);
+	border-bottom: 3px solid var(--gh-blue);
 	z-index: 1030;
 }
 h1 {
