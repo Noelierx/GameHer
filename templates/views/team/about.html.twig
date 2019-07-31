@@ -116,7 +116,7 @@
 			{% for member in esports %}
 				<div class="col s4 l3 gameherMember">
 					<div class="gameherMember__image">
-						<img src="{{ asset('uploads/members/' ~ member.picture) }}" alt="" class="gameherMember__image">
+						<img src="{{ asset('uploads/members/' ~ member.picture) }}" alt="{{ member.nickname }}" class="gameherMember__image">
 					</div>
 					<p class="gameherMember__name">{{ member.firstname }} <span class="gameherMember__nickname">{{ member.nickname }}</span> {{ member.lastName }}</p>
 					<p class="gameherMember__role">{{ ('esport.member.role.' ~ member.role) |trans }}</p>

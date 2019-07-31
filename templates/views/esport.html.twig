@@ -41,7 +41,7 @@
 				{% for player in main_team %}
 				<div class="col s4 l3 leaguePlayer">
 					<div class="leaguePlayer__image">
-						<img src="{{ asset('build/img/esport/player.png') }}" alt="" class="leaguePlayer__image">
+						<img src="{{ asset('uploads/members/' ~ player.picture) }}" alt="{{ player.nickname }}" class="leaguePlayer__image">
 					</div>
 					<p class="leaguePlayer__name">{{ player.firstname }} <span class="leaguePlayer__nickname">{{ player.nickname }}</span> {{ player.lastName }}</p>
 					<p class="leaguePlayer__role">{{ ('esport.member.role.' ~ player.role) |trans }}</p>
@@ -60,7 +60,7 @@
 				{% for player in academy %}
 					<div class="col s4 l3 leaguePlayer">
 						<div class="leaguePlayer__image">
-							<img src="{{ asset('build/img/esport/player.png') }}" alt="" class="leaguePlayer__image">
+							<img src="{{ asset('uploads/members/' ~ player.picture) }}" alt="{{ player.nickname }}" class="leaguePlayer__image">
 						</div>
 						<p class="leaguePlayer__name">{{ player.firstname }} <span class="leaguePlayer__nickname">{{ player.nickname }}</span> {{ player.lastName }}</p>
 						<p class="leaguePlayer__role">{{ ('esport.member.role.' ~ player.role) |trans }}</p>

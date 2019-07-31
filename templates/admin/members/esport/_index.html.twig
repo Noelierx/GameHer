@@ -1,6 +1,6 @@
-{% spaceless %}
-	{% trans_default_domain 'admin' %}
+{% trans_default_domain 'admin' %}
 
+{% spaceless %}
 	<h2>{{ 'members.index.esport_title'|trans }}
 		<a href="{{ path('admin_esport_members_new') }}" class="btn green right">
 			{{ 'default.action.add'|trans }}
@@ -25,11 +25,11 @@
 				<td>{{ ('members.esport.team.' ~ member.team) |trans }}</td>
 				<td class="right-align">
 					<div class="item-actions">
-						<a href="{{ path('admin_members_edit', {uuid: member.uuidAsString}) }}" class="btn teal">
+						<a href="{{ path('admin_esport_members_edit', {uuid: member.uuidAsString}) }}" class="btn teal">
 							{{ 'default.action.edit'|trans }}
 							<i class="fa fa-edit" aria-hidden="true"></i>
 						</a>
-						<form action="{{ url('admin_members_delete', {uuid: member.uuidAsString}) }}" method="post" data-confirmation="true" id="delete-form" style="display:inline-block">
+						<form action="{{ url('admin_esport_members_delete', {uuid: member.uuidAsString}) }}" method="post" data-confirmation="true" id="delete-form" style="display:inline-block">
 							<input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
 							<button type="submit" class="btn red">
 								{{ 'default.action.delete'|trans }}
