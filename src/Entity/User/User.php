@@ -4,6 +4,7 @@ namespace App\Entity\User;
 
 use App\Entity\Blog\Comment;
 use App\Entity\Blog\Post;
+use App\Entity\StringUuidTrait;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -20,8 +21,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface
 {
+	use StringUuidTrait;
+
     const ROLE_DEFAULT = 'ROLE_USER';
     const ROLE_ADMIN = 'ROLE_ADMIN';
+    const ROLE_REDACTEUR = 'ROLE_REDACTEUR';
     const ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
 
     /**
@@ -391,4 +395,9 @@ class User implements UserInterface
 
         return $this;
     }
+
+	public function getCreatedAt(): DateTime
+	{
+		return $this->createdAt;
+	}
 }

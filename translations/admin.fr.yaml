@@ -65,3 +65,11 @@ streamers.index.label.name: Nom
 streamers.index.label.channel: Chaine twitch
 streamers.index.label.updated_at: Ajouté le
 streamers.index.label.actions: Actions
+
+users.index.title: Utilisateurs
+users.index.no_results: Aucun utilisateur trouvé
+users.index.label.name: Nom
+users.index.label.role: Role
+users.index.label.category: Catégorie
+users.index.label.joined: Inscrit le
+users.index.label.actions: Actions

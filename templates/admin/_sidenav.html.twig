@@ -31,6 +31,11 @@
 			<a class="nav-link {{ _self.activeLink('admin_streamers') }}" href="{{ path('admin_streamers_index') }}"><i class="fab fa-fw fa-twitch mr-2 fa-2x"></i> Streamers</a>
 		</li>
 	{% endif %}
+	{% if is_granted('ROLE_SUPER_ADMIN') %}
+		<li>
+			<a class="nav-link {{ _self.activeLink('admin_users') }}" href="{{ path('admin_users') }}"><i class="fa fa-fw fa-handshake mr-2 fa-2x"></i> Utilisateurs</a>
+		</li>
+	{% endif %}
 	<li class="filler"></li>
 	<li>
 		<a href="{{ path('index') }}" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i>Retour au site</a>
