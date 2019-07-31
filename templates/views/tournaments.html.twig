@@ -9,5 +9,37 @@
 		className: '--orange',
 	} only %}
 
+	<section class="gameherLeague">
+		<div class="container gameherLeague__row">
+			<div class="row">
+				<div class="col s6">
+					<div class="gameherLeague__title">{{ 'tournament.ghleague.title'|trans }}</div>
+				</div>
+				<div class="col s6 gameherLeague__trigger">
+					<button class="btn gameherLeague__button" data-team="main">{{ 'tournament.ghleague.show'|trans }}</button>
+				</div>
+			</div>
+		</div>
+		<div class="container tournamentToggled gameherLeague__infography">
+			<div class="row">
+				<div class="col s6 gameherLeague__introduction">
+					<img src="{{ asset('build/img/tournaments/GHleague-logo.png') }}" alt="Game'Her League">
+					<p>The Game'Her League is an online tournament promoting diversity in esport.</p>
+				</div>
+			</div>
+			<div class="row gameherLeague__stats">
+				<div class="col s4 gameherLeague__kpi">
+					<img src="{{ asset('build/img/tournaments/players.png') }}" alt="210 Joueurs">
+				</div>
+				<div class="col s4 gameherLeague__kpi">
+					<img src="{{ asset('build/img/tournaments/teams.png') }}" alt="52 Equipes">
+				</div>
+				<div class="col s4 gameherLeague__kpi2">
+					<img src="{{ asset('build/img/tournaments/matches.png') }}" alt="59 matchs disputés">
+					<img src="{{ asset('build/img/tournaments/qualifiers.png') }}" alt="13 qualifiers">
+				</div>
+			</div>
+		</div>
+	</section>
 
 {% endblock %}

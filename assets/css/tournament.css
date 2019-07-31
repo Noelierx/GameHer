@@ -1,0 +1,76 @@
+.gameherLeague {
+	background-image:
+		url("../img/tournaments/background-gh.png");
+	background-position: center 30%;
+	background-color: var(--gh-blue);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-bottom: 5px solid var(--gh-red);
+	margin: 0;
+	padding: 5rem 0;
+	transition: background-position 200ms ease-in;
+	&.opened {
+		background-position: center top;
+	}
+}
+
+.gameherLeague__row {
+	.row {
+		display: flex;
+	}
+}
+
+.tournamentToggled {
+	display: none;
+}
+
+.gameherLeague__introduction {
+	display: flex;
+	color: var(--gh-orange);
+}
+
+.gameherLeague__stats {
+	display: flex;
+}
+.gameherLeague__kpi {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	padding: 0 2rem;
+	img {height: 300px;}
+}
+.gameherLeague__kpi2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.gameherLeague__title {
+	font-size: 5rem;
+	color: var(--gh-white);
+	text-transform: uppercase;
+	font-family: "headingcompressedpro-extbd", sans-serif;
+}
+
+.gameherLeague__trigger {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gameherLeague__teamName {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	font-family: 'FoundationSans-Roman', sans-serif;
+	margin-bottom: .5rem;
+}
+
+.gameherLeague__button {
+	background-color: var(--gh-blue);
+	border: 1px solid var(--gh-orange);
+	&:hover, &:focus, &:active {
+		background-color: #000;
+	}
+}
