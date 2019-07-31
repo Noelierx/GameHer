@@ -23,9 +23,11 @@
 {% block header %}{{ include('partials/_navbar.html.twig') }}{% endblock %}
 
 <main>
-    <div class="container-fluid">
-        {{ include('partials/_flash_messages.html.twig') }}
-    </div>
+		{% block flash_messages %}
+		<div class="container-fluid">
+			{{ include('partials/_flash_messages.html.twig') }}
+		</div>
+		{% endblock %}
 		{% block main %}{% endblock %}
 
 {% block footer %}

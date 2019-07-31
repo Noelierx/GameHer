@@ -1,0 +1,110 @@
+.numbersBanner {
+	display: flex;
+	background-color: var(--gh-red);
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: var(--gh-white);
+	padding: 6rem 0 6rem;
+
+	hr {margin: 2rem 0;}
+}
+
+.numbersBanner__title {
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0 0 4rem;
+	font-size: 8rem;
+}
+
+.numbersBanner__cell {
+	font-family: "headingcompressedpro-extbd", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.numbersBanner__number {
+	font-size: 5rem;
+}
+.numbersBanner__legend {
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+
+.whoAreWe {
+	margin: 6rem auto 3rem;
+	border-bottom: 3px solid var(--gh-red);
+	padding-bottom: 2rem;
+}
+
+.whoAreWe__title {
+	font-size: 1.6rem;
+	font-family: "headingcompressedpro-extbd", sans-serif;
+	text-transform: uppercase;
+}
+.whoAreWe__illustration {
+	position: relative;
+}
+.whoAreWe__picture {
+	margin: 0 auto;
+	max-height: 50vh;
+}
+.whoAreWe__sideblock {
+	position: absolute;
+	right: 0;
+	top: 10%;
+	width: 40%;
+	background-color: var(--gh-red);
+	color: var(--gh-white);
+	padding: 1.5rem 1rem;
+}
+
+.memberToggler {
+	display: flex;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+.memberToggle {
+	display: block;
+	text-align: center;
+	font-size: 2rem;
+	text-transform: uppercase;
+	font-family: "headingcompressedpro-extbd", sans-serif;
+	flex: auto;
+	color: var(--gh-red);
+
+	&:not(:last-of-type) { border-right: 1px solid var(--gh-red); }
+	&.active {font-size: 4rem;}
+}
+
+.membersList {
+	display: none;
+	&.active {display: block;}
+}
+
+.gameherMember {
+	margin-bottom: 3rem;
+	p { margin: 0; }
+}
+.gameherMember__image img {
+	max-width: 100%;
+}
+.gameherMember__name {
+	font-size: 2rem;
+	font-family: "headingcompressedpro-extbd", sans-serif;
+}
+.gameherMember__nickname {
+	color: var(--gh-red);
+	text-transform: uppercase;
+}
+.gameherMember__role {
+	color: var(--gh-red);
+	font-family: 'FoundationSans-Roman', sans-serif;
+}
+.gameherMember__social {
+	display: flex;
+	justify-content: space-evenly;
+	a {color: #000;}
+	padding-top: .5rem;
+}

@@ -10,21 +10,17 @@
             <p><i class="fa fa-globe"></i> {{ role.category }}</p>
         </div>
     </div>
+	{% for member in role.members %}
+	<div class="row">
+		<div class="col s12">
+			{{ member.nickname }}
+		</div>
+	</div>
+	{% else %}
+		<div class="row">
+			No members
+		</div>
+	{% endfor %}
 
 {% endblock %}
 
-{% block sidebar %}
-    <div class="section actions">
-        <a href="{{ path('admin_roles_edit', {uuid: role.uuidAsString}) }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-edit" aria-hidden="true"></i> Edit
-        </a>
-        <a href="{{ path('admin_roles_index') }}" class="btn btn-lg btn-block btn-info">
-            <i class="fa fa-return" aria-hidden="true"></i> Back
-        </a>
-        <a href="{{ path('admin_roles_delete', {uuid: role.uuidAsString}) }}" class="btn btn-lg btn-block btn-danger">
-            <i class="fa fa-plus" aria-hidden="true"></i> Delete
-        </a>
-    </div>
-
-    {{ parent() }}
-{% endblock %}

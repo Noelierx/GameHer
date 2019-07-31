@@ -1,0 +1,26 @@
+.message {
+	padding: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	.btn {
+		min-width: 40px;
+	}
+}
+
+.message-success {
+	background-color: #4CAF50;
+
+	.btn-success {
+		background-color: #388E3C;
+	}
+}
+.message-danger {
+	color: #ffffffe6;
+	background-color: #f44336;
+
+	.btn-danger {
+		background-color: #D32F2F;
+	}
+}

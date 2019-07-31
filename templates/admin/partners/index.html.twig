@@ -16,7 +16,7 @@
     <thead>
     <tr>
         <th scope="col">{{ 'partners.index.label.name'|trans }}</th>
-        <th scope="col"><i class="fa fa-pencil" aria-hidden="true"></i> {{ 'partners.index.label.updated_at'|trans }}</th>
+        <th scope="col"><i class="fa fa-pencil-alt" aria-hidden="true"></i> {{ 'partners.index.label.updated_at'|trans }}</th>
         <th scope="col" class="center-align"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'partners.index.label.actions'|trans }}</th>
     </tr>
     </thead>
@@ -53,14 +53,4 @@
     {% endfor %}
     </tbody>
     </table>
-{% endblock %}
-
-{% block sidebar %}
-    <div class="section actions">
-        <a href="{{ path('admin_partners_new') }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-plus" aria-hidden="true"></i> {{ 'default.action.add'|trans }}
-        </a>
-    </div>
-
-    {{ parent() }}
 {% endblock %}

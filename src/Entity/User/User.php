@@ -4,6 +4,7 @@ namespace App\Entity\User;
 
 use App\Entity\Blog\Comment;
 use App\Entity\Blog\Post;
+use App\Entity\StringUuidTrait;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -20,8 +21,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface
 {
+	use StringUuidTrait;
+
     const ROLE_DEFAULT = 'ROLE_USER';
     const ROLE_ADMIN = 'ROLE_ADMIN';
+    const ROLE_REDACTEUR = 'ROLE_REDACTEUR';
     const ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
 
     /**
@@ -36,13 +40,13 @@ class User implements UserInterface
      * @var UuidInterface
      * @ORM\Column(type="uuid", unique=true)
      */
-    private $uuid;
+    protected $uuid;
 
     /**
      * @var string
      * @ORM\Column(type="string")
      */
-    private $email;
+    protected $email;
 
     /**
      * @var string
@@ -50,7 +54,19 @@ class User implements UserInterface
      * @Assert\NotNull
      * @Assert\NotBlank
      */
-    private $displayName;
+    protected $displayName;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $firstName;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $lastName;
 
     /**
      * @var string
@@ -62,7 +78,7 @@ class User implements UserInterface
      * @var array
      * @ORM\Column(type="json")
      */
-    private $roles = [];
+    protected $roles = [];
 
     /**
      * @var string
@@ -204,6 +220,30 @@ class User implements UserInterface
     public function setDisplayName(string $displayName): self
     {
         $this->displayName = $displayName;
+
+        return $this;
+    }
+
+    public function getFirstName(): string
+    {
+        return $this->firstName;
+    }
+
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getLastName(): string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
 
         return $this;
     }
@@ -355,4 +395,9 @@ class User implements UserInterface
 
         return $this;
     }
+
+	public function getCreatedAt(): DateTime
+	{
+		return $this->createdAt;
+	}
 }

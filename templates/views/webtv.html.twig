@@ -3,5 +3,91 @@
 {% block body_id 'index' %}
 
 {% block main %}
-    WebTv
+	<section class="container-fluid">
+		<div id="twitch-embed" style="height: 720px"></div>
+	</section>
+
+	<section class="streamPanels">
+		<div class="container">
+			<div class="row">
+				<div class="col m4">
+					<img src="{{ asset('build/img/webtv/abonnement.jpg') }}" alt="">
+				</div>
+				<div class="col m4">
+					<a href="{{ path('donations') }}"><img src="{{ asset('build/img/webtv/donations.jpg') }}" alt=""></a><br><br>
+					<a href=""><img src="{{ asset('build/img/webtv/discord.jpg') }}" alt=""></a><br><br>
+					<a href="//twitter.com/GameHer"><img src="{{ asset('build/img/webtv/twitter.jpg') }}" alt=""></a>
+				</div>
+				<div class="col m4">
+					<img src="{{ asset('build/img/webtv/regles.jpg') }}" alt=""><br><br>
+					<a href="//instagram.com/gameheroff"><img src="{{ asset('build/img/webtv/instagram.jpg') }}" alt=""></a><br><br>
+					<a href="#"><img src="{{ asset('build/img/webtv/planning.jpg') }}" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="textBanner --red">
+		<div class="container">
+			<h3 class="textBanner__title">Ne manquez plus un live</h3>
+			<h4 class="textBanner__subtitle">Installez notre <a href="#">extension</a></h4>
+		</div>
+	</section>
+
+	<section class="twitchExtension">
+		<div class="container">
+			<div class="row">
+				<div class="col s6">
+					<h3>L'extension</h3>
+					<p>Afin de ne manquer aucun live de Game'Her, nous avons mis en place une extension pour votre navigateur. Cette extension vous notifiera lorsqu'un streamer sera présent sur la WebTV.</p>
+					<p>N'hésitez pas à l'installer, elle est gratuite et compatible avec la majorité des navigateurs récents utilisant chromium.</p>
+					<p>Cette extension pourra aussi vous faire gagner des petits bonus dans le futur !</p>
+				</div>
+				<div class="col s6 valign-wrapper">
+					<img src="{{ asset('build/img/webtv/CHROME_WEB_STORE.png') }}" alt="Chrome WebStore">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="textBanner --blue">
+		<div class="container">
+			<h3 class="textBanner__title">Nos streamers</h3>
+			<h4 class="textBanner__subtitle">Visitez <span style="color: var(--gh-yellow)">leur chaine</span></h4>
+		</div>
+	</section>
+
+	<section class="streamersGH">
+		<div class="container">
+			<div class="row">
+				{% for streamer in streamers %}
+					<div class="col s4">
+						<div class="streamer">
+							<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ streamer.name }}">
+							<div class="footer">
+								<div class="links">
+									<p class="name">{{ streamer.name }}</p>
+									<p class="channel">Twitch.tv/{{ streamer.channel }}</p>
+								</div>
+								<a href="//twitch.tv/{{ streamer.channel }}" class="fleche" target="_blank" rel="noopener noreferrer">
+									<img src="{{ asset('build/img/webtv/fleche.png') }}" alt="{{ streamer.channel }}">
+								</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="https://embed.twitch.tv/embed/v1.js"></script>
+	<script type="text/javascript">
+		new Twitch.Embed("twitch-embed", {
+			channel: "gamehertv",
+			width: '100%',
+			height: '720px'
+		});
+	</script>
 {% endblock %}

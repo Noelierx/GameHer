@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Team\EsportMember;
 use App\Entity\Team\Member;
 use App\Form\Team\MemberType;
 use App\Service\FileUploader;
@@ -24,6 +25,7 @@ class MembersController extends AbstractController
     {
         return $this->render('admin/members/index.html.twig', [
             'members' => $this->getDoctrine()->getRepository(Member::class)->findAll(),
+            'esports' => $this->getDoctrine()->getRepository(EsportMember::class)->findAll(),
         ]);
     }
 
@@ -46,7 +48,7 @@ class MembersController extends AbstractController
             $em->persist($member);
             $em->flush();
 
-            $this->addFlash('success', 'members.flash_message.success.create');
+            $this->addFlash('success', 'members.success.create');
 
             return $this->redirectToRoute('admin_members_index');
         }
@@ -54,17 +56,6 @@ class MembersController extends AbstractController
         return $this->render('admin/members/new.html.twig', [
             'member' => $member,
             'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{uuid}", name="admin_members_show", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
-     * @Route("/{slug}", name="admin_members_show_slug", methods={"GET"})
-     */
-    public function show(Member $member): Response
-    {
-        return $this->render('admin/members/show.html.twig', [
-            'member' => $member,
         ]);
     }
 
@@ -83,7 +74,7 @@ class MembersController extends AbstractController
             }
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'members.flash_message.success.edit');
+            $this->addFlash('success', 'members.success.edit');
 
             return $this->redirectToRoute('admin_members_edit', ['uuid' => $member->getUuidAsString()]);
         }
@@ -107,7 +98,7 @@ class MembersController extends AbstractController
         $em->remove($member);
         $em->flush();
 
-        $this->addFlash('success', 'members.flash_message.success.delete');
+        $this->addFlash('success', 'members.success.delete');
 
         return $this->redirectToRoute('admin_members_index');
     }

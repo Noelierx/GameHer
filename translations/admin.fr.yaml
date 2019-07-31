@@ -1,4 +1,3 @@
-
 default.action.show: Voir
 default.action.add: Ajouter
 default.action.edit: Editer
@@ -8,18 +7,18 @@ default.action.save: Sauvegarder
 posts.index.title: Articles
 posts.index.no_results: Aucun articles trouvé
 posts.index.label.name: Nom
+posts.index.label.author: Auteur
 posts.index.label.tags: Tags
 posts.index.label.published_at: Publié le
-posts.index.label.created_at: Créé le
+posts.index.label.updated_at: Modifié le
 posts.index.label.actions: Actions
 posts.index.not_published: Non publié
 
-posts.flash_message.success.create:
-posts.flash_message.success.edit:
-posts.flash_message.success.delete:
-posts.flash_message.fail.create:
-posts.flash_message.fail.edit:
-posts.flash_message.fail.delete:
+tags.index.title: Tags
+tags.index.no_results: Aucun tag trouvé
+tags.index.label.name: Nom
+tags.index.label.posts: Posts
+tags.index.label.actions: Actions
 
 partners.index.title: Partenaires
 partners.index.no_results: Aucun partenaire trouvé
@@ -27,36 +26,50 @@ partners.index.label.name: Nom
 partners.index.label.updated_at: Modifié le
 partners.index.label.actions: Actions
 
-partners.flash_message.success.create:
-partners.flash_message.success.edit:
-partners.flash_message.success.delete:
-partners.flash_message.fail.create:
-partners.flash_message.fail.edit:
-partners.flash_message.fail.delete:
-
-members.flash_message.success.create:
-members.flash_message.success.edit:
-members.flash_message.success.delete:
-members.flash_message.fail.create:
-members.flash_message.fail.edit:
-members.flash_message.fail.delete:
-
 members.index.title: Membres
+members.index.esport_title: Membres esport
 members.index.no_results: Aucun membre trouvé
 members.index.label.name: Nom
+members.index.label.role: Role
+members.index.label.category: Catégorie
+members.index.label.team: Equipe
 members.index.label.updated_at: Modifié le
 members.index.label.actions: Actions
+
+members.role.category.direction: Direction
+members.role.category.administration: Administration
+members.role.category.members: Membres
+
+members.esport.team.team_main: Principale
+members.esport.team.team_academy: Académie
+members.esport.role.10_top: Top
+members.esport.role.20_jungle: Jungle
+members.esport.role.30_mid: Mid
+members.esport.role.40_adc: Adc
+members.esport.role.50_support: Support
+members.esport.role.60_coach: Coach
+members.esport.role.70_manager: Manager
+members.esport.role.80_project_manager: Chef de projet
 
 roles.index.title: Roles
 roles.index.no_results: Aucun role trouvé
 roles.index.label.name: Nom
 roles.index.label.category: Catégorie
+roles.index.label.members: Membres
 roles.index.label.updated_at: Modifié le
 roles.index.label.actions: Actions
 
-roles.flash_message.success.create:
-roles.flash_message.success.edit:
-roles.flash_message.success.delete:
-roles.flash_message.fail.create:
-roles.flash_message.fail.edit:
-roles.flash_message.fail.delete:
+streamers.index.title: Streamers
+streamers.index.no_results: Aucun streamer existant
+streamers.index.label.name: Nom
+streamers.index.label.channel: Chaine twitch
+streamers.index.label.updated_at: Ajouté le
+streamers.index.label.actions: Actions
+
+users.index.title: Utilisateurs
+users.index.no_results: Aucun utilisateur trouvé
+users.index.label.name: Nom
+users.index.label.role: Role
+users.index.label.category: Catégorie
+users.index.label.joined: Inscrit le
+users.index.label.actions: Actions

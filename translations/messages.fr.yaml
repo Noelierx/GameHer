@@ -47,3 +47,15 @@ esport:
 partners:
   title: Partenaires
   subtitle: ils nous soutiennent et nous les en remerçions
+
+#esport
+esport.member.team.team_main: Principale
+esport.member.team.team_academy: Académie
+esport.member.role.10_top: Top
+esport.member.role.20_jungle: Jungle
+esport.member.role.30_mid: Mid
+esport.member.role.40_adc: Adc
+esport.member.role.50_support: Support
+esport.member.role.60_coach: Coach
+esport.member.role.70_manager: Manager
+esport.member.role.80_project_manager: Chef de projet

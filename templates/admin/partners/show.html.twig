@@ -20,18 +20,3 @@
 
 {% endblock %}
 
-{% block sidebar %}
-    <div class="section actions">
-        <a href="{{ path('admin_partners_edit', {uuid: partner.uuidAsString}) }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-edit" aria-hidden="true"></i> Edit
-        </a>
-        <a href="{{ path('admin_partners_index') }}" class="btn btn-lg btn-block btn-info">
-            <i class="fa fa-return" aria-hidden="true"></i> Back
-        </a>
-        <a href="{{ path('admin_partners_delete', {uuid: partner.uuidAsString}) }}" class="btn btn-lg btn-block btn-danger">
-            <i class="fa fa-plus" aria-hidden="true"></i> Delete
-        </a>
-    </div>
-
-    {{ parent() }}
-{% endblock %}

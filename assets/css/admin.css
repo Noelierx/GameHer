@@ -1,3 +1,10 @@
+body {
+	background-color: #eee;
+}
+main {
+	padding-left: 300px;
+}
+
 .logo {
 	padding: 2rem 0;
 }
@@ -10,6 +17,11 @@
 	max-height: 100%;
 }
 
+.sidenav {
+	display: flex;
+	flex-direction: column;
+}
+
 .sidenav .nav-link {
 	display: flex;
 	align-items: center;
@@ -18,3 +30,9 @@
 .sidenav .nav-link svg {
 	margin-right: 1rem;
 }
+
+.filler {
+	flex-grow: 1;
+}
+
+.badge + .badge {margin-left: .25rem;}

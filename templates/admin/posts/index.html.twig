@@ -18,9 +18,10 @@
 			<thead>
 			<tr>
 				<th scope="col">{{ 'posts.index.label.name'|trans }}</th>
-				<th scope="col">{{ 'posts.index.label.tags'|trans }}</th>
-				<th scope="col"><i class="fa fa-pencil" aria-hidden="true"></i> {{ 'posts.index.label.published_at'|trans }}</th>
-				<th scope="col"><i class="fa fa-pencil" aria-hidden="true"></i> {{ 'posts.index.label.created_at'|trans }}</th>
+				<th scope="col"><i class="fa fa-user"></i> {{ 'posts.index.label.author'|trans }}</th>
+				<th scope="col"><i class="fa fa-tag"></i> {{ 'posts.index.label.tags'|trans }}</th>
+				<th scope="col"><i class="fa fa-pencil-alt" aria-hidden="true"></i> {{ 'posts.index.label.published_at'|trans }}</th>
+				<th scope="col"><i class="fa fa-pencil-alt" aria-hidden="true"></i> {{ 'posts.index.label.updated_at'|trans }}</th>
 				<th scope="col" class="center-align"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'posts.index.label.actions'|trans }}</th>
 			</tr>
 			</thead>
@@ -28,27 +29,25 @@
 			{% for post in posts %}
 				<tr>
 					<td>{{ post.title }}</td>
-					<td>{% for tag in post.tags %}{{ tag.name }}{% endfor %}</td>
+					<td>{{ post.author.displayName }}</td>
+					<td>{% for tag in post.tags %}<span class="badge teal new" data-badge-caption="">{{ tag.name }}</span>{% endfor %}</td>
 					{% if post.publishedAt %}
-						<td>{{ post.publishedAt| date }}</td>
+						<td>{{ post.publishedAt| date('d/m/y H:i') }}</td>
 					{% else %}
 						<td>{{ 'posts.index.not_published'|trans }}</td>
 					{% endif %}
-					<td>{{ post.createdAt| date }}</td>
+					<td>{{ post.updatedAt| date('d/m/y H:i') }}</td>
 					<td class="right-align">
 						<div class="item-actions">
-							<a href="{{ path('admin_posts_show', {uuid: post.uuidAsString}) }}" class="btn pink">
-								{{ 'default.action.show'|trans }}
+							<a href="{{ path('admin_posts_show', {uuid: post.uuidAsString}) }}" class="btn btn-floating pink" title="{{ 'default.action.show'|trans }}">
 								<i class="fa fa-eye" aria-hidden="true"></i>
 							</a>
-							<a href="{{ path('admin_posts_edit', {uuid: post.uuidAsString}) }}" class="btn purple">
-								{{ 'default.action.edit'|trans }}
+							<a href="{{ path('admin_posts_edit', {uuid: post.uuidAsString}) }}" class="btn btn-floating purple" title="{{ 'default.action.edit'|trans }}">
 								<i class="fa fa-edit" aria-hidden="true"></i>
 							</a>
 							<form action="{{ url('admin_posts_delete', {uuid: post.uuidAsString}) }}" method="post" data-confirmation="true" id="delete-form" style="display:inline-block">
 								<input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
-								<button type="submit" class="btn red">
-									{{ 'default.action.delete'|trans }}
+								<button type="submit" class="btn btn-floating red" title="{{ 'default.action.delete'|trans }}">
 									<i class="fa fa-trash" aria-hidden="true"></i>
 								</button>
 							</form>
@@ -57,7 +56,7 @@
 				</tr>
 			{% else %}
 				<tr>
-					<td colspan="4" align="center">{{ 'posts.index.no_results'|trans }}</td>
+					<td colspan="5" align="center">{{ 'posts.index.no_results'|trans }}</td>
 				</tr>
 			{% endfor %}
 			</tbody>

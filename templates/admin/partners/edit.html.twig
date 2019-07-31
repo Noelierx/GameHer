@@ -2,18 +2,66 @@
 
 {% block content %}
 
-    <h1>{{ partner.name }}</h1>
+	<div class="row">
+		<div class="col s12">
+			<h2>{{ partner.name }}
 
-    {{ form(form) }}
+				{% if partner.logo is not null %}
+					<img src="{{ asset('uploads/partners/' ~ partner.logo) }}" alt="{{ partner.name }}" class="right">
+				{% endif %}
+			</h2>
+		</div>
+	</div>
+
+
+	{{ form_start(form) }}
+	<div class="row">
+		<div class="input-field col s12">
+			{{ form_label(form.name) }}
+			{{ form_widget(form.name) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="file-field input-field col s4">
+			<label for="file-placeholder" class="active">Logo</label>
+			<div class="btn"><span>File</span> {{ form_widget(form.logo) }}</div>
+			<div class="file-path-wrapper"><input class="file-path" type="text" id="file-placeholder"></div>
+		</div>
+		<div class="input-field col s8">
+			{{ form_label(form.description) }}
+			{{ form_widget(form.description) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="input-field col s6">
+			<i class="fab fa-twitter prefix"></i>
+			{{ form_label(form.twitter) }}
+			{{ form_widget(form.twitter) }}
+		</div>
+		<div class="input-field col s6">
+			<i class="fa fa-globe prefix"></i>
+			{{ form_label(form.website) }}
+			{{ form_widget(form.website) }}
+		</div>
+
+		<div class="input-field col s6">
+			<i class="fab fa-facebook prefix"></i>
+			{{ form_label(form.facebook) }}
+			{{ form_widget(form.facebook) }}
+		</div>
+		<div class="input-field col s6">
+			<i class="fab fa-instagram prefix"></i>
+			{{ form_label(form.instagram) }}
+			{{ form_widget(form.instagram) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field">
+			{{ form_row(form.save) }}
+		</div>
+	</div>
+	{{ form_end(form) }}
 
 {% endblock %}
 
-{% block sidebar %}
-    <div class="section actions">
-        <a href="{{ path('admin_partners_index') }}" class="btn btn-lg btn-block btn-danger">
-            <i class="fa fa-return" aria-hidden="true"></i> Back
-        </a>
-    </div>
-
-    {{ parent() }}
-{% endblock %}

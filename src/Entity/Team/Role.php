@@ -22,7 +22,6 @@ class Role
     const CATEGORY_DIRECTION = 'direction';
     const CATEGORY_ADMINISTRATION = 'administration';
     const CATEGORY_MEMBERS = 'members';
-    const CATEGORY_ESPORT = 'esport';
 
     /**
      * @var int
@@ -43,6 +42,7 @@ class Role
      * @ORM\Column(type="string", nullable=false)
      * @Assert\NotNull
      * @Assert\NotBlank
+     * @Assert\Choice(callback="getAvailableCategories")
      */
     protected $category;
 
@@ -56,7 +56,7 @@ class Role
 
     /**
      * @var ArrayCollection|Member[]
-     * @ORM\OneToMany(targetEntity="App\Entity\Team\Member", mappedBy="role")
+     * @ORM\OneToMany(targetEntity="Member", mappedBy="role")
      */
     protected $members;
 
@@ -90,7 +90,6 @@ class Role
         return [
             self::CATEGORY_ADMINISTRATION,
             self::CATEGORY_DIRECTION,
-            self::CATEGORY_ESPORT,
             self::CATEGORY_MEMBERS,
         ];
     }

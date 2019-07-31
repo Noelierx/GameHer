@@ -1,0 +1,78 @@
+.textBanner {
+	text-align: center;
+	padding: 3rem 0;
+	&.--red {
+		background-color: var(--gh-red);
+		.textBanner__subtitle {color: var(--gh-blue);}
+	}
+	&.--blue {
+		background-color: var(--gh-blue);
+		.textBanner__subtitle {color: var(--gh-white);}
+	}
+}
+
+.textBanner__title {
+	font-family: 'headingcompressedpro-extbd', sans-serif;
+	font-size: 111px;
+	color: var(--gh-white);
+	text-transform: uppercase;
+}
+
+.textBanner__subtitle {
+	text-transform: uppercase;
+	a {color: var(--gh-yellow);}
+}
+
+.streamPanels {
+	background-color: #0f0e11;
+
+}
+
+.twitchExtension .row {
+	display: flex;
+}
+
+.twitchExtension, .streamersGH, .streamPanels {
+	padding: 4rem 0;
+}
+
+.streamersGH {
+	border-bottom: 5px solid var(--gh-blue);
+}
+
+.streamer {
+	position: relative;
+	font-family: 'headingcompressedpro-extbd', sans-serif;
+
+	p {margin: 0;line-height: 1;}
+
+	.footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		display: flex;
+
+		.links {
+			flex-grow: 1;
+			padding: .5rem;
+
+			.name {
+				font-size: 1.6rem;
+				color: var(--gh-red);
+			}
+			.channel {
+				font-size: 1.8rem;
+				color: var(--gh-white);
+				text-transform: uppercase;
+			}
+		}
+		.fleche {
+			margin: auto 0 0;
+			transition: all 200ms ease-in-out;
+			min-width: 60px;
+			max-width: 60px;
+			&:hover {filter: saturate(0.5);}
+		}
+	}
+}
+

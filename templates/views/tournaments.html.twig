@@ -3,5 +3,11 @@
 {% block body_id 'index' %}
 
 {% block main %}
-    Tournaments
+	{% include "common/titleBanner.html.twig" with {
+		mainTitle: 'Nos tournois',
+		content: '',
+		className: '--orange',
+	} only %}
+
+
 {% endblock %}

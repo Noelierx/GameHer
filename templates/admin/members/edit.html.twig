@@ -2,18 +2,70 @@
 
 {% block content %}
 
-    <h1>{{ member.nickname }}</h1>
+	<div class="row">
+		<div class="col s12">
+			<h2>{{ member.nickname }}
 
-    {{ form(form) }}
+				{% if member.picture is not null %}
+					<img src="{{ asset('uploads/members/' ~ member.picture) }}" alt="{{ member.nickname }}" class="right">
+				{% endif %}
+			</h2>
+		</div>
+	</div>
 
-{% endblock %}
+	{{ form_start(form) }}
+	<div class="row">
+		<div class="input-field col s4">
+			{{ form_label(form.firstname) }}
+			{{ form_widget(form.firstname) }}
+		</div>
+		<div class="input-field col s4">
+			{{ form_label(form.nickname) }}
+			{{ form_widget(form.nickname) }}
+		</div>
+		<div class="input-field col s4">
+			{{ form_label(form.lastname) }}
+			{{ form_widget(form.lastname) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="file-field input-field col s6">
+			<label for="file-placeholder" class="active">Picture</label>
+			<div class="btn"><span>File</span> {{ form_widget(form.picture) }}</div>
+			<div class="file-path-wrapper"><input class="file-path" type="text" id="file-placeholder"></div>
+		</div>
+		<div class="input-field col s6">
+			{{ form_label(form.role) }}
+			{{ form_widget(form.role) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field col s3">
+			<i class="fab fa-twitter prefix"></i>
+			{{ form_label(form.twitter) }}
+			{{ form_widget(form.twitter) }}
+		</div>
+		<div class="input-field col s3">
+			<i class="fab fa-twitch prefix"></i>
+			{{ form_label(form.twitch) }}
+			{{ form_widget(form.twitch) }}
+		</div>
+		<div class="input-field col s3">
+			<i class="fab fa-facebook prefix"></i>
+			{{ form_label(form.facebook) }}
+			{{ form_widget(form.facebook) }}
+		</div>
+		<div class="input-field col s3">
+			<i class="fab fa-instagram prefix"></i>
+			{{ form_label(form.instagram) }}
+			{{ form_widget(form.instagram) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field">
+			{{ form_row(form.save) }}
+		</div>
+	</div>
+	{{ form_end(form) }}
 
-{% block sidebar %}
-    <div class="section actions">
-        <a href="{{ path('admin_members_index') }}" class="btn btn-lg btn-block btn-danger">
-            <i class="fa fa-return" aria-hidden="true"></i> Back
-        </a>
-    </div>
-
-    {{ parent() }}
 {% endblock %}

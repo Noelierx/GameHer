@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'index' %}
+
+{% block main %}
+	<div class="container-fluid">
+		<div class="row article__row">
+			<div class="article__header">
+				<img src="{{ asset('build/img/blog/entete.png') }}" alt="{{ article.slug }}">
+			</div>
+			<h1 class="article__title">{{ article.title }}</h1>
+		</div>
+	</div>
+
+	{% set tags = [] %}
+	{% for tag in article.tags %}
+		{% set tags = tags|merge([tag.name]) %}
+	{% endfor %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h2 class="article__second_title">{{ article.title }}</h2>
+				<p class="article__metadata">
+					Posté par <span class="article__author">{{ article.author.displayName }}</span> le {{ article.publishedAt |date('d M Y') }} dans<span>
+						{% for tag in article.tags %}<a href="{{ path('blog', {tag: tag.name}) }}" class="article__tag">{{ tag.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+					</span>
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col article__content">
+				{{ article.content |raw }}
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid followUs">
+		<h4 class="followUs__subtitle">Si notre article vous a plu</h4>
+		<h3 class="followUs__title">Soutenez nous sur <a href="{{ path('donations') }}">Tipee</a></h3>
+	</div>
+
+	<div class="container author">
+		<div class="row">
+			<div class="col s3">
+				<img src="{{ asset('build/img/esport/player.png') }}" alt="{{ article.author.displayName }}" class="author__picture">
+			</div>
+			<div class="col s9">
+				<h5 class="author__name">{{ article.author.firstName }} <span class="author__nickname">{{ article.author.displayName }}</span> {{ article.author.lastName }}</h5>
+				<p class="author__description">Description</p>
+				<p class="author__socials">
+					{% if article.author.twitter is not null %}
+					<a href="//twitter.com/{{ article.author.twitter }}" target="_blank" rel="noreferrer noopener">
+						<i class="fab fa-twitter" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if article.author.facebook is not null %}
+					<a href="//facebook.com/{{ article.author.facebook }}" target="_blank" rel="noreferrer noopener">
+						<i class="fab fa-facebook-square" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if article.author.youtube is not null %}
+					<a href="//youtube.com{{ article.author.youtube }}" target="_blank" rel="noreferrer noopener">
+						<i class="fab fa-youtube-square" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if article.author.twitch is not null %}
+					<a href="//twitch.tv{{ article.author.twitch }}" target="_blank" rel="noreferrer noopener">
+						<i class="fab fa-twitch" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					<a href="#" target="_blank" rel="noreferrer noopener">
+						<i class="fab fa-discord" aria-hidden="true"></i>
+					</a>
+					{% if article.author.instagram is not null %}
+					<a href="//instagram.com{{ article.author.instagram }}" target="_blank" rel="noreferrer noopener">
+						<i class="fab fa-instagram" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container recommended">
+		<div class="row"><h5 class="recommended__title">Articles recommandés</h5></div>
+		<div class="row">
+			<div class="col s4">
+				<div class="article">
+					<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
+					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
+						<div class="links">
+							<p class="tag">{% for tag in article.tags %}{{ tag.name }} {% endfor %}</p>
+							<p class="channel">{{ article.title }}</p>
+						</div>
+						<div class="fleche">
+							<img src="{{ asset('build/img/blog/fleche.png') }}" alt="{{ article.title }}">
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col s4">
+				<div class="article">
+					<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
+					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
+						<div class="links">
+							<p class="tag">{% for tag in article.tags %}{{ tag.name }} {% endfor %}</p>
+							<p class="channel">{{ article.title }}</p>
+						</div>
+						<div class="fleche">
+							<img src="{{ asset('build/img/blog/fleche.png') }}" alt="{{ article.title }}">
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col s4">
+				<div class="article">
+					<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
+					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
+						<div class="links">
+							<p class="tag">{% for tag in article.tags %}{{ tag.name }} {% endfor %}</p>
+							<p class="channel">{{ article.title }}</p>
+						</div>
+						<div class="fleche">
+							<img src="{{ asset('build/img/blog/fleche.png') }}" alt="{{ article.title }}">
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr style="border-bottom: 3px solid var(--gh-blue);">
+{% endblock %}

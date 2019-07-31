@@ -49,7 +49,7 @@ class PostsController extends AbstractController
             $em->persist($post);
             $em->flush();
 
-            $this->addFlash('success', 'posts.flash_message.success.create');
+            $this->addFlash('success', 'posts.success.create');
 
             return $this->redirectToRoute('admin_posts_index');
         }
@@ -71,47 +71,47 @@ class PostsController extends AbstractController
         ]);
     }
 
-	/**
-	 * @Route("/{uuid}/edit", name="admin_posts_edit", methods={"GET", "POST"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
-	 * @Route("/{slug}/edit", name="admin_posts_edit_slug", methods={"GET", "POST"})
-	 */
-	public function edit(Request $request, Post $post, FileUploader $fileUploader): Response
-	{
-		$form = $this->createForm(PostType::class, $post);
-		$form->handleRequest($request);
+    /**
+     * @Route("/{uuid}/edit", name="admin_posts_edit", methods={"GET", "POST"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
+     * @Route("/{slug}/edit", name="admin_posts_edit_slug", methods={"GET", "POST"})
+     */
+    public function edit(Request $request, Post $post, FileUploader $fileUploader): Response
+    {
+        $form = $this->createForm(PostType::class, $post);
+        $form->handleRequest($request);
 
-		if ($form->isSubmitted() && $form->isValid()) {
-			if (($picture = $form['picture']->getData())) {
-				$post->setPicture($fileUploader->upload($picture, $this->getParameter('posts_pictures_directory')));
-			}
-			$this->getDoctrine()->getManager()->flush();
+        if ($form->isSubmitted() && $form->isValid()) {
+            if (($picture = $form['picture']->getData())) {
+                $post->setPicture($fileUploader->upload($picture, $this->getParameter('posts_pictures_directory')));
+            }
+            $this->getDoctrine()->getManager()->flush();
 
-			$this->addFlash('success', 'posts.flash_message.success.edit');
+            $this->addFlash('success', 'posts.success.edit');
 
-			return $this->redirectToRoute('admin_posts_edit', ['uuid' => $post->getUuidAsString()]);
-		}
+            return $this->redirectToRoute('admin_posts_edit', ['uuid' => $post->getUuidAsString()]);
+        }
 
-		return $this->render('admin/posts/edit.html.twig', [
-			'form' => $form->createView(),
-			'post' => $post,
-		]);
-	}
+        return $this->render('admin/posts/edit.html.twig', [
+            'form' => $form->createView(),
+            'post' => $post,
+        ]);
+    }
 
-	/**
-	 * @Route("/{uuid}/delete", methods={"POST"}, name="admin_posts_delete")
-	 */
-	public function delete(Request $request, Post $post): Response
-	{
-		if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
-			return $this->redirectToRoute('admin_posts_index');
-		}
+    /**
+     * @Route("/{uuid}/delete", methods={"POST"}, name="admin_posts_delete")
+     */
+    public function delete(Request $request, Post $post): Response
+    {
+        if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
+            return $this->redirectToRoute('admin_posts_index');
+        }
 
-		$em = $this->getDoctrine()->getManager();
-		$em->remove($post);
-		$em->flush();
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($post);
+        $em->flush();
 
-		$this->addFlash('success', 'posts.flash_message.success.delete');
+        $this->addFlash('success', 'posts.success.delete');
 
-		return $this->redirectToRoute('admin_posts_index');
-	}
+        return $this->redirectToRoute('admin_posts_index');
+    }
 }

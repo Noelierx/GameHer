@@ -3,6 +3,7 @@
 namespace App\Entity\Blog;
 
 use App\Entity\StringUuidTrait;
+use App\Entity\User\User;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -71,7 +72,7 @@ class Post
     protected $published = false;
 
     /**
-     * @var UserInterface
+     * @var User
      * @ORM\ManyToOne(targetEntity="App\Entity\User\User", inversedBy="posts")
      */
     protected $author;
@@ -157,7 +158,7 @@ class Post
         return $this;
     }
 
-    public function getAuthor(): UserInterface
+    public function getAuthor(): User
     {
         return $this->author;
     }
@@ -181,15 +182,15 @@ class Post
         return $this;
     }
 
-	public function getCreatedAt(): DateTime
-	{
-		return $this->createdAt;
-	}
+    public function getCreatedAt(): DateTime
+    {
+        return $this->createdAt;
+    }
 
-	public function getUpdatedAt(): DateTime
-	{
-		return $this->updatedAt;
-	}
+    public function getUpdatedAt(): DateTime
+    {
+        return $this->updatedAt;
+    }
 
     public function getTags(): Collection
     {
@@ -263,9 +264,9 @@ class Post
     public function setPublished(bool $published): self
     {
         $this->published = $published;
-        if ($published === true) {
-        	$this->setPublishedAt(new DateTime());
-		}
+        if (true === $published) {
+            $this->setPublishedAt(new DateTime());
+        }
 
         return $this;
     }
