@@ -35,6 +35,7 @@
 	margin: 6rem auto 3rem;
 	border-bottom: 3px solid var(--gh-red);
 	padding-bottom: 2rem;
+	font-family: 'FoundationSans-Roman', sans-serif;
 }
 
 .whoAreWe__title {

@@ -9,6 +9,13 @@ const $ = require('jquery');
 $('select').formSelect();
 $('.dropdown-trigger').dropdown();
 
+//Blog
+$('#news__categories').change(function ($event) {
+	$event.preventDefault();
+	window.location.href = window.location.origin + window.location.pathname + '?tag=' + $(this).val().toLowerCase();
+});
+
+//Esport
 $('.leagueTeams__button').click(function ($event) {
 	$event.preventDefault();
 
@@ -24,11 +31,14 @@ $('.leagueTeams__button').click(function ($event) {
 	}
 });
 
-$('#news__categories').change(function ($event) {
+//Tournaments
+$('.gameherLeague__button').click(function ($event) {
 	$event.preventDefault();
-	window.location.href = window.location.origin + window.location.pathname + '?tag=' + $(this).val().toLowerCase();
+	$('.tournamentToggled').slideToggle();
+	$('.gameherLeague').toggleClass('opened')
 });
 
+//About
 $('.memberToggle').click(function ($event) {
 	$event.preventDefault();
 	if ($(this).hasClass('active')) {

@@ -56,3 +56,7 @@ esport.member.role.50_support: Support
 esport.member.role.60_coach: Coach
 esport.member.role.70_manager: Manager
 esport.member.role.80_project_manager: Chef de projet
+
+#tournament
+tournament.ghleague.title: Game'Her League
+tournament.ghleague.show: Voir
