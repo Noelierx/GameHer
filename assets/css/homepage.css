@@ -1,0 +1,40 @@
+.contentClass {
+    text-transform: uppercase;
+    margin: -35px;
+}
+.contentClass p {
+    margin: 0;
+    font-size: 60px;
+    font-family: 'headingcompressedpro-extbd', sans-serif;
+}
+.titleHomepage {
+    font-family: 'headingcompressedpro-extbd', sans-serif;
+    font-size: 45px;
+}
+.withBackgroundImage {
+    background-image:
+            linear-gradient(rgba(201,46,75, 0.1), rgba(201,46,75, 0.1)),
+            url("../img/homepage/MASCOTTE.png");
+    background-position: left;
+    background-color: var(--gh-red);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.esportTitle{
+  color: #2BCA63;
+}
+.communicationTitle{
+    color: #C82E4A;
+}
+.tournoiTitle{
+    color: #D5D096;
+}
+.streamingTitle{
+    color: #9C4593;
+}
+.graphismeTitle{
+    color: #C9772E;
+}
+.presseTitle{
+    color: #A1BCEB;
+}

@@ -3,10 +3,10 @@
         <h2 class="recruitment-title">{{ explanation }}</h2>
         <div class="row">
             {% for element in elements %}
-                <div class="col s12 m4">
+                <div class="col s4">
                     <div class="icon-block">
                         <img src="{{ element.logo_url }}"/>
-                        <h5>{{ element.title }}</h5>
+                        <h5 class="{{ titleClass | default('') }}">{{ element.title }}</h5>
                         <p class="light">{{ element.content }}</p>
                     </div>
                 </div>

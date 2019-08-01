@@ -25,7 +25,10 @@ mit_license: MIT License
 help.app_description: App description
 help.more_information: More information
 
-# donations
+homepage:
+  title: Game'Her
+  subtitle: Reveal Yourself
+  second_title: Introduction
 donations:
   title: Soutenir Game'Her
   subtitle: Pourquoi et comment nous soutenir ?

@@ -36,6 +36,8 @@
 
 body {
     background-color: var(--gh-white);
+	font-size: 1.2rem;
+	font-family: 'FoundationSans-Roman', sans-serif;
 }
 img {
 	max-width: 100%;
@@ -61,6 +63,9 @@ nav a, nav ul a {
 .nav-wrapper {
 	border-bottom: 3px solid var(--gh-blue);
 	z-index: 1030;
+}
+.sidenav {
+	margin-top:70px;
 }
 h1 {
 	font-family: 'headingcompressedpro-extbd', sans-serif;

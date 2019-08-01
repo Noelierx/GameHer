@@ -1,18 +1,26 @@
-{% set _hasLink = link is defined %}
+{% set _hasContenu = contenu is defined %}
 
-<div class="page-header page-header--big sectionRed">
+<div class="page-header page-header--big {{ className | default('') }}">
     <div class="page-header__wrapper">
-        <div class="page-header__content">
+        <div class="page-header__content {{ classNameContent | default('') }}">
             <div class="page-header__content-wrapper">
                 {% if mainTitle is defined %}
-                <h1 class="page-header__title">{{ mainTitle | raw }}</h1>
+                <h1 class="page-header__title {{ titleClass | default('') }}">{{ mainTitle | raw }}</h1>
                 {% endif %}
-                <div class="page-header__desc editor-content">
+                {% if secondTitle is defined %}
+                    <h2 class="page-header__title {{ titleClass | default('') }}">{{ secondTitle | raw }}</h2>
+                {% endif %}
+                {% if content is defined %}
+                <div class="page-header__desc editor-content {{ contentClass | default('') }}">
                     <p><span>{{ content | raw }}</span></p>
                 </div>
+                {% endif %}
             </div>
         </div>
-        <div class="page-header__img-wrapper" style="background-image: url({{ image_url }})">
+        <div class="page-header__img-wrapper" style="background-image: url({{ image_url | default('https://www.fundermax.at/fileadmin/redakteure/_processed_/2/0/csm_0085_1c4866d798.jpg') }})">
+            {% if _hasContenu %}
+                {{ contenu | raw }}
+            {% endif %}
         </div>
 
     </div>
