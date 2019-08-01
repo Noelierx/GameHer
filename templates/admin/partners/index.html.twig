@@ -24,7 +24,7 @@
     {% for partner in partners %}
         <tr>
             <td>{{ partner.name }}</td>
-            <td>{{ partner.updatedAt| date }}</td>
+            <td>{{ partner.updatedAt| date('d/m/y') }}</td>
             <td class="right-align">
                 <div class="item-actions">
                     <a href="{{ path('admin_partners_show', {uuid: partner.uuidAsString}) }}" class="btn pink">

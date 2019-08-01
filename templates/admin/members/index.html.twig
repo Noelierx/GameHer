@@ -15,7 +15,6 @@
 			<th scope="col">{{ 'members.index.label.name'|trans }}</th>
 			<th scope="col">{{ 'members.index.label.role'|trans }}</th>
 			<th scope="col">{{ 'members.index.label.category'|trans }}</th>
-			<th scope="col"><i class="fa fa-pencil-alt" aria-hidden="true"></i> {{ 'members.index.label.updated_at'|trans }}</th>
 			<th scope="col" class="center-align"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'members.index.label.actions'|trans }}</th>
     </tr>
     </thead>
@@ -25,17 +24,14 @@
             <td>{{ member.nickname }}</td>
             <td>{{ member.role.name }}</td>
             <td>{{ ('members.role.category.' ~ member.role.category) |trans }}</td>
-            <td>{{ member.updatedAt| date }}</td>
             <td class="right-align">
                 <div class="item-actions">
-                    <a href="{{ path('admin_members_edit', {uuid: member.uuidAsString}) }}" class="btn teal">
-											{{ 'default.action.edit'|trans }}
+                    <a href="{{ path('admin_members_edit', {uuid: member.uuidAsString}) }}" class="btn btn-floating teal">
 											<i class="fa fa-edit" aria-hidden="true"></i>
                     </a>
                     <form action="{{ url('admin_members_delete', {uuid: member.uuidAsString}) }}" method="post" data-confirmation="true" id="delete-form" style="display:inline-block">
                         <input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
-                        <button type="submit" class="btn red">
-													{{ 'default.action.delete'|trans }}
+                        <button type="submit" class="btn btn-floating red">
 													<i class="fa fa-trash" aria-hidden="true"></i>
                         </button>
                     </form>

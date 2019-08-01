@@ -26,7 +26,7 @@
 		<div class="row posts">
 			{% for article in paginator.results %}
 			<div class="col s6 l4">
-				<div class="article">
+				<div class="imageWithFooter --red">
 					<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
 					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
 						<div class="links">

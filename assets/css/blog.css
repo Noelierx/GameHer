@@ -36,12 +36,14 @@ input[type="text"].news__search {
 	margin-bottom: 6rem;
 }
 
-.article {
+.imageWithFooter {
 	position: relative;
 	font-family: 'headingcompressedpro-extbd', sans-serif;
 	margin-bottom: 1.5rem;
 
 	p {margin: 0;line-height: 1;}
+	&.--orange .name {color: var(--gh-orange);}
+	&.--red .name {color: var(--gh-red);}
 
 	.footer {
 		position: absolute;

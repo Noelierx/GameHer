@@ -29,7 +29,7 @@
 .streamPanels {
 	padding: 4rem 0;
 	background-color: #0f0e11;
-	img { margin: auto; }
+	img { margin: 1rem auto; }
 	a { display: block; margin: 1rem 0; }
 }
 
@@ -44,40 +44,3 @@
 .streamersGH {
 	border-bottom: 5px solid var(--gh-blue);
 }
-
-.streamer {
-	position: relative;
-	font-family: 'headingcompressedpro-extbd', sans-serif;
-
-	p {margin: 0;line-height: 1;}
-
-	.footer {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		display: flex;
-
-		.links {
-			flex-grow: 1;
-			padding: .5rem;
-
-			.name {
-				font-size: 1.6rem;
-				color: var(--gh-red);
-			}
-			.channel {
-				font-size: 1.8rem;
-				color: var(--gh-white);
-				text-transform: uppercase;
-			}
-		}
-		.fleche {
-			margin: auto 0 0;
-			transition: all 200ms ease-in-out;
-			min-width: 60px;
-			max-width: 60px;
-			&:hover {filter: saturate(0.5);}
-		}
-	}
-}
-

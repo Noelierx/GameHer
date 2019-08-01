@@ -25,7 +25,7 @@
 			<tr>
 				<td>{{ user.displayName }}</td>
 				<td>{% for role in user.roles %}{{ role }}{% endfor %}</td>
-				<td>{{ user.createdAt| date }}</td>
+				<td>{{ user.createdAt| date('d/m/y H:i') }}</td>
 				<td class="right-align">
 					<div class="item-actions">
 						<a href="{{ path('admin', {uuid: user.uuidAsString}) }}" class="btn teal">
