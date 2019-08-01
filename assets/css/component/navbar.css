@@ -1,0 +1,28 @@
+@media (min-width: 601px) {
+	nav {height: 5rem;line-height: 5rem;}
+}
+
+nav .brand-logo {
+	padding: 1rem;
+	@media (max-width: 767px) { padding: .5rem; }
+}
+nav img {max-height: 3rem;}
+
+nav li {
+	transition: background-color 200ms ease-in-out;
+}
+
+nav a, nav ul a {
+	color: var(--gh-blue);
+	&.active {color: var(--gh-pink);}
+}
+
+.nav-wrapper {
+	border-bottom: 3px solid var(--gh-blue);
+	background-color: var(--gh-white);
+	z-index: 1030;
+}
+
+.sidenav {
+	margin-top:70px;
+}

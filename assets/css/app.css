@@ -35,7 +35,7 @@
 }
 
 body {
-    background-color: var(--gh-white);
+	background-color: var(--gh-white);
 	font-size: 1.2rem;
 	font-family: 'FoundationSans-Roman', sans-serif;
 }
@@ -52,21 +52,7 @@ img {
 .body-container {
     flex-grow: 1;
 }
-.primary {
-    color: var(--gh-red);
-}
-nav a, nav ul a {
-	color: var(--gh-blue);
-	font-family: "FoundationSans-Roman", sans-serif;
-	&.active {color: var(--gh-pink);}
-}
-.nav-wrapper {
-	border-bottom: 3px solid var(--gh-blue);
-	z-index: 1030;
-}
-.sidenav {
-	margin-top:70px;
-}
+
 h1 {
 	font-family: 'headingcompressedpro-extbd', sans-serif;
     font-size: 111px;
@@ -85,16 +71,11 @@ h4 {
 	font-size: 2rem;
 }
 
-@media only screen and (min-width: 601px) {
-	nav {height: 5rem;line-height: 5rem;}
+hr {
+	border-bottom: 3px solid var(--gh-blue);
 }
-nav .brand-logo {
-	padding: 1rem;
-	height: 5rem;
-}
-nav img {max-height: 3rem;}
 
-.sectionBlue{
+.sectionBlue {
 	background-color: var(--gh-blue);
 	color: var(--gh-white);
 	margin-top: -35px;

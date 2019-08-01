@@ -1,4 +1,5 @@
-<footer class="body-footer page-footer white">
+{% spaceless %}
+<footer class="page-footer">
     {% include "common/partnerBanner.html.twig" with {
         partnerBanner_classImage: "partnerBanner_footer",
         partners : [
@@ -24,54 +25,46 @@
             }
         ]
     } only %}
-    <hr style="background-color: var(--gh-blue); width: 50%; height:3px;">
-    <div class="container">
+		<hr>
+    <div class="container-fluid">
         <div class="row">
-            <div class="col l3 s12">
+            <div class="col l3 hide-on-med-and-down">
                 <img src="{{ asset('build/img/logo_footer.png') }}" alt="GameHer">
             </div>
-            <div class="col l3 s12">
-                <h5 class="primary">Game'Her</h5>
+            <div class="col l3 s6 m4">
+                <h5>{{ 'footer.title.gameher' |trans }}</h5>
                 <ul>
-                    <li><a href="{{ path('blog') }}">{{ 'menu.blog'|trans }}</a></li>
-                    <li><a href="{{ path('esport') }}">{{ 'menu.esport'|trans }}</a></li>
-                    <li><a href="{{ path('webtv') }}">{{ 'menu.webtv'|trans }}</a></li>
-                    <li><a href="{{ path('tournaments') }}">{{ 'menu.tournaments'|trans }}</a></li>
-                    <li><a href="#">{{ 'menu.team.about'|trans }}</a></li>
+                    <li><a href="{{ path('blog') }}">{{ 'footer.menu.blog'|trans }}</a></li>
+                    <li><a href="{{ path('esport') }}">{{ 'footer.menu.esport'|trans }}</a></li>
+                    <li><a href="{{ path('webtv') }}">{{ 'footer.menu.webtv'|trans }}</a></li>
+                    <li><a href="{{ path('tournaments') }}">{{ 'footer.menu.tournaments'|trans }}</a></li>
+                    <li><a href="#">{{ 'footer.menu.about'|trans }}</a></li>
                 </ul>
             </div>
-            <div class="col l3 s12">
-                <h5 class="primary">Liens utiles</h5>
+            <div class="col l3 s6 m4">
+                <h5>{{ 'footer.title.links' |trans }}</h5>
                 <ul>
-                    <li><a href="#">{{ 'menu.team.presskit'|trans }}</a></li>
-                    <li><a href="{{ path('partners') }}">{{ 'menu.partners'|trans }}</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Mentions Légales</a></li>
+                    <li><a href="#">{{ 'footer.menu.presskit'|trans }}</a></li>
+                    <li><a href="{{ path('partners') }}">{{ 'footer.menu.partners'|trans }}</a></li>
+                    <li><a href="#">{{ 'footer.menu.privacy_policy' |trans }}</a></li>
+                    <li><a href="#">{{ 'footer.menu.legal_mention' |trans }}</a></li>
                 </ul>
             </div>
-            <div class="col l3 s12">
-                <h5 class="primary">Nous suivre</h5>
-                <p>
-                    <a href="https://twitter.com/GameHer" title="GameHer Twitter">
-                        <i class="fab fa-twitter" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://www.facebook.com/GameHer" title="GameHer Facebook">
-                        <i class="fab fa-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" title="GameHer Youtube">
-                        <i class="fab fa-youtube" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" title="GameHer Twitch">
-                        <i class="fab fa-twitch" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" title="GameHer Discord">
-                        <i class="fab fa-discord" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" title="GameHer Instagram">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                    </a>
-                </p>
+            <div class="col l3 s12 m4">
+                <h5>{{ 'footer.title.follow_us' |trans }}</h5>
+								<ul>
+									<li><a href="{{ path('contact')}}">{{ 'footer.menu.contact_us'|trans }}</a></li>
+									<li class="footer__socials">
+										<a href="//twitter.com/GameHer" title="GameHer Twitter"><i class="fab fa-twitter" aria-hidden="true"></i>                    </a>
+										<a href="//facebook.com/GameHer" title="GameHer Facebook"><i class="fab fa-facebook-square" aria-hidden="true"></i>                    </a>
+										<a href="#" title="GameHer Youtube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+										<a href="#" title="GameHer Twitch"><i class="fab fa-twitch" aria-hidden="true"></i></a>
+										<a href="#" title="GameHer Discord"><i class="fab fa-discord" aria-hidden="true"></i></a>
+										<a href="#" title="GameHer Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+									</li>
+								</ul>
             </div>
         </div>
     </div>
 </footer>
+{% endspaceless %}

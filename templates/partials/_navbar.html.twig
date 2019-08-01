@@ -15,7 +15,7 @@
         <li><a href="{{ path('display_profile') }}">{{ 'menu.user'|trans }}</a></li>
         <li><a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a></li>
     </ul>
-        <ul class="sidenav" id="mobile-demo">
+        <ul class="sidenav" id="mobile">
             <li><a href="{{ path('blog') }}">{{ 'menu.blog'|trans }}</a></li>
             <li><a href="{{ path('esport') }}">{{ 'menu.esport'|trans }}</a></li>
             <li><a href="{{ path('webtv') }}">{{ 'menu.webtv'|trans }}</a></li>
@@ -34,8 +34,8 @@
             {% endif %}
         </ul>
     <nav>
-        <div class="nav-wrapper white">
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <div class="nav-wrapper">
+            <a href="#" data-target="mobile" class="sidenav-trigger"><i class="fa fa-bars"></i></a>
 					<ul class="right hide-on-med-and-down">
 						<li><a href="{{ path('blog') }}" {{ _self.activeLink('blog') }}>{{ 'menu.blog'|trans }}</a></li>
 						<li><a href="{{ path('esport') }}" {{ _self.activeLink('esport') }}>{{ 'menu.esport'|trans }}</a></li>

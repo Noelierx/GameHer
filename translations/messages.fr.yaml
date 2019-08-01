@@ -63,3 +63,18 @@ esport.member.role.80_project_manager: Chef de projet
 #tournament
 tournament.ghleague.title: Game'Her League
 tournament.ghleague.show: Voir
+
+#footer
+footer.title.gameher: Game'Her
+footer.title.links: Liens utiles
+footer.title.follow_us: Nous suivre
+footer.menu.blog: News & Article
+footer.menu.esport: Esport
+footer.menu.webtv: WebTV
+footer.menu.tournaments: Tournois
+footer.menu.about: A propos
+footer.menu.presskit: Media kit
+footer.menu.partners: Partenaires
+footer.menu.privacy_policy: Privacy Policy
+footer.menu.legal_mention: Mentions Légales
+footer.menu.contact_us: Contact

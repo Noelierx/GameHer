@@ -8,7 +8,7 @@
 	padding: 6rem 0 6rem;
 	height: calc(100vh - 5rem);
 
-hr {margin: 2rem 0;}
+hr {margin: 2rem 0;border-width:1px;border-color: var(--gh-white);}
 }
 
 .numbersBanner__title {
@@ -42,12 +42,9 @@ hr {margin: 2rem 0;}
 	margin: 6rem auto 4rem;
 	border-bottom: 3px solid var(--gh-red);
 	padding-bottom: 6rem;
-	font-family: 'FoundationSans-Roman', sans-serif;
 }
 
 .whoAreWe__title {
-	font-size: 1.6rem;
-	font-family: "headingcompressedpro-extbd", sans-serif;
 	text-transform: uppercase;
 }
 .whoAreWe__illustration {
