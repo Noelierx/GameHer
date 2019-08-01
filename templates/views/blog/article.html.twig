@@ -43,10 +43,10 @@
 	<div class="container author">
 		<div class="row">
 			<div class="col s3">
-				<img src="{{ asset('build/img/esport/player.png') }}" alt="{{ article.author.displayName }}" class="author__picture">
+				<img src="{{ article.author.picture ? asset('uploads/members/' ~ article.author.picture) : asset('build/img/esport/player.png') }}" alt="{{ article.author.displayName }}" class="author__picture">
 			</div>
 			<div class="col s9">
-				<h5 class="author__name">{{ article.author.firstName }} <span class="author__nickname">{{ article.author.displayName }}</span> {{ article.author.lastName }}</h5>
+				<h5 class="author__name">{{ article.author.firstName | default('') }} <span class="author__nickname">{{ article.author.displayName }}</span> {{ article.author.lastName | default('') }}</h5>
 				<p class="author__description">Description</p>
 				<p class="author__socials">
 					{% if article.author.twitter is not null %}

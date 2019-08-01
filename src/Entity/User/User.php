@@ -116,6 +116,12 @@ class User implements UserInterface
      */
     protected $instagram;
 
+	/**
+	 * @var string
+	 * @ORM\Column(type="string", nullable=true)
+	 */
+	protected $picture;
+
     /**
      * @var Collection|Post[]
      * @ORM\OneToMany(targetEntity="App\Entity\Blog\Post", mappedBy="author")
@@ -224,7 +230,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getFirstName(): string
+    public function getFirstName(): ?string
     {
         return $this->firstName;
     }
@@ -236,7 +242,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getLastName(): string
+    public function getLastName(): ?string
     {
         return $this->lastName;
     }
@@ -399,5 +405,17 @@ class User implements UserInterface
 	public function getCreatedAt(): DateTime
 	{
 		return $this->createdAt;
+	}
+
+	public function getPicture(): ?string
+	{
+		return $this->picture;
+	}
+
+	public function setPicture(string $picture): self
+	{
+		$this->picture = $picture;
+
+		return $this;
 	}
 }
