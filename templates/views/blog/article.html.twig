@@ -41,95 +41,9 @@
 	</div>
 
 	<div class="container author">
-		<div class="row">
-			<div class="col s3">
-				<img src="{{ article.author.picture ? asset('uploads/members/' ~ article.author.picture) : asset('build/img/esport/player.png') }}" alt="{{ article.author.displayName }}" class="author__picture">
-			</div>
-			<div class="col s9">
-				<h5 class="author__name">{{ article.author.firstName | default('') }} <span class="author__nickname">{{ article.author.displayName }}</span> {{ article.author.lastName | default('') }}</h5>
-				<p class="author__description">Description</p>
-				<p class="author__socials">
-					{% if article.author.twitter is not null %}
-					<a href="//twitter.com/{{ article.author.twitter }}" target="_blank" rel="noreferrer noopener">
-						<i class="fab fa-twitter" aria-hidden="true"></i>
-					</a>
-					{% endif %}
-					{% if article.author.facebook is not null %}
-					<a href="//facebook.com/{{ article.author.facebook }}" target="_blank" rel="noreferrer noopener">
-						<i class="fab fa-facebook-square" aria-hidden="true"></i>
-					</a>
-					{% endif %}
-					{% if article.author.youtube is not null %}
-					<a href="//youtube.com{{ article.author.youtube }}" target="_blank" rel="noreferrer noopener">
-						<i class="fab fa-youtube-square" aria-hidden="true"></i>
-					</a>
-					{% endif %}
-					{% if article.author.twitch is not null %}
-					<a href="//twitch.tv{{ article.author.twitch }}" target="_blank" rel="noreferrer noopener">
-						<i class="fab fa-twitch" aria-hidden="true"></i>
-					</a>
-					{% endif %}
-					<a href="#" target="_blank" rel="noreferrer noopener">
-						<i class="fab fa-discord" aria-hidden="true"></i>
-					</a>
-					{% if article.author.instagram is not null %}
-					<a href="//instagram.com{{ article.author.instagram }}" target="_blank" rel="noreferrer noopener">
-						<i class="fab fa-instagram" aria-hidden="true"></i>
-					</a>
-					{% endif %}
-				</p>
-			</div>
-		</div>
+		{% include('views/blog/_author.html.twig') with {author: article.author} %}
 	</div>
 
-	<div class="container recommended">
-		<div class="row"><h5 class="recommended__title">Articles recommandés</h5></div>
-		<div class="row">
-			<div class="col s4">
-				<div class="article">
-					<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
-					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
-						<div class="links">
-							<p class="tag">{% for tag in article.tags %}{{ tag.name }} {% endfor %}</p>
-							<p class="channel">{{ article.title }}</p>
-						</div>
-						<div class="fleche">
-							<img src="{{ asset('build/img/blog/fleche.png') }}" alt="{{ article.title }}">
-						</div>
-					</a>
-				</div>
-			</div>
-
-			<div class="col s4">
-				<div class="article">
-					<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
-					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
-						<div class="links">
-							<p class="tag">{% for tag in article.tags %}{{ tag.name }} {% endfor %}</p>
-							<p class="channel">{{ article.title }}</p>
-						</div>
-						<div class="fleche">
-							<img src="{{ asset('build/img/blog/fleche.png') }}" alt="{{ article.title }}">
-						</div>
-					</a>
-				</div>
-			</div>
-
-			<div class="col s4">
-				<div class="article">
-					<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
-					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
-						<div class="links">
-							<p class="tag">{% for tag in article.tags %}{{ tag.name }} {% endfor %}</p>
-							<p class="channel">{{ article.title }}</p>
-						</div>
-						<div class="fleche">
-							<img src="{{ asset('build/img/blog/fleche.png') }}" alt="{{ article.title }}">
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+	{{  render(controller('App\\Controller\\SideController::recommended')) }}
 	<hr>
 {% endblock %}

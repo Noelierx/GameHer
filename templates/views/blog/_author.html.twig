@@ -1,0 +1,41 @@
+{% spaceless %}
+	<div class="row">
+		<div class="col s3">
+			<img src="{{ author.picture ? asset('uploads/members/' ~ author.picture) : asset('build/img/esport/player.png') }}" alt="{{ author.displayName }}" class="author__picture">
+		</div>
+		<div class="col s9">
+			<h5 class="author__name">{{ author.firstName | default('') }} <span class="author__nickname">{{ author.displayName }}</span> {{ author.lastName | default('') }}</h5>
+			<p class="author__description">Description</p>
+			<p class="author__socials">
+				{% if author.twitter is not null %}
+					<a href="//twitter.com/{{ author.twitter }}" target="_blank" rel="noreferrer noopener">
+						<i class="fab fa-twitter" aria-hidden="true"></i>
+					</a>
+				{% endif %}
+				{% if author.facebook is not null %}
+					<a href="//facebook.com/{{ author.facebook }}" target="_blank" rel="noreferrer noopener">
+						<i class="fab fa-facebook-square" aria-hidden="true"></i>
+					</a>
+				{% endif %}
+				{% if author.youtube is not null %}
+					<a href="//youtube.com{{ author.youtube }}" target="_blank" rel="noreferrer noopener">
+						<i class="fab fa-youtube-square" aria-hidden="true"></i>
+					</a>
+				{% endif %}
+				{% if author.twitch is not null %}
+					<a href="//twitch.tv{{ author.twitch }}" target="_blank" rel="noreferrer noopener">
+						<i class="fab fa-twitch" aria-hidden="true"></i>
+					</a>
+				{% endif %}
+				<a href="#" target="_blank" rel="noreferrer noopener">
+					<i class="fab fa-discord" aria-hidden="true"></i>
+				</a>
+				{% if author.instagram is not null %}
+					<a href="//instagram.com{{ author.instagram }}" target="_blank" rel="noreferrer noopener">
+						<i class="fab fa-instagram" aria-hidden="true"></i>
+					</a>
+				{% endif %}
+			</p>
+		</div>
+	</div>
+{% endspaceless %}

@@ -38,4 +38,13 @@ class PostRepository extends ServiceEntityRepository
 
         return (new Paginator($qb))->paginate($page);
     }
+
+	public function getRecommended(int $int)
+	{
+		return $this->createQueryBuilder('p')
+			->orderBy('p.publishedAt', 'DESC')
+			->setMaxResults(3)
+			->getQuery()
+			->getResult();
+	}
 }
