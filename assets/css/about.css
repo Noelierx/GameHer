@@ -8,7 +8,7 @@
 	padding: 6rem 0 6rem;
 	min-height: calc(100vh - 5rem);
 
-hr {margin: 2rem 0;border-width:1px;border-color: var(--gh-white);}
+	hr { margin: 2rem 0;border-width:1px;border-color: #e6687e; }
 }
 
 .numbersBanner__title {
@@ -19,8 +19,8 @@ hr {margin: 2rem 0;border-width:1px;border-color: var(--gh-white);}
 }
 
 .numbersBanner__arrow {
-	font-size: 5rem;
-	text-align: center;
+	display: flex;
+	justify-content: center;
 	margin-top: 6rem;
 }
 
@@ -46,6 +46,7 @@ hr {margin: 2rem 0;border-width:1px;border-color: var(--gh-white);}
 
 .whoAreWe__title {
 	text-transform: uppercase;
+	font-size: 35px;
 }
 .whoAreWe__illustration {
 	position: relative;
@@ -54,13 +55,15 @@ hr {margin: 2rem 0;border-width:1px;border-color: var(--gh-white);}
 	margin: 0 auto;
 	max-height: 50vh;
 }
-.whoAreWe__sideblock {
+.whoAreWe__aside {
 	position: absolute;
 	right: 0;
 	top: 10%;
 	width: 40%;
 	background-color: var(--gh-red);
 	color: var(--gh-white);
+	font-size: 1rem;
+	text-align: justify;
 	padding: 1.5rem 1rem;
 }
 
@@ -79,6 +82,7 @@ hr {margin: 2rem 0;border-width:1px;border-color: var(--gh-white);}
 	font-family: "headingcompressedpro-extbd", sans-serif;
 	flex: auto;
 	color: var(--gh-red);
+	cursor: pointer;
 
 	&:not(:last-of-type) { border-right: 1px solid var(--gh-red); }
 	&.active {font-size: 4rem;}
@@ -93,8 +97,8 @@ hr {margin: 2rem 0;border-width:1px;border-color: var(--gh-white);}
 	margin: 0 auto 3rem;
 	p { margin: 0; }
 }
-.gameherMember__image img {
-	max-width: 100%;
+.gameherMember__image {
+	height: 20rem;
 }
 .gameherMember__name {
 	font-size: 2rem;

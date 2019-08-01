@@ -10,12 +10,13 @@
 	&.dark {
 		background-color: var(--gh-blue);
 		color: var(--gh-white);
-
+		a {color: var(--gh-white);}
 		.row {flex-direction: row-reverse;}
 	}
 	&.white {
 		background-color: var(--gh-white);
 		color: var(--gh-blue);
+		a {color: var(--gh-blue);}
 	}
 }
 
@@ -24,13 +25,20 @@
 	flex-direction: column;
 }
 
+.partner__image {
+	display: flex;
+	align-items: center;
+}
+
 .partner__logo {
-	max-height: 12rem;
-	@media (max-width: 992px) { margin: auto; }
+	max-height: 10rem;
+	margin: auto;
+	padding: 0 2rem;
 }
 
 .partner__name {
 	text-transform: uppercase;
+	color: var(--gh-red);
 	margin: 0;
 }
 
@@ -42,5 +50,6 @@
 
 .partner__social {
 	font-size: 1.2rem;
+	a:hover {color: var(--gh-red);}
 	svg { margin-right: .5rem;}
 }

@@ -17,6 +17,7 @@
 				</form>
 				<select name="categories" id="news__categories">
 					<option value="" disabled selected>Sélectionner une catégorie</option>
+					<option value="">Tous</option>
 					{% for tag in tags %}
 						<option value="{{ tag.name }}">{{ tag.name }}</option>
 					{% endfor %}
@@ -31,7 +32,7 @@
 					<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
 					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
 						<div class="links">
-							<p class="tag">{% for tag in article.tags %}{{ tag.name }} {% endfor %}</p>
+							<p class="tag">{{ article.tags[0].name }}</p>
 							<p class="channel">{{ article.title }}</p>
 						</div>
 						<div class="fleche">
@@ -46,7 +47,7 @@
 
 		</div>
 		<div class="row pagination">
-			<div class="col">
+			<div class="col s12">
 				{% include 'views/blog/_pagination.html.twig' %}
 			</div>
 		</div>

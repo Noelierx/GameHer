@@ -20,12 +20,14 @@
 				<div class="col s6 partner__content">
 					<h3 class="partner__name">{{ partner.name }}</h3>
 					<p class="partner__description">{{ partner.description }}</p>
+					{% if partner.website or partner.twitter or partner.instagram or partner.facebook %}
 					<p class="partner__social">
-						<i class="fa fa-globe"></i>
-						<i class="fab fa-twitter"></i>
-						<i class="fab fa-instagram"></i>
-						<i class="fab fa-facebook-square"></i>
+						{% if partner.website %}<a href="{{ partner.website }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-globe"></i></a>{% endif %}
+						{% if partner.twitter %}<a href="{{ partner.twitter }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>{% endif %}
+						{% if partner.instagram %}<a href="{{ partner.instagram }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>{% endif %}
+						{% if partner.facebook %}<a href="{{ partner.facebook }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>{% endif %}
 					</p>
+					{% endif %}
 				</div>
 			</div>
 		</div>

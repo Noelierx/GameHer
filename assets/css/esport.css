@@ -1,23 +1,17 @@
 .esportToggled {
 	display: none;
+	margin-top: 2rem;
 }
 .leagueTeams {
 	display: flex;
-	background-image:
-		linear-gradient(rgba(0, 23, 36, 0.8), rgba(0, 23, 36, 0.8)),
-		url("../img/esport/leagueoflegends.jpg");
-	background-position: center 30%;
+	background-image: url("../img/esport/leagueoflegends.png");
+	background-position: center top;
 	background-color: var(--gh-blue);
 	background-repeat: no-repeat;
 	align-items: center;
 	margin: 0;
 	padding: 5rem 0;
-	transition: background-position 200ms ease-in;
 	border-bottom: 3px solid var(--gh-red);
-
-	&.opened {
-		background-position: center top;
-	}
 }
 
 .leagueTeams__title {
@@ -27,6 +21,9 @@
 	font-family: "headingcompressedpro-extbd", sans-serif;
 	text-align: center;
 	@media (min-width: 993px) { text-align: initial; }
+}
+.leagueTeams__trigger {
+	margin-bottom: 0;
 }
 .leagueTeams__description {
 	color: var(--gh-white);
@@ -69,4 +66,7 @@
 	justify-content: space-evenly;
 	color: var(--gh-white);
 	padding-top: .5rem;
+	&:hover {color: var(--gh-orange);}
 }
+.leagueTeams__button.opened .GHshow {display: none;}
+.leagueTeams__button:not(.opened) .GHhide {display: none;}

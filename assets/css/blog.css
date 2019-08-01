@@ -8,12 +8,14 @@
 	color: var(--gh-orange);
 	text-transform: uppercase;
 	margin: 0;
+	font-size: 85px;
 	@media (max-width: 992px) { font-size: 4rem; }
 }
 .news__subtitle {
 	color: var(--gh-blue);
 	text-transform: uppercase;
 	margin: 0;
+	font-size: 20px;
 	@media (max-width: 992px) { font-size: 1.5rem; }
 }
 .news__form {
@@ -30,10 +32,6 @@ input[type="text"].news__search {
 
 .streamersGH {
 	border-bottom: 5px solid var(--gh-blue);
-}
-
-.pagination {
-	margin-bottom: 6rem;
 }
 
 .imageWithFooter {
@@ -81,15 +79,16 @@ input[type="text"].news__search {
 }
 
 .article__title {
-	width: 75%;
+	width: 65%;
 	color: var(--gh-white);
 	display: table;
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left: 5%;
+	left: 10%;
 	margin: auto;
 	text-transform: uppercase;
+	font-size: 75px;
 }
 .article__second_title {
 	font-family: "headingcompressedpro-extbd", sans-serif;
@@ -143,8 +142,8 @@ input[type="text"].news__search {
 }
 
 .author {
-	border-bottom: 3px solid var(--gh-orange);
-	padding-bottom: 2rem;
+	margin-bottom: 5rem;
+	& + hr {width: 50%;border-color: var(--gh-orange);}
 }
 .author__picture {
 	margin-top: -5rem;
@@ -165,7 +164,6 @@ input[type="text"].news__search {
 .author__socials a {
 	color: #000;
 	margin-right: .25rem;
-	transition: color 200ms ease-in;
 	&:hover {color: var(--gh-orange);}
 }
 
@@ -177,4 +175,37 @@ input[type="text"].news__search {
 	font-family: "headingcompressedpro-extbd", sans-serif;
 	font-size: 2.5rem;
 	text-transform: uppercase;
+}
+
+.navigation {
+	display: flex;
+	justify-content: center;
+}
+
+ul.pagination {
+	border: 1px solid var(--gh-orange);
+
+	li {
+		font-family: "headingcompressedpro-extbd", sans-serif;
+		border-radius: 0;
+		height: auto;
+		transition: all 200ms ease-in-out;
+		color: var(--gh-orange);
+		&:not(:last-of-type) {border-right: 1px solid var(--gh-orange);}
+
+		a {padding: .5rem 1rem; color: inherit;}
+		&.active, &:hover {
+			color: var(--gh-white);
+			background-color: var(--gh-orange);
+		}
+
+		&.arrow {
+			background-color: var(--gh-orange);
+			color: var(--gh-white);
+		}
+		&.arrow:hover {
+			background-color: var(--gh-white);
+			color: var(--gh-orange);
+		}
+	}
 }

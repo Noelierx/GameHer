@@ -37,19 +37,20 @@ recruitment:
   subtitle: Comment devenir bénévole ?
   explanation: Afin de mener à bien notre mission, nous avons une équipe de bénévoles qui s'investit au quotidien.
   titlePole: Ce que nous faisons
-esport:
-  title: Nos equipes esport
-  subtitle: les joueurs et le personnel encadrant
-  league:
-    title: League Of Legends
-    main_team: Equipe principale
-    academy_team: Equipe académique
-    show_team: Voir
 partners:
   title: Partenaires
   subtitle: ils nous soutiennent et nous les en remerçions
 
 #esport
+esport.title: Nos equipes esport
+esport.subtitle: les joueurs et le personnel encadrant
+esport.league.title: League of Legends
+esport.league.show_team: Voir
+esport.league.hide_team: Masquer
+esport.league.main_team: Equipe principale
+esport.league.academy_team: Equipe académique
+esport.team.description.team_main: L'équipe GameHer Esport League of Legends est la figure de proue de notre structure. Elle est un mélange parfait de la notion de mixité et des objectifs de performance que nous souhaitons voir émerger dans l'esport.
+esport.team.description.team_academy: L'équipe GameHer Esport Academy.
 esport.member.team.team_main: Principale
 esport.member.team.team_academy: Académie
 esport.member.role.10_top: Top
@@ -61,9 +62,37 @@ esport.member.role.60_coach: Coach
 esport.member.role.70_manager: Manager
 esport.member.role.80_project_manager: Chef de projet
 
+#webtv
+webtv.banner.do_not_miss_us: Ne manquez plus un live
+webtv.banner.install_extension: 'Installez notre %link%extension%endlink%'
+webtv.banner.our_streamers: Nos streamers
+webtv.banner.their_channel: 'Visitez <span style="color: var(--gh-yellow)">leur chaine</span>'
+webtv.extension.title: L'extension
+webtv.extension.description: |
+  Afin de ne manquer aucun live de Game'Her, nous avons mis en place une extension pour votre navigateur. Cette extension vous notifiera lorsqu'un streamer sera présent sur la WebTV.
+
+  N'hésitez pas à l'installer, elle est gratuite et compatible avec la majorité des navigateurs récents utilisant chromium.
+
+  Cette extension pourra aussi vous faire gagner des petits bonus dans le futur !
+
 #tournament
 tournament.ghleague.title: Game'Her League
 tournament.ghleague.show: Voir
+tournament.ghleague.hide: Masquer
+tournament.ghleague.description: The Game'Her League is an online tournament promoting diversity in esport.
+
+#about
+about.kpi.title: Quelques chiffres
+about.kpi.creation: Création
+about.kpi.members: Membres
+about.kpi.teams: équipes
+about.kpi.competitions: Compétitions
+about.whoarewe.title: Qui sommes nous ?
+about.whoarewe.description: |
+  Game'Her est une association créée en août 2017 aspirant à développer un environnement sain pour les joueuses en leur donnant les outils nécessaires pour s'épanouir et évoluer dans les domaines du jeu vidéo, de l'esport et/ou de l'audiovisuel, tout en ne les enfermant pas dans un milieu exclusivement féminin.
+
+  Le but étant de s'ouvrir à la mixité et de démocratiser la place de la femme, selon nous reléguée en arrière-plan dans l'univers du jeu vidéo.
+about.whoarewe.aside: Nous sommes une équipe de passionnés, motivés par le jeu-vidéo sous tous ses aspects rêvant de voir s'épanouir la notion de mixité et diversité au sein de ce milieu.
 
 #footer
 footer.title.gameher: Game'Her

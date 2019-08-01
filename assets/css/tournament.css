@@ -1,8 +1,8 @@
 .gameherLeague {
-	background-image: url("../img/tournaments/background-logo.png");
+	background-image: url("../img/tournaments/background-gh.png");
 	background-position: center top;
 	background-color: var(--gh-blue);
-	background-size: cover;
+	background-repeat: no-repeat;
 	border-bottom: 5px solid var(--gh-red);
 	padding: 5rem 0;
 }
@@ -39,6 +39,9 @@
 .gameherLeague__stats {
 	@media only screen and (min-width: 993px) { display: flex; }
 }
+.gameherLeague__podium {
+	@media only screen and (min-width: 993px) {padding-top: 2rem; }
+}
 .col.gameherLeague__kpi {
 	display: flex;
 	align-items: center;
@@ -58,6 +61,9 @@
 		flex-direction: column;
 		margin-top: 0;
 		padding: 0 2rem;
-		img { width: auto; padding: 0; }
+		img { width: auto; padding: 0 0 0 4rem; height: 93px; }
 	}
 }
+
+.gameherLeague__button.opened .GHshow {display: none;}
+.gameherLeague__button:not(.opened) .GHhide {display: none;}

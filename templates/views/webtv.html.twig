@@ -30,8 +30,8 @@
 
 	<section class="textBanner --red">
 		<div class="container">
-			<h3 class="textBanner__title">Ne manquez plus un live</h3>
-			<h4 class="textBanner__subtitle">Installez notre <a href="#">extension</a></h4>
+			<h3 class="textBanner__title">{{ 'webtv.banner.do_not_miss_us'| trans }}</h3>
+			<h4 class="textBanner__subtitle">{{ 'webtv.banner.install_extension' |trans({'%link%': '<a href="#">', '%endlink%': '</a>'}) |raw }}</h4>
 		</div>
 	</section>
 
@@ -39,10 +39,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col s12 l6">
-					<h3>L'extension</h3>
-					<p>Afin de ne manquer aucun live de Game'Her, nous avons mis en place une extension pour votre navigateur. Cette extension vous notifiera lorsqu'un streamer sera présent sur la WebTV.</p>
-					<p>N'hésitez pas à l'installer, elle est gratuite et compatible avec la majorité des navigateurs récents utilisant chromium.</p>
-					<p>Cette extension pourra aussi vous faire gagner des petits bonus dans le futur !</p>
+					<h3>{{ 'webtv.extension.title' | trans }}</h3>
+					<p>{{ 'webtv.extension.description' |trans |nl2br }}</p>
 				</div>
 				<div class="col s12 l6 valign-wrapper">
 					<img src="{{ asset('build/img/webtv/CHROME_WEB_STORE.png') }}" alt="Chrome WebStore">
@@ -53,8 +51,8 @@
 
 	<section class="textBanner --blue">
 		<div class="container">
-			<h3 class="textBanner__title">Nos streamers</h3>
-			<h4 class="textBanner__subtitle">Visitez <span style="color: var(--gh-yellow)">leur chaine</span></h4>
+			<h3 class="textBanner__title">{{ 'webtv.banner.our_streamers' | trans }}</h3>
+			<h4 class="textBanner__subtitle">{{ 'webtv.banner.their_channel' |trans |raw }}</h4>
 		</div>
 	</section>
 

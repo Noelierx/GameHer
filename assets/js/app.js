@@ -40,7 +40,8 @@ $('.leagueTeams__button').click(function ($event) {
 $('.gameherLeague__button').click(function ($event) {
 	$event.preventDefault();
 	$('.gameherLeague__infography').slideToggle();
-	$('.gameherLeague').toggleClass('opened')
+	$('.gameherLeague').toggleClass('opened');
+	$(this).toggleClass('opened');
 });
 
 //About

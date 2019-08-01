@@ -61,17 +61,6 @@ class RolesController extends AbstractController
     }
 
     /**
-     * @Route("/{uuid}", name="admin_roles_show", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
-     * @Route("/{slug}", name="admin_roles_show_slug", methods={"GET"})
-     */
-    public function show(Role $role): Response
-    {
-        return $this->render('admin/roles/show.html.twig', [
-            'role' => $role,
-        ]);
-    }
-
-    /**
      * @Route("/{uuid}/edit", name="admin_roles_edit", methods={"GET", "POST"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
      * @Route("/{slug}/edit", name="admin_roles_edit_slug", methods={"GET", "POST"})
      */

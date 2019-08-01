@@ -29,10 +29,6 @@
             <td>{{ role.members.count }}</td>
             <td class="right-align">
                 <div class="item-actions">
-                    <a href="{{ path('admin_roles_show', {uuid: role.uuidAsString}) }}" class="btn pink">
-											{{ 'default.action.show'|trans }}
-											<i class="fa fa-eye" aria-hidden="true"></i>
-                    </a>
                     <a href="{{ path('admin_roles_edit', {uuid: role.uuidAsString}) }}" class="btn teal">
 											{{ 'default.action.edit'|trans }}
 											<i class="fa fa-edit" aria-hidden="true"></i>

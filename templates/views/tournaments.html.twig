@@ -17,17 +17,20 @@
 					<h3 class="gameherLeague__title">{{ 'tournament.ghleague.title'|trans }}</h3>
 				</div>
 				<div class="col s3 gameherLeague__trigger">
-					<button class="btn btn-show gameherLeague__button">{{ 'tournament.ghleague.show'|trans }}</button>
+					<button class="btn btn-show gameherLeague__button">
+						<span class="GHshow">{{ 'tournament.ghleague.show'|trans }}</span>
+						<span class="GHhide">{{ 'tournament.ghleague.hide'|trans }}</span>
+					</button>
 				</div>
 			</div>
 		</div>
 		<div class="container gameherLeague__infography">
 			<div class="row gameherLeague__introduction">
-				<div class="col s6 l4">
+				<div class="col s6 l3">
 					<img src="{{ asset('build/img/tournaments/GHleague-logo.png') }}" alt="Game'Her League">
 				</div>
 				<div class="col s6 l4">
-					<p>The Game'Her League is an online tournament promoting diversity in esport.</p>
+					<p>{{ 'tournament.ghleague.description'|trans }}</p>
 				</div>
 			</div>
 			<div class="row gameherLeague__stats">

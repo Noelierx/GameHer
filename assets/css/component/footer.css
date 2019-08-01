@@ -4,7 +4,6 @@ footer {
 	li { margin: .5rem 0; }
 	a {
 		color: #000;
-		transition: color 200ms ease-in-out;
 		&:hover { text-decoration: underline; }
 	}
 	img { margin: auto; }

@@ -70,15 +70,20 @@ h4 {
 	font-size: 2rem;
 }
 hr {
+	border: 0;
 	border-bottom: 3px solid var(--gh-blue);
+}
+a {
+	color: inherit;
+	transition: color 200ms ease-in;
 }
 
 button.btn-show {
 	background-color: var(--gh-blue);
 	border: 1px solid var(--gh-orange);
-	&:hover, &:focus, &:active {
-		background-color: #000;
-	}
+	transition: background-color 200ms ease-in-out;
+	&:hover, &:focus, &:active, &.opened:hover { background-color: #000; }
+	&.opened { background-color: var(--gh-orange); }
 }
 
 .sectionBlue {

@@ -43,6 +43,7 @@
 	<div class="container author">
 		{% include('views/blog/_author.html.twig') with {author: article.author} %}
 	</div>
+	<hr>
 
 	{{  render(controller('App\\Controller\\SideController::recommended')) }}
 	<hr>
