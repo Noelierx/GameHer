@@ -1,3 +1,20 @@
 .recruitment-title {
-    padding: 30px 0;
+    padding: 30px 0 0 0;
+    color: var(--gh-yellow);
+    text-align: center;
+    text-transform: uppercase;
+}
+.recruitment-text {
+    width: 405px;
+    text-align: center;
+    padding-bottom: 36px;
+    margin:0 auto;
+}
+.recruitment-picto {
+    width:64px;
+    height:64px;
+    margin:0 auto;
+}
+.fix-immonde {
+    display: flex; flex-wrap: wrap;
 }

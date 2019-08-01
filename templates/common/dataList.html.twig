@@ -1,14 +1,15 @@
 {% spaceless %}
 <section class="{{ element_class | default('') }}">
     <div class="container">
-        <h2 class="recruitment-title">{{ explanation }}</h2>
-        <div class="row">
+        <h2 class="recruitment-title">{{ title_pole }}</h2>
+        <p class="recruitment-text">{{ explanation }}</p>
+        <div class="row fix-immonde">
             {% for element in elements %}
-                <div class="col s4">
+                <div class="col s12 m5 l4">
                     <div class="icon-block">
-                        <img src="{{ element.logo_url }}"/>
-                        <h5 class="{{ titleClass | default('') }}">{{ element.title }}</h5>
-                        <p class="light">{{ element.content }}</p>
+                        <img src="{{ element.logo_url }}" class="recruitment-picto"/>
+                        <h5 class="{{ element.title_class | default('') }}" style="text-align: center;">{{ element.title }}</h5>
+                        <p class="light" style="text-align: center;">{{ element.content }}</p>
                     </div>
                 </div>
             {% endfor %}
