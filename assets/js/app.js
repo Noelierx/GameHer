@@ -18,17 +18,20 @@ $('#news__categories').change(function ($event) {
 //Esport
 $('.leagueTeams__button').click(function ($event) {
 	$event.preventDefault();
+	var $buttonOpened = $('.leagueTeams__button.opened');
+	var $toggle = $('.esportToggled');
 
 	if ($(this).hasClass('opened')) {
-		$('.leagueTeams__button.opened').removeClass('opened');
-		$('.esportToggled').slideUp();
-	} else {
-		$('.leagueTeams__button.opened').removeClass('opened');
-		$('.esportToggled').slideUp();
-
-		$(this).addClass('opened');
-		$('.esportToggled.' + $(this).attr('data-team')).slideDown();
+		$buttonOpened.removeClass('opened');
+		$toggle.slideUp();
+		return;
 	}
+
+	$buttonOpened.removeClass('opened');
+	$toggle.hide();
+
+	$(this).addClass('opened');
+	$('.esportToggled.' + $(this).attr('data-team')).slideDown();
 });
 
 //Tournaments

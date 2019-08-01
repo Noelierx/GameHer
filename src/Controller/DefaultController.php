@@ -57,7 +57,7 @@ class DefaultController extends AbstractController
 	 */
 	public function esport(): Response
 	{
-		return $this->render('views/esport.html.twig', [
+		return $this->render('views/esport/esport.html.twig', [
 			'main_team' => $this->getDoctrine()->getRepository(EsportMember::class)
 				->findBy(['team' => EsportMember::MAIN_TEAM], ['role' => 'asc']),
 			'academy' => $this->getDoctrine()->getRepository(EsportMember::class)
