@@ -6,8 +6,9 @@
 	flex-direction: column;
 	color: var(--gh-white);
 	padding: 6rem 0 6rem;
+	height: calc(100vh - 5rem);
 
-	hr {margin: 2rem 0;}
+hr {margin: 2rem 0;}
 }
 
 .numbersBanner__title {
@@ -15,6 +16,12 @@
 	text-align: center;
 	margin: 0 0 4rem;
 	font-size: 8rem;
+}
+
+.numbersBanner__arrow {
+	font-size: 5rem;
+	text-align: center;
+	margin-top: 6rem;
 }
 
 .numbersBanner__cell {
@@ -32,9 +39,9 @@
 }
 
 .whoAreWe {
-	margin: 6rem auto 3rem;
+	margin: 6rem auto 4rem;
 	border-bottom: 3px solid var(--gh-red);
-	padding-bottom: 2rem;
+	padding-bottom: 6rem;
 	font-family: 'FoundationSans-Roman', sans-serif;
 }
 

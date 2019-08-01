@@ -47,6 +47,6 @@ $('.memberToggle').click(function ($event) {
 
 	$('.memberToggle').removeClass('active');
 	$(this).addClass('active');
-	$('.membersList').slideUp().removeClass('active');
-	$('.membersList.' + $(this).attr('data-toggle')).slideDown().addClass('active');
+	$('.membersList').hide().removeClass('active');
+	$('.membersList.' + $(this).attr('data-toggle')).fadeIn().addClass('active');
 });

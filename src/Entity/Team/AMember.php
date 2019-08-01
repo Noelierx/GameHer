@@ -198,7 +198,7 @@ abstract class AMember
         return $this;
     }
 
-    public function getPicture(): string
+    public function getPicture(): ?string
     {
         return $this->picture;
     }
