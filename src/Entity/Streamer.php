@@ -41,7 +41,7 @@ class Streamer
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $picture;
 
@@ -88,7 +88,7 @@ class Streamer
         return $this;
     }
 
-    public function getPicture(): string
+    public function getPicture(): ?string
     {
         return $this->picture;
     }

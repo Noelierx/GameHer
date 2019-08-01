@@ -13,7 +13,7 @@ $('.dropdown-trigger').dropdown();
 //Blog
 $('#news__categories').change(function ($event) {
 	$event.preventDefault();
-	window.location.href = window.location.origin + window.location.pathname + '?tag=' + $(this).val().toLowerCase();
+	window.location.href = window.location.origin + '/blog?tag=' + $(this).val().toLowerCase();
 });
 
 //Esport

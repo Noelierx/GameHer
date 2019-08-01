@@ -54,6 +54,12 @@ class PostsController extends AbstractController
             return $this->redirectToRoute('admin_posts_index');
         }
 
+		if ($form->isSubmitted() && !$form->isValid()) {
+			foreach ($form->getErrors() as $error) {
+				$this->addFlash('danger', $error->getMessage().$error->getCause());
+			}
+		}
+
         return $this->render('admin/posts/new.html.twig', [
             'post' => $post,
             'form' => $form->createView(),
@@ -90,6 +96,12 @@ class PostsController extends AbstractController
 
             return $this->redirectToRoute('admin_posts_edit', ['uuid' => $post->getUuidAsString()]);
         }
+
+		if ($form->isSubmitted() && !$form->isValid()) {
+			foreach ($form->getErrors() as $error) {
+				$this->addFlash('danger', $error->getMessage().$error->getCause());
+			}
+		}
 
         return $this->render('admin/posts/edit.html.twig', [
             'form' => $form->createView(),

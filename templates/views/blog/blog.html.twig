@@ -6,11 +6,11 @@
 	<div class="container">
 
 		<div class="row news">
-			<div class="col s9">
+			<div class="col s12 m8 l9">
 				<h1 class="news__title">News & Articles</h1>
 				<h2 class="news__subtitle">Nos articles sur le monde du jeu vidéo</h2>
 			</div>
-			<div class="col s3">
+			<div class="col s12 m4 l3">
 				<form action="{{ path('blog') }}" method="get" class="news__form">
 					<input type="text" placeholder="Recherche" class="news__search" name="query">
 				</form>
@@ -25,7 +25,7 @@
 
 		<div class="row posts">
 			{% for article in paginator.results %}
-			<div class="col s4">
+			<div class="col s6 l4">
 				<div class="article">
 					<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
 					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">

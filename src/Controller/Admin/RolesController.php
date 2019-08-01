@@ -48,6 +48,12 @@ class RolesController extends AbstractController
             return $this->redirectToRoute('admin_roles_index');
         }
 
+		if ($form->isSubmitted() && !$form->isValid()) {
+			foreach ($form->getErrors() as $error) {
+				$this->addFlash('danger', $error->getMessage().$error->getCause());
+			}
+		}
+
         return $this->render('admin/roles/new.html.twig', [
             'role' => $role,
             'form' => $form->createView(),
@@ -81,6 +87,12 @@ class RolesController extends AbstractController
 
             return $this->redirectToRoute('admin_roles_edit', ['uuid' => $role->getUuidAsString()]);
         }
+
+		if ($form->isSubmitted() && !$form->isValid()) {
+			foreach ($form->getErrors() as $error) {
+				$this->addFlash('danger', $error->getMessage().$error->getCause());
+			}
+		}
 
         return $this->render('admin/roles/edit.html.twig', [
             'form' => $form->createView(),

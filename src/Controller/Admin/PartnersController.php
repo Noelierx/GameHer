@@ -62,6 +62,12 @@ class PartnersController extends AbstractController
             }
         }
 
+		if ($form->isSubmitted() && !$form->isValid()) {
+			foreach ($form->getErrors() as $error) {
+				$this->addFlash('danger', $error->getMessage().$error->getCause());
+			}
+		}
+
         return $this->render('admin/partners/new.html.twig', [
             'partner' => $partner,
             'form' => $form->createView(),
@@ -107,6 +113,12 @@ class PartnersController extends AbstractController
                 ]);
             }
         }
+
+		if ($form->isSubmitted() && !$form->isValid()) {
+			foreach ($form->getErrors() as $error) {
+				$this->addFlash('danger', $error->getMessage().$error->getCause());
+			}
+		}
 
         return $this->render('admin/partners/edit.html.twig', [
             'form' => $form->createView(),

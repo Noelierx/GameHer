@@ -1,20 +1,24 @@
 .news {
-	display: flex;
 	align-items: center;
 	margin: 6rem 0 6rem;
+	@media (min-width: 601px) { display: flex; }
+	@media (max-width: 992px) { font-size: 4rem; }
 }
 .news__title {
 	color: var(--gh-orange);
 	text-transform: uppercase;
 	margin: 0;
+	@media (max-width: 992px) { font-size: 4rem; }
 }
 .news__subtitle {
 	color: var(--gh-blue);
 	text-transform: uppercase;
 	margin: 0;
+	@media (max-width: 992px) { font-size: 1.5rem; }
 }
 .news__form {
 	display: flex;
+	@media (max-width: 600px) {  margin-top: 1rem; }
 }
 input[type="text"].news__search {
 	border: 1px solid var(--gh-orange);
@@ -35,6 +39,7 @@ input[type="text"].news__search {
 .article {
 	position: relative;
 	font-family: 'headingcompressedpro-extbd', sans-serif;
+	margin-bottom: 1.5rem;
 
 	p {margin: 0;line-height: 1;}
 

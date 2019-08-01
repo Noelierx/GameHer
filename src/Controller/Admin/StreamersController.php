@@ -41,27 +41,23 @@ class StreamersController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            try {
-                if (($logo = $form['picture']->getData())) {
-                    $streamer->setPicture($fileUploader->upload($logo, $this->getParameter('streamers_picture_directory')));
-                }
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($streamer);
-                $em->flush();
+			if (($logo = $form['picture']->getData())) {
+				$streamer->setPicture($fileUploader->upload($logo, $this->getParameter('streamers_picture_directory')));
+			}
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($streamer);
+			$em->flush();
 
-                $this->addFlash('success', 'streamers.success.create');
+			$this->addFlash('success', 'streamers.success.create');
 
-                return $this->redirectToRoute('admin_streamers_index');
-            } catch (Exception $e) {
-                die(dump($e));
-                $this->addFlash('danger', 'streamers.fail.create');
-
-                return $this->render('admin/streamers/new.html.twig', [
-                    'streamer' => $streamer,
-                    'form' => $form->createView(),
-                ]);
-            }
+			return $this->redirectToRoute('admin_streamers_index');
         }
+
+		if ($form->isSubmitted() && !$form->isValid()) {
+			foreach ($form->getErrors() as $error) {
+				$this->addFlash('danger', $error->getMessage().$error->getCause());
+			}
+		}
 
         return $this->render('admin/streamers/new.html.twig', [
             'streamer' => $streamer,
@@ -90,24 +86,21 @@ class StreamersController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            try {
-                if (($logo = $form['logo']->getData())) {
-                    $streamer->setPicture($fileUploader->upload($logo, $this->getParameter('streamers_logo_directory')));
-                }
-                $this->getDoctrine()->getManager()->flush();
+			if (($logo = $form['logo']->getData())) {
+				$streamer->setPicture($fileUploader->upload($logo, $this->getParameter('streamers_logo_directory')));
+			}
+			$this->getDoctrine()->getManager()->flush();
 
-                $this->addFlash('success', 'streamers.success.edit');
+			$this->addFlash('success', 'streamers.success.edit');
 
-                return $this->redirectToRoute('admin_streamers_edit', ['uuid' => $streamer->getUuidAsString()]);
-            } catch (Exception $e) {
-                $this->addFlash('danger', 'streamers.fail.delete');
-
-                return $this->render('admin/streamers/edit.html.twig', [
-                    'form' => $form->createView(),
-                    'streamer' => $streamer,
-                ]);
-            }
+			return $this->redirectToRoute('admin_streamers_edit', ['uuid' => $streamer->getUuidAsString()]);
         }
+
+        if ($form->isSubmitted() && !$form->isValid()) {
+			foreach ($form->getErrors() as $error) {
+				$this->addFlash('danger', $error->getMessage().$error->getCause());
+			}
+		}
 
         return $this->render('admin/streamers/edit.html.twig', [
             'form' => $form->createView(),

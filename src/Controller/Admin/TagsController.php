@@ -28,17 +28,19 @@ class TagsController extends AbstractController
         $form = $this->createForm(TagType::class, $tag);
         $form->handleRequest($request);
 
-        try {
-            if ($form->isSubmitted() && $form->isValid()) {
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($tag);
-                $em->flush();
+		if ($form->isSubmitted() && $form->isValid()) {
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($tag);
+			$em->flush();
 
-                $this->addFlash('success', 'tags.success.create');
-            }
-        } catch (DBALException $e) {
-            $this->addFlash('danger', sprintf('SQL Excetion: %s', $e->getMessage()));
-        }
+			$this->addFlash('success', 'tags.success.create');
+		}
+
+		if ($form->isSubmitted() && !$form->isValid()) {
+			foreach ($form->getErrors() as $error) {
+				$this->addFlash('danger', $error->getMessage().$error->getCause());
+			}
+		}
 
         return $this->render('admin/tags.html.twig', [
             'tags' => $this->getDoctrine()->getRepository(Tag::class)->findAll(),
