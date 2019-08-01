@@ -29,8 +29,6 @@
             {% endif %}
             {% if app.user %}
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">{{ app.user.displayName }} <i class="fa fa-caret-down"></i></a></li>
-            {% else %}
-                <li class="nav-item"><a href="{{ path('connect_discord') }}" class="nav-link">{{ 'menu.login'|trans }}</a></li>
             {% endif %}
         </ul>
     <nav>
@@ -50,8 +48,6 @@
 						{% endif %}
 						{% if app.user %}
 							<li><a class="dropdown-trigger" href="#!" data-target="dropdown2">{{ app.user.displayName }} <i class="fa fa-caret-down"></i></a></li>
-						{% else %}
-							<li class="nav-item"><a href="{{ path('connect_discord') }}" class="nav-link">{{ 'menu.login'|trans }}</a></li>
 						{% endif %}
 					</ul>
 					<a href="{{ path('index') }}" class="brand-logo"><img src="{{ asset('build/img/logo.png') }}" alt="GameHer"></a>

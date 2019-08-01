@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block body_id 'index' %}
+{% block title 'News & Article - GameHer' %}
+{% block body_id 'blog' %}
 
 {% block main %}
 	<div class="container">
@@ -26,7 +27,7 @@
 		<div class="row posts">
 			{% for article in paginator.results %}
 			<div class="col s6 l4">
-				<div class="imageWithFooter --red">
+				<div class="imageWithFooter --orange">
 					<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
 					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
 						<div class="links">

@@ -8,6 +8,7 @@ require('../css/app.css');
 const $ = require('jquery');
 
 $('select').formSelect();
+$('.sidenav').sidenav();
 $('.dropdown-trigger').dropdown();
 
 //Blog

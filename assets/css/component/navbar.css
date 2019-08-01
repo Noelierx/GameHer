@@ -25,4 +25,7 @@ nav a, nav ul a {
 
 .sidenav {
 	margin-top: 5rem;
+	transition: transform 200ms ease-in-out;
 }
+nav .dropdown-trigger i,
+nav .dropdown-trigger svg {color: var(--gh-red); }

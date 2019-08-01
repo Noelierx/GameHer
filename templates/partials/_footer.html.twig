@@ -48,6 +48,9 @@
                     <li><a href="{{ path('partners') }}">{{ 'footer.menu.partners'|trans }}</a></li>
                     <li><a href="#">{{ 'footer.menu.privacy_policy' |trans }}</a></li>
                     <li><a href="#">{{ 'footer.menu.legal_mention' |trans }}</a></li>
+										{% if app.user is null %}
+											<li><a href="{{ path('connect_discord') }}">{{ 'footer.menu.login'|trans }}</a></li>
+										{% endif %}
                 </ul>
             </div>
             <div class="col l3 s12 m4">
