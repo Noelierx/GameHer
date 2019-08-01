@@ -1,3 +1,4 @@
+require('normalize.css/normalize.css');
 require('materialize-css');
 require('materialize-css/dist/css/materialize.css');
 require('materialize-css/dist/js/materialize.min.js');
@@ -37,7 +38,7 @@ $('.leagueTeams__button').click(function ($event) {
 //Tournaments
 $('.gameherLeague__button').click(function ($event) {
 	$event.preventDefault();
-	$('.tournamentToggled').slideToggle();
+	$('.gameherLeague__infography').slideToggle();
 	$('.gameherLeague').toggleClass('opened')
 });
 

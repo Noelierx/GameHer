@@ -1,4 +1,3 @@
-@import "~normalize.css/normalize.css";
 @import "component/main.css";
 @import "homepage.css";
 @import "blog.css";
@@ -56,24 +55,30 @@ img {
 
 h1 {
 	font-family: 'headingcompressedpro-extbd', sans-serif;
-    font-size: 111px;
+	font-size: 111px;
 }
 h2 {
-    font-family: "FoundationSans-Roman", sans-serif;
-    font-size: 30px;
+	font-family: "FoundationSans-Roman", sans-serif;
+	font-size: 30px;
 }
 h3 {
 	font-family: 'headingcompressedpro-extbd', sans-serif;
 	font-size: 28px;
 }
-
 h4 {
 	font-family: 'FoundationSans-Roman', sans-serif;
 	font-size: 2rem;
 }
-
 hr {
 	border-bottom: 3px solid var(--gh-blue);
+}
+
+button.btn-show {
+	background-color: var(--gh-blue);
+	border: 1px solid var(--gh-orange);
+	&:hover, &:focus, &:active {
+		background-color: #000;
+	}
 }
 
 .sectionBlue {

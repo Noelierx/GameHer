@@ -42,13 +42,6 @@
 	margin-bottom: .5rem;
 }
 
-.leagueTeams__button {
-	background-color: var(--gh-blue);
-	border: 1px solid var(--gh-orange);
-	&:hover, &:focus, &:active {
-		 background-color: #000;
-	 }
-}
 .leaguePlayer {
 	margin-bottom: 3rem;
 	p { margin: 0; }
