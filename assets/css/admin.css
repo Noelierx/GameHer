@@ -21,6 +21,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	margin-top: 0;
+	padding-bottom: 0;
 }
 
 .sidenav .nav-link {

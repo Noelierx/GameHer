@@ -86,11 +86,11 @@ hr {margin: 2rem 0;border-width:1px;border-color: var(--gh-white);}
 
 .membersList {
 	display: none;
-	&.active {display: block;}
+	&.active {display: flex !important; flex-wrap: wrap; }
 }
 
-.gameherMember {
-	margin-bottom: 3rem;
+.col.gameherMember {
+	margin: 0 auto 3rem;
 	p { margin: 0; }
 }
 .gameherMember__image img {
