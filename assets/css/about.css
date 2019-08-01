@@ -6,7 +6,7 @@
 	flex-direction: column;
 	color: var(--gh-white);
 	padding: 6rem 0 6rem;
-	height: calc(100vh - 5rem);
+	min-height: calc(100vh - 5rem);
 
 hr {margin: 2rem 0;border-width:1px;border-color: var(--gh-white);}
 }
@@ -66,6 +66,7 @@ hr {margin: 2rem 0;border-width:1px;border-color: var(--gh-white);}
 
 .memberToggler {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	margin-bottom: 2rem;
 }

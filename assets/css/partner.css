@@ -12,7 +12,6 @@
 		color: var(--gh-white);
 
 		.row {flex-direction: row-reverse;}
-		.partner__image {text-align: right;}
 	}
 	&.white {
 		background-color: var(--gh-white);
@@ -27,6 +26,7 @@
 
 .partner__logo {
 	max-height: 12rem;
+	@media (max-width: 992px) { margin: auto; }
 }
 
 .partner__name {

@@ -25,10 +25,6 @@
 	justify-content: center;
 }
 
-.tournamentToggled {
-	//display: none;
-}
-
 .gameherLeague__infography {
 	display: none;
 	margin-top: 5rem;
@@ -41,7 +37,7 @@
 }
 
 .gameherLeague__stats {
-	display: flex;
+	@media only screen and (min-width: 993px) { display: flex; }
 }
 .col.gameherLeague__kpi {
 	display: flex;
@@ -53,7 +49,15 @@
 }
 .col.gameherLeague__kpi2 {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: space-between;
-	padding: 0 2rem;
+	margin-top: 4rem;
+	img { width: 50%; padding: 0 2rem; }
+
+	@media only screen and (min-width: 993px) {
+		flex-direction: column;
+		margin-top: 0;
+		padding: 0 2rem;
+		img { width: auto; padding: 0; }
+	}
 }

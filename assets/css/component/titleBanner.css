@@ -24,6 +24,7 @@
 .titleBanner__subtitle {
 	font-family: 'FoundationSans-Roman', sans-serif;
 	text-transform: uppercase;
+	text-align: center;
 	color: var(--gh-orange);
 	font-size: 2rem;
 	line-height: 2.5rem;

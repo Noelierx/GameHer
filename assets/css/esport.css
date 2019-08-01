@@ -25,6 +25,8 @@
 	color: var(--gh-orange);
 	text-transform: uppercase;
 	font-family: "headingcompressedpro-extbd", sans-serif;
+	text-align: center;
+	@media (min-width: 993px) { text-align: initial; }
 }
 .leagueTeams__description {
 	color: var(--gh-white);
