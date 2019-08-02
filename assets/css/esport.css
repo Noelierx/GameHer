@@ -45,8 +45,8 @@
 	margin-bottom: 3rem;
 	p { margin: 0; }
 }
-.leaguePlayer__image img {
-	max-width: 100%;
+.leaguePlayer__image {
+	height: 20rem;
 }
 .leaguePlayer__name {
 	color: var(--gh-white);

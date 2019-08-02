@@ -35,7 +35,7 @@ class DiscordAuthenticator extends SocialAuthenticator
 
     public function start(Request $request, AuthenticationException $authException = null): Response
     {
-        return new RedirectResponse('/login');
+        return new RedirectResponse('/connect/discord');
     }
 
     public function supports(Request $request): bool

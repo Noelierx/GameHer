@@ -31,6 +31,7 @@ class MemberRepository extends ServiceEntityRepository
 		return $this->createQueryBuilder('members')
 			->leftJoin('members.role', 'role')
 			->where('role.category = :category')
+			->orderBy('members.nickname', 'asc')
 			->setParameter('category', $category)
 			->getQuery()
 			->getResult();

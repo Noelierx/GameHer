@@ -102,4 +102,11 @@ class DefaultController extends AbstractController
     {
         return $this->render('views/donations.html.twig');
     }
+
+	/**
+	 * @Route("/logout", name="logout")
+	 */
+	public function logout()
+	{
+	}
 }

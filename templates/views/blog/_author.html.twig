@@ -4,8 +4,8 @@
 			<img src="{{ author.picture ? asset('uploads/members/' ~ author.picture) : asset('build/img/esport/player.png') }}" alt="{{ author.displayName }}" class="author__picture">
 		</div>
 		<div class="col s9">
-			<h5 class="author__name">{{ author.firstName | default('') }} <span class="author__nickname">{{ author.displayName }}</span> {{ author.lastName | default('') }}</h5>
-			<p class="author__description">Description</p>
+			<h5 class="author__name">{{ author.firstName | default('') }} <a href="{{ path('blog', {author: author.displayName}) }}" class="author__nickname">{{ author.displayName }}</a> {{ author.lastName | default('') }}</h5>
+			{#<p class="author__description">Description</p>#}
 			<p class="author__socials">
 				{% if author.twitter is not null %}
 					<a href="//twitter.com/{{ author.twitter }}" target="_blank" rel="noreferrer noopener">

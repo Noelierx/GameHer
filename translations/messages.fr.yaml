@@ -37,9 +37,17 @@ recruitment:
   subtitle: Comment devenir bénévole ?
   explanation: Afin de mener à bien notre mission, nous avons une équipe de bénévoles qui s'investit au quotidien.
   titlePole: Ce que nous faisons
-partners:
-  title: Partenaires
-  subtitle: ils nous soutiennent et nous les en remerçions
+
+#blog
+blog.title: News & Articles
+blog.subtitle: Nos articles sur le monde du jeu vidéo
+blog.search: Recherche
+blog.tag_selection.placeholder: Sélectionner une catégorie
+blog.tag_selection.everything: Toutes
+blog.no_posts: Aucun article
+article.follow_us.title: Si notre article vous a plu
+article.follow_us.donation: 'Soutenez nous sur %link%Tipee%endlink%'
+
 
 #esport
 esport.title: Nos equipes esport
@@ -81,6 +89,10 @@ tournament.ghleague.show: Voir
 tournament.ghleague.hide: Masquer
 tournament.ghleague.description: The Game'Her League is an online tournament promoting diversity in esport.
 
+#partners
+partners.title: Partenaires
+partners.subtitle: ils nous soutiennent et nous les en remerçions
+
 #about
 about.kpi.title: Quelques chiffres
 about.kpi.creation: Création
@@ -93,6 +105,11 @@ about.whoarewe.description: |
 
   Le but étant de s'ouvrir à la mixité et de démocratiser la place de la femme, selon nous reléguée en arrière-plan dans l'univers du jeu vidéo.
 about.whoarewe.aside: Nous sommes une équipe de passionnés, motivés par le jeu-vidéo sous tous ses aspects rêvant de voir s'épanouir la notion de mixité et diversité au sein de ce milieu.
+about.category.direction: Direction
+about.category.administration: Administration
+about.category.members: Membres
+about.category.esport: Esport
+
 
 #footer
 footer.title.gameher: Game'Her

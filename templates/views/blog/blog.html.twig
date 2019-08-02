@@ -8,16 +8,16 @@
 
 		<div class="row news">
 			<div class="col s12 m8 l9">
-				<h1 class="news__title">News & Articles</h1>
-				<h2 class="news__subtitle">Nos articles sur le monde du jeu vidéo</h2>
+				<h1 class="news__title">{{ 'blog.title' |trans }}</h1>
+				<h2 class="news__subtitle">{{ 'blog.subtitle' |trans }}</h2>
 			</div>
 			<div class="col s12 m4 l3">
 				<form action="{{ path('blog') }}" method="get" class="news__form">
-					<input type="text" placeholder="Recherche" class="news__search" name="query">
+					<input type="text" placeholder="{{ 'blog.search' |trans }}" class="news__search" name="query">
 				</form>
 				<select name="categories" id="news__categories">
-					<option value="" disabled selected>Sélectionner une catégorie</option>
-					<option value="">Tous</option>
+					<option value="" disabled selected>{{ 'blog.tag_selection.placeholder' |trans }}</option>
+					<option value="">{{ 'blog.tag_selection.everything' |trans }}</option>
 					{% for tag in tags %}
 						<option value="{{ tag.name }}">{{ tag.name }}</option>
 					{% endfor %}
@@ -42,7 +42,7 @@
 				</div>
 			</div>
 			{% else %}
-				<div class="col s12">No posts</div>
+				<div class="col s12">{{ 'blog.no_posts' |trans }}</div>
 			{% endfor %}
 
 		</div>

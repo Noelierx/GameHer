@@ -101,13 +101,10 @@ input[type="text"].news__search {
 	margin: 0;
 	line-height: 1;
 	color: var(--gh-gray);
-}
-.article__author {
-	color: var(--gh-orange);
-}
-.article__tag {
-	color: var(--gh-orange);
-	&:hover {text-decoration: underline;}
+	a {
+		color: var(--gh-orange);
+		&:hover {text-decoration: underline;}
+	}
 }
 .article__content {
 	h3 {
@@ -160,6 +157,7 @@ input[type="text"].news__search {
 .author__nickname {
 	color: var(--gh-orange);
 	text-transform: uppercase;
+	&:hover {text-decoration: underline;}
 }
 .author__socials a {
 	color: #000;

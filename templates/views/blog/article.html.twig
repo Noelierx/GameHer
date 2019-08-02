@@ -36,8 +36,11 @@
 		</div>
 	</div>
 	<div class="container-fluid followUs">
-		<h4 class="followUs__subtitle">Si notre article vous a plu</h4>
-		<h3 class="followUs__title">Soutenez nous sur <a href="{{ path('donations') }}">Tipee</a></h3>
+		<h4 class="followUs__subtitle">{{ 'article.follow_us.title' |trans }}</h4>
+		<h3 class="followUs__title">{{ 'article.follow_us.donation' |trans({
+				'%link%': '<a href="'~ path('donations') ~ '">',
+				'%endlink%': '</a>'
+			}) |raw }}</h3>
 	</div>
 
 	<div class="container author">
