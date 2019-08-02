@@ -27,8 +27,7 @@
 }
 
 .contact form {
-	input[type="text"], textarea {
-		color: var(--gh-gray);
+	input[type="text"], input[type="email"],textarea {
 		background-color: #dadada;
 		padding: 0 .5rem;
 

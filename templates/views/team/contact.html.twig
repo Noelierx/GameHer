@@ -23,41 +23,52 @@
 					</li>
 				</ul>
 			</div>
-			<form action="{{ path('contact_form') }}" method="post" class="col s12 l6">
+			<div class="col s12 l6">
+				{{ form_start(form) }}
 				<div class="row">
 					<div class="input-field col s12">
-						<input type="text" id="subject">
-						<label for="subject">{{ 'contact.form.subject' |trans }}</label>
+						{{ form_widget(form.subject) }}
+						{{ form_label(form.subject) }}
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s6">
-						<input type="text" id="nickname">
-						<label for="nickname">{{ 'contact.form.nickname' |trans }}</label>
+						{{ form_widget(form.nickname) }}
+						{{ form_label(form.nickname) }}
 					</div>
 					<div class="input-field col s6">
-						<input type="text" id="email">
-						<label for="email">{{ 'contact.form.email' |trans }}</label>
+						{{ form_widget(form.email) }}
+						{{ form_label(form.email) }}
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<textarea name="message" id="message" class="materialize-textarea" style="height: 10rem;"></textarea>
-						<label for="message">{{ 'contact.form.message' |trans }}</label>
+						{{ form_widget(form.message) }}
+						{{ form_label(form.message) }}
 					</div>
 					<div class="col s12 contact__dataUsage">
 						<label class="contact__dataUsageLabel">
-							<input type="checkbox" class="filled-in" name="data_usage" />
+							{{ form_widget(form.data_usage) }}
 							<span class="contact__dataUsageSpan">{{ 'contact.form.data_usage' |trans }}</span>
 						</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s6">
-						<button type="submit" class="btn">{{ 'contact.form.send' |trans }}</button>
+						{{ form_row(form.send) }}
 					</div>
 				</div>
-			</form>
+				{{ form_end(form) }}
+			</div>
+
+{#
+					<div class="col s12 contact__dataUsage">
+						<label class="contact__dataUsageLabel">
+							<input type="checkbox" class="filled-in" name="data_usage" required />
+							<span class="contact__dataUsageSpan">{{ 'contact.form.data_usage' |trans }}</span>
+						</label>
+					</div>
+#}
 		</div>
 	</section>
 	<hr>

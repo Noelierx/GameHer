@@ -119,6 +119,7 @@ contact.form.email: Email
 contact.form.message: Votre message
 contact.form.data_usage: En utilisant ce formulaire, vous acceptez le stockage et l'utilisation de vos données par ce site
 contact.form.send: Envoyer
+contact.flash_message.error.fields_required: Tous les champs sont obligatoires
 
 #footer
 footer.title.gameher: Game'Her
