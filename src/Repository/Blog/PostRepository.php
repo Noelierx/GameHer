@@ -4,6 +4,7 @@ namespace App\Repository\Blog;
 
 use App\Entity\Blog\Post;
 use App\Entity\Blog\Tag;
+use App\Entity\User\User;
 use App\Pagination\Paginator;
 use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -22,7 +23,7 @@ class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
-    public function findLatest(int $page = 1, Tag $tag = null): Paginator
+    public function findLatest(int $page = 1, array $options = []): Paginator
     {
         $qb = $this->createQueryBuilder('p')
             ->addSelect('a', 't')
@@ -32,9 +33,12 @@ class PostRepository extends ServiceEntityRepository
             ->orderBy('p.publishedAt', 'DESC')
             ->setParameter('now', new DateTime());
 
-        if (null !== $tag) {
-            $qb->andWhere(':tag MEMBER OF p.tags')->setParameter('tag', $tag);
+        if ($options['tag'] instanceof Tag) {
+            $qb->andWhere(':tag MEMBER OF p.tags')->setParameter('tag', $options['tag']);
         }
+		if ($options['author'] instanceof User) {
+			$qb->andWhere('p.author = :author')->setParameter('author', $options['author']);
+		}
 
         return (new Paginator($qb))->paginate($page);
     }
