@@ -7,7 +7,8 @@
 	<div class="container-fluid">
 		<div class="row article__row">
 			<div class="article__header">
-				<img src="{{ asset('build/img/blog/entete.png') }}" alt="{{ article.slug }}">
+				<img src="{{ asset('build/img/blog/entete.png') }}" aria-hidden="true" class="article__entete">
+				<img src="{{ asset('build/img/blog/entete2.png') }}" aria-hidden="true" class="article__entete2">
 			</div>
 			<h1 class="article__title">{{ article.title }}</h1>
 		</div>

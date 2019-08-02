@@ -82,8 +82,9 @@ button.btn-show {
 	background-color: var(--gh-blue);
 	border: 1px solid var(--gh-orange);
 	transition: background-color 200ms ease-in-out;
-	&:hover, &:focus, &:active, &.opened:hover { background-color: #000; }
-	&.opened { background-color: var(--gh-orange); }
+	&:focus, &:active {background-color: inherit;}
+	&:hover, &.opened:hover { background-color: var(--gh-orange); }
+	&.opened { background-color: var(--gh-orange); &:hover {background-color: #000;}}
 }
 
 .sectionBlue {

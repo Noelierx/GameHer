@@ -78,6 +78,19 @@ input[type="text"].news__search {
 	position: relative;
 }
 
+.article__header {
+	position: relative;
+}
+.article__entete {
+	z-index: 100;
+}
+.article__entete2 {
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	height: 100%;
+}
+
 .article__title {
 	width: 65%;
 	color: var(--gh-white);

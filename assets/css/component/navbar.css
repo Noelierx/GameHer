@@ -14,6 +14,7 @@ nav li {
 
 nav a, nav ul a {
 	color: var(--gh-blue);
+	text-transform: capitalize;
 	&.active {color: var(--gh-pink);}
 }
 

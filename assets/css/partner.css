@@ -1,9 +1,11 @@
 .partner {
 	border-bottom: 3px solid var(--gh-red);
 
+	p {margin: 1rem 0 0;}
+
 	.row {
 		margin: 0;
-		padding: 2rem 0;
+		padding: 3rem 0;
 		display: flex;
 	}
 
@@ -31,7 +33,7 @@
 }
 
 .partner__logo {
-	max-height: 10rem;
+	max-width: 60%;
 	margin: auto;
 	padding: 0 2rem;
 }
