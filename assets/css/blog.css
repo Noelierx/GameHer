@@ -80,15 +80,27 @@ input[type="text"].news__search {
 
 .article__header {
 	position: relative;
+	overflow: hidden;
+	max-height: 30rem;
 }
 .article__entete {
 	z-index: 100;
+	height: 100%;
+	width: 100%;
 }
 .article__entete2 {
 	z-index: -1;
 	position: absolute;
 	top: 0;
 	height: 100%;
+	width: 100%;
+}
+.article__picture {
+	position: absolute;
+	top: 0;
+	width: 60%;
+	right: 0;
+	z-index: -2;
 }
 
 .article__title {

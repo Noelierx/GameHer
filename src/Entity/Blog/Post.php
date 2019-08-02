@@ -244,7 +244,7 @@ class Post
         return $this;
     }
 
-    public function getPicture(): string
+    public function getPicture(): ?string
     {
         return $this->picture;
     }
