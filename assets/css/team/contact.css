@@ -1,0 +1,54 @@
+.contact {
+	margin: 6rem auto;
+}
+.contact__title {
+	margin-top: 0;
+	color: var(--gh-red);
+	text-transform: uppercase;
+}
+
+.contact__links {
+	li {margin-bottom: 1rem;}
+}
+
+.contact__socials a {
+	margin-right: .5rem;
+	&:hover {color: var(--gh-red);}
+}
+
+.contact__dataUsage {
+	display: flex;
+	font-size: .8rem;
+	label.contact__dataUsageLabel {color: #000; display: flex; align-items: center;padding-left: .5rem;}
+	span.contact__dataUsageSpan {display: block;height: auto;font-size: .8rem;line-height: 1;}
+	span.contact__dataUsageSpan:after {bottom: 0;margin: auto;left: 5px;}
+	span.contact__dataUsageSpan:before {bottom: 0;margin: auto;left: 5px;}
+	[type="checkbox"].filled-in:checked + span:not(.lever):after {border: 2px solid var(--gh-red);background-color: var(--gh-red);}
+}
+
+.contact form {
+	input[type="text"], textarea {
+		color: var(--gh-gray);
+		background-color: #dadada;
+		padding: 0 .5rem;
+
+		&:focus {
+			border-bottom: 1px solid var(--gh-red) !important;
+			box-shadow: 0 1px 0 0 var(--gh-red) !important;
+		}
+	}
+	.input-field {display: flex;}
+	.col label {
+		left: 1.25rem;
+		text-transform: uppercase;
+		&.active {
+			color: var(--gh-red) !important;
+			transform: translateY(-1.5rem) scale(1);
+		}
+	}
+	.row { margin: 0; }
+	button {
+		background-color: var(--gh-red);
+		&:hover {background-color: #dd526d;}
+	}
+}

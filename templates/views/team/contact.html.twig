@@ -4,6 +4,61 @@
 {% block body_id 'contact' %}
 
 {% block main %}
-
+	<section class="container contact">
+		<div class="row">
+			<div class="col s12 l6 contact__leftPanel">
+				<h1 class="contact__title">{{ 'contact.title' |trans }}</h1>
+				<ul class="contact__links">
+					<li><i class="fa fa-fw fa-edit"></i> contact@gameher.fr</li>
+					<li><i class="fa fa-fw fa-bookmark"></i> esport@gameher.fr</li>
+					<li><i class="fa fa-fw fa-fire"></i> partenariat@gameher.fr</li>
+					<li><i class="fa fa-fw fa-bell"></i> recrutement@gameher.fr</li>
+					<li class="contact__socials">
+						<a href="//twitter.com/GameHer" title="GameHer Twitter"><i class="fab fa-twitter" aria-hidden="true"></i>                    </a>
+						<a href="//facebook.com/GameHer" title="GameHer Facebook"><i class="fab fa-facebook-square" aria-hidden="true"></i>                    </a>
+						<a href="#" title="GameHer Youtube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+						<a href="#" title="GameHer Twitch"><i class="fab fa-twitch" aria-hidden="true"></i></a>
+						<a href="#" title="GameHer Discord"><i class="fab fa-discord" aria-hidden="true"></i></a>
+						<a href="#" title="GameHer Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+					</li>
+				</ul>
+			</div>
+			<form action="{{ path('contact_form') }}" method="post" class="col s12 l6">
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="subject">
+						<label for="subject">{{ 'contact.form.subject' |trans }}</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input type="text" id="nickname">
+						<label for="nickname">{{ 'contact.form.nickname' |trans }}</label>
+					</div>
+					<div class="input-field col s6">
+						<input type="text" id="email">
+						<label for="email">{{ 'contact.form.email' |trans }}</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea name="message" id="message" class="materialize-textarea" style="height: 10rem;"></textarea>
+						<label for="message">{{ 'contact.form.message' |trans }}</label>
+					</div>
+					<div class="col s12 contact__dataUsage">
+						<label class="contact__dataUsageLabel">
+							<input type="checkbox" class="filled-in" name="data_usage" />
+							<span class="contact__dataUsageSpan">{{ 'contact.form.data_usage' |trans }}</span>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<button type="submit" class="btn">{{ 'contact.form.send' |trans }}</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<hr>
 {% endblock %}
-

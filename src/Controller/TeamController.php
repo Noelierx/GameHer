@@ -7,6 +7,7 @@ use App\Entity\Team\EsportMember;
 use App\Entity\Team\Role;
 use App\Repository\Team\MemberRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -34,6 +35,14 @@ class TeamController extends AbstractController
 	public function contact(): Response
 	{
 		return $this->render('views/team/contact.html.twig');
+	}
+
+	/**
+	 * @Route("/contact", name="contact_form", methods={"POST"})
+	 */
+	public function contactForm(Request $request): Response
+	{
+
 	}
 
 	/**

@@ -5,8 +5,9 @@
 @import "webtv.css";
 @import "tournament.css";
 @import "partner.css";
-@import "recruitment.css";
-@import "about.css";
+@import "team/recruitment.css";
+@import "team/about.css";
+@import "team/contact.css";
 
 :root {
 	--gh-blue: #001724;

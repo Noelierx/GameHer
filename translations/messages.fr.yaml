@@ -110,6 +110,15 @@ about.category.administration: Administration
 about.category.members: Membres
 about.category.esport: Esport
 
+#contact
+contact.title: Contact
+contact.form.select_pole: Choisissez la section
+contact.form.subject: Objet
+contact.form.nickname: Pseudo
+contact.form.email: Email
+contact.form.message: Votre message
+contact.form.data_usage: En utilisant ce formulaire, vous acceptez le stockage et l'utilisation de vos données par ce site
+contact.form.send: Envoyer
 
 #footer
 footer.title.gameher: Game'Her

@@ -1,5 +1,6 @@
 {% set _hasContenu = contenu is defined %}
 
+{% spaceless %}
 <div class="page-header page-header--big {{ className | default('') }}">
     <div class="page-header__wrapper">
         <div class="page-header__content {{ classNameContent | default('') }}">
@@ -22,6 +23,6 @@
                 {{ contenu | raw }}
             {% endif %}
         </div>
-
     </div>
 </div>
+{% endspaceless %}
