@@ -17,23 +17,23 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class MemberRepository extends ServiceEntityRepository
 {
-	public function __construct(RegistryInterface $registry)
-	{
-		parent::__construct($registry, Member::class);
-	}
+    public function __construct(RegistryInterface $registry)
+    {
+        parent::__construct($registry, Member::class);
+    }
 
-	public function getByCategory(string $category)
-	{
-		if (!in_array($category, Role::getAvailableCategories())) {
-			throw new InvalidArgumentException();
-		}
+    public function getByCategory(string $category)
+    {
+        if (!in_array($category, Role::getAvailableCategories())) {
+            throw new InvalidArgumentException();
+        }
 
-		return $this->createQueryBuilder('members')
-			->leftJoin('members.role', 'role')
-			->where('role.category = :category')
-			->orderBy('members.nickname', 'asc')
-			->setParameter('category', $category)
-			->getQuery()
-			->getResult();
-	}
+        return $this->createQueryBuilder('members')
+            ->leftJoin('members.role', 'role')
+            ->where('role.category = :category')
+            ->orderBy('members.nickname', 'asc')
+            ->setParameter('category', $category)
+            ->getQuery()
+            ->getResult();
+    }
 }

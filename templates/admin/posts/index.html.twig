@@ -18,7 +18,6 @@
 			<thead>
 			<tr>
 				<th scope="col">{{ 'posts.index.label.name'|trans }}</th>
-				<th scope="col"><i class="fa fa-user"></i> {{ 'posts.index.label.author'|trans }}</th>
 				<th scope="col"><i class="fa fa-tag"></i> {{ 'posts.index.label.tags'|trans }}</th>
 				<th scope="col"><i class="fa fa-pencil-alt" aria-hidden="true"></i> {{ 'posts.index.label.published_at'|trans }}</th>
 				<th scope="col"><i class="fa fa-pencil-alt" aria-hidden="true"></i> {{ 'posts.index.label.updated_at'|trans }}</th>
@@ -28,9 +27,17 @@
 			<tbody>
 			{% for post in posts %}
 				<tr>
-					<td>{{ post.title }}</td>
-					<td>{{ post.author.displayName }}</td>
-					<td>{% for tag in post.tags %}<span class="badge teal new" data-badge-caption="">{{ tag.name }}</span>{% endfor %}</td>
+					<td>
+						<div class="post__infos">
+							<p>{{ post.title }}</p>
+							<p>par <span class="post__author">{{ post.author.displayName }}</span></p>
+						</div>
+					</td>
+					<td>
+						<div class="post__tags">
+						{% for tag in post.tags %}<span class="badge teal new" data-badge-caption="">{{ tag.name }}</span>{% endfor %}
+						</div>
+					</td>
 					{% if post.publishedAt %}
 						<td>{{ post.publishedAt| date('d/m/y H:i') }}</td>
 					{% else %}

@@ -13,41 +13,41 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ContactForm extends AbstractType
 {
-	/**
-	 * @var TranslatorInterface
-	 */
-	private $translator;
+    /**
+     * @var TranslatorInterface
+     */
+    private $translator;
 
-	public function __construct(TranslatorInterface $translator)
-	{
-		$this->translator = $translator;
-	}
+    public function __construct(TranslatorInterface $translator)
+    {
+        $this->translator = $translator;
+    }
 
-	public function buildForm(FormBuilderInterface $builder, array $options)
-	{
-		$builder
-			->add('subject', TextType::class, [
-				'label' => $this->translator->trans('contact.form.subject')
-			])
-			->add('nickname', TextType::class, [
-				'label' => $this->translator->trans('contact.form.nickname')
-			])
-			->add('email', EmailType::class, [
-				'label' => $this->translator->trans('contact.form.email')
-			])
-			->add('message', TextareaType::class, [
-				'attr' => [
-					'style' => 'height:10rem',
-					'class' => 'materialize-textarea'
-				],
-				'label' => $this->translator->trans('contact.form.message')
-			])
-			->add('data_usage', CheckboxType::class, [
-				'attr' => ['class' => 'filled-in'],
-			])
-			->add('send', SubmitType::class, [
-				'label' => $this->translator->trans('contact.form.send'),
-				'attr' => ['class' => 'btn'],
-			]);
-	}
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('subject', TextType::class, [
+                'label' => $this->translator->trans('contact.form.subject')
+            ])
+            ->add('nickname', TextType::class, [
+                'label' => $this->translator->trans('contact.form.nickname')
+            ])
+            ->add('email', EmailType::class, [
+                'label' => $this->translator->trans('contact.form.email')
+            ])
+            ->add('message', TextareaType::class, [
+                'attr' => [
+                    'style' => 'height:10rem',
+                    'class' => 'materialize-textarea'
+                ],
+                'label' => $this->translator->trans('contact.form.message')
+            ])
+            ->add('data_usage', CheckboxType::class, [
+                'attr' => ['class' => 'filled-in'],
+            ])
+            ->add('send', SubmitType::class, [
+                'label' => $this->translator->trans('contact.form.send'),
+                'attr' => ['class' => 'btn'],
+            ]);
+    }
 }

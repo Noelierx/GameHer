@@ -36,19 +36,19 @@ class PostRepository extends ServiceEntityRepository
         if ($options['tag'] instanceof Tag) {
             $qb->andWhere(':tag MEMBER OF p.tags')->setParameter('tag', $options['tag']);
         }
-		if ($options['author'] instanceof User) {
-			$qb->andWhere('p.author = :author')->setParameter('author', $options['author']);
-		}
+        if ($options['author'] instanceof User) {
+            $qb->andWhere('p.author = :author')->setParameter('author', $options['author']);
+        }
 
         return (new Paginator($qb))->paginate($page);
     }
 
-	public function getRecommended(int $int)
-	{
-		return $this->createQueryBuilder('p')
-			->orderBy('p.publishedAt', 'DESC')
-			->setMaxResults(3)
-			->getQuery()
-			->getResult();
-	}
+    public function getRecommended(int $int)
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.publishedAt', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
 }

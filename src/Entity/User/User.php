@@ -21,7 +21,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface
 {
-	use StringUuidTrait;
+    use StringUuidTrait;
 
     const ROLE_DEFAULT = 'ROLE_USER';
     const ROLE_ADMIN = 'ROLE_ADMIN';
@@ -116,11 +116,11 @@ class User implements UserInterface
      */
     protected $instagram;
 
-	/**
-	 * @var string
-	 * @ORM\Column(type="string", nullable=true)
-	 */
-	protected $picture;
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $picture;
 
     /**
      * @var Collection|Post[]
@@ -402,20 +402,20 @@ class User implements UserInterface
         return $this;
     }
 
-	public function getCreatedAt(): DateTime
-	{
-		return $this->createdAt;
-	}
+    public function getCreatedAt(): DateTime
+    {
+        return $this->createdAt;
+    }
 
-	public function getPicture(): ?string
-	{
-		return $this->picture;
-	}
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
 
-	public function setPicture(string $picture): self
-	{
-		$this->picture = $picture;
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
-		return $this;
-	}
+        return $this;
+    }
 }

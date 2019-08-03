@@ -21,13 +21,13 @@ class AdminController extends AbstractController
         return $this->render('admin/admin.html.twig');
     }
 
-	/**
-	 * @Route("/users", name="admin_users")
-	 */
+    /**
+     * @Route("/users", name="admin_users")
+     */
     public function users()
-	{
-		return $this->render('admin/users.html.twig', [
-			'users' => $this->getDoctrine()->getRepository(User::class)->findAll()
-		]);
-	}
+    {
+        return $this->render('admin/users.html.twig', [
+            'users' => $this->getDoctrine()->getRepository(User::class)->findAll()
+        ]);
+    }
 }

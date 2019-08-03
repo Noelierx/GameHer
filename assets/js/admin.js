@@ -1,3 +1,5 @@
+require('datatables/media/js/jquery.dataTables.min');
+require('datatables/media/css/jquery.dataTables.min.css');
 require('../css/admin.css');
 const $ = require('jquery');
 
@@ -12,3 +14,5 @@ $('.dismiss').click(function ($event) {
 	$event.preventDefault();
 	$(this).parent().fadeOut();
 });
+
+$('#members').dataTable();

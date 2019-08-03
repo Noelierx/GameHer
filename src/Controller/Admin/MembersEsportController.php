@@ -75,11 +75,11 @@ class MembersEsportController extends AbstractController
             return $this->redirectToRoute('admin_esport_members_edit', ['uuid' => $member->getUuidAsString()]);
         }
 
-		if ($form->isSubmitted() && !$form->isValid()) {
-			foreach ($form->getErrors() as $error) {
-				$this->addFlash('danger', $error->getMessage().$error->getCause());
-			}
-		}
+        if ($form->isSubmitted() && !$form->isValid()) {
+            foreach ($form->getErrors() as $error) {
+                $this->addFlash('danger', $error->getMessage().$error->getCause());
+            }
+        }
 
         return $this->render('admin/members/esport/edit.html.twig', [
             'form' => $form->createView(),

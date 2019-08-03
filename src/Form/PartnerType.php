@@ -28,7 +28,7 @@ class PartnerType extends AbstractType
         $builder
             ->add('name', TextType::class, ['required' => true ])
             ->add('description', TextareaType::class, [
-				'required' => true,
+                'required' => true,
                 'attr' => ['rows' => 5, 'class' => 'materialize-textarea'],
             ])
             ->add('logo', FileType::class, [

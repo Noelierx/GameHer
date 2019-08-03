@@ -19,6 +19,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.10.0",
         "ckeditor": "^4.12.1",
+        "datatables": "^1.10.18",
         "jquery": "^3.4.1",
         "materialize-css": "^1.0.0",
         "normalize.css": "^8.0.1",

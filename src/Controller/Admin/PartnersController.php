@@ -62,26 +62,15 @@ class PartnersController extends AbstractController
             }
         }
 
-		if ($form->isSubmitted() && !$form->isValid()) {
-			foreach ($form->getErrors() as $error) {
-				$this->addFlash('danger', $error->getMessage().$error->getCause());
-			}
-		}
+        if ($form->isSubmitted() && !$form->isValid()) {
+            foreach ($form->getErrors() as $error) {
+                $this->addFlash('danger', $error->getMessage().$error->getCause());
+            }
+        }
 
         return $this->render('admin/partners/new.html.twig', [
             'partner' => $partner,
             'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{uuid}", name="admin_partners_show", methods={"GET"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
-     * @Route("/{slug}", name="admin_partners_show_slug", methods={"GET"})
-     */
-    public function show(Partner $partner): Response
-    {
-        return $this->render('admin/partners/show.html.twig', [
-            'partner' => $partner,
         ]);
     }
 
@@ -114,11 +103,11 @@ class PartnersController extends AbstractController
             }
         }
 
-		if ($form->isSubmitted() && !$form->isValid()) {
-			foreach ($form->getErrors() as $error) {
-				$this->addFlash('danger', $error->getMessage().$error->getCause());
-			}
-		}
+        if ($form->isSubmitted() && !$form->isValid()) {
+            foreach ($form->getErrors() as $error) {
+                $this->addFlash('danger', $error->getMessage().$error->getCause());
+            }
+        }
 
         return $this->render('admin/partners/edit.html.twig', [
             'form' => $form->createView(),

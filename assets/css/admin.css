@@ -37,4 +37,24 @@ main {
 	flex-grow: 1;
 }
 
-.badge + .badge {margin-left: .25rem;}
+#admin_post_show .container {
+	background-color: var(--gh-white);
+	border: 1px solid #000;
+	margin-top: 3rem;
+	padding: 2rem 1rem;
+}
+
+.post__infos {
+	display: flex;
+	flex-direction: column;
+	p {margin: 0;}
+}
+.post__author {
+	color: var(--gh-gray);
+}
+.post__tags {
+	display: flex;
+	flex-wrap: wrap;
+	.badge {margin-left: 0;margin-bottom: .25rem;}
+	.badge + .badge {margin-left: .25rem;}
+}

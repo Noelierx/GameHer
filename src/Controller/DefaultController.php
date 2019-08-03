@@ -30,12 +30,12 @@ class DefaultController extends AbstractController
      */
     public function blog(Request $request, int $page, PostRepository $posts, TagRepository $tags, UserRepository $users): Response
     {
-    	$options = [
-    		'tag' => $request->query->has('tag') ? $tags->findOneBy(['name' => $request->query->get('tag')]) : null,
-    		'author' => $request->query->has('author') ? $users->findOneBy(['displayName' => $request->query->get('author')]) : null,
-		];
+        $options = [
+            'tag' => $request->query->has('tag') ? $tags->findOneBy(['name' => $request->query->get('tag')]) : null,
+            'author' => $request->query->has('author') ? $users->findOneBy(['displayName' => $request->query->get('author')]) : null,
+        ];
 
-		$posts = $posts->findLatest($page, $options);
+        $posts = $posts->findLatest($page, $options);
 
         return $this->render('views/blog/blog.html.twig', [
             'paginator' => $posts,
@@ -54,18 +54,18 @@ class DefaultController extends AbstractController
         ]);
     }
 
-	/**
-	 * @Route("/esport", name="esport", methods={"GET"})
-	 */
-	public function esport(): Response
-	{
-		return $this->render('views/esport/esport.html.twig', [
-			'main_team' => $this->getDoctrine()->getRepository(EsportMember::class)
-				->findBy(['team' => EsportMember::MAIN_TEAM], ['role' => 'asc']),
-			'academy' => $this->getDoctrine()->getRepository(EsportMember::class)
-				->findBy(['team' => EsportMember::ACADEMY_TEAM], ['role' => 'asc']),
-		]);
-	}
+    /**
+     * @Route("/esport", name="esport", methods={"GET"})
+     */
+    public function esport(): Response
+    {
+        return $this->render('views/esport/esport.html.twig', [
+            'main_team' => $this->getDoctrine()->getRepository(EsportMember::class)
+                ->findBy(['team' => EsportMember::MAIN_TEAM], ['role' => 'asc']),
+            'academy' => $this->getDoctrine()->getRepository(EsportMember::class)
+                ->findBy(['team' => EsportMember::ACADEMY_TEAM], ['role' => 'asc']),
+        ]);
+    }
 
     /**
      * @Route("/webtv", name="webtv", methods={"GET"})
@@ -118,10 +118,10 @@ class DefaultController extends AbstractController
     {
         return $this->render('views/mentions.html.twig');
     }
-	/**
-	 * @Route("/logout", name="logout")
-	 */
-	public function logout()
-	{
-	}
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logout()
+    {
+    }
 }

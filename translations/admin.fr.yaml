@@ -1,6 +1,7 @@
 default.action.show: Voir
 default.action.add: Ajouter
 default.action.edit: Editer
+default.action.back: Retour
 default.action.delete: Supprimer
 default.action.save: Sauvegarder
 
