@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "72dd8b0dcca536c628ac9a9b5ea5bac6",
+    "content-hash": "e32a172eebfc04412af02e1c96271855",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -6019,6 +6019,50 @@
             ],
             "description": "A tool to automatically fix PHP code style",
             "time": "2019-06-01T10:32:12+00:00"
+        },
+        {
+            "name": "heroku/heroku-buildpack-php",
+            "version": "v158",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/heroku/heroku-buildpack-php.git",
+                "reference": "26be51dee125027ac81bac756c3f27279623912d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/26be51dee125027ac81bac756c3f27279623912d",
+                "reference": "26be51dee125027ac81bac756c3f27279623912d",
+                "shasum": ""
+            },
+            "bin": [
+                "bin/heroku-hhvm-apache2",
+                "bin/heroku-hhvm-nginx",
+                "bin/heroku-php-apache2",
+                "bin/heroku-php-nginx"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Zuelke",
+                    "email": "dz@heroku.com"
+                }
+            ],
+            "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP/HHVM and Apache2/Nginx as on Heroku",
+            "homepage": "https://github.com/heroku/heroku-buildpack-php",
+            "keywords": [
+                "apache",
+                "apache2",
+                "foreman",
+                "heroku",
+                "hhvm",
+                "nginx",
+                "php"
+            ],
+            "time": "2019-07-04T10:43:37+00:00"
         },
         {
             "name": "nikic/php-parser",
