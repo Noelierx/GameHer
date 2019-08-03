@@ -14,8 +14,7 @@
     "scripts": {
         "dev": "encore dev",
         "watch": "encore dev --watch",
-        "build": "encore production --progress",
-        "heroku-postbuild": "encore production"
+        "build": "encore production --progress"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.10.0",
