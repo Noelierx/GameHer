@@ -5,7 +5,7 @@
         <p class="recruitment-text">{{ explanation }}</p>
         <div class="row fix-immonde">
             {% for element in elements %}
-                <div class="col s12 m5 l4">
+                <div class="col s12 m5 l4 add-padding">
                     <div class="icon-block">
                         <img src="{{ element.logo_url }}" class="recruitment-picto"/>
                         <h5 class="{{ element.title_class | default('') }}" style="text-align: center;">{{ element.title }}</h5>
