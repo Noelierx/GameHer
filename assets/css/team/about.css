@@ -90,11 +90,11 @@
 
 .membersList {
 	display: none;
-	&.active {display: flex !important; flex-wrap: wrap; }
+	&.active {display: flex !important; flex-wrap: wrap; justify-content: center;}
 }
 
 .col.gameherMember {
-	margin: 0 auto 3rem;
+	margin: 0 0 3rem !important;
 	p { margin: 0; }
 }
 .gameherMember__image {
