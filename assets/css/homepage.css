@@ -32,33 +32,55 @@
 .homepage__illustration {
     position: absolute;
 }
-
-    .homepage__picture {
+.quote {
+    float:right;
+}
+.homepage__picture {
         max-width: 27vh;
         margin-top: 250px;
     }
     .homepage__aside {
         top: 66%;
-        width: 100% !important;
+        width: 600px;
+        padding: 25px;
         background-color: var(--gh-red);
         color: var(--gh-white);
-        font-size: 1rem;
+        font-size: 1.2rem;
         text-align: left;
-        padding: 1.5rem 1rem;
         position: absolute;
-        left: 162px;
+        left: 64px;
     }
-
 @media (min-width: 922px) {
     .homepage__picture {
-        max-width: 27vh;
-        margin-top: 325px;
+        max-width: 35vh;
+        margin-top: 179px;
+        margin-left: -160px;
     }
     .homepage__aside {
-        top: 77%;
-
+        top: 59%;
+    }
+    .quote {
+        width:300px;
     }
 }
+@media (min-width: 1024px){
+    .quote {
+        width: 375px;
+    }
+    .homepage__aside {
+        top: 42%;
+    }
+}
+@media (min-width: 1275px) {
+    .quote {
+        width:475px;
+    } }
+@media (min-width: 1500px) {
+    .quote {
+        width:700px;
+    }
+}
+
 .contentClass p {
     margin: 0;
     font-size: 60px;
