@@ -28,5 +28,31 @@ nav a, nav ul a {
 	margin-top: 5rem;
 	transition: transform 200ms ease-in-out;
 }
+
+nav .dropdown-trigger {cursor: pointer;}
 nav .dropdown-trigger i,
 nav .dropdown-trigger svg {color: var(--gh-red); }
+
+header .dropdown-content {
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: auto;
+	width: 100%;
+	position: absolute;
+	top: 5rem;
+	justify-content: flex-end;
+	opacity: 1;
+	background-color: #dadada;
+	display: none;
+
+	li {
+		display: inline-block;
+		width: auto;
+		& > a {color: var(--gh-blue); &:hover, &.active {color: var(--gh-red);}}
+	}
+}
+
+header li .active + .dropdown-content {
+	display: flex;
+}

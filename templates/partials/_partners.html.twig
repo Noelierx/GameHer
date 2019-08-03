@@ -1,11 +1,11 @@
 {% spaceless %}
-	<section class="partnerBanner partnerBanner_footer">
+	<section class="partnerFooter">
 		<div class="container-fluid">
-			<div class="partnerBanner__table">
+			<div class="row">
 				{% for partner in partners %}
-					<div class="partnerBanner__col">
-						<a href="{{ partner.website ? partner.website : path('partners') }}">
-							<img src="{{ asset('/uploads/partners/' ~ partner.logo) }}" class="partnerBanner__image" alt="{{ partner.name }}" />
+					<div class="col s6 m4 l3 partnerFooter__partner" >
+						<a href="{{ partner.website ? partner.website : path('partners') }}" class="partnerFooter__link">
+							<img src="{{ asset('/uploads/partners/' ~ partner.logo) }}" class="partnerFooter__image" alt="{{ partner.name }}" />
 						</a>
 					</div>
 				{% endfor %}

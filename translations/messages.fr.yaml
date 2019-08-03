@@ -57,8 +57,8 @@ esport.league.show_team: Voir
 esport.league.hide_team: Masquer
 esport.league.main_team: Equipe principale
 esport.league.academy_team: Equipe académique
-esport.team.description.team_main: L'équipe GameHer Esport League of Legends est la figure de proue de notre structure. Elle est un mélange parfait de la notion de mixité et des objectifs de performance que nous souhaitons voir émerger dans l'esport.
-esport.team.description.team_academy: L'équipe GameHer Esport Academy.
+esport.team.description.team_main: L'équipe Game'Her League of Legends est la figure de proue de notre structure. Elle est un mélange parfait de la notion de mixité et des objectifs de performance que nous souhaitons voir émerger dans l'esport.
+esport.team.description.team_academy: L'équipe Game'Her Académie est un ensemble de joueurs et joueuses souhaitant progresser sur League of Legends. Game'Her met à leur disposition les outils nécessaires pour atteindre leurs objectifs.
 esport.member.team.team_main: Principale
 esport.member.team.team_academy: Académie
 esport.member.role.10_top: Top
@@ -87,7 +87,7 @@ webtv.extension.description: |
 tournament.ghleague.title: Game'Her League
 tournament.ghleague.show: Voir
 tournament.ghleague.hide: Masquer
-tournament.ghleague.description: The Game'Her League is an online tournament promoting diversity in esport.
+tournament.ghleague.description: Découvrez le premier tournoi mettant en avant la mixité dans l'esport, la Game'Her League.
 
 #partners
 partners.title: Partenaires
