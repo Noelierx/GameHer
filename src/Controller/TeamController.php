@@ -19,58 +19,91 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class TeamController extends AbstractController
 {
-	/**
-	 * @Route("/a-propos", name="about", methods={"GET"})
-	 */
-	public function about(MemberRepository $memberRepository): Response
-	{
-		return $this->render('views/team/about.html.twig', [
-			'direction' => $memberRepository->getByCategory(Role::CATEGORY_DIRECTION),
-			'administration' => $memberRepository->getByCategory(Role::CATEGORY_ADMINISTRATION),
-			'members' => $memberRepository->getByCategory(Role::CATEGORY_MEMBERS),
-			'esports' => $this->getDoctrine()->getRepository(EsportMember::class)->findAll(),
-		]);
-	}
+    /**
+     * @Route("/a-propos", name="about", methods={"GET"})
+     */
+    public function about(MemberRepository $memberRepository): Response
+    {
+        return $this->render(
+            'views/team/about.html.twig',
+            [
+                'direction'      => $memberRepository->getByCategory(Role::CATEGORY_DIRECTION),
+                'administration' => $memberRepository->getByCategory(Role::CATEGORY_ADMINISTRATION),
+                'members'        => $memberRepository->getByCategory(Role::CATEGORY_MEMBERS),
+                'esports'        => $this->getDoctrine()->getRepository(EsportMember::class)->findAll(),
+            ]
+        );
+    }
 
-	/**
-	 * @Route("/contact", name="contact", methods={"GET", "POST"})
-	 */
-	public function contact(Request $request, Swift_Mailer $mailer): Response
-	{
-		$form = $this->createForm(ContactForm::class);
-		$form->handleRequest($request);
+    /**
+     * @Route("/contact", name="contact", methods={"GET", "POST"})
+     */
+    public function contact(Request $request, Swift_Mailer $mailer): Response
+    {
+        $form = $this->createForm(ContactForm::class);
+        $form->handleRequest($request);
 
-		if ($form->isSubmitted() && $form->isValid()) {
-			$data = $form->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
 
-			$message = new Swift_Message();
-			$message->setFrom($data['email'])
-				->setSubject($data['nickname'] . ': ' . $data['subject'])
-				->setTo('contact@gameher.fr')
-				->setBody($data['message']);
+            $message = new Swift_Message();
+            $message->setFrom($data['email'])
+                ->setSubject($data['nickname'] . ': ' . $data['subject'])
+                ->setTo('contact@gameher.fr')
+                ->setBody($data['message']);
 
-			$mailer->send($message);
+            $mailer->send($message);
 
-			$this->addFlash('success', 'message sent');
-		}
+            $this->addFlash('success', 'message sent');
+        }
 
-		if ($form->isSubmitted() && !$form->isValid()) {
-			foreach ($form->getErrors() as $error) {
-				$this->addFlash('danger', $error->getMessage().$error->getCause());
-			}
-		}
+        if ($form->isSubmitted() && !$form->isValid()) {
+            foreach ($form->getErrors() as $error) {
+                $this->addFlash('danger', $error->getMessage() . $error->getCause());
+            }
+        }
 
-		return $this->render('views/team/contact.html.twig', [
-			'form' => $form->createView(),
-		]);
-	}
+        return $this->render(
+            'views/team/contact.html.twig',
+            [
+                'form' => $form->createView(),
+            ]
+        );
+    }
 
-	/**
-	 * @Route("/recruitment", name="recruitment", methods={"GET"})
-	 */
-	public function recrutement(): Response
-	{
-		return $this->render('views/team/recruitment.html.twig');
-	}
+    /**
+     * @Route("/recruitment", name="recruitment", methods={"GET"})
+     */
+    public function recruitment(Request $request, Swift_Mailer $mailer): Response
+    {
+        $form = $this->createForm(ContactForm::class);
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+            $message = new Swift_Message();
+            $message->setFrom($data['email'])
+                ->setSubject($data['nickname'] . ': ' . $data['subject'])
+                ->setTo('recrutement@gameher.fr')
+                ->setBody($data['message']);
+
+            $mailer->send($message);
+
+            $this->addFlash('success', 'message sent');
+        }
+
+        if ($form->isSubmitted() && !$form->isValid()) {
+            foreach ($form->getErrors() as $error) {
+                $this->addFlash('danger', $error->getMessage() . $error->getCause());
+            }
+        }
+
+        return $this->render(
+            'views/team/recruitment.html.twig',
+            [
+                'form' => $form->createView(),
+            ]
+        );
+    }
 }

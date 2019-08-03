@@ -53,4 +53,72 @@
             }
         ]
     } only %}
+    <section class="container contact">
+        <div class="row">
+            <div class="col s12 l6 contact__leftPanel">
+                <h1 class="contact__title">{{ 'contact.title' |trans }}</h1>
+                <p>Vous souhaitez nous rejoindre ? Envoyez nous un mail de motivation via le formulaire ci-contre et nous vous répondrons le plus rapidement possible !</p>
+                <ul class="contact__links">
+                    <li><i class="fa fa-fw fa-edit"></i> contact@gameher.fr</li>
+                    <li><i class="fa fa-fw fa-bookmark"></i> esport@gameher.fr</li>
+                    <li><i class="fa fa-fw fa-fire"></i> partenariat@gameher.fr</li>
+                    <li><i class="fa fa-fw fa-bell"></i> recrutement@gameher.fr</li>
+                    <li class="contact__socials">
+                        <a href="//twitter.com/GameHer" title="GameHer Twitter"><i class="fab fa-twitter" aria-hidden="true"></i>                    </a>
+                        <a href="//facebook.com/GameHer" title="GameHer Facebook"><i class="fab fa-facebook-square" aria-hidden="true"></i>                    </a>
+                        <a href="#" title="GameHer Youtube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        <a href="#" title="GameHer Twitch"><i class="fab fa-twitch" aria-hidden="true"></i></a>
+                        <a href="#" title="GameHer Discord"><i class="fab fa-discord" aria-hidden="true"></i></a>
+                        <a href="#" title="GameHer Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col s12 l6">
+                {{ form_start(form) }}
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form_widget(form.subject) }}
+                        {{ form_label(form.subject) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        {{ form_widget(form.nickname) }}
+                        {{ form_label(form.nickname) }}
+                    </div>
+                    <div class="input-field col s6">
+                        {{ form_widget(form.email) }}
+                        {{ form_label(form.email) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ form_widget(form.message) }}
+                        {{ form_label(form.message) }}
+                    </div>
+                    <div class="col s12 contact__dataUsage">
+                        <label class="contact__dataUsageLabel">
+                            {{ form_widget(form.data_usage) }}
+                            <span class="contact__dataUsageSpan">{{ 'contact.form.data_usage' |trans }}</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        {{ form_row(form.send) }}
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+
+            {#
+                                <div class="col s12 contact__dataUsage">
+                                    <label class="contact__dataUsageLabel">
+                                        <input type="checkbox" class="filled-in" name="data_usage" required />
+                                        <span class="contact__dataUsageSpan">{{ 'contact.form.data_usage' |trans }}</span>
+                                    </label>
+                                </div>
+            #}
+        </div>
+    </section>
 {% endblock %}
