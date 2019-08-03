@@ -9,7 +9,6 @@ const $ = require('jquery');
 
 $('select').formSelect();
 $('.sidenav').sidenav();
-$('.dropdown-trigger').dropdown();
 
 //Blog
 $('#news__categories').change(function ($event) {
@@ -55,4 +54,10 @@ $('.memberToggle').click(function ($event) {
 	$(this).addClass('active');
 	$('.membersList').hide().removeClass('active');
 	$('.membersList.' + $(this).attr('data-toggle')).fadeIn().addClass('active');
+});
+
+$('.dropdown-trigger').click(function ($event) {
+	$event.preventDefault();
+	$('#' + $(this).attr('data-dropdown')).slideToggle().css('display','flex');
+	$(this).toggleClass('active');
 });
