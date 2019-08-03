@@ -103,6 +103,21 @@ class DefaultController extends AbstractController
         return $this->render('views/donations.html.twig');
     }
 
+    /**
+     * @Route("/privacy", name="privacy", methods={"GET"})
+     */
+    public function privacy(): Response
+    {
+        return $this->render('views/privacy.html.twig');
+    }
+
+    /**
+     * @Route("/mentions", name="mentions", methods={"GET"})
+     */
+    public function mentions(): Response
+    {
+        return $this->render('views/mentions.html.twig');
+    }
 	/**
 	 * @Route("/logout", name="logout")
 	 */
