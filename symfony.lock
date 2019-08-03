@@ -126,6 +126,9 @@
     "guzzlehttp/psr7": {
         "version": "1.6.1"
     },
+    "heroku/heroku-buildpack-php": {
+        "version": "v158"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
