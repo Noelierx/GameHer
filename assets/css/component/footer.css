@@ -1,5 +1,5 @@
 footer {
-	&.page-footer { background-color: var(--gh-white); }
+	&.page-footer { padding: 0; margin-top: 2rem; background-color: var(--gh-white); }
 	h5 { color: var(--gh-red); }
 	li { margin: .5rem 0; }
 	a {
@@ -15,4 +15,31 @@ footer {
 
 		a:hover { color: var(--gh-gray); }
 	}
+}
+
+.partnerFooter {
+	margin: 4rem 0;
+}
+
+.partnerFooter .row {
+	display: flex;
+	margin: 0;
+	flex-wrap: wrap;
+}
+
+.row .col.partnerFooter__partner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 2rem;
+	margin: auto;
+}
+
+.partnerFooter__link {
+	display: block;
+}
+
+.partnerFooter__image {
+	max-height: 5rem;
+	filter: brightness(0.1);
 }
