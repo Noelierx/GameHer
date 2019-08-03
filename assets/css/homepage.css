@@ -39,13 +39,12 @@
     }
     .homepage__aside {
         top: 66%;
-        width: 39%;
+        width: 100% !important;
         background-color: var(--gh-red);
         color: var(--gh-white);
         font-size: 1rem;
-        text-align: justify;
+        text-align: left;
         padding: 1.5rem 1rem;
-
         position: absolute;
         left: 162px;
     }
