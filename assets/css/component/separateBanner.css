@@ -2,6 +2,11 @@
 .sectionRed {
     background-color: var(--gh-red);
 }
+.text-donation {
+    color: var(--gh-red);
+    font-size: 25px;
+    text-transform: uppercase;
+}
 .page-header__wrapper {
     display: flex;
     flex-wrap: wrap; }
@@ -45,13 +50,15 @@
     color: var(--gh-white);
     text-transform: uppercase;
     text-align: center;
-    margin: 25px 0 0 0; }
+    margin: 25px 0 0 0;
+    font-size:85px;
+}
 @media (min-width: 1024px) {
     .page-header__title {
         margin: 31px 0 0 0; } }
 
 .page-header__desc {
-    font-size: 25px;
+    font-size: 20px;
     margin: 15px 0 0 0;
     line-height: 1.6; }
 @media (min-width: 1024px) {
@@ -84,7 +91,7 @@
     .page-header__content {
         padding: 30px; }
     .page-header__content-wrapper {
-        max-width: 510px;
+        max-width: 580px;
         text-align: center; }
     .page-header--big .page-header__img-wrapper {
         height: 700px;

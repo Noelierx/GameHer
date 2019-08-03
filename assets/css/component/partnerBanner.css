@@ -1,16 +1,16 @@
 .partnerBanner {
-    padding: 10px 0 30px 0;
+    padding: 40px 0 30px 0;
     text-align: center;
 }
 
 .partnerBanner__image {
-     max-height: 80px;
+     max-width:75%;
      display: inline-block;
      vertical-align: middle;
  }
 
 .partnerBanner__footer {
-    max-height: 55px;
+    max-width:75%;
 }
 
 .partnerBanner__table {
