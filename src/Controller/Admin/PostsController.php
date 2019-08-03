@@ -24,7 +24,7 @@ class PostsController extends AbstractController
     public function index()
     {
         return $this->render('admin/posts/index.html.twig', [
-            'posts' => $this->getDoctrine()->getRepository(Post::class)->findBy([], ['publishedAt' => 'ASC', 'createdAt' => 'DESC']),
+            'posts' => $this->getDoctrine()->getRepository(Post::class)->findBy([], ['publishedAt' => 'DESC', 'createdAt' => 'DESC']),
         ]);
     }
 

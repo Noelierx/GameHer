@@ -44,3 +44,7 @@ On the *OAuth2* tab, click on **Add Redirect** and enter the app's redirect url.
 In the scopes section, select `identify`, `email` and `connections`
 
 Finally, **Save Changes** ! You can now log into the app
+
+### PHP Extensions
+
+`sudo apt-get install php7.3 php7.3-cli php7.3-common php7.3-fpm php7.3-mysql php7.3-intl php7.3-curl  php7.3-zip php7.3-xml`
