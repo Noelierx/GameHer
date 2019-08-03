@@ -25,8 +25,8 @@ class StreamerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class)
-            ->add('channel', TextType::class)
+            ->add('name', TextType::class, ['required' => true ])
+            ->add('channel', TextType::class, ['required' => true ])
             ->add('picture', FileType::class, [
                 'mapped' => false,
                 'required' => false,

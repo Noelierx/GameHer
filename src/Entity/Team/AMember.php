@@ -131,7 +131,7 @@ abstract class AMember
         return $this->firstname;
     }
 
-    public function setFirstname(string $firstname): self
+    public function setFirstname(?string $firstname): self
     {
         $this->firstname = $firstname;
 
@@ -143,7 +143,7 @@ abstract class AMember
         return $this->lastname;
     }
 
-    public function setLastname(string $lastname): self
+    public function setLastname(?string $lastname): self
     {
         $this->lastname = $lastname;
 
@@ -155,7 +155,7 @@ abstract class AMember
         return $this->twitch;
     }
 
-    public function setTwitch(string $twitch): self
+    public function setTwitch(?string $twitch): self
     {
         $this->twitch = $twitch;
 
@@ -167,7 +167,7 @@ abstract class AMember
         return $this->twitter;
     }
 
-    public function setTwitter(string $twitter): self
+    public function setTwitter(?string $twitter): self
     {
         $this->twitter = $twitter;
 
@@ -179,7 +179,7 @@ abstract class AMember
         return $this->facebook;
     }
 
-    public function setFacebook(string $facebook): self
+    public function setFacebook(?string $facebook): self
     {
         $this->facebook = $facebook;
 
@@ -191,7 +191,7 @@ abstract class AMember
         return $this->instagram;
     }
 
-    public function setInstagram(string $instagram): self
+    public function setInstagram(?string $instagram): self
     {
         $this->instagram = $instagram;
 
@@ -203,7 +203,7 @@ abstract class AMember
         return $this->picture;
     }
 
-    public function setPicture(string $picture): self
+    public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
 

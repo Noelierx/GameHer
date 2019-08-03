@@ -175,7 +175,7 @@ class Post
         return $this->publishedAt;
     }
 
-    public function setPublishedAt(DateTime $publishedAt): self
+    public function setPublishedAt(?DateTime $publishedAt): self
     {
         $this->publishedAt = $publishedAt;
 
@@ -249,7 +249,7 @@ class Post
         return $this->picture;
     }
 
-    public function setPicture(string $picture): self
+    public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
 

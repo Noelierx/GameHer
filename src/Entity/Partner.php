@@ -131,7 +131,7 @@ class Partner
         return $this->logo;
     }
 
-    public function setLogo(string $logo): self
+    public function setLogo(?string $logo): self
     {
         $this->logo = $logo;
 
@@ -143,7 +143,7 @@ class Partner
         return $this->website;
     }
 
-    public function setWebsite(string $website): self
+    public function setWebsite(?string $website): self
     {
         $this->website = $website;
 
@@ -155,7 +155,7 @@ class Partner
         return $this->twitter;
     }
 
-    public function setTwitter(string $twitter): self
+    public function setTwitter(?string $twitter): self
     {
         $this->twitter = $twitter;
 
@@ -167,7 +167,7 @@ class Partner
         return $this->facebook;
     }
 
-    public function setFacebook(string $facebook): self
+    public function setFacebook(?string $facebook): self
     {
         $this->facebook = $facebook;
 
@@ -179,7 +179,7 @@ class Partner
         return $this->instagram;
     }
 
-    public function setInstagram(string $instagram): self
+    public function setInstagram(?string $instagram): self
     {
         $this->instagram = $instagram;
 
