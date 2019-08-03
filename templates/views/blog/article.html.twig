@@ -9,7 +9,7 @@
 			<div class="article__header">
 				<img src="{{ asset('build/img/blog/entete.png') }}" aria-hidden="true" class="article__entete">
 				<img src="{{ asset('build/img/blog/entete2.png') }}" aria-hidden="true" class="article__entete2">
-				<img src="{{ article.picture ? asset('uploads/posts' ~ article.picture) : asset('build/img/webtv/streamer.png')}}" alt="{{ article.title }}" class="article__picture">
+				<img src="{{ article.picture ? asset('uploads/posts/' ~ article.picture) : asset('build/img/webtv/streamer.png')}}" alt="{{ article.title }}" class="article__picture">
 			</div>
 			<h1 class="article__title">{{ article.title }}</h1>
 		</div>
