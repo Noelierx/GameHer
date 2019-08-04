@@ -44,7 +44,7 @@ class User implements UserInterface
 
     /**
      * @var string
-     * @ORM\Column(type="string")
+	 * @ORM\Column(type="string", nullable=true)
      */
     protected $email;
 
@@ -254,12 +254,12 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail(?string $email): self
     {
         $this->email = $email;
 
