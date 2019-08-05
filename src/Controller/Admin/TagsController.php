@@ -4,7 +4,6 @@ namespace App\Controller\Admin;
 
 use App\Entity\Blog\Tag;
 use App\Form\Blog\TagType;
-use Doctrine\DBAL\DBALException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

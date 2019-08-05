@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Controller;
 
 use App\Entity\Team\EsportMember;
@@ -27,10 +26,10 @@ class TeamController extends AbstractController
         return $this->render(
             'views/team/about.html.twig',
             [
-                'direction'      => $memberRepository->getByCategory(Role::CATEGORY_DIRECTION),
+                'direction' => $memberRepository->getByCategory(Role::CATEGORY_DIRECTION),
                 'administration' => $memberRepository->getByCategory(Role::CATEGORY_ADMINISTRATION),
-                'members'        => $memberRepository->getByCategory(Role::CATEGORY_MEMBERS),
-                'esports'        => $this->getDoctrine()->getRepository(EsportMember::class)->findAll(),
+                'members' => $memberRepository->getByCategory(Role::CATEGORY_MEMBERS),
+                'esports' => $this->getDoctrine()->getRepository(EsportMember::class)->findAll(),
             ]
         );
     }
@@ -48,7 +47,7 @@ class TeamController extends AbstractController
 
             $message = new Swift_Message();
             $message->setFrom($data['email'])
-                ->setSubject($data['nickname'] . ': ' . $data['subject'])
+                ->setSubject($data['nickname'].': '.$data['subject'])
                 ->setTo('contact@gameher.fr')
                 ->setBody($data['message']);
 
@@ -59,7 +58,7 @@ class TeamController extends AbstractController
 
         if ($form->isSubmitted() && !$form->isValid()) {
             foreach ($form->getErrors() as $error) {
-                $this->addFlash('danger', $error->getMessage() . $error->getCause());
+                $this->addFlash('danger', $error->getMessage().$error->getCause());
             }
         }
 
@@ -84,7 +83,7 @@ class TeamController extends AbstractController
 
             $message = new Swift_Message();
             $message->setFrom($data['email'])
-                ->setSubject($data['nickname'] . ': ' . $data['subject'])
+                ->setSubject($data['nickname'].': '.$data['subject'])
                 ->setTo('recrutement@gameher.fr')
                 ->setBody($data['message']);
 
@@ -95,7 +94,7 @@ class TeamController extends AbstractController
 
         if ($form->isSubmitted() && !$form->isValid()) {
             foreach ($form->getErrors() as $error) {
-                $this->addFlash('danger', $error->getMessage() . $error->getCause());
+                $this->addFlash('danger', $error->getMessage().$error->getCause());
             }
         }
 

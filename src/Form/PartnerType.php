@@ -26,7 +26,7 @@ class PartnerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class, ['required' => true ])
+            ->add('name', TextType::class, ['required' => true])
             ->add('description', TextareaType::class, [
                 'required' => true,
                 'attr' => ['rows' => 5, 'class' => 'materialize-textarea'],

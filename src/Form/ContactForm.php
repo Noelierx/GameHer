@@ -27,20 +27,20 @@ class ContactForm extends AbstractType
     {
         $builder
             ->add('subject', TextType::class, [
-                'label' => $this->translator->trans('contact.form.subject')
+                'label' => $this->translator->trans('contact.form.subject'),
             ])
             ->add('nickname', TextType::class, [
-                'label' => $this->translator->trans('contact.form.nickname')
+                'label' => $this->translator->trans('contact.form.nickname'),
             ])
             ->add('email', EmailType::class, [
-                'label' => $this->translator->trans('contact.form.email')
+                'label' => $this->translator->trans('contact.form.email'),
             ])
             ->add('message', TextareaType::class, [
                 'attr' => [
                     'style' => 'height:10rem',
-                    'class' => 'materialize-textarea'
+                    'class' => 'materialize-textarea',
                 ],
-                'label' => $this->translator->trans('contact.form.message')
+                'label' => $this->translator->trans('contact.form.message'),
             ])
             ->add('data_usage', CheckboxType::class, [
                 'attr' => ['class' => 'filled-in'],

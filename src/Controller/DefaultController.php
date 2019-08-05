@@ -10,9 +10,12 @@ use App\Repository\PartnerRepository;
 use App\Repository\StreamerRepository;
 use App\Repository\User\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\RouterInterface;
 
 class DefaultController extends AbstractController
 {
@@ -118,10 +121,27 @@ class DefaultController extends AbstractController
     {
         return $this->render('views/mentions.html.twig');
     }
+
     /**
      * @Route("/logout", name="logout")
      */
     public function logout()
     {
+    }
+
+    /**
+     * This route is used to redirect previous articles urls to the new /blog route.
+     *
+     * @Route("/{path}", name="blog_redirect")
+     */
+    public function blogRedirect(string $path, PostRepository $posts, RouterInterface $router)
+    {
+        $article = $posts->findOneBy(['slug' => $path]);
+
+        if ($article instanceof Post) {
+            return new RedirectResponse($router->generate('show_article_slug', ['slug' => $article->getSlug()]));
+        }
+
+        throw new NotFoundHttpException();
     }
 }

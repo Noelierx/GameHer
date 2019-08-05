@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Repository\Team;
 
 use App\Entity\Team\Member;
