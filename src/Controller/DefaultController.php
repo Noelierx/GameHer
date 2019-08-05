@@ -128,20 +128,4 @@ class DefaultController extends AbstractController
     public function logout()
     {
     }
-
-    /**
-     * This route is used to redirect previous articles urls to the new /blog route.
-     *
-     * @Route("/{path}", name="blog_redirect")
-     */
-    public function blogRedirect(string $path, PostRepository $posts, RouterInterface $router)
-    {
-        $article = $posts->findOneBy(['slug' => $path]);
-
-        if ($article instanceof Post) {
-            return new RedirectResponse($router->generate('show_article_slug', ['slug' => $article->getSlug()]));
-        }
-
-        throw new NotFoundHttpException();
-    }
 }
