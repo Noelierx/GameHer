@@ -44,6 +44,9 @@
 						{% if is_granted('ROLE_ADMIN') %}
 							<li><a class="nav-link" href="{{ path('admin') }}">{{ 'menu.admin'|trans }}</a></li>
 						{% endif %}
+						{% if is_granted('ROLE_REDACTEUR') %}
+							<li><a class="nav-link" href="{{ path('admin') }}">{{ 'menu.redaction'|trans }}</a></li>
+						{% endif %}
 						{% if app.user %}
 							<li>
 								<a class="dropdown-trigger" data-dropdown="dropdown-user">{{ app.user.displayName }} <i class="fa fa-caret-down"></i></a>

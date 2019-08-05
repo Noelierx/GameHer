@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/")
- * @IsGranted("ROLE_ADMIN")
+ * @IsGranted("ROLE_REDACTEUR")
  */
 class AdminController extends AbstractController
 {
