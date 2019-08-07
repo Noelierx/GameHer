@@ -29,8 +29,9 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', TextType::class, ['required' => true ])
+            ->add('title', TextType::class, ['required' => true])
             ->add('content', CKEditorType::class, [
+                'config' => ['height' => '500px'],
                 'required' => true,
                 'label_attr' => ['style' => 'transform: translateY(-14px) scale(0.8);transform-origin: 0 0;'],
                 ])

@@ -4,8 +4,8 @@ use App\Kernel;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;
 
-$_SERVER['APP_DEBUG'] = true;
-$_SERVER['APP_ENV'] = 'dev';
+//$_SERVER['APP_DEBUG'] = true;
+//$_SERVER['APP_ENV'] = 'dev';
 require dirname(__DIR__).'/config/bootstrap.php';
 
 if ($_SERVER['APP_DEBUG']) {

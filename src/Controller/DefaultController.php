@@ -10,9 +10,12 @@ use App\Repository\PartnerRepository;
 use App\Repository\StreamerRepository;
 use App\Repository\User\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\RouterInterface;
 
 class DefaultController extends AbstractController
 {
@@ -118,6 +121,7 @@ class DefaultController extends AbstractController
     {
         return $this->render('views/mentions.html.twig');
     }
+
     /**
      * @Route("/logout", name="logout")
      */

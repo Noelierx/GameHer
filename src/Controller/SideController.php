@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Controller;
 
 use App\Repository\Blog\PostRepository;
@@ -19,7 +18,7 @@ class SideController extends AbstractController
     public function recommended(PostRepository $postRepository)
     {
         return $this->render('partials/_recommendedArticles.html.twig', [
-            'articles' => $postRepository->getRecommended(3)
+            'articles' => $postRepository->getRecommended(3),
         ]);
     }
 }

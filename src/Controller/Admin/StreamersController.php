@@ -5,7 +5,6 @@ namespace App\Controller\Admin;
 use App\Entity\Streamer;
 use App\Form\StreamerType;
 use App\Service\FileUploader;
-use Exception;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

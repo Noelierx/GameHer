@@ -38,7 +38,9 @@ input[type="text"].news__search {
 	position: relative;
 	font-family: 'headingcompressedpro-extbd', sans-serif;
 	margin-bottom: 1.5rem;
+	background-color: var(--gh-blue);
 
+	& > img {width: auto; height: 180px; margin: auto;}
 	p {margin: 0;line-height: 1;}
 	&.--orange .name {color: var(--gh-orange);}
 	&.--red .name {color: var(--gh-red);}
@@ -98,7 +100,8 @@ input[type="text"].news__search {
 .article__picture {
 	position: absolute;
 	top: 0;
-	width: 60%;
+	min-width: 60%;
+	height: 100%;
 	right: 0;
 	z-index: -2;
 }
@@ -138,6 +141,8 @@ input[type="text"].news__search {
 		text-transform: uppercase;
 		font-size: 1.8rem;
 	}
+	img { margin: auto; }
+	a {color: var(--gh-orange); &:hover{text-decoration: underline; }}
 }
 
 .followUs {

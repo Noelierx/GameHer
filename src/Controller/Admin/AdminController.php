@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/")
- * @IsGranted("ROLE_ADMIN")
+ * @IsGranted("ROLE_REDACTEUR")
  */
 class AdminController extends AbstractController
 {
@@ -27,7 +27,7 @@ class AdminController extends AbstractController
     public function users()
     {
         return $this->render('admin/users.html.twig', [
-            'users' => $this->getDoctrine()->getRepository(User::class)->findAll()
+            'users' => $this->getDoctrine()->getRepository(User::class)->findAll(),
         ]);
     }
 }

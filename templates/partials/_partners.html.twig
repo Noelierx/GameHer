@@ -4,7 +4,7 @@
 			<div class="row">
 				{% for partner in partners %}
 					<div class="col s6 m4 l3 partnerFooter__partner" >
-						<a href="{{ partner.website ? partner.website : path('partners') }}" class="partnerFooter__link">
+						<a href="{{ partner.website ? partner.website : path('partners') }}" class="partnerFooter__link" target="_blank" rel="noopener noreferrer">
 							<img src="{{ asset('/uploads/partners/' ~ partner.logo) }}" class="partnerFooter__image" alt="{{ partner.name }}" />
 						</a>
 					</div>

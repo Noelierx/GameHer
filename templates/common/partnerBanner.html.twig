@@ -3,7 +3,7 @@
         <div class="partnerBanner__table">
             {% for partner in partners %}
                 <div class="partnerBanner__col">
-                    <a href="{{ partner.url }}"><img src="{{ partner.logo_url }}" class="partnerBanner__image {{ partnerBanner_classImage | default('') }}" alt="{{ partner.logo_alt | default('') }}" /></a>
+                    <a href="{{ partner.url }}" target="_blank" rel="noopener noreferrer"><img src="{{ partner.logo_url }}" class="partnerBanner__image {{ partnerBanner_classImage | default('') }}" alt="{{ partner.logo_alt | default('') }}" /></a>
                 </div>
             {% endfor %}
         </div>

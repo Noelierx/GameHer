@@ -9,6 +9,7 @@ framework:
         handler_id: ~
         cookie_secure: auto
         cookie_samesite: lax
+        cookie_lifetime: 604800
 
     esi: true
     #fragments: true

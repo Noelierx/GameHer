@@ -4,7 +4,7 @@
 		{{  render(controller('App\\Controller\\SideController::partners')) }}
 		<hr>
 		{% endif %}
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col l3 hide-on-med-and-down">
                 <img src="{{ asset('/build/img/logo_footer.png') }}" alt="GameHer">
@@ -32,17 +32,17 @@
             </div>
             <div class="col l3 s12 m4">
                 <h5>{{ 'footer.title.follow_us' |trans }}</h5>
-								<ul>
-									<li><a href="{{ path('contact')}}">{{ 'footer.menu.contact_us'|trans }}</a></li>
-									<li class="footer__socials">
-										<a href="//twitter.com/GameHer" title="GameHer Twitter"><i class="fab fa-twitter" aria-hidden="true"></i>                    </a>
-										<a href="//facebook.com/GameHer" title="GameHer Facebook"><i class="fab fa-facebook-square" aria-hidden="true"></i>                    </a>
-										<a href="#" title="GameHer Youtube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-										<a href="#" title="GameHer Twitch"><i class="fab fa-twitch" aria-hidden="true"></i></a>
-										<a href="#" title="GameHer Discord"><i class="fab fa-discord" aria-hidden="true"></i></a>
-										<a href="#" title="GameHer Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-									</li>
-								</ul>
+                <ul>
+                    <li><a href="{{ path('contact')}}">{{ 'footer.menu.contact_us'|trans }}</a></li>
+                    <li class="footer__socials">
+                        <a href="//twitter.com/GameHer" title="GameHer Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="//facebook.com/GameHer" title="GameHer Facebook"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="//youtube.com/channel/UCEpAdXm_wIiYXJ5wueVQIcg/featured" title="GameHer Youtube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        <a href="//twitch.tv/gamehertv" title="GameHer Twitch"><i class="fab fa-twitch" aria-hidden="true"></i></a>
+                        <a href="//discordapp.com/invite/vKpbwh6" title="GameHer Discord"><i class="fab fa-discord" aria-hidden="true"></i></a>
+                        <a href="//instagram.com/gameheroff/" title="GameHer Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
