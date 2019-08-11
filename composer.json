@@ -29,6 +29,7 @@
         "wohali/oauth2-discord-new": "^1.0"
     },
     "require-dev": {
+        "deployer/deployer": "^6.4",
         "friendsofphp/php-cs-fixer": "^2.15",
         "heroku/heroku-buildpack-php": "^158.0",
         "symfony/maker-bundle": "^1.12",
