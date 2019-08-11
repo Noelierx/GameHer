@@ -5,7 +5,12 @@
     letter-spacing: .2rem;
 }
 .withMargin {
-    margin-left: 150px;
+    margin-left: 0;
+}
+@media (min-width: 769px) {
+    .withMargin {
+        margin-left: 150px;
+    }
 }
 @media (min-width: 1280px) {
     .withMargin {

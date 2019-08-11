@@ -9,7 +9,11 @@
 	text-transform: uppercase;
 	margin: 0;
 	font-size: 85px;
-	@media (max-width: 992px) { font-size: 4rem; }
+}
+@media (max-width: 992px) {
+	.news__title {
+		font-size: 4rem
+	}
 }
 .news__subtitle {
 	color: var(--gh-blue);
@@ -116,7 +120,12 @@ input[type="text"].news__search {
 	left: 10%;
 	margin: auto;
 	text-transform: uppercase;
-	font-size: 75px;
+	font-size: 30px;
+}
+@media (min-width: 700px) {
+	.article__title {
+		font-size: 75px;
+	}
 }
 .article__second_title {
 	font-family: "headingcompressedpro-extbd", sans-serif;
