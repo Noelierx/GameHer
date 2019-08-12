@@ -1,7 +1,7 @@
 {% spaceless %}
 	<div class="row">
 		<div class="col s3">
-			<img src="{{ author.picture ? asset('uploads/members/' ~ author.picture) : asset('build/img/esport/player.png') }}" alt="{{ author.displayName }}" class="author__picture">
+			<img src="{{ author.picture ? asset('uploads/members/' ~ author.picture) : asset('build/img/blog/WAITING.png') }}" alt="{{ author.displayName }}" class="author__picture">
 		</div>
 		<div class="col s9">
 			<h5 class="author__name">{{ author.firstName | default('') }} <a href="{{ path('blog', {author: author.displayName}) }}" class="author__nickname">{{ author.displayName }}</a> {{ author.lastName | default('') }}</h5>
