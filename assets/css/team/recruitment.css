@@ -1,15 +1,21 @@
-.recruitment-title {
-    padding: 100px 0 0 0;
+.sectionBlue {
+    background-color: var(--gh-blue);
+    color: var(--gh-white);
+}
+.dataList-wrapper {
+    padding: 80px 0;
+}
+.dataList-title {
     color: var(--gh-yellow);
     text-align: center;
     text-transform: uppercase;
 }
-.recruitment-text {
+.dataList-text {
     text-align: center;
     padding-bottom: 36px;
     margin:0 auto;
 }
-.recruitment-picto {
+.dataList-picto {
     width:64px;
     height:64px;
     margin:0 auto;

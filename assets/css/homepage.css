@@ -1,125 +1,59 @@
-.contentClass {
+.homepage__subtitle {
     text-transform: uppercase;
-    margin-top: -35px;
-    font-size: 35px;
     letter-spacing: .2rem;
-}
-.withMargin {
-    margin-left: 0;
-}
-@media (min-width: 769px) {
-    .withMargin {
-        margin-left: 150px;
-    }
-}
-@media (min-width: 1280px) {
-    .withMargin {
-        margin-left: 250px;
-    }
-}
-.full-height {
-    height:100vh!important;
-    padding:30px;
-}
-.homepage__title {
-    text-transform: uppercase;
-    font-size: 35px;
-    color:var(--gh-red);
-}
-@media (max-width: 580px) {
-    .homepage__illustration {
-        display:none;
-    }
-    .homepage__picture {
-        display:none;
-    }
-}
-.homepage__illustration {
-    position: absolute;
-}
-.quote {
-    float:right;
-}
-.homepage__picture {
-        max-width: 27vh;
-        margin-top: 250px;
-    }
-    .homepage__aside {
-        top: 66%;
-        width: 600px;
-        padding: 25px;
-        background-color: var(--gh-red);
-        color: var(--gh-white);
-        font-size: 1.2rem;
-        text-align: left;
-        position: absolute;
-        left: 64px;
-    }
-@media (min-width: 922px) {
-    .homepage__picture {
-        max-width: 35vh;
-        margin-top: 179px;
-        margin-left: -160px;
-    }
-    .homepage__aside {
-        top: 59%;
-    }
-    .quote {
-        width:300px;
-    }
-}
-@media (min-width: 1024px){
-    .quote {
-        width: 375px;
-    }
-    .homepage__aside {
-        top: 42%;
-    }
-}
-@media (min-width: 1275px) {
-    .quote {
-        width:475px;
-    } }
-@media (min-width: 1500px) {
-    .quote {
-        width:700px;
-    }
-}
-
-.contentClass p {
     margin: 0;
     font-size: 60px;
     font-family: 'headingcompressedpro-extbd', sans-serif;
 }
+
+.withMargin {
+    margin-left: 0;
+    @media (min-width: 769px) {
+        margin-left: 150px;
+    }
+    @media (min-width: 1024px) {
+        margin-left: 0;
+    }
+    @media (min-width: 1280px) {
+        margin-left: 250px;
+    }
+}
+
 .titleHomepage {
     font-family: 'headingcompressedpro-extbd', sans-serif;
     font-size: 45px;
 }
+
 .withBackgroundImage {
-    background-image:
-            linear-gradient(rgba(201,46,75, 0.1), rgba(201,46,75, 0.1)),
-            url("../img/homepage/MASCOTTE.png");
+    background-image: linear-gradient(rgba(201, 46, 75, 0.1), rgba(201, 46, 75, 0.1)),
+    url("../img/homepage/MASCOTTE.png");
     background-position: left;
     background-color: var(--gh-red);
     background-repeat: no-repeat;
     background-size: cover;
 }
-.esportTitle{
-  color: #2BCA63;
+
+.esportTitle {
+    color: #2BCA63;
 }
-.communicationTitle{
+
+.communicationTitle {
     color: #C82E4A;
 }
-.tournoiTitle{
+
+.tournoiTitle {
     color: #D5D096;
 }
-.streamingTitle{
+
+.streamingTitle {
     color: #9C4593;
 }
-.graphismeTitle{
+
+.graphismeTitle {
     color: #C9772E;
 }
-.presseTitle{
+
+.presseTitle {
     color: #A1BCEB;
 }
 
@@ -128,11 +62,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+}
 
 /*===== All Button Style =====*/
 .main-btn {
-    margin-top:25px;
+    margin-top: 25px;
     display: inline-block;
     font-weight: 600;
     text-align: center;
@@ -149,140 +84,62 @@
     color: #fff;
     cursor: pointer;
     z-index: 5;
-    -webkit-transition: all 0.4s ease-out 0s;
-    -moz-transition: all 0.4s ease-out 0s;
-    -ms-transition: all 0.4s ease-out 0s;
-    -o-transition: all 0.4s ease-out 0s;
     transition: all 0.4s ease-out 0s;
     background-color: #EB3656;
-    -webkit-box-shadow: 0px 5px 16px 0px rgba(235, 54, 86, 0.65);
-    -moz-box-shadow: 0px 5px 16px 0px rgba(235, 54, 86, 0.65);
-    box-shadow: 0px 5px 16px 0px rgba(235, 54, 86, 0.65);
+    box-shadow: 0 5px 16px 0 rgba(235, 54, 86, 0.65);
     font-family: 'Barlow', sans-serif;
-    text-transform: uppercase; }
-.main-btn i {
-    margin-right: 5px; }
-.main-btn:hover {
-    background-color: var(--gh-white);
-    color: var(--gh-red);
-    border-color: var(--gh-red); }
-.main-btn.main-btn-2 {
-    background-color: var(--gh-white);
-    color: #EB3656;
-    border-color: #EB3656; }
-.main-btn.main-btn-2:hover {
-    background-color: var(--gh-red);
-    border-color: var(--gh-red);
-    color: var(--gh-white); }
+    text-transform: uppercase;
 
+    i { margin-right: 5px; }
+    &:hover {
+        background-color: var(--gh-white);
+        color: var(--gh-red);
+        border-color: var(--gh-red);
+    }
+    &.main-btn-2 {
+        background-color: var(--gh-white);
+        color: #EB3656;
+        border-color: #EB3656;
+        &:hover {
+            background-color: var(--gh-red);
+            border-color: var(--gh-red);
+            color: var(--gh-white);
+        }
+    }
+}
 /*===========================
     3.ABOUT css
 ===========================*/
 .about-area {
-    padding-top: 80px;
-    padding-bottom: 80px; }
-
-@media (max-width: 767px) {
-    .about-area {
-        padding-top: 30px;
-        padding-bottom: 80px; } }
+    padding: 80px 0;
+}
 
 .about-image {
     position: relative;
-    margin-top: 50px; }
-@media (max-width: 767px) {
-    .about-image::before {
-        display: none; } }
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    .about-image::before {
-        display: block; } }
-.about-image .single-image {
-    width: 360px; }
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-    .about-image .single-image {
-        width: 280px; } }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .about-image .single-image {
-        width: 400px; } }
-@media (max-width: 767px) {
-    .about-image .single-image {
-        width: 100%; } }
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    .about-image .single-image {
-        width: 360px; } }
-.about-image .single-image img {
-    width: 100%; }
-.about-image .single-image.image-tow {
-    margin-top: -200px;
-    position: relative;
-    z-index: 5; }
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-    .about-image .single-image.image-tow {
-        margin-top: -150px; } }
-@media (max-width: 767px) {
-    .about-image .single-image.image-tow {
-        margin-top: 30px; } }
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    .about-image .single-image.image-tow {
-        margin-top: -200px; } }
-.about-image .about-btn {
-    position: relative;
-    margin-top: -40px;
-    display: inline-block;
-    z-index: 9; }
-@media (max-width: 767px) {
-    .about-image .about-btn {
-        margin: 0 auto;
-        display: block;
-        text-align: center; } }
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    .about-image .about-btn {
-        margin-left: 80px;
-        display: inline-block;
-        text-align: left;
-        margin-top: -50px; } }
-.about-image .about-btn .main-btn {
-    line-height: 58px;
-    padding: 0 40px;
-    border: 8px solid var(--gh-white);
-    font-weight: 700;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none; }
-.about-image .about-btn .main-btn span {
-    font-size: 35px; }
-@media (max-width: 767px) {
-    .about-image .about-btn .main-btn span {
-        font-size: 28px; } }
-.about-image .about-btn .main-btn:hover {
-    border-color: var(--gh-red); }
-@media (max-width: 767px) {
-    .about-image .about-btn .main-btn {
-        line-height: 48px;
-        padding: 0 30px;
-        font-size: 14px;
-        margin-top: -25px; } }
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    .about-image .about-btn .main-btn {
-        line-height: 48px;
-        padding: 0 30px;
-        font-size: 14px;
-        margin-top: -25px; } }
+}
 
 .about-content .about-welcome {
     font-size: 24px;
-    margin-top: 45px;
+    margin: 0;
     color: var(--gh-red);
-    text-transform: uppercase; }
-@media (max-width: 767px) {
-    .about-content .about-welcome {
-        font-size: 18px; } }
+    text-transform: uppercase;
+}
 
 .about-content .about-title {
     font-size: 35px;
     margin-top: 10px;
-    text-transform: uppercase; }
-@media (max-width: 767px) {
-    .about-content .about-title {
-        font-size: 26px; } }
+    text-transform: uppercase;
+}
 
+@media (max-width: 767px) {
+    .about-area {
+        padding-top: 30px;
+        padding-bottom: 80px;
+    }
+    .about-content .about-welcome {
+        font-size: 18px;
+    }
+    .about-content .about-title {
+        font-size: 26px;
+    }
+}

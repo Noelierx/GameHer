@@ -87,10 +87,3 @@ button.btn-show {
 	&:hover, &.opened:hover { background-color: var(--gh-orange); }
 	&.opened { background-color: var(--gh-orange); &:hover {background-color: #000;}}
 }
-
-.sectionBlue {
-	background-color: var(--gh-blue);
-	color: var(--gh-white);
-	margin-top: -35px;
-	padding-bottom: 80px;
-}

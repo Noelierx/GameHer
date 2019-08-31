@@ -12,9 +12,7 @@
                     <h2 class="page-header__title {{ titleClass | default('') }}">{{ secondTitle | raw }}</h2>
                 {% endif %}
                 {% if content is defined %}
-                <div class="page-header__desc editor-content {{ contentClass | default('') }}">
-                    <p><span>{{ content | raw }}</span></p>
-                </div>
+                <p class="page-header__desc editor-content {{ contentClass | default('') }}">{{ content | raw }}</p>
                 {% endif %}
             </div>
         </div>

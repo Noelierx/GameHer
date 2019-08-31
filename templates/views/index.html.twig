@@ -8,21 +8,19 @@
         mainTitle: "homepage.title" | trans,
         content: "homepage.subtitle" | trans,
         classNameContent: "withBackgroundImage",
-        contentClass: "contentClass",
+        contentClass: "homepage__subtitle",
         classContent: "withMargin",
         image_url: "/build/img/homepage/PHOTOGRAPHIE.png",
     } only %}
     <section id="about" class="about-area">
         <div class="container">
             <div class="row">
-                <div class="col s12 m12 l12 xl6">
+                <div class="col hide-on-med-and-down l6 xl6">
                     <div class="about-image clearfix">
-                        <div class="single-image float-left">
-                            <img src="{{ asset('build/img/homepage/mixite.png') }}" alt="About">
-                        </div> <!-- single image -->
+                        <img src="{{ asset('build/img/homepage/mixite.png') }}" alt="About">
                     </div> <!-- about image -->
                 </div>
-                <div class="col s12 m12 l12 xl6">
+                <div class="col s12 l6 xl6">
                     <div class="about-content">
                         <h4 class="about-welcome">Notre mission </h4>
                         <h3 class="about-title">Qu'est-ce que Game'Her ?</h3>
