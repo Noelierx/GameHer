@@ -32,7 +32,7 @@
 					<img src="{{ article.picture ? asset('uploads/posts/' ~ article.picture) : asset('build/img/webtv/streamer.png')}}" alt="{{ article.title }}">
 					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
 						<div class="links">
-							<p class="tag">{{ article.tags[0].name }}</p>
+							{% if article.tags.count %}<p class="tag">{{ article.tags[0].name }}</p>{% endif %}
 							<p class="channel">{{ article.title }}</p>
 						</div>
 						<div class="fleche">
