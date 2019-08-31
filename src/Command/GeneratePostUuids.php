@@ -3,7 +3,6 @@
 namespace App\Command;
 
 use App\Entity\Blog\Post;
-use App\Entity\Core\User\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\Console\Command\Command;
@@ -12,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class GeneratePostUuids extends Command
 {
-    protected static $defaultName = 'app:user:uuid';
+    protected static $defaultName = 'app:post:uuid';
 
     /**
      * @var EntityManagerInterface
@@ -37,10 +36,11 @@ class GeneratePostUuids extends Command
         foreach ($posts as $post) {
             /** @var Post $post */
             if (null !== $post->getUuidAsString()) {
-                return;
+                continue;
             }
 
             $post->setUuid(Uuid::uuid4());
+            echo 'Set uuid for post ' . $post->getUuidAsString() .'\n';
         }
 
         $this->entityManager->flush();

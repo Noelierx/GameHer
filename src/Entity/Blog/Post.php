@@ -139,6 +139,13 @@ class Post
         return $this->slug;
     }
 
+    public function setUuid(UuidInterface $uuid): self
+    {
+        $this->uuid = $uuid;
+
+        return $this;
+    }
+
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
