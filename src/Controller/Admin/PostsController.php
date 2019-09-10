@@ -5,6 +5,8 @@ namespace App\Controller\Admin;
 use App\Entity\Blog\Post;
 use App\Form\Blog\PostType;
 use App\Service\FileUploader;
+use DateTime;
+use Exception;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,6 +32,7 @@ class PostsController extends AbstractController
 
     /**
      * @Route("/new", name="admin_posts_new", methods={"GET", "POST"})
+     * @throws Exception
      */
     public function new(Request $request, FileUploader $fileUploader, Security $security): Response
     {
@@ -38,12 +41,18 @@ class PostsController extends AbstractController
         $post->setContent('');
 
         $form = $this->createForm(PostType::class, $post);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             if (($picture = $form['picture']->getData())) {
                 $post->setPicture($fileUploader->upload($picture, $this->getParameter('posts_pictures_directory')));
             }
+            if (($posted = $request->request->get('post', null))) {
+                $date = new DateTime($posted['publishedAt']);
+                $post->setPublishedAt($date);
+            }
+
             $post->setAuthor($security->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
