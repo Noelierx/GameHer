@@ -17,9 +17,9 @@ $('#news__categories').change(function ($event) {
 });
 
 //Esport
-$('.leagueTeams__button').click(function ($event) {
+$('.esportTeam__button').click(function ($event) {
 	$event.preventDefault();
-	var $buttonOpened = $('.leagueTeams__button.opened');
+	var $buttonOpened = $('.esportTeam__button.opened');
 	var $toggle = $('.esportToggled');
 
 	if ($(this).hasClass('opened')) {

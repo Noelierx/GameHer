@@ -12,6 +12,7 @@
 		<thead>
 		<tr>
 			<th scope="col">{{ 'members.index.label.name'|trans }}</th>
+			<th scope="col">{{ 'members.index.label.game'|trans }}</th>
 			<th scope="col">{{ 'members.index.label.role'|trans }}</th>
 			<th scope="col">{{ 'members.index.label.team'|trans }}</th>
 			<th scope="col" class="center-align"><i class="fa fa-cogs" aria-hidden="true"></i> {{ 'members.index.label.actions'|trans }}</th>
@@ -21,6 +22,7 @@
 		{% for member in esports %}
 			<tr>
 				<td>{{ member.nickname }}</td>
+				<td>{{ ('members.esport.game.' ~ member.game) |trans }}</td>
 				<td>{{ ('members.esport.role.' ~ member.role) |trans }}</td>
 				<td>{{ ('members.esport.team.' ~ member.team) |trans }}</td>
 				<td class="right-align">

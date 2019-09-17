@@ -10,6 +10,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class EsportMember extends AMember
 {
+    const GAME_LEAGUE_OF_LEGENDS = 'game_lol';
+    const GAME_ROCKET_LEAGUE = 'game_rl';
+
     const MAIN_TEAM = 'team_main';
     const ACADEMY_TEAM = 'team_academy';
 
@@ -21,6 +24,23 @@ class EsportMember extends AMember
     const ROLE_COACH = '60_coach';
     const ROLE_MANAGER = '70_manager';
     const ROLE_PROJECT_MANAGER = '80_project_manager';
+    const ROLE_PLAYER = '90_player';
+
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=false)
+     * @Assert\Choice(callback="getAvailableGames")
+     */
+    protected $game;
+
+    public static function getAvailableGames()
+    {
+        return [
+            self::GAME_LEAGUE_OF_LEGENDS,
+            self::GAME_ROCKET_LEAGUE,
+        ];
+    }
 
     /**
      * @var string
@@ -56,6 +76,18 @@ class EsportMember extends AMember
             self::ROLE_MANAGER,
             self::ROLE_PROJECT_MANAGER,
         ];
+    }
+
+    public function getGame(): ?string
+    {
+        return $this->game;
+    }
+
+    public function setGame(string $game): self
+    {
+        $this->game = $game;
+
+        return $this;
     }
 
     public function getTeam(): string
