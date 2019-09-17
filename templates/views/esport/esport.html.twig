@@ -62,20 +62,20 @@
 				</div>
 				<div class="col s12 l6">
 					<div class="row">
-						<div class="col s6 offset-s3 esportTeam__team">
+						<div class="col s6 esportTeam__team">
 							<p class="esportTeam__teamName">{{ 'esport.rocketl.main_team'|trans }}</p>
 							<button class="btn btn-show esportTeam__button" data-team="rl-main">
 								<span class="GHshow">{{ 'esport.rocketl.show_team'|trans }}</span>
 								<span class="GHhide">{{ 'esport.rocketl.hide_team'|trans }}</span>
 							</button>
 						</div>
-{#						<div class="col s6 esportTeam__team">#}
-{#							<p class="esportTeam__teamName">{{ 'esport.rocketl.academy_team'|trans }}</p>#}
-{#							<button class="btn btn-show esportTeam__button" data-team="rl-academy">#}
-{#								<span class="GHshow">{{ 'esport.rocketl.show_team'|trans }}</span>#}
-{#								<span class="GHhide">{{ 'esport.rocketl.hide_team'|trans }}</span>#}
-{#							</button>#}
-{#						</div>#}
+						<div class="col s6 esportTeam__team">
+							<p class="esportTeam__teamName">{{ 'esport.rocketl.academy_team'|trans }}</p>
+							<button class="btn btn-show esportTeam__button" data-team="rl-academy">
+								<span class="GHshow">{{ 'esport.rocketl.show_team'|trans }}</span>
+								<span class="GHhide">{{ 'esport.rocketl.hide_team'|trans }}</span>
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -86,9 +86,9 @@
 			</div>
 
 			{#	Academy Team	#}
-{#			<div class="row esportToggled rl-academy">#}
-{#				{% include 'views/esport/_playersList.html.twig' with {players: rl_academy} %}#}
-{#			</div>#}
+			<div class="row esportToggled rl-academy">
+				{% include 'views/esport/_playersList.html.twig' with {players: rl_academy} %}
+			</div>
 		</div>
 	</section>
 {% endblock %}

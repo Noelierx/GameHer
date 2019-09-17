@@ -5,14 +5,20 @@
 
 .leagueOflegends, .rocketLeague {
 	display: flex;
-	background-image: url("../img/esport/leagueoflegends.png");
-	background-position: center top;
 	background-color: var(--gh-blue);
 	background-repeat: no-repeat;
 	align-items: center;
 	margin: 0;
 	padding: 5rem 0;
 	border-bottom: 3px solid var(--gh-red);
+}
+.leagueOflegends {
+    background-image: url("../img/esport/leagueoflegends.png");
+    background-position: center top;
+}
+.rocketLeague {
+	background-image: url("../img/esport/rocketleague.png");
+    background-position: center;
 }
 
 .esportTeam__title {
