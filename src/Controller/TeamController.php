@@ -71,7 +71,7 @@ class TeamController extends AbstractController
     }
 
     /**
-     * @Route("/recruitment", name="recruitment", methods={"GET"})
+     * @Route("/recruitment", name="recruitment", methods={"GET", "POST"})
      */
     public function recruitment(Request $request, Swift_Mailer $mailer): Response
     {
