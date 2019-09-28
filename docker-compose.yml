@@ -1,0 +1,61 @@
+version: '3.7'
+
+services:
+
+  # Nginx
+  nginx:
+    image: nginx:alpine
+    container_name: gh-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/symfony
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./logs/nginx:/var/log/nginx:cached
+    networks:
+      - gh-network
+
+  # API
+  web:
+    build: ./docker/php-fpm
+    image: gh-web
+    container_name: gh-web
+    ports:
+      - "9000:9001"
+    volumes:
+      - .:/var/www/symfony:cached
+      - ./logs/symfony:/var/www/symfony/var/log:cached
+    networks:
+      - gh-network
+
+  # MariaDB
+  mariadb:
+    image: mariadb:10.2
+    container_name: gh-mariadb
+    command: ["--default-authentication-plugin=mysql_native_password"]
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gameher
+      MYSQL_USER: gameher
+      MYSQL_PASSWORD: gameherpwd
+    volumes:
+      - .:/application
+    networks:
+      - gh-network
+
+  # PHPMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    container_name: gh-phpmyadmin
+    working_dir: /application
+    environment:
+      - PMA_HOST=gh-mariadb
+    ports:
+      - "8082:80"
+    networks:
+      - gh-network
+
+networks:
+  gh-network:
