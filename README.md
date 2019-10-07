@@ -1,5 +1,5 @@
 # GameHer
-Le futur nouveau de Game'Her
+Website for Game'Her, a French association aspiring to develop a healthy environment for female players by giving them the tools they need to flourish and evolve in the fields of video games, Esport and/or audiovisual, while not locking them in an exclusively feminine environment.
 
 ### Setup
 
@@ -55,7 +55,11 @@ Fork this repository by clicking on the fork button on the top of this page. Thi
 
 Then you need to go in your repository `$ cd GameHer` you will also need to set up a new remote that points to the original project so that you can grab any changes and bring them into your local copy.
 `$ git remote add upstream git@github.com:Noelierx/GameHer.git`
+
+
 And you good to work ! Now you just have to create new branches like that : 
 `$ git checkout -b <add-your-new-branch-name>` Do your stuff and then commit with this command line : `git commit -m "Stuff you have done"`
+
+
 Then, you will have to do a pull request by typing `$ git push origin <add-your-branch-name>`
 And go back to github to click on the button 'Compare and Pull Request'. 
