@@ -55,6 +55,7 @@ members.esport.role.60_coach: Coach
 members.esport.role.70_manager: Manager
 members.esport.role.80_project_manager: Chef de projet
 members.esport.role.90_player: Joueur
+members.esport.role.91_playere: Joueuse
 
 roles.index.title: Roles
 roles.index.no_results: Aucun role trouvé

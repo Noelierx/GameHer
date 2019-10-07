@@ -25,6 +25,7 @@ class EsportMember extends AMember
     const ROLE_MANAGER = '70_manager';
     const ROLE_PROJECT_MANAGER = '80_project_manager';
     const ROLE_PLAYER = '90_player';
+    const ROLE_PLAYERE = '91_playere';
 
 
     /**
@@ -75,6 +76,8 @@ class EsportMember extends AMember
             self::ROLE_COACH,
             self::ROLE_MANAGER,
             self::ROLE_PROJECT_MANAGER,
+            self::ROLE_PLAYER,
+            self::ROLE_PLAYERE,
         ];
     }
 
