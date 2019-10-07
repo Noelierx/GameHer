@@ -40,6 +40,14 @@ class EsportMemberType extends AbstractType
                     'accept' => 'image/*',
                 ],
             ])
+            ->add('game', ChoiceType::class, [
+                'choices' => EsportMember::getAvailableGames(),
+                'choice_label' => function ($choice, $key, $value) {
+                    return $this->translator->trans('members.esport.game.'.$value, [], 'admin');
+                },
+                'required' => true,
+                'label_attr' => ['class' => 'active'],
+            ])
             ->add('team', ChoiceType::class, [
                 'choices' => EsportMember::getAvailableTeams(),
                 'choice_label' => function ($choice, $key, $value) {

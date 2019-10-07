@@ -22,6 +22,7 @@ main {
 	flex-direction: column;
 	margin-top: 0;
 	padding-bottom: 0;
+	height: 100%;
 }
 
 .sidenav .nav-link {

@@ -31,6 +31,7 @@ members.index.title: Membres
 members.index.esport_title: Membres esport
 members.index.no_results: Aucun membre trouvé
 members.index.label.name: Nom
+members.index.label.game: Jeu
 members.index.label.role: Role
 members.index.label.category: Catégorie
 members.index.label.team: Equipe
@@ -41,6 +42,8 @@ members.role.category.direction: Direction
 members.role.category.administration: Administration
 members.role.category.members: Membres
 
+members.esport.game.game_lol: League Of Legends
+members.esport.game.game_rl: Rocket League
 members.esport.team.team_main: Principale
 members.esport.team.team_academy: Académie
 members.esport.role.10_top: Top
@@ -51,6 +54,8 @@ members.esport.role.50_support: Support
 members.esport.role.60_coach: Coach
 members.esport.role.70_manager: Manager
 members.esport.role.80_project_manager: Chef de projet
+members.esport.role.90_player: Joueur
+members.esport.role.91_playere: Joueuse
 
 roles.index.title: Roles
 roles.index.no_results: Aucun role trouvé
