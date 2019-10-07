@@ -9,7 +9,7 @@
 			{% for article in articles %}
 				<div class="col s12 m6 l4">
 					<div class="imageWithFooter">
-						<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ article.title }}">
+						<img src="{{ article.picture ? asset('uploads/posts/' ~ article.picture) : asset('build/img/webtv/streamer.png')}}" alt="{{ article.title }}">
 						<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
 							<div class="links">
 								<p class="tag">{% for tag in article.tags %}{{ tag.name }} {% endfor %}</p>
