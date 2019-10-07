@@ -1,6 +1,6 @@
 {% spaceless %}
 	{% for player in players %}
-		<div class="col s4 l3 esportPlayer">
+		<div class="col s12 m4 l3 esportPlayer">
 			<div class="esportPlayer__image">
 				<img src="{{ (player.picture is not null) ? asset('uploads/members/' ~ player.picture) : asset('build/img/esport/player.png') }}" alt="{{ player.nickname }}" class="esportPlayer__image">
 			</div>
