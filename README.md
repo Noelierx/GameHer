@@ -48,3 +48,14 @@ Finally, **Save Changes** ! You can now log into the app
 ### PHP Extensions
 
 `sudo apt-get install php7.3 php7.3-cli php7.3-common php7.3-fpm php7.3-mysql php7.3-intl php7.3-curl  php7.3-zip php7.3-xml`
+
+# How to contribute
+Fork this repository by clicking on the fork button on the top of this page. This will create a copy of this repository in your account. Then you will need to clone the repository to work on it !
+`$ git clone git@github.com:USERNAME/GameHer.git` where `USERNAME` is your GitHub username.
+
+Then you need to go in your repository `$ cd GameHer` you will also need to set up a new remote that points to the original project so that you can grab any changes and bring them into your local copy.
+`$ git remote add upstream git@github.com:Noelierx/GameHer.git`
+And you good to work ! Now you just have to create new branches like that : 
+`$ git checkout -b <add-your-new-branch-name>` Do your stuff and then commit with this command line : `git commit -m "Stuff you have done"`
+Then, you will have to do a pull request by typing `$ git push origin <add-your-branch-name>`
+And go back to github to click on the button 'Compare and Pull Request'. 
