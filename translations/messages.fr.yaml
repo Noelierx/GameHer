@@ -70,7 +70,15 @@ esport.member.role.40_adc: Adc
 esport.member.role.50_support: Support
 esport.member.role.60_coach: Coach
 esport.member.role.70_manager: Manager
+esport.member.role.90_player: Joueur
+esport.member.role.91_playere: Joueuse
 esport.member.role.80_project_manager: Chef de projet
+
+esport.rocketl.title: Rocket League
+esport.rocketl.show_team: Voir
+esport.rocketl.hide_team: Masquer
+esport.rocketl.main_team: Equipe principale
+esport.rocketl.academy_team: Equipe académique
 
 #webtv
 webtv.banner.do_not_miss_us: Ne manquez plus un live

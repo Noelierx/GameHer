@@ -63,10 +63,14 @@ class DefaultController extends AbstractController
     public function esport(): Response
     {
         return $this->render('views/esport/esport.html.twig', [
-            'main_team' => $this->getDoctrine()->getRepository(EsportMember::class)
-                ->findBy(['team' => EsportMember::MAIN_TEAM], ['role' => 'asc']),
-            'academy' => $this->getDoctrine()->getRepository(EsportMember::class)
-                ->findBy(['team' => EsportMember::ACADEMY_TEAM], ['role' => 'asc']),
+            'lol_main' => $this->getDoctrine()->getRepository(EsportMember::class)
+                ->findBy(['team' => EsportMember::MAIN_TEAM, 'game' => EsportMember::GAME_LEAGUE_OF_LEGENDS], ['role' => 'asc']),
+            'lol_academy' => $this->getDoctrine()->getRepository(EsportMember::class)
+                ->findBy(['team' => EsportMember::ACADEMY_TEAM, 'game' => EsportMember::GAME_LEAGUE_OF_LEGENDS], ['role' => 'asc']),
+            'rl_main' => $this->getDoctrine()->getRepository(EsportMember::class)
+                ->findBy(['team' => EsportMember::MAIN_TEAM, 'game' => EsportMember::GAME_ROCKET_LEAGUE], ['role' => 'desc']),
+            'rl_academy' => $this->getDoctrine()->getRepository(EsportMember::class)
+                ->findBy(['team' => EsportMember::ACADEMY_TEAM, 'game' => EsportMember::GAME_ROCKET_LEAGUE], ['role' => 'desc']),
         ]);
     }
 

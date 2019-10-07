@@ -1,12 +1,12 @@
 {% spaceless %}
 	{% for player in players %}
-		<div class="col s12 m4 l3 leaguePlayer">
-			<div class="leaguePlayer__image">
-				<img src="{{ (player.picture is not null) ? asset('uploads/members/' ~ player.picture) : asset('build/img/esport/player.png') }}" alt="{{ player.nickname }}" class="leaguePlayer__image">
+		<div class="col s12 m4 l3 esportPlayer">
+			<div class="esportPlayer__image">
+				<img src="{{ (player.picture is not null) ? asset('uploads/members/' ~ player.picture) : asset('build/img/esport/player.png') }}" alt="{{ player.nickname }}" class="esportPlayer__image">
 			</div>
-			<p class="leaguePlayer__name">{{ player.firstname }} <span class="leaguePlayer__nickname">{{ player.nickname }}</span> {{ player.lastName }}</p>
-			<p class="leaguePlayer__role">{{ ('esport.member.role.' ~ player.role) |trans }}</p>
-			<p class="leaguePlayer__social">
+			<p class="esportPlayer__name">{{ player.firstname }} <span class="esportPlayer__nickname">{{ player.nickname }}</span> {{ player.lastName }}</p>
+			<p class="esportPlayer__role">{{ ('esport.member.role.' ~ player.role) |trans }}</p>
+			<p class="esportPlayer__social">
 				{% if player.twitch is not null %}<a href="//twitch.tv/{{ player.twitch }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitch"></i></a> {% endif %}
 				{% if player.twitter is not null %}<a href="//twitter.com/{{ player.twitter }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitter"></i></a> {% endif %}
 				{% if player.instagram is not null %}<a href="//instagram.com/{{ player.instagram }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i></a> {% endif %}

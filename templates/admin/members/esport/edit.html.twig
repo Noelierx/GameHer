@@ -29,16 +29,20 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="file-field input-field col s6">
+		<div class="file-field input-field col s5">
 			<label for="file-placeholder" class="active">Picture</label>
 			<div class="btn"><span>File</span> {{ form_widget(form.picture) }}</div>
 			<div class="file-path-wrapper"><input class="file-path" type="text" id="file-placeholder"></div>
 		</div>
 		<div class="input-field col s3">
+			{{ form_label(form.game) }}
+			{{ form_widget(form.game) }}
+		</div>
+		<div class="input-field col s2">
 			{{ form_label(form.team) }}
 			{{ form_widget(form.team) }}
 		</div>
-		<div class="input-field col s3">
+		<div class="input-field col s2">
 			{{ form_label(form.role) }}
 			{{ form_widget(form.role) }}
 		</div>
