@@ -3,7 +3,7 @@ menu.toggle_nav: Toggle_nav
 menu.homepage: Homepage
 menu.admin: Admin
 menu.redaction: Rédaction
-menu.blog: News & Article
+menu.blog: News & Articles
 menu.esport: Esport
 menu.webtv: WebTV
 menu.tournaments: Tournois
@@ -52,7 +52,7 @@ article.follow_us.donation: 'Soutenez nous sur %link%Tipee%endlink%'
 
 
 #esport
-esport.title: Nos equipes esport
+esport.title: Nos équipes esport
 esport.subtitle: les joueurs et le personnel encadrant
 esport.league.title: League of Legends
 esport.league.show_team: Voir
