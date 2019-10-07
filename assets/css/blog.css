@@ -113,7 +113,7 @@ input[type="text"].news__search {
 .article__title {
 	width: 65%;
 	color: var(--gh-white);
-	display: table;
+	display: flex;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -121,6 +121,8 @@ input[type="text"].news__search {
 	margin: auto;
 	text-transform: uppercase;
 	font-size: 30px;
+  z-index: 100;
+  align-items: center;
 }
 @media (min-width: 700px) {
 	.article__title {
