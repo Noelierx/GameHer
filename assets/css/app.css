@@ -79,6 +79,8 @@ a {
 	transition: color 200ms ease-in;
 }
 
+.roundBorder {border-radius: 50px;}
+
 button.btn-show {
 	background-color: var(--gh-blue);
 	border: 1px solid var(--gh-orange);
