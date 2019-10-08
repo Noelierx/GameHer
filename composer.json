@@ -34,7 +34,8 @@
         "heroku/heroku-buildpack-php": "^158.0",
         "symfony/console": "4.3.*",
         "symfony/maker-bundle": "^1.12",
-        "symfony/var-dumper": "^4.3"
+        "symfony/var-dumper": "^4.3",
+        "symfony/web-server-bundle": "4.3.*"
     },
     "config": {
         "preferred-install": {
