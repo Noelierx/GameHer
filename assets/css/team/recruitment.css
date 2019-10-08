@@ -20,6 +20,25 @@
     height:64px;
     margin:0 auto;
 }
+.dataList-description {
+	display: none;
+	position: absolute;
+	background-color: var(--gh-blue);
+	z-index: 10;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: -10px;
+}
+.icon-block {
+	cursor: pointer;
+	position: relative;
+}
+.icon-block:hover .dataList-description {
+	display: block;
+}
+.dataList-description:hover {
+	display: block;
+}
 .fix-immonde {
     display: flex; flex-wrap: wrap;
 }
