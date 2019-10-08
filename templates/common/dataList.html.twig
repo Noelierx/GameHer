@@ -10,7 +10,7 @@
                         <div class="icon-block">
                             <img src="{{ element.logo_url }}" class="dataList-picto" alt="{{ element.title }}"/>
                             <h5 class="{{ element.title_class | default('') }}" style="text-align: center;">{{ element.title }}</h5>
-                            <p class="light" style="text-align: center;">{{ element.content }}</p>
+                            <p class="light dataList-description" style="text-align: center;">{{ element.content }}</p>
                         </div>
                     </div>
                 {% endfor %}
