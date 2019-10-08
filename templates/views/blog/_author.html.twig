@@ -5,7 +5,7 @@
 		</div>
 		<div class="col s9">
 			<h5 class="author__name">{{ author.firstName | default('') }} <a href="{{ path('blog', {author: author.displayName}) }}" class="author__nickname">{{ author.displayName }}</a> {{ author.lastName | default('') }}</h5>
-			{#<p class="author__description">Description</p>#}
+			<p class="author__description">{{ author.description }}</p>
 			<p class="author__socials">
 				{% if author.twitter is not null %}
 					<a href="//twitter.com/{{ author.twitter }}" target="_blank" rel="noreferrer noopener">

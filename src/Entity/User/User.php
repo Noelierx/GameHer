@@ -72,6 +72,12 @@ class User implements UserInterface
      * @var string
      * @ORM\Column(type="string", nullable=true)
      */
+    protected $description;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
     protected $discordId;
 
     /**
@@ -172,6 +178,7 @@ class User implements UserInterface
         return serialize([
             $this->uuid->toString(),
             $this->displayName,
+            $this->description,
             $this->email,
             $this->discord,
             $this->twitter,
@@ -226,6 +233,18 @@ class User implements UserInterface
     public function setDisplayName(string $displayName): self
     {
         $this->displayName = $displayName;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
