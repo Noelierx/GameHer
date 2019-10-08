@@ -71,7 +71,7 @@
 		{#	Esport	#}
 		<div class="row membersList esport">
 			{% for member in esports %}
-				<div class="col s4 l3 gameherMember">
+				<div class="col s12 m4 l3 gameherMember">
 					<div class="gameherMember__image">
 						<img src="{{ (member.picture is not null) ? asset('uploads/members/' ~ member.picture) : asset('build/img/esport/player.png') }}" alt="{{ member.nickname }}" class="gameherMember__image">
 					</div>
