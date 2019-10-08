@@ -1,6 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block title 'Partenaires - GameHer' %}
+
+{% block stylesheets %}
+{#         {{ encore_entry_link_tags('app') }}
+ #}
+ {{ parent() }}
+	<style>
+		.row {
+    padding: 1 !important;
+}
+	</style>
+ {% endblock %}
+
 {% block body_id 'partners' %}
 
 {% block main %}
@@ -13,10 +25,8 @@
 	{% for partner in partners %}
 	<section class="partner {{ loop.index is odd ? 'white' : 'dark' }}">
 		<div class="container">
-			<div class="row">
-				<div class="col s6 partner__image">
-					<img src="{{ asset('uploads/partners/' ~ partner.logo) }}" alt="{{ partner.name }}" class="partner__logo">
-				</div>
+
+			<div class="row">		
 				<div class="col s6 partner__content">
 					<h3 class="partner__name">{{ partner.name }}</h3>
 					<p class="partner__description">{{ partner.description }}</p>
@@ -28,6 +38,12 @@
 						{% if partner.facebook %}<a href="{{ partner.facebook }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>{% endif %}
 					</p>
 					{% endif %}
+				</div>	
+			</div>
+
+			<div class="row" style="padding-top: 0">
+				<div class="col s6 partner__image">
+					<img src="{{ asset('uploads/partners/' ~ partner.logo) }}" alt="{{ partner.name }}" class="partner__logo">
 				</div>
 			</div>
 		</div>
