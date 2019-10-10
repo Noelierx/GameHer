@@ -25,9 +25,10 @@ nav a, nav ul a {
 }
 
 .sidenav {
-	@media (min-width: 601px) { margin-top: 5rem; }
-	@media (max-width: 601px) { margin-top: 56px; }
-	transition: transform 200ms ease-in-out;
+	margin-top: 5rem;
+	@media (max-width: 600px) {
+		margin-top: 4rem;
+	}
 }
 
 nav .dropdown-trigger {cursor: pointer;}
