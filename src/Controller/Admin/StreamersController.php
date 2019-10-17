@@ -85,8 +85,8 @@ class StreamersController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if (($logo = $form['logo']->getData())) {
-                $streamer->setPicture($fileUploader->upload($logo, $this->getParameter('streamers_logo_directory')));
+            if (($logo = $form['picture']->getData())) {
+                $streamer->setPicture($fileUploader->upload($logo, $this->getParameter('streamers_picture_directory')));
             }
             $this->getDoctrine()->getManager()->flush();
 
