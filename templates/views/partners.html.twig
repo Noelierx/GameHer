@@ -14,10 +14,10 @@
 	<section class="partner {{ loop.index is odd ? 'white' : 'dark' }}">
 		<div class="container">
 			<div class="row">
-				<div class="col s6 partner__image">
+				<div class="col s12 m6 partner__image">
 					<img src="{{ asset('uploads/partners/' ~ partner.logo) }}" alt="{{ partner.name }}" class="partner__logo">
 				</div>
-				<div class="col s6 partner__content">
+				<div class="col s12 m6 partner__content">
 					<h3 class="partner__name">{{ partner.name }}</h3>
 					<p class="partner__description">{{ partner.description }}</p>
 					{% if partner.website or partner.twitter or partner.instagram or partner.facebook %}
