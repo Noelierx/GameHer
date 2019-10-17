@@ -8,7 +8,10 @@
 
 If you want to support us, you can make [donations](https://gameher.fr/donations).
 
+### GitHub
+
 ### Setup
+
 
 Clone the project and install its dependencies:
 ```
