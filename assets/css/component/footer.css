@@ -1,18 +1,18 @@
 footer {
 	&.page-footer { padding: 0; margin-top: 2rem; background-color: var(--gh-white); }
-	h5 { color: var(--gh-red); }
+	h5 { color: var(--gh-red); margin-top: 20%; margin-left: 30%;}
 	li { margin: .5rem 0; }
 	a {
-		color: #000;
+		color: #000; margin-left: 30%;
 		&:hover { text-decoration: underline; }
 	}
-	img { margin: auto; }
-	hr { width: 50%; }
+	img { margin: auto; margin-top: 30%;}
+	hr { width: 40%; }
 	.footer__socials {
 		width: 50%;
 		display: flex;
 		justify-content: space-between;
-
+		margin-left: 25%;
 		a:hover { color: var(--gh-gray); }
 	}
 }
