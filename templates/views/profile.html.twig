@@ -2,7 +2,17 @@
 
 {% block body_id 'index' %}
 
+{% form_theme form 'themes/materialcss.form.twig' %}
+
 {% block main %}
-    <p>{{ app.user.discord }}</p>
-    <p>{{  form(form) }}</p>
+    <div class="col">
+        <div class="container">
+        <h3 class="header">{{ 'menu.user'|trans }}</h3>
+        <h5 class="caption">{{ app.user.discord }}</h5>
+        <div class="divider"></div>
+        <div class="col s6 m6">
+            {{ form(form,  { 'attr' : { 'class': 'col s12' }}) }}
+        </div>
+        </div>
+    </div>
 {% endblock %}
