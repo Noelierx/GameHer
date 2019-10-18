@@ -62,7 +62,7 @@
 				{% for streamer in streamers %}
 					<div class="col s12 m6 l6">
 						<div class="imageWithFooter --red">
-							<img src="{{ asset('build/img/webtv/streamer.png') }}" alt="{{ streamer.name }}">
+							<img src="{{ (streamer.picture) ? asset('uploads/streamers/' ~ streamer.picture) : asset('build/img/webtv/streamer.png') }}" alt="{{ streamer.name }}">
 							<div class="footer">
 								<div class="links">
 									<p class="name">{{ streamer.name }}</p>
