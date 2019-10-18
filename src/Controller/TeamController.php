@@ -29,7 +29,7 @@ class TeamController extends AbstractController
                 'direction' => $memberRepository->getByCategory(Role::CATEGORY_DIRECTION),
                 'administration' => $memberRepository->getByCategory(Role::CATEGORY_ADMINISTRATION),
                 'members' => $memberRepository->getByCategory(Role::CATEGORY_MEMBERS),
-                'esports' => $this->getDoctrine()->getRepository(EsportMember::class)->findAll(),
+                'esports' => $memberRepository->getByCategory(Role::CATEGORY_ESPORT),
             ]
         );
     }

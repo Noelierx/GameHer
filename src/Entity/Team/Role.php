@@ -22,6 +22,7 @@ class Role
     const CATEGORY_DIRECTION = 'direction';
     const CATEGORY_ADMINISTRATION = 'administration';
     const CATEGORY_MEMBERS = 'members';
+    const CATEGORY_ESPORT = 'esport';
 
     /**
      * @var int
@@ -91,6 +92,7 @@ class Role
             self::CATEGORY_ADMINISTRATION,
             self::CATEGORY_DIRECTION,
             self::CATEGORY_MEMBERS,
+            self::CATEGORY_ESPORT,
         ];
     }
 
