@@ -51,7 +51,7 @@ class PostType extends AbstractType
             ])
             ->add('publishedAt', DateType::class, [
                 'widget' => 'single_text',
-                'format' => 'yyyy-mm-dd',
+                'format' => 'yyyy-MM-dd',
                 'required' => false,
                 'attr' => ['class' => 'datepicker'],
                 'label' => 'Date de publication',
