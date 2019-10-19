@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
- * @ORM\Table("member")
+ * @ORM\Table("`member`")
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="type", type="string", length=75)
  * @ORM\DiscriminatorMap({
