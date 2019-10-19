@@ -26,6 +26,7 @@ nav a, nav ul a {
 
 .sidenav {
 	margin-top: 5rem;
+	padding-bottom: 120px;
 	@media (max-width: 600px) {
 		margin-top: 4rem;
 	}
@@ -57,4 +58,12 @@ header .dropdown-content {
 
 header li .active + .dropdown-content {
 	display: flex;
+}
+
+.sidenav .collapsible-header {
+	padding: 0 32px;
+}
+
+.sidenav .collapsible-body li a {
+	padding: 0 48px;
 }
