@@ -1,0 +1,21 @@
+{% block text_row %}
+    <div class="input-field s12">
+        {{ form_label(form) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+{% endblock %}
+
+{% block textarea_row %}
+    <div class="input-field s12">
+        {{ form_label(form) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form, {'attr': {'class': 'materialize-textarea'}}) }}
+    </div>
+{% endblock %}
+
+{% block submit_row %}
+    <div class="col l4 s12 center-align">
+        {{ form_row(form, {'attr': {'class': 'btn btn-large'}}) }}
+    </div>
+{% endblock %}
