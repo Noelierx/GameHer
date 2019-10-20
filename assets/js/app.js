@@ -9,6 +9,7 @@ const $ = require('jquery');
 
 $('select').formSelect();
 $('.sidenav').sidenav();
+$('.collapsible').collapsible();
 
 //Blog
 $('#news__categories').change(function ($event) {

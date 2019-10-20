@@ -1,5 +1,5 @@
 {% macro activeLink(path) %}
-	{% if app.request.attributes.get('_route') starts with path %}class="active"{% endif %}
+  {% if app.request.attributes.get('_route') starts with path %}class="active"{% endif %}
 {%  endmacro %}
 
 {% spaceless %}
@@ -13,52 +13,72 @@
             <li><a href="{{ path('tournaments') }}">{{ 'menu.tournaments'|trans }}</a></li>
             <li><a href="{{ path('partners') }}">{{ 'menu.partners'|trans }}</a></li>
             <li><a href="{{ path('donations') }}">{{ 'menu.donations'|trans }}</a></li>
-						<li><a class="btn red darken-3" href="https://eliminate.fr/product-category/gameher/" target="_blank">{{ 'menu.boutique'|trans }}</a></li>
-            <!-- Dropdown Trigger -->
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown-team">{{ 'menu.team.header' |trans }} <i class="fa fa-caret-down"></i></a></li>
+            <li><a class="btn red darken-3" href="https://eliminate.fr/product-category/gameher/" target="_blank">{{ 'menu.boutique'|trans }}</a></li>
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header">{{ 'menu.team.header' |trans }} <i class="fa fa-caret-down"></i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="{{ path('about') }}" {{ _self.activeLink('about') }}>{{ 'menu.team.about'|trans }}</a></li>
+                    <li><a href="{{ path('contact') }}" {{ _self.activeLink('contact') }}>{{ 'menu.team.contact'|trans }}</a></li>
+                    <li><a href="{{ path('recruitment') }}" {{ _self.activeLink('recruitment') }}>{{ 'menu.team.recruitment'|trans }}</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
             {% if is_granted('ROLE_ADMIN') %}
                 <li><a class="nav-link" href="{{ path('admin') }}">{{ 'menu.admin'|trans }}</a></li>
             {% endif %}
             {% if app.user %}
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">{{ app.user.displayName }} <i class="fa fa-caret-down"></i></a></li>
+              <ul class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header">{{ app.user.displayName }} <i class="fa fa-caret-down"></i></a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><a href="{{ path('display_profile') }}">{{ 'menu.user'|trans }}</a></li>
+                      <li><a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
             {% endif %}
         </ul>
     <nav>
         <div class="nav-wrapper">
             <a href="#" data-target="mobile" class="sidenav-trigger"><i class="fa fa-bars"></i></a>
-					<ul class="right hide-on-med-and-down">
-						<li><a href="{{ path('blog') }}" {{ _self.activeLink('blog') }}>{{ 'menu.blog'|trans }}</a></li>
-						<li><a href="{{ path('esport') }}" {{ _self.activeLink('esport') }}>{{ 'menu.esport'|trans }}</a></li>
-						<li><a href="{{ path('webtv') }}" {{ _self.activeLink('webtv') }}>{{ 'menu.webtv'|trans }}</a></li>
-						<li><a href="{{ path('tournaments') }}" {{ _self.activeLink('tournaments') }}>{{ 'menu.tournaments'|trans }}</a></li>
-						<li><a href="{{ path('partners') }}" {{ _self.activeLink('partners') }}>{{ 'menu.partners'|trans }}</a></li>
-						<li><a href="{{ path('donations') }}" {{ _self.activeLink('donations') }}>{{ 'menu.donations'|trans }}</a></li>
-						<li><a class="btn red darken-3" href="https://eliminate.fr/product-category/gameher/" target="_blank">{{ 'menu.boutique'|trans }}</a></li>
-						<!-- Dropdown Trigger -->
-						<li>
-							<a class="dropdown-trigger {% if app.request.requestUri matches '/team/' %}active{% endif %}" data-dropdown="dropdown-team">{{ 'menu.team.header' |trans }} <i class="fa fa-caret-down"></i></a>
-							<ul id="dropdown-team" class="dropdown-content">
-								<li><a href="{{ path('about') }}" {{ _self.activeLink('about') }}>{{ 'menu.team.about'|trans }}</a></li>
-								<li><a href="{{ path('contact') }}" {{ _self.activeLink('contact') }}>{{ 'menu.team.contact'|trans }}</a></li>
-								<li><a href="{{ path('recruitment') }}" {{ _self.activeLink('recruitment') }}>{{ 'menu.team.recruitment'|trans }}</a></li>
-							</ul>
-						</li>
-						{% if is_granted('ROLE_ADMIN') %}
-							<li><a class="nav-link" href="{{ path('admin') }}">{{ 'menu.admin'|trans }}</a></li>
-						{% elseif is_granted('ROLE_REDACTEUR') %}
-							<li><a class="nav-link" href="{{ path('admin') }}">{{ 'menu.redaction'|trans }}</a></li>
-						{% endif %}
-						{% if app.user %}
-							<li>
-								<a class="dropdown-trigger" data-dropdown="dropdown-user">{{ app.user.displayName }} <i class="fa fa-caret-down"></i></a>
-								<ul id="dropdown-user" class="dropdown-content">
-									<li><a href="{{ path('display_profile') }}">{{ 'menu.user'|trans }}</a></li>
-									<li><a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a></li>
-								</ul>
-							</li>
-						{% endif %}
-					</ul>
-					<a href="{{ path('index') }}" class="brand-logo"><img src="{{ asset('build/img/logo.png') }}" alt="GameHer"></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{{ path('blog') }}" {{ _self.activeLink('blog') }}>{{ 'menu.blog'|trans }}</a></li>
+            <li><a href="{{ path('esport') }}" {{ _self.activeLink('esport') }}>{{ 'menu.esport'|trans }}</a></li>
+            <li><a href="{{ path('webtv') }}" {{ _self.activeLink('webtv') }}>{{ 'menu.webtv'|trans }}</a></li>
+            <li><a href="{{ path('tournaments') }}" {{ _self.activeLink('tournaments') }}>{{ 'menu.tournaments'|trans }}</a></li>
+            <li><a href="{{ path('partners') }}" {{ _self.activeLink('partners') }}>{{ 'menu.partners'|trans }}</a></li>
+            <li><a href="{{ path('donations') }}" {{ _self.activeLink('donations') }}>{{ 'menu.donations'|trans }}</a></li>
+            <li><a class="btn red darken-3" href="https://eliminate.fr/product-category/gameher/" target="_blank">{{ 'menu.boutique'|trans }}</a></li>
+            <!-- Dropdown Trigger -->
+            <li>
+              <a class="dropdown-trigger {% if app.request.requestUri matches '/team/' %}active{% endif %}" data-dropdown="dropdown-team">{{ 'menu.team.header' |trans }} <i class="fa fa-caret-down"></i></a>
+              <ul id="dropdown-team" class="dropdown-content">
+                <li><a href="{{ path('about') }}" {{ _self.activeLink('about') }}>{{ 'menu.team.about'|trans }}</a></li>
+                <li><a href="{{ path('contact') }}" {{ _self.activeLink('contact') }}>{{ 'menu.team.contact'|trans }}</a></li>
+                <li><a href="{{ path('recruitment') }}" {{ _self.activeLink('recruitment') }}>{{ 'menu.team.recruitment'|trans }}</a></li>
+              </ul>
+            </li>
+            {% if is_granted('ROLE_ADMIN') %}
+              <li><a class="nav-link" href="{{ path('admin') }}">{{ 'menu.admin'|trans }}</a></li>
+            {% elseif is_granted('ROLE_REDACTEUR') %}
+              <li><a class="nav-link" href="{{ path('admin') }}">{{ 'menu.redaction'|trans }}</a></li>
+            {% endif %}
+            {% if app.user %}
+              <li>
+                <a class="dropdown-trigger" data-dropdown="dropdown-user">{{ app.user.displayName }} <i class="fa fa-caret-down"></i></a>
+                <ul id="dropdown-user" class="dropdown-content">
+                  <li><a href="{{ path('display_profile') }}">{{ 'menu.user'|trans }}</a></li>
+                  <li><a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a></li>
+                </ul>
+              </li>
+            {% endif %}
+          </ul>
+          <a href="{{ path('index') }}" class="brand-logo"><img src="{{ asset('build/img/logo.png') }}" alt="GameHer"></a>
         </div>
     </nav>
     {% endblock %}
