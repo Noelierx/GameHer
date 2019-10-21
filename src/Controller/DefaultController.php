@@ -36,7 +36,7 @@ class DefaultController extends AbstractController
 		$author = $request->query->has('author') ? $users->findOneBy(['displayName' => $request->query->get('author')]) : null;
         $options = [
             'tag' => $request->query->has('tag') ? $tags->findOneBy(['name' => $request->query->get('tag')]) : null,
-            'author' => $author,
+            'author' => $author
         ];
 
         $posts = $posts->findLatest($page, $options);
