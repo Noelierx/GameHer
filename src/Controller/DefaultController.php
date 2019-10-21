@@ -43,6 +43,7 @@ class DefaultController extends AbstractController
         return $this->render('views/blog/blog.html.twig', [
             'paginator' => $posts,
             'tags' => $tags->findAll(),
+			'hasAuthor' =>  $request->query->has('author') 
         ]);
     }
 
