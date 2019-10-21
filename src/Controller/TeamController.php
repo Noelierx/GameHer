@@ -53,9 +53,9 @@ class TeamController extends AbstractController
 
             try {
                 $mailer->send($message);
-                $this->addFlash('success', 'message sent');
+                $this->addFlash('success', 'Message envoyé');
             } catch(\Swift_TransportException $e) {
-                $this->addFlash('danger', 'message could not be sent');
+                $this->addFlash('danger', 'Un problème est survenu');
             }
         }
 
@@ -90,9 +90,12 @@ class TeamController extends AbstractController
                 ->setTo('recrutement@gameher.fr')
                 ->setBody($data['message']);
 
-            $mailer->send($message);
-
-            $this->addFlash('success', 'message sent');
+            try {
+                $mailer->send($message);
+                $this->addFlash('success', 'Message envoyé');
+            } catch(\Swift_TransportException $e) {
+                $this->addFlash('danger', 'Un problème est survenu');
+            }
         }
 
         if ($form->isSubmitted() && !$form->isValid()) {
