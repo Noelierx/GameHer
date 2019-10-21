@@ -70,7 +70,10 @@
 
 		{#	Esport	#}
 		<div class="row membersList esport">
+			{% set newArray = [] %}
 			{% for member in esports %}
+				{% if member.nickname not in newArray %}
+				{% set newArray = newArray|merge([member.nickname]) %}
 				<div class="col s12 m4 l3 gameherMember">
 					<div class="gameherMember__image">
 						<img src="{{ (member.picture is not null) ? asset('uploads/members/' ~ member.picture) : asset('build/img/esport/player.png') }}" alt="{{ member.nickname }}" class="gameherMember__image">
@@ -84,6 +87,7 @@
 						{% if member.facebook is not null %}<a href="//facebook.com/{{ member.facebook }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-square"></i></a> {% endif %}
 					</p>
 				</div>
+				{% endif %}
 			{% endfor %}
 		</div>
 	</section>
