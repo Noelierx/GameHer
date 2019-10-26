@@ -3,10 +3,49 @@
     background-color: var(--gh-red);
 }
 .text-donation {
+    position: relative;
     color: var(--gh-red);
     font-size: 25px;
     text-transform: uppercase;
 }
+.text-donation .icon {
+    position: absolute;
+    top: 1px;
+    display: inline-block;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.donation-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.donation-container .donation-partner {
+    margin: 20px 0;
+}
+
+.donation-container .donation-partner img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+}
+
+@media screen and (max-width: 767px) {
+    .donation-container .donation-partner img {
+        width: 100px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .donation-container .donation-partner img {
+        width: 130px;
+    }
+}
+
 .page-header__wrapper {
     display: flex;
     height: calc(100vh - 5rem);
