@@ -1,101 +1,148 @@
 .homepage__subtitle {
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    margin: 0;
-    font-size: 35px;
-    font-family: 'headingcompressedpro-extbd', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	margin: 0;
+	font-size: 35px;
+	font-family: 'headingcompressedpro-extbd', sans-serif;
 }
 
 .withMargin {
-    margin-left: 0;
-    @media (min-width: 769px) {
-        margin-left: 150px;
-    }
-    @media (min-width: 1024px) {
-        margin-left: 0;
-    }
-    @media (min-width: 1280px) {
-        margin-left: 250px;
-    }
+	margin-left: 0;
+
+	@media (min-width: 769px) {
+		margin-left: 150px;
+	}
+
+	@media (min-width: 1024px) {
+		margin-left: 0;
+	}
+
+	@media (min-width: 1280px) {
+		margin-left: 250px;
+	}
 }
 
 .titleHomepage {
-    font-family: 'headingcompressedpro-extbd', sans-serif;
-    font-size: 45px;
+	font-family: 'headingcompressedpro-extbd', sans-serif;
+	font-size: 45px;
 }
 
 .withBackgroundImage {
-    background-image: linear-gradient(rgba(201, 46, 75, 0.1), rgba(201, 46, 75, 0.1)),
-    url("../img/homepage/MASCOTTE.png");
-    background-position: left;
-    background-color: var(--gh-red);
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-image: linear-gradient(rgba(201, 46, 75, 0.1), rgba(201, 46, 75, 0.1)),
+		url("../img/homepage/MASCOTTE.png");
+	background-position: left;
+	background-color: var(--gh-red);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .esportTitle {
-    color: #2BCA63;
+	color: #2BCA63;
 }
 
 .communicationTitle {
-    color: #C82E4A;
+	color: #C82E4A;
 }
 
 .tournoiTitle {
-    color: #D5D096;
+	color: #D5D096;
 }
 
 .streamingTitle {
-    color: #9C4593;
+	color: #9C4593;
 }
 
 .graphismeTitle {
-    color: #C9772E;
+	color: #C9772E;
 }
 
 .presseTitle {
-    color: #A1BCEB;
+	color: #A1BCEB;
 }
 
 .bg_cover {
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
 }
 
 
 .about-area {
-    padding: 80px 0;
+	padding: 80px 0;
 }
 
 .about-image {
-    position: relative;
+	position: relative;
 }
 
 .about-content .about-welcome {
-    font-size: 24px;
-    margin: 0;
-    color: var(--gh-red);
-    text-transform: uppercase;
+	font-size: 24px;
+	margin: 0;
+	color: var(--gh-red);
+	text-transform: uppercase;
 }
 
 .about-content .about-title {
-    font-size: 35px;
-    margin-top: 10px;
-    text-transform: uppercase;
+	font-size: 35px;
+	margin-top: 10px;
+	text-transform: uppercase;
 }
 
 @media (max-width: 767px) {
-    .about-area {
-        padding-top: 30px;
-        padding-bottom: 80px;
-    }
-    .about-content .about-welcome {
-        font-size: 18px;
-    }
-    .about-content .about-title {
-        font-size: 26px;
-    }
+	.about-area {
+		padding-top: 30px;
+		padding-bottom: 80px;
+	}
+
+	.about-content .about-welcome {
+		font-size: 18px;
+	}
+
+	.about-content .about-title {
+		font-size: 26px;
+	}
+}
+
+.latest_articles_title {
+	font-family: "headingcompressedpro-extbd",
+		sans-serif;
+	text-transform: uppercase;
+	color: #C82E4A;
+	font-size: 50px;
+	text-align: left;
+}
+
+.latest_articles_content {
+	color: var(--gh-blue);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media (min-width:768px) {
+	.latest_articles_content {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.latest_articles_title {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@media (min-width: 1000px) {
+	.latest_articles_content {
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.latest_articles_title {
+		margin-left: 200px;
+	}
+
 }

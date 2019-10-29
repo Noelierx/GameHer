@@ -9,6 +9,7 @@ use App\Repository\Blog\TagRepository;
 use App\Repository\PartnerRepository;
 use App\Repository\StreamerRepository;
 use App\Repository\User\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,9 +23,23 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="index", methods={"GET"})
      */
-    public function index(): Response
+    public function index(PostRepository $posts, $page = 1, $limit = 5): Response
     {
-        return $this->render('views/index.html.twig');
+        $articles = $this->getDoctrine()->getRepository(Post::class);
+        $queryBuilder = $articles->createQueryBuilder('p');
+        $queryBuilder
+            ->select('p')
+            ->from('App:Blog\Post', 'p')
+            ->where('p.publishedAt <= :now')
+            ->orderBy('p.publishedAt', 'DESC');
+
+        if (!$articles) {
+            throw new NotFoundHttpException('Aucun article publié');
+        }
+        return $this->render('views/index.html.twig', [
+            'articles' => $articles->findAll(),
+            'paginator' => $posts->findAll()
+        ]);
     }
 
     /**
@@ -130,6 +145,5 @@ class DefaultController extends AbstractController
      * @Route("/logout", name="logout")
      */
     public function logout()
-    {
-    }
+    { }
 }

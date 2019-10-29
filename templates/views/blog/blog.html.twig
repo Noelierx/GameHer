@@ -4,53 +4,33 @@
 {% block body_id 'blog' %}
 
 {% block main %}
-	<div class="container">
+    <div class="container">
 
-		<div class="row news">
-			<div class="col s12 m8 l9">
-				<h1 class="news__title">{{ 'blog.title' |trans }}</h1>
-				<h2 class="news__subtitle">{{ 'blog.subtitle' |trans }}</h2>
-			</div>
-			<div class="col s12 m4 l3">
-				<form action="{{ path('blog') }}" method="get" class="news__form">
-					<input type="text" placeholder="{{ 'blog.search' |trans }}" class="news__search" name="query">
-				</form>
-				<select name="categories" id="news__categories">
-					<option value="" disabled selected>{{ 'blog.tag_selection.placeholder' |trans }}</option>
-					<option value="">{{ 'blog.tag_selection.everything' |trans }}</option>
-					{% for tag in tags %}
-						<option value="{{ tag.name }}">{{ tag.name }}</option>
-					{% endfor %}
-				</select>
-			</div>
-		</div>
+        <div class="row news">
+            <div class="col s12 m8 l9">
+                <h1 class="news__title">{{ 'blog.title' |trans }}</h1>
+                <h2 class="news__subtitle">{{ 'blog.subtitle' |trans }}</h2>
+            </div>
+            <div class="col s12 m4 l3">
+                <form action="{{ path('blog') }}" method="get" class="news__form">
+                    <input type="text" placeholder="{{ 'blog.search' |trans }}" class="news__search" name="query">
+                </form>
+                <select name="categories" id="news__categories">
+                    <option value="" disabled selected>{{ 'blog.tag_selection.placeholder' |trans }}</option>
+                    <option value="">{{ 'blog.tag_selection.everything' |trans }}</option>
+                    {% for tag in tags %}
+                        <option value="{{ tag.name }}">{{ tag.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
 
-		<div class="row posts">
-			{% for article in paginator.results %}
-			<div class="col s12 m6 l4">
-				<div class="imageWithFooter --orange">
-					<img src="{{ article.picture ? asset('uploads/posts/' ~ article.picture) : asset('build/img/webtv/streamer.png')}}" alt="{{ article.title }}">
-					<a href="{{ path('show_article_slug', {slug: article.slug}) }}" class="footer">
-						<div class="links">
-							{% if article.tags.count %}<p class="tag">{{ article.tags[0].name }}</p>{% endif %}
-							<p class="channel">{{ article.title }}</p>
-						</div>
-						<div class="fleche">
-							<img src="{{ asset('build/img/blog/fleche.png') }}" alt="{{ article.title }}">
-						</div>
-					</a>
-				</div>
-			</div>
-			{% else %}
-				<div class="col s12">{{ 'blog.no_posts' |trans }}</div>
-			{% endfor %}
-
-		</div>
-		<div class="row pagination">
-			<div class="col s12">
-				{% include 'views/blog/_pagination.html.twig' %}
-			</div>
-		</div>
-	</div>
-	<hr>
+        {% include "views/blog/_post.html.twig" %}
+        <div class="row pagination">
+            <div class="col s12">
+                {% include 'views/blog/_pagination.html.twig' %}
+            </div>
+        </div>
+    </div>
+    <hr>
 {% endblock %}
