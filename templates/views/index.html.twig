@@ -86,8 +86,16 @@
 {% endblock %}
 
 {% block articles %}
-    {% for article in articles %}
-        {% include "views/blog/_post.html.twig" %}
+    {% for article in postRepository %}
+
+        <div class="row justify-content-center">
+            <div class="container latest_articles_content">
+
+                <h3 class="latest_articles_title">{% trans %}Nos derniers articles{% endtrans %}</h3>
+
+                {% include "views/blog/_post.html.twig" %}
+            </div>
+        </div>
 
     {% endfor %}
 {% endblock %}

@@ -23,22 +23,17 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="index", methods={"GET"})
      */
-    public function index(PostRepository $posts, $page = 1, $limit = 5): Response
+    public function index(PostRepository $postRepository): Response
     {
-        $articles = $this->getDoctrine()->getRepository(Post::class);
-        $queryBuilder = $articles->createQueryBuilder('p');
-        $queryBuilder
-            ->select('p')
-            ->from('App:Blog\Post', 'p')
-            ->where('p.publishedAt <= :now')
-            ->orderBy('p.publishedAt', 'DESC');
+        $postRepository = $this->getDoctrine()->getRepository(Post::class)->findBy([
+            'published' => true
+        ], ['publishedAt' => 'DESC']);
 
-        if (!$articles) {
+        if ($postRepository === null) {
             throw new NotFoundHttpException('Aucun article publié');
         }
         return $this->render('views/index.html.twig', [
-            'articles' => $articles->findAll(),
-            'paginator' => $posts->findAll()
+            'postRepository' => $postRepository
         ]);
     }
 
