@@ -1,7 +1,5 @@
 {% spaceless %}
     <footer class="page-footer">
-
-
         {% if app.request.attributes.get('_route') != 'partners' %}
             {{  render(controller('App\\Controller\\SideController::partners')) }}
             <hr>

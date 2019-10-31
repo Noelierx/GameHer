@@ -25,15 +25,12 @@ class DefaultController extends AbstractController
      */
     public function index(PostRepository $postRepository): Response
     {
-        $postRepository = $this->getDoctrine()->getRepository(Post::class)->findBy([
+        $posts = $this->getDoctrine()->getRepository(Post::class)->findBy([
             'published' => true
         ], ['publishedAt' => 'DESC']);
 
-        if ($postRepository === null) {
-            throw new NotFoundHttpException('Aucun article publié');
-        }
         return $this->render('views/index.html.twig', [
-            'postRepository' => $postRepository
+            'posts' => $posts
         ]);
     }
 
@@ -52,6 +49,7 @@ class DefaultController extends AbstractController
 
         return $this->render('views/blog/blog.html.twig', [
             'paginator' => $posts,
+            'posts' => $posts,
             'tags' => $tags->findAll(),
         ]);
     }

@@ -1,5 +1,6 @@
 <div class="row posts">
-    {% for article in paginator %}
+    {% for article in posts %}
+        {% set paginator = posts %}
         <div class="col s12 m4 l4">
             <div class="imageWithFooter --orange">
                 <img src="{{ article.picture ? asset('uploads/posts/' ~ article.picture) : asset('build/img/webtv/streamer.png')}}" alt="{{ article.title }}">
