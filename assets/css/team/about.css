@@ -95,10 +95,13 @@
 
 .col.gameherMember {
 	margin: 0 0 3rem !important;
+	display: flex;
+  flex-direction: column;
 	p { margin: 0; }
 }
 .gameherMember__image {
 	height: 20rem;
+	margin: 0 auto;
 }
 .gameherMember__name {
 	font-size: 2rem;
