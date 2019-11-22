@@ -116,8 +116,6 @@
 	font-family: 'FoundationSans-Roman', sans-serif;
 }
 .gameherMember__social {
-	display: flex;
-	justify-content: space-evenly;
 	a {color: #000;}
 	padding-top: .5rem;
 }
