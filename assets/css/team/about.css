@@ -97,7 +97,7 @@
 	margin: 0 0 3rem !important;
 	display: flex;
   flex-direction: column;
-	p { margin: 0; }
+	p { margin: 0 auto; }
 }
 .gameherMember__image {
 	height: 20rem;
