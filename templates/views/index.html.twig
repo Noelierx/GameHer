@@ -3,36 +3,50 @@
 {% block body_id 'index' %}
 
 {% block main %}
-    {% include "common/separateBanner.html.twig" with {
-        className: "sectionRed",
-        mainTitle: "homepage.title" | trans,
-        content: "homepage.subtitle" | trans,
-        classNameContent: "withBackgroundImage",
-        contentClass: "homepage__subtitle",
-        classContent: "withMargin",
-        image_url: "/build/img/homepage/PHOTOGRAPHIE.png",
-    } only %}
-    <section id="about" class="about-area">
-        <div class="container">
-            <div class="row">
-                <div class="col hide-on-med-and-down l6 xl6">
-                    <div class="about-image clearfix">
-                        <img src="{{ asset('build/img/homepage/mixite.png') }}" alt="About">
-                    </div> <!-- about image -->
-                </div>
-                <div class="col s12 l6 xl6">
-                    <div class="about-content">
-                        <h4 class="about-welcome">Notre mission </h4>
-                        <h3 class="about-title">Qu'est-ce que Game'Her ?</h3>
-                        <p style="margin-top:25px;"><b>Game’Her est une association créée en août 2017 aspirant à développer un environnement sain pour les joueuses tout en ne les enfermant pas dans un milieu exclusivement féminin.</b>
-                            <br> <br>
-                            Le but étant de s’ouvrir à la mixité et de démocratiser la place de la femme, selon nous reléguée en arrière-plan, dans l’univers du jeu vidéo. Nous sommes une équipe de passionnés, motivés par le jeu vidéo sous tous ses aspects rêvant de voir s’épanouir la notion de mixité et diversité au sein de ce milieu.</p>
-                        <a class="btn roundBorder red darken-3 " href="{{ path('about')}}">En savoir plus</a>
-                    </div> <!-- about content -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
+	<div id="wrapper">
+
+		<!-- Intro -->
+		<section class="intro">
+			<header>
+				<h1 class="page-header__title">Game'Her</h1>
+				<p class="page-header__desc editor-content homepage__subtitle">Reveal Yourself</p>
+				<ul class="actions">
+					<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
+				</ul>
+			</header>
+			<div class="content">
+				<span class="image fill" data-position="center"><img src="{{ asset('build/img/homepage/PHOTOGRAPHIE.png') }}" alt="" /></span>
+			</div>
+		</section>
+
+		<!-- Section -->
+		<section id="first">
+			<header>
+				<h2 class="homepage__h2">Introduction</h2>
+			</header>
+			<div class="content">
+				<h3>Notre mission</h3>
+				<p><strong>Game'Her</strong> est une association loi 1901 créée en août 2017 et ayant pour but de développer un environnement sain pour les personnes (quelque soit le genre) souhaitant s’investir dans le gaming, en leur fournissant les outils nécessaires pour qu’elles puissent s’ épanouir dans ce milieu.<br/>Nous souhaitons également les aider à évoluer dans les domaines du streaming et/ou de l’esport dans le but de s’ouvrir à la mixité et à la diversité tout en démocratisant la place de la femme dans l’univers du jeu vidéo.</p>
+				<div class="whoAreWe__illustration">
+					<img src="{{ asset('build/img/homepage/dons.png') }}" alt="GameHer" class="whoAreWe__picture">
+					<div class="whoAreWe__aside">Nous sommes une équipe de passionnés, motivés par le jeu-vidéo sous tous ses aspects rêvant de voir s'épanouir la notion de mixité et diversité au sein de ce milieu.</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Section -->
+		<section>
+			<header>
+				<h2 class="homepage__h2">Comment aider Game'Her ?</h2>
+				<h3>Devenir bénévole</h3>
+				<p><strong>Vous souhaitez vous investir au sein de Game’Her en mettant à profit votre temps et vos compétences ?</strong></p>
+				<p>Nous travaillons exclusivement sur Discord, donc vous n’avez aucune contrainte physique ! Et nous essayons au maximum d’organiser des rencontres IRL entre les membres de l’association dès que nous le pouvons.</p>
+			</header>
+			<div class="content">
+				<span class="image main"><img src="{{ asset('build/img/recrutement/PHOTOGRAPHIE.png') }}" alt="" /></span>
+			</div>
+		</section>
+	</div>
     {% include "common/dataListNoHover.html.twig" with {
         element_class: "sectionBlue",
         explanation: "recruitment.explanation" | trans,
