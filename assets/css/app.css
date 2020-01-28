@@ -79,7 +79,9 @@ a {
 	transition: color 200ms ease-in;
 }
 
+.alignLeft {text-align:left;}
 .roundBorder {border-radius: 50px;}
+.whiteText {color:var(--gh-white);}
 
 button.btn-show {
 	background-color: var(--gh-blue);

@@ -25,7 +25,7 @@
 				<h2 class="homepage__h2">Introduction</h2>
 			</header>
 			<div class="content">
-				<h3>Notre mission</h3>
+				<h3 class="gameherMember__nickname">Notre mission</h3>
 				<p><strong>Game'Her</strong> est une association loi 1901 créée en août 2017 et ayant pour but de développer un environnement sain pour les personnes (quelque soit le genre) souhaitant s’investir dans le gaming, en leur fournissant les outils nécessaires pour qu’elles puissent s’ épanouir dans ce milieu.<br/>Nous souhaitons également les aider à évoluer dans les domaines du streaming et/ou de l’esport dans le but de s’ouvrir à la mixité et à la diversité tout en démocratisant la place de la femme dans l’univers du jeu vidéo.</p>
 				<div class="whoAreWe__illustration">
 					<img src="{{ asset('build/img/homepage/dons.png') }}" alt="GameHer" class="whoAreWe__picture">
@@ -38,9 +38,9 @@
 		<section>
 			<header>
 				<h2 class="homepage__h2">Comment aider Game'Her ?</h2>
-				<h3>Devenir bénévole</h3>
-				<p><strong>Vous souhaitez vous investir au sein de Game’Her en mettant à profit votre temps et vos compétences ?</strong></p>
-				<p>Nous travaillons exclusivement sur Discord, donc vous n’avez aucune contrainte physique ! Et nous essayons au maximum d’organiser des rencontres IRL entre les membres de l’association dès que nous le pouvons.</p>
+				<h3 class="dataList-title alignLeft">Devenir bénévole</h3>
+				<p class="alignLeft whiteText"><strong>Vous souhaitez vous investir au sein de Game’Her en mettant à profit votre temps et vos compétences ?</strong></p>
+				<p class="alignLeft whiteText">Nous travaillons exclusivement sur Discord, donc vous n’avez aucune contrainte physique ! Et nous essayons au maximum d’organiser des rencontres IRL entre les membres de l’association dès que nous le pouvons.</p>
 			</header>
 			<div class="content">
 				<span class="image main"><img src="{{ asset('build/img/recrutement/PHOTOGRAPHIE.png') }}" alt="" /></span>
@@ -90,4 +90,6 @@
             }
         ]
     } only %}
+	{{  render(controller('App\\Controller\\SideController::recommended')) }}
+	<hr>
 {% endblock %}

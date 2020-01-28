@@ -82,20 +82,9 @@ body {
 	}
 }
 
-html {
-	box-sizing: border-box;
-}
 
 *, *:before, *:after {
 	box-sizing: inherit;
-}
-
-html {
-	overflow-x: hidden;
-}
-
-body {
-	overflow-x: hidden;
 }
 
 /* Image */
@@ -180,7 +169,7 @@ a.arrow:before {
 #wrapper:before {
 	background-attachment: fixed;
 	background-color: #c92e4b;
-	background-image: url("../img/homepage/MASCOTTE.png");
+	background-image: url("../img/homepage/MASCOTTE_OFFICIELLE.png");
 	background-position: -50% 10%;
 	background-repeat: repeat-y;
 	background-size: 75% auto;
@@ -406,7 +395,7 @@ a.arrow:before {
 	#wrapper > section > header {
 		background-attachment: fixed;
 		background-color: #c92e4b;
-		background-image: url("../img/homepage/MASCOTTE.png");
+		background-image: url("../img/homepage/MASCOTTE_OFFICIELLE.png");
 		background-position: 25% 50%;
 		background-repeat: repeat-y;
 		background-size: 40rem auto;
