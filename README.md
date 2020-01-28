@@ -1,4 +1,4 @@
-![GameHer Social Banner](https://pbs.twimg.com/profile_banners/895352686295617536/1564869814/1500x500)
+![GameHer Social Banner](https://pbs.twimg.com/profile_banners/895352686295617536/1576449060/1500x500)
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Open Source Helpers](https://www.codetriage.com/noelierx/gameher/badges/users.svg)](https://www.codetriage.com/noelierx/gameher)
