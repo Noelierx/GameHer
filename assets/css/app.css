@@ -79,7 +79,9 @@ a {
 	transition: color 200ms ease-in;
 }
 
+.alignLeft {text-align:left;}
 .roundBorder {border-radius: 50px;}
+.whiteText {color:var(--gh-white);}
 
 button.btn-show {
 	background-color: var(--gh-blue);
@@ -88,4 +90,34 @@ button.btn-show {
 	&:focus, &:active {background-color: inherit;}
 	&:hover, &.opened:hover { background-color: var(--gh-orange); }
 	&.opened { background-color: var(--gh-orange); &:hover {background-color: #000;}}
+}
+
+.btn-primary {
+	outline:none;
+	height: 40px;
+	text-align: center;
+	width: auto;
+	border-radius:40px;
+	background: #fff;
+	border: 2px solid var(--gh-red);
+	color:var(--gh-red);
+	letter-spacing:1px;
+	text-shadow:0;
+	transition: all 0.25s ease;
+	&:hover {color:var(--gh-white);background: var(--gh-red);}
+}
+
+.btn-secondary {
+	outline:none;
+	height: 40px;
+	text-align: center;
+	width: auto;
+	border-radius:40px;
+	background: var(--gh-red);
+	border: 2px solid var(--gh-white);
+	color:var(--gh-white);
+	letter-spacing:1px;
+	text-shadow:0;
+	transition: all 0.25s ease;
+&:hover {color:var(--gh-red);background: var(--gh-white);}
 }
