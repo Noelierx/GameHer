@@ -34,7 +34,7 @@
 
 .withBackgroundImage {
     background-image: linear-gradient(rgba(201, 46, 75, 0.1), rgba(201, 46, 75, 0.1)),
-    url("../img/homepage/MASCOTTE.png");
+    url("../img/homepage/MASCOTTE2.png");
     background-position: left;
     background-color: var(--gh-red);
     background-repeat: no-repeat;
@@ -74,6 +74,7 @@ header, section {
 
 body {
 	-ms-overflow-style: scrollbar;
+	overflow-x:hidden;
 }
 
 @media screen and (max-width: 480px) {
@@ -169,7 +170,7 @@ a.arrow:before {
 #wrapper:before {
 	background-attachment: fixed;
 	background-color: #c92e4b;
-	background-image: url("../img/homepage/MASCOTTE_OFFICIELLE.png");
+	background-image: url("../img/homepage/MASCOTTE2.png");
 	background-position: -50% 10%;
 	background-repeat: repeat-y;
 	background-size: 75% auto;
@@ -395,7 +396,7 @@ a.arrow:before {
 	#wrapper > section > header {
 		background-attachment: fixed;
 		background-color: #c92e4b;
-		background-image: url("../img/homepage/MASCOTTE_OFFICIELLE.png");
+		background-image: url("../img/homepage/MASCOTTE2.png");
 		background-position: 25% 50%;
 		background-repeat: repeat-y;
 		background-size: 40rem auto;
