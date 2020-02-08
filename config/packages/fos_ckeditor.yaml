@@ -6,3 +6,19 @@ twig:
 fos_ck_editor:
     base_path: "build/ckeditor"
     js_path:   "build/ckeditor/ckeditor.js"
+    configs:
+        global_config:
+            extraPlugins: "preview,justify,pastetools,pastefromgdocs"
+    plugins:
+        preview:
+            path:     "build/ckeditor/plugins/preview/"
+            filename: "plugin.js"
+        justify:
+            path:     "build/ckeditor/plugins/justify/"
+            filename: "plugin.js"
+        pastetools:
+            path:     "build/ckeditor/plugins/pastetools/"
+            filename: "plugin.js"
+        pastefromgdocs:
+            path:     "build/ckeditor/plugins/pastefromgdocs/"
+            filename: "plugin.js"

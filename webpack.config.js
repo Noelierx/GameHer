@@ -41,6 +41,7 @@ Encore
 				{from: './node_modules/ckeditor/plugins', to: 'ckeditor/plugins/[path][name].[ext]'},
 				{from: './node_modules/ckeditor/skins', to: 'ckeditor/skins/[path][name].[ext]'},
 				{from: './assets/img', to: 'img/[path][name].[ext]'},
+				{from: './assets/plugins/ckeditor', to: 'ckeditor/plugins/[path][name].[ext]'},
 		])
     /*
      * FEATURE CONFIG
