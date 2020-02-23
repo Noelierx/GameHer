@@ -146,6 +146,7 @@ input[type="text"].news__search {
 	}
 }
 .article__content {
+	float: none !important;
 	h3 {
 		font-family: "headingcompressedpro-extbd", sans-serif;
 		color: var(--gh-orange);
