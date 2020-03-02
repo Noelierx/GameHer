@@ -18,7 +18,7 @@ footer {
 }
 
 .partnerFooter {
-	margin: 4rem 0;
+	margin: 2rem 0;
 }
 
 .partnerFooter .row {
@@ -42,4 +42,5 @@ footer {
 .partnerFooter__image {
 	max-height: 5rem;
 	filter: brightness(0.1);
+	margin-top: 24px;
 }
