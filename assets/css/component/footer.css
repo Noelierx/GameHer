@@ -12,7 +12,9 @@ footer {
 		width: 50%;
 		display: flex;
 		justify-content: space-between;
-
+		a {
+			margin-right: .5rem;
+		}
 		a:hover { color: var(--gh-gray); }
 	}
 }
