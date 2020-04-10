@@ -73,7 +73,7 @@
 	color: var(--gh-white);
 	padding-top: .5rem;
 	&:hover {color: var(--gh-orange);}
-	a:not(last-of-type) {margin-right: .5rem:}
+	a:not(last-of-type) {margin-right: .5rem;}
 }
 .esportTeam__button.opened .GHshow {display: none;}
 .esportTeam__button:not(.opened) .GHhide {display: none;}
