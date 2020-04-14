@@ -48,10 +48,8 @@ class PostRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('p')
             ->orderBy('p.publishedAt', 'DESC')
-			->where('p.publishedAt <= :now')
             ->setMaxResults(3)
             ->getQuery()
-            ->getResult()
-            ->setParameter('now', new DateTime());
+            ->getResult();
     }
 }
