@@ -146,6 +146,7 @@ input[type="text"].news__search {
 	}
 }
 .article__content {
+	ul:not(.browser-default)>li{list-style-type: circle !important;}
 	float: none !important;
 	word-break: break-word;
 	h3 {
