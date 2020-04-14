@@ -154,7 +154,7 @@ input[type="text"].news__search {
 		text-transform: uppercase;
 		font-size: 1.8rem;
 	}
-	img { margin: auto; }
+	img { margin: auto; height: auto !important; }
 	a {color: var(--gh-orange); &:hover{text-decoration: underline; }}
 }
 
