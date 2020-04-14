@@ -46,6 +46,7 @@ class PostRepository extends ServiceEntityRepository
     public function getRecommended(int $int)
     {
         return $this->createQueryBuilder('p')
+			->where('p.publishedAt <= :now')
             ->orderBy('p.publishedAt', 'DESC')
             ->setMaxResults(3)
             ->getQuery()
