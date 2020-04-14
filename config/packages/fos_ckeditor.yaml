@@ -8,7 +8,7 @@ fos_ck_editor:
     js_path:   "build/ckeditor/ckeditor.js"
     configs:
         global_config:
-            extraPlugins: "preview,justify,pastetools,pastefromgdocs"
+            extraPlugins: "preview,justify,pastetools,pastefromgdocs,youtube"
     plugins:
         preview:
             path:     "build/ckeditor/plugins/preview/"
@@ -22,3 +22,6 @@ fos_ck_editor:
         pastefromgdocs:
             path:     "build/ckeditor/plugins/pastefromgdocs/"
             filename: "plugin.js"
+        youtube:
+          path:     "build/ckeditor/plugins/youtube/"
+          filename: "plugin.js"
