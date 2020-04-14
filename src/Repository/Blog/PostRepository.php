@@ -9,6 +9,7 @@ use App\Pagination\Paginator;
 use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * @method Post|null find($id, $lockMode = null, $lockVersion = null)
@@ -46,10 +47,11 @@ class PostRepository extends ServiceEntityRepository
     public function getRecommended(int $int)
     {
         return $this->createQueryBuilder('p')
-			->where('p.publishedAt <= :now')
             ->orderBy('p.publishedAt', 'DESC')
+			->where('p.publishedAt <= :now')
             ->setMaxResults(3)
             ->getQuery()
-            ->getResult();
+            ->getResult()
+            ->setParameter('now', new DateTime());
     }
 }
