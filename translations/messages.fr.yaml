@@ -80,6 +80,11 @@ esport.rocketl.hide_team: Masquer
 esport.rocketl.main_team: Equipe principale
 esport.rocketl.academy_team: Equipe académique
 
+esport.hs.title: Hearthstone
+esport.hs.show_team: Voir
+esport.hs.hide_team: Masquer
+esport.hs.main_team: Equipe principale
+
 #webtv
 webtv.banner.do_not_miss_us: Ne manquez plus un live
 webtv.banner.install_extension: 'Installez notre %link%extension%endlink%'

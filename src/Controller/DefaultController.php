@@ -74,6 +74,8 @@ class DefaultController extends AbstractController
                 ->findBy(['team' => EsportMember::MAIN_TEAM, 'game' => EsportMember::GAME_ROCKET_LEAGUE], ['role' => 'desc']),
             'rl_academy' => $this->getDoctrine()->getRepository(EsportMember::class)
                 ->findBy(['team' => EsportMember::ACADEMY_TEAM, 'game' => EsportMember::GAME_ROCKET_LEAGUE], ['role' => 'desc']),
+			'hs_main' => $this->getDoctrine()->getRepository(EsportMember::class)
+				->findBy(['team' => EsportMember::MAIN_TEAM, 'game' => EsportMember::GAME_HEARTHSTONE], ['role' => 'desc']),
         ]);
     }
 

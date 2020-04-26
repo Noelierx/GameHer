@@ -3,7 +3,7 @@
 	margin-top: 2rem;
 }
 
-.leagueOflegends, .rocketLeague {
+.leagueOflegends, .hearthstone {
 	display: flex;
 	background-color: var(--gh-blue);
 	background-repeat: no-repeat;
@@ -16,7 +16,7 @@
     background-image: url("../img/esport/leagueoflegends.png");
     background-position: center top;
 }
-.rocketLeague {
+.hearthstone {
 	background-image: url("../img/esport/rocketleague.png");
     background-position: center;
 }
