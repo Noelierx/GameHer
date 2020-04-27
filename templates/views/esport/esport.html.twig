@@ -51,29 +51,21 @@
 		</div>
 	</section>
 
-	{#	Rocket League	#}
-	<section class="rocketLeague open">
+	{#	Hearthstone	#}
+	<section class="hearthstone open">
 		<div class="container">
 			<div class="row esportTeam__trigger">
 				<div class="col s12 l6">
-					<div class="esportTeam__title">{{ 'esport.rocketl.title'|trans }}</div>
+					<div class="esportTeam__title">{{ 'esport.hs.title'|trans }}</div>
 					<p class="esportTeam__description esportToggled main">{{ 'esport.team.description.team_main' |trans }}</p>
-					<p class="esportTeam__description esportToggled academy">{{ 'esport.team.description.team_academy' |trans }}</p>
 				</div>
 				<div class="col s12 l6">
 					<div class="row">
 						<div class="col s6 esportTeam__team">
-							<p class="esportTeam__teamName">{{ 'esport.rocketl.main_team'|trans }}</p>
-							<button class="btn btn-show esportTeam__button" data-team="rl-main">
-								<span class="GHshow">{{ 'esport.rocketl.show_team'|trans }}</span>
-								<span class="GHhide">{{ 'esport.rocketl.hide_team'|trans }}</span>
-							</button>
-						</div>
-						<div class="col s6 esportTeam__team">
-							<p class="esportTeam__teamName">{{ 'esport.rocketl.academy_team'|trans }}</p>
-							<button class="btn btn-show esportTeam__button" data-team="rl-academy">
-								<span class="GHshow">{{ 'esport.rocketl.show_team'|trans }}</span>
-								<span class="GHhide">{{ 'esport.rocketl.hide_team'|trans }}</span>
+							<p class="esportTeam__teamName">{{ 'esport.hs.main_team'|trans }}</p>
+							<button class="btn btn-show esportTeam__button" data-team="hs-main">
+								<span class="GHshow">{{ 'esport.hs.show_team'|trans }}</span>
+								<span class="GHhide">{{ 'esport.hs.hide_team'|trans }}</span>
 							</button>
 						</div>
 					</div>
@@ -81,13 +73,8 @@
 			</div>
 
 			{#	Main Team	#}
-			<div class="row esportToggled rl-main">
-				{% include 'views/esport/_playersList.html.twig' with {players: rl_main} %}
-			</div>
-
-			{#	Academy Team	#}
-			<div class="row esportToggled rl-academy">
-				{% include 'views/esport/_playersList.html.twig' with {players: rl_academy} %}
+			<div class="row esportToggled hs-main">
+				{% include 'views/esport/_playersList.html.twig' with {players: hs_main} %}
 			</div>
 		</div>
 	</section>

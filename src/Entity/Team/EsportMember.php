@@ -12,6 +12,7 @@ class EsportMember extends AMember
 {
     const GAME_LEAGUE_OF_LEGENDS = 'game_lol';
     const GAME_ROCKET_LEAGUE = 'game_rl';
+	const GAME_HEARTHSTONE = 'game_hs';
 
     const MAIN_TEAM = 'team_main';
     const ACADEMY_TEAM = 'team_academy';
@@ -40,6 +41,7 @@ class EsportMember extends AMember
         return [
             self::GAME_LEAGUE_OF_LEGENDS,
             self::GAME_ROCKET_LEAGUE,
+            self::GAME_HEARTHSTONE,
         ];
     }
 
