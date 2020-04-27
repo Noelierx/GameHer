@@ -44,6 +44,7 @@ members.role.category.members: Membres
 
 members.esport.game.game_lol: League Of Legends
 members.esport.game.game_rl: Rocket League
+members.esport.game.game_hs: Hearthstone
 members.esport.team.team_main: Principale
 members.esport.team.team_academy: Académie
 members.esport.role.10_top: Top
