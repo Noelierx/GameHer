@@ -1,11 +1,11 @@
 {
     "devDependencies": {
         "@symfony/webpack-encore": "^0.27.0",
-        "core-js": "^3.1.4",
+        "core-js": "^3.6.5",
         "postcss-comment": "^2.0.0",
-        "postcss-custom-properties": "^9.0.2",
+        "postcss-custom-properties": "^9.1.1",
         "postcss-loader": "^3.0.0",
-        "postcss-nested": "^4.1.2",
+        "postcss-nested": "^4.2.1",
         "postcss-preset-env": "^6.7.0",
         "webpack-notifier": "^1.8.0"
     },
@@ -18,7 +18,7 @@
         "heroku-postbuild": "encore production"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.10.0",
+        "@fortawesome/fontawesome-free": "^5.13.0",
         "ckeditor": "^4.12.1",
         "datatables": "^1.10.18",
         "jquery": "^3.5.0",
