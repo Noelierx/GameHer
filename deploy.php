@@ -27,7 +27,7 @@ before('deploy:cache:clear', 'deploy:npm:install');
 before('deploy:cache:clear', 'deploy:npm:build');
 
 //Setup host
-host('gameher.fr')
+host('161.35.75.9')
 	->user('gameher')
 	->multiplexing(false)
 	->forwardAgent(true)
