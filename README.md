@@ -34,20 +34,32 @@ That's it, you are ready
 
 ### Develop
 
-If you use the [Symfony CLI](https://symfony.com/download) you can launch a development server with `symfony server:start`, otherwise you need to configure your Apache installation to serve the files from the `public` folder.  
+If you use the [Symfony CLI](https://symfony.com/download) you can launch a development server with `symfony server:start`, otherwise you need to configure your Apache installation to serve the files from the `public` folder.
 You can then launch the webpack server with a watcher by running `npm run watch`
 
 Then head over to http://localhost:3000 (with Symfony CLI) or to your webserver to start working
+
+You can run the application with Docker:  
+Clone the repo and run `make install`  
+This will setup the docker images, install the dependencies and run the migrations  
+You can then run `npm install` and `npm run dev` at the root of the repository in order to install and compile assets.  
+You might need to setup your hosts to redirect `gameher.dev` to localhost  
+
+After this first installation, you can boot up the docker containers by simply running `make up`  
+Log into the different containers by running `make tty` for the symfony container and `make db` for the mariadb container  
+Recompile the front assets with `make assets`  
+Stop the containers with `make stop`  
+
 
 ### Configuring Discord
 
 The app uses Discord's OAuth server to handle user. In order to login and access the admin panel, you need to configure a Discord app.
 
-Head over to [Discord's Developer Portal](https://discordapp.com/developers/applications) and create a **New Application** and fill its name  
-On the *General Information* tab, you can retrieve the client ID and client Secret that you need to add to your `.env` file  
-On the *OAuth2* tab, click on **Add Redirect** and enter the app's redirect url. The format will be:  
+Head over to [Discord's Developer Portal](https://discordapp.com/developers/applications) and create a **New Application** and fill its name
+On the *General Information* tab, you can retrieve the client ID and client Secret that you need to add to your `.env` file
+On the *OAuth2* tab, click on **Add Redirect** and enter the app's redirect url. The format will be:
 `http://YOUR_APP_URL/connect/discord/check
-`  
+`
 In the scopes section, select `identify`, `email` and `connections`
 
 Finally, **Save Changes** ! You can now log into the app
@@ -64,9 +76,9 @@ Then you need to go in your repository `$ cd GameHer` you will also need to set 
 `$ git remote add upstream git@github.com:Noelierx/GameHer.git`
 
 
-And you good to work ! Now you just have to create new branches like that : 
+And you good to work ! Now you just have to create new branches like that :
 `$ git checkout -b <add-your-new-branch-name>` Do your stuff and then commit with this command line : `git commit -m "Stuff you have done"`
 
 
 Then, you will have to do a pull request by typing `$ git push origin <add-your-branch-name>`
-And go back to github to click on the button 'Compare and Pull Request'. 
+And go back to github to click on the button 'Compare and Pull Request'.
