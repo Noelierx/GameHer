@@ -13,7 +13,7 @@
             <li><a href="{{ path('tournaments') }}">{{ 'menu.tournaments'|trans }}</a></li>
             <li><a href="{{ path('partners') }}">{{ 'menu.partners'|trans }}</a></li>
             <li><a href="{{ path('donations') }}">{{ 'menu.donations'|trans }}</a></li>
-            <li><a class="btn roundBorder red darken-3" href="https://eliminate.fr/product-category/gameher/" target="_blank">{{ 'menu.boutique'|trans }}</a></li>
+            <li><a class="btn roundBorder red darken-3" href="https://eliminate.fr/product-category/gameher/" target="_blank" rel="noopener">{{ 'menu.boutique'|trans }}</a></li>
             <ul class="collapsible collapsible-accordion">
               <li>
                 <a class="collapsible-header">{{ 'menu.team.header' |trans }} <i class="fa fa-caret-down"></i></a>
@@ -53,7 +53,7 @@
             <li><a href="{{ path('tournaments') }}" {{ _self.activeLink('tournaments') }}>{{ 'menu.tournaments'|trans }}</a></li>
             <li><a href="{{ path('partners') }}" {{ _self.activeLink('partners') }}>{{ 'menu.partners'|trans }}</a></li>
             <li><a href="{{ path('donations') }}" {{ _self.activeLink('donations') }}>{{ 'menu.donations'|trans }}</a></li>
-            <li><a class="btn roundBorder red darken-3" href="https://eliminate.fr/product-category/gameher/" target="_blank">{{ 'menu.boutique'|trans }}</a></li>
+            <li><a class="btn roundBorder red darken-3" href="https://eliminate.fr/product-category/gameher/" target="_blank" rel="noopener">{{ 'menu.boutique'|trans }}</a></li>
             <!-- Dropdown Trigger -->
             <li>
               <a class="dropdown-trigger {% if app.request.requestUri matches '/team/' %}active{% endif %}" data-dropdown="dropdown-team">{{ 'menu.team.header' |trans }} <i class="fa fa-caret-down"></i></a>
