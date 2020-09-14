@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+env:
+  TZ: UTC
+  PHP_VERSION: 7.3
+  NODE_VERSION: 12.x
+
+jobs:
+  php:
+    runs-on: ubuntu-latest
+    name: php / ${{ matrix.test.name }}
+    strategy:
+      fail-fast: false
+      matrix:
+        test:
+          - name: Lint Symfony's templates files
+            script: bin/console lint:twig templates/
+
+          - name: Lint Symfony's config files
+            script: bin/console lint:yaml config/ --parse-tags
+
+          - name: Lint Symfony's translations files
+            script: bin/console lint:xliff translations
+
+          # Available in Symfony 4.4, see https://symfony.com/blog/new-in-symfony-4-4-service-container-linter
+          # - name: Lint Symfony's container
+          #  script: bin/console lint:container
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          coverage: none
+          extensions: ctype, iconv, intl
+          ini-values: date.timezone=${{ env.TZ }}, memory_limit=-1, session.gc_probability=0, opcache.enable=1, opcache.enable_cli=1, opcache.memory_consumption=256, opcache.max_accelerated_files=20000, opcache.validate_timestamps=0, realpath_cache_size=4096K, realpath_cache_ttl=600
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: $(composer config cache-files-dir)
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+
+      - name: Tests
+        run: "${{ matrix.test.script }}"
+
+  javascript:
+    runs-on: ubuntu-latest
+    name: javascript / ${{ matrix.test.name }}
+    strategy:
+      fail-fast: false
+      matrix:
+        test:
+          - name: Building for development
+            script: yarn dev
+
+          - name: Building for production
+            script: yarn build
+
+    steps:
+      - name: Install Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - uses: actions/checkout@v2
+
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: $(yarn cache dir)
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
+      - run: yarn install --frozen-lockfile
+
+      - name: Tests
+        run: "${{ matrix.test.script }}"
