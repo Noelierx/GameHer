@@ -57,12 +57,12 @@ esport.subtitle: les joueurs et le personnel encadrant
 esport.league.title: League of Legends
 esport.league.show_team: Voir
 esport.league.hide_team: Masquer
-esport.league.main_team: Equipe principale
-esport.league.academy_team: Equipe académique
-esport.team.description.team_main: L'équipe Game'Her League of Legends est la figure de proue de notre structure. Elle est un mélange parfait de la notion de mixité et des objectifs de performance que nous souhaitons voir émerger dans l'esport.
-esport.team.description.team_academy: L'équipe Game'Her Académie est un ensemble de joueurs et joueuses souhaitant progresser sur League of Legends. Game'Her met à leur disposition les outils nécessaires pour atteindre leurs objectifs.
-esport.member.team.team_main: Principale
-esport.member.team.team_academy: Académie
+esport.league.main_team: Noctua
+esport.league.academy_team: Nebu
+esport.team.description.team_main: L'équipe Noctua est la figure de proue de notre structure. Elle est un mélange parfait de la notion de mixité et des objectifs de performance que nous souhaitons voir émerger dans l'esport.
+esport.team.description.team_academy: L'équipe Nebu est un ensemble de joueurs et joueuses souhaitant progresser sur League of Legends. Game'Her met à leur disposition les outils nécessaires pour atteindre leurs objectifs.
+esport.member.team.team_main: Noctua
+esport.member.team.team_academy: Nebu
 esport.member.role.10_top: Top
 esport.member.role.20_jungle: Jungle
 esport.member.role.30_mid: Mid
@@ -140,7 +140,7 @@ contact.flash_message.error.fields_required: Tous les champs sont obligatoires
 footer.title.gameher: Game'Her
 footer.title.links: Liens utiles
 footer.title.follow_us: Nous suivre
-footer.menu.blog: News & Article
+footer.menu.blog: News & Articles
 footer.menu.esport: Esport
 footer.menu.webtv: WebTV
 footer.menu.tournaments: Tournois

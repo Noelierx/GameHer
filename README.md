@@ -6,7 +6,7 @@
 # GameHer
 [Gameher.fr](https://gameher.fr/) is a french association aspiring to develop gender diversity in the fields of video games, esport and streaming. It is run by [a great team of volunteers](https://gameher.fr/team/a-propos) with the goal of developing a healthy environment for all players. We want to give them the tools they need to flourish and evolve in the fields of video games, esport and streaming.
 
-If you want to support us, you can make [donations](https://gameher.fr/donations).
+If you want to support us, you can make [donations](https://gameher.fr/donations) or you can create an account for Digital Ocean with our affiliate link: [Digital Ocean](https://m.do.co/c/20ded2e61f92)
 
 ### Setup
 
