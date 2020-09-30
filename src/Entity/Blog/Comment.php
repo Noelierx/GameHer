@@ -56,4 +56,34 @@ class Comment
     {
         $this->uuid = Uuid::uuid4();
     }
+
+	public function getContent(): string
+	{
+		return $this->content;
+	}
+
+	public function setContent(string $content): void
+	{
+		$this->content = $content;
+	}
+
+	public function getPost(): Post
+	{
+		return $this->post;
+	}
+
+	public function setPost(Post $post): void
+	{
+		$this->post = $post;
+	}
+
+	public function getAuthor(): User
+	{
+		return $this->author;
+	}
+
+	public function setAuthor(User $author): void
+	{
+		$this->author = $author;
+	}
 }
