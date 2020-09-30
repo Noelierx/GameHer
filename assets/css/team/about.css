@@ -63,7 +63,7 @@
 	background-color: var(--gh-red);
 	color: var(--gh-white);
 	font-size: 1rem;
-	text-align: justify;
+	text-align: left;
 	padding: 1.5rem 1rem;
 }
 
