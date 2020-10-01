@@ -1,0 +1,22 @@
+{# templates/bundles/TwigBundle/Exception/error.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title 'Page non trouvée - GameHer' %}
+{% block body_id 'error' %}
+
+{% block main %}
+	<div class="error__wrapper">
+		<div class="container">
+				<div class="col error__texts">
+					<h1 class="error__text">
+						<span class="error__text__title">{{ 'error.title' |trans }}</span>
+						<span class="error__text__code">{{ status_code }}</span>
+					</h1>
+						<a class="btn roundBorder error__button " href="{{ path('index') }}" rel="home">{{ 'error.button.text' |trans }}</a>
+
+				</div>
+				<div class="error__illustration">
+					<img alt="" src="{{ asset('build/img/errors/error-illustration.svg') }}" aria-hidden="true">
+				</div>
+			</div>
+	</div>
+{% endblock %}

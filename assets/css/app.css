@@ -8,6 +8,7 @@
 @import "team/recruitment.css";
 @import "team/about.css";
 @import "team/contact.css";
+@import "errors.css";
 
 :root {
 	--gh-blue: #001724;
