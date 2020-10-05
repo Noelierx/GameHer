@@ -10,6 +10,10 @@ $('.datepicker').datepicker({
 	firstDay: 1
 });
 
+$('.timepicker').timepicker({
+	twelveHour: false
+});
+
 $('.dismiss').click(function ($event) {
 	$event.preventDefault();
 	$(this).parent().fadeOut();
