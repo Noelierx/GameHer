@@ -213,6 +213,16 @@ class User implements UserInterface
         return $this;
     }
 
+    public static function getAvailableRoles(): array
+	{
+		return [
+			self::ROLE_DEFAULT,
+			self::ROLE_REDACTEUR,
+			self::ROLE_ADMIN,
+			self::ROLE_SUPER_ADMIN,
+		];
+	}
+
     public function getPassword()
     {
     }

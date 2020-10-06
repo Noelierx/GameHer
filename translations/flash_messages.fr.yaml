@@ -32,3 +32,5 @@ streamers.success.delete: Succès !
 streamers.fail.create: Une erreur s'est produite
 streamers.fail.edit: Une erreur s'est produite
 streamers.fail.delete: Une erreur s'est produite
+
+users.success.create: Utilisateur créé !

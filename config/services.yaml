@@ -4,6 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    users_pictures_directory: '%kernel.project_dir%/public/uploads/users'
     partners_logo_directory: '%kernel.project_dir%/public/uploads/partners'
     members_pictures_directory: '%kernel.project_dir%/public/uploads/members'
     posts_pictures_directory: '%kernel.project_dir%/public/uploads/posts'
