@@ -3,11 +3,11 @@
 namespace App\Form\Blog;
 
 use App\Entity\Blog\Tag;
-use DateTime;
+use App\Entity\User\User;
+use App\Repository\User\UserRepository;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -27,6 +27,8 @@ class PostType extends AbstractType
     {
         $this->translator = $translator;
     }
+
+
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -48,6 +50,20 @@ class PostType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => true,
                 'required' => false,
+            ])
+
+            ->add('author', EntityType::class, [
+                'class' => User::class,
+                'query_builder' => function (UserRepository $er) {
+                    return $er->createQueryBuilder('u')
+                        ->Where('u.roles = :val')
+                        ->setParameter('val', "[\"ROLE_REDACTEUR\"]")
+                        ->orderBy('u.id', 'ASC');
+                },
+                'choice_label' => 'displayName',
+                'multiple' => true,
+                'required' => false,
+
             ])
             ->add('publishedAt', DateType::class, [
                 'widget' => 'single_text',
