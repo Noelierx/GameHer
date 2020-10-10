@@ -108,6 +108,7 @@ class AdminController extends AbstractController
 
 	/**
 	 * @Route("/users/{uuid}/delete", name="admin_users_delete", methods={"POST"})
+	 * @IsGranted("ROLE_ADMIN")
 	 */
 	public function delete(User $user, Request $request, ObjectManager $em): Response
 	{
