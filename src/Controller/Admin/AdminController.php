@@ -72,4 +72,54 @@ class AdminController extends AbstractController
 			'form' => $form->createView(),
 		]);
 	}
+
+	/**
+	 * @Route("/users/{uuid}/edit", name="admin_users_edit", methods={"GET", "POST"})
+	 * @IsGranted("ROLE_ADMIN")
+	 */
+	public function edit(User $user, Request $request, FileUploader $fileUploader, ObjectManager $em): Response
+	{
+		$form = $this->createForm(UserType::class, $user);
+		$form->handleRequest($request);
+
+		if ($form->isSubmitted() && $form->isValid()) {
+			if (($picture = $form['picture']->getData())) {
+				$user->setPicture($fileUploader->upload($picture, $this->getParameter('users_pictures_directory')));
+			}
+
+			$em->flush();
+
+			$this->addFlash('success', 'users.success.edit');
+
+			return $this->redirectToRoute('admin_users_edit', ['uuid' => $user->getUuidAsString()]);
+		}
+
+		if ($form->isSubmitted() && !$form->isValid()) {
+			foreach ($form->getErrors() as $error) {
+				$this->addFlash('danger', $error->getMessage() . $error->getCause());
+			}
+		}
+
+		return $this->render('admin/users/edit.html.twig', [
+			'user' => $user,
+			'form' => $form->createView()
+		]);
+	}
+
+	/**
+	 * @Route("/users/{uuid}/delete", name="admin_users_delete", methods={"POST"})
+	 */
+	public function delete(User $user, Request $request, ObjectManager $em): Response
+	{
+		if (!$this->isCsrfTokenValid('delete', $request->get('token'))) {
+			return $this->redirectToRoute('admin_users');
+		}
+
+		$em->remove($user);
+		$em->flush();
+
+		$this->addFlash('success', 'users.success.delete');
+
+		return $this->redirectToRoute('admin_users');
+	}
 }

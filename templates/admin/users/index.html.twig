@@ -28,11 +28,11 @@
 				<td>{{ user.createdAt| date('d/m/y H:i') }}</td>
 				<td class="right-align">
 					<div class="item-actions">
-						<a href="{{ path('admin', {uuid: user.uuidAsString}) }}" class="btn teal">
+						<a href="{{ path('admin_users_edit', {uuid: user.uuidAsString}) }}" class="btn teal">
 							{{ 'default.action.edit'|trans }}
 							<i class="fa fa-edit" aria-hidden="true"></i>
 						</a>
-						<form action="{{ url('admin', {uuid: user.uuidAsString}) }}" method="post" data-confirmation="true" id="delete-form" style="display:inline-block">
+						<form action="{{ url('admin_users_delete', {uuid: user.uuidAsString}) }}" method="post" data-confirmation="true" id="delete-form" style="display:inline-block">
 							<input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
 							<button type="submit" class="btn red">
 								{{ 'default.action.delete'|trans }}
