@@ -81,10 +81,8 @@
 	writing-mode: vertical-rl;
 	transform-origin: center;
 	transform: rotate(180deg);
-
 	text-transform: uppercase;
 	position: relative;
-
 	letter-spacing: .25em;
 	font-size: .25em;
 	line-height: 0;
