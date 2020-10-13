@@ -12,12 +12,14 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\User\UserRepository")
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
+ * @UniqueEntity("email")
  */
 class User implements UserInterface
 {
@@ -205,6 +207,11 @@ class User implements UserInterface
 
         return array_unique($roles);
     }
+
+    public function hasRole(string $role): bool
+	{
+		return \in_array($role, $this->getRoles());
+	}
 
     public function setRoles(array $roles): self
     {

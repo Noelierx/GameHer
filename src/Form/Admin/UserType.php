@@ -2,8 +2,6 @@
 
 namespace App\Form\Admin;
 
-use App\Entity\Team\Role;
-use App\Entity\User\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -11,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -24,6 +23,14 @@ class UserType extends AbstractType
 	public function __construct(TranslatorInterface $translator)
 	{
 		$this->translator = $translator;
+	}
+
+	public function configureOptions(OptionsResolver $resolver)
+	{
+		$resolver->setDefaults([
+			'addRolesField' => false,
+			'choices'       => [],
+		]);
 	}
 
 	public function buildForm(FormBuilderInterface $builder, array $options)
@@ -43,15 +50,6 @@ class UserType extends AbstractType
 					'accept' => 'image/*',
 				],
 			])
-			->add('roles', ChoiceType::class, [
-				'choices' => User::getAvailableRoles(),
-				'choice_label' => function ($choice, $key, $value) {
-					return $value;
-				},
-				'multiple' => true,
-				'required' => true,
-                'label_attr' => ['class' => 'active'],
-			])
 			->add('twitter', TextType::class, ['required' => false])
 			->add('facebook', TextType::class, ['required' => false])
 			->add('youtube', TextType::class, ['required' => false])
@@ -62,5 +60,19 @@ class UserType extends AbstractType
 				'label' => $this->translator->trans('default.action.save', [], 'admin'),
 				'attr' => ['class' => 'btn right'],
 			]);
+
+		if ($options['addRolesField']) {
+			$builder->add(
+				'roles', ChoiceType::class, [
+				'choices'      => $options['choices'],
+				'choice_label' => function ($choice, $key, $value) {
+					return $value;
+				},
+				'multiple'     => true,
+				'required'     => true,
+				'label_attr'   => ['class' => 'active'],
+			]
+			);
+		}
 	}
 }

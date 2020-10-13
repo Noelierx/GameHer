@@ -24,7 +24,7 @@
 		{% for user in users %}
 			<tr>
 				<td>{{ user.displayName }}</td>
-				<td>{% for role in user.roles %}{{ role }}{% endfor %}</td>
+				<td>{{ user.roles|join(', ') }}</td>
 				<td>{{ user.createdAt| date('d/m/y H:i') }}</td>
 				<td class="right-align">
 					<div class="item-actions">

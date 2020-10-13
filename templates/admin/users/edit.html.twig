@@ -41,8 +41,12 @@
 			<div class="file-path-wrapper"><input class="file-path" type="text" id="file-placeholder"></div>
 		</div>
 		<div class="input-field col s6">
-			{{ form_label(form.roles) }}
-			{{ form_widget(form.roles) }}
+			{% if addRolesField %}
+				{{ form_label(form.roles) }}
+				{{ form_widget(form.roles) }}
+			{% else %}
+				{{ user.roles|join(', ') }}
+			{% endif %}
 		</div>
 	</div>
 	<div class="row">

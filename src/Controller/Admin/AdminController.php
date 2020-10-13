@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
 /**
  * @Route("/")
@@ -45,7 +46,10 @@ class AdminController extends AbstractController
 	{
 		$user = (new User())->setDisplayName('');
 
-		$form = $this->createForm(UserType::class, $user);
+		$form = $this->createForm(UserType::class, $user, [
+			'addRolesField' => true,
+			'choices'       => $this->getAvailableRoles(),
+		]);
 		$form->handleRequest($request);
 
 		if ($form->isSubmitted() && $form->isValid()) {
@@ -79,7 +83,11 @@ class AdminController extends AbstractController
 	 */
 	public function edit(User $user, Request $request, FileUploader $fileUploader, ObjectManager $em): Response
 	{
-		$form = $this->createForm(UserType::class, $user);
+		$addRolesField = $this->isEditRolesOrDeleteAllowed($user);
+		$form = $this->createForm(UserType::class, $user, [
+			'addRolesField' => $addRolesField,
+			'choices'       => $this->getAvailableRoles(),
+		]);
 		$form->handleRequest($request);
 
 		if ($form->isSubmitted() && $form->isValid()) {
@@ -101,17 +109,40 @@ class AdminController extends AbstractController
 		}
 
 		return $this->render('admin/users/edit.html.twig', [
-			'user' => $user,
-			'form' => $form->createView()
+			'user'          => $user,
+			'form'          => $form->createView(),
+			'addRolesField' => $addRolesField,
 		]);
+	}
+
+	private function getAvailableRoles(): array
+	{
+		return \array_filter(
+			User::getAvailableRoles(),
+			function (string $choice) {
+				return $this->isGranted($choice);
+			}
+		);
 	}
 
 	/**
 	 * @Route("/users/{uuid}/delete", name="admin_users_delete", methods={"POST"})
 	 * @IsGranted("ROLE_ADMIN")
 	 */
-	public function delete(User $user, Request $request, ObjectManager $em): Response
+	public function delete(User $user, Request $request, Security $security, ObjectManager $em): Response
 	{
+		if (!$this->isEditRolesOrDeleteAllowed($user)) {
+			$this->addFlash('danger', 'users.fail.delete');
+
+			return $this->redirectToRoute('admin_users');
+		}
+
+		if ($user === $security->getUser()) {
+			$this->addFlash('danger', 'users.fail.delete');
+
+			return $this->redirectToRoute('admin_users');
+		}
+
 		if (!$this->isCsrfTokenValid('delete', $request->get('token'))) {
 			return $this->redirectToRoute('admin_users');
 		}
@@ -122,5 +153,11 @@ class AdminController extends AbstractController
 		$this->addFlash('success', 'users.success.delete');
 
 		return $this->redirectToRoute('admin_users');
+	}
+
+	private function isEditRolesOrDeleteAllowed(User $user): bool
+	{
+		return $this->isGranted(User::ROLE_SUPER_ADMIN)
+			|| !($user->hasRole(User::ROLE_ADMIN) || $user->hasRole(User::ROLE_SUPER_ADMIN));
 	}
 }
