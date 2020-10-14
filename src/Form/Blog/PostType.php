@@ -29,7 +29,6 @@ class PostType extends AbstractType
     }
 
 
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -51,7 +50,6 @@ class PostType extends AbstractType
                 'multiple' => true,
                 'required' => false,
             ])
-
             ->add('author', EntityType::class, [
                 'class' => User::class,
                 'query_builder' => function (UserRepository $er) {
@@ -63,7 +61,6 @@ class PostType extends AbstractType
                 'choice_label' => 'displayName',
                 'multiple' => true,
                 'required' => false,
-
             ])
             ->add('publishedAt', DateType::class, [
                 'widget' => 'single_text',

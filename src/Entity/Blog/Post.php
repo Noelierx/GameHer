@@ -74,7 +74,7 @@ class Post
     /**
      *
      * @var Collection|User[]
-     * @ORM\ManyToMany(targetEntity="App\Entity\User\User", inversedBy="posts"  )
+     * @ORM\ManyToMany(targetEntity="App\Entity\User\User", inversedBy="posts")
      *
      */
     protected $authors;

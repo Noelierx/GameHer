@@ -136,7 +136,7 @@ class User implements UserInterface
 
     /**
      * @var Collection|Comment[]
-     * @ORM\OneToMany(targetEntity="App\Entity\Blog\Comment", mappedBy="author")
+     * @ORM\OneToMany(targetEntity="App\Entity\Blog\Comment", mappedBy="authors")
      */
     protected $comments;
 
