@@ -73,4 +73,4 @@ And you good to work ! Now you just have to create new branches like that :
 
 
 Then, you will have to do a pull request by typing `$ git push origin <add-your-branch-name>`
-And go back to github to click on the button 'Compare and Pull Request'.
+And go back to github to click on the button 'Compare and Pull Request'. 
