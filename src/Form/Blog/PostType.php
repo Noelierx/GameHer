@@ -16,15 +16,15 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class PostType extends AbstractType
 {
-	/**
-	 * @var TranslatorInterface
-	 */
-	private $translator;
+    /**
+     * @var TranslatorInterface
+     */
+    private $translator;
 
-	public function __construct(TranslatorInterface $translator)
-	{
-		$this->translator = $translator;
-	}
+    public function __construct(TranslatorInterface $translator)
+    {
+        $this->translator = $translator;
+    }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
