@@ -209,9 +209,9 @@ class User implements UserInterface
     }
 
     public function hasRole(string $role): bool
-	{
-		return \in_array($role, $this->getRoles());
-	}
+    {
+        return \in_array($role, $this->getRoles());
+    }
 
     public function setRoles(array $roles): self
     {
@@ -221,14 +221,14 @@ class User implements UserInterface
     }
 
     public static function getAvailableRoles(): array
-	{
-		return [
-			self::ROLE_DEFAULT,
-			self::ROLE_REDACTEUR,
-			self::ROLE_ADMIN,
-			self::ROLE_SUPER_ADMIN,
-		];
-	}
+    {
+        return [
+            self::ROLE_DEFAULT,
+            self::ROLE_REDACTEUR,
+            self::ROLE_ADMIN,
+            self::ROLE_SUPER_ADMIN,
+        ];
+    }
 
     public function getPassword()
     {

@@ -1,78 +1,78 @@
 {% extends 'admin/admin.html.twig' %}
 
 {% block content %}
-	<h2>Ajouter un Utilisateur</h2>
+    <h2>Ajouter un Utilisateur</h2>
 
-	{{ form_start(form) }}
-	<div class="row">
-		<div class="input-field col s6">
-			{{ form_label(form.email) }}
-			{{ form_widget(form.email) }}
-		</div>
-		<div class="input-field col s6">
-			{{ form_label(form.displayName) }}
-			{{ form_widget(form.displayName) }}
-		</div>
-	</div>
-	<div class="row">
-		<div class="input-field col s6">
-			{{ form_label(form.firstname) }}
-			{{ form_widget(form.firstname) }}
-		</div>
-		<div class="input-field col s6">
-			{{ form_label(form.lastname) }}
-			{{ form_widget(form.lastname) }}
-		</div>
-	</div>
-	<div class="row">
-		<div class="file-field input-field col s6">
-			<label for="file-placeholder" class="active">Picture</label>
-			<div class="btn"><span>File</span> {{ form_widget(form.picture) }}</div>
-			<div class="file-path-wrapper"><input class="file-path" type="text" id="file-placeholder"></div>
-		</div>
-		<div class="input-field col s6">
-			{{ form_label(form.roles) }}
-			{{ form_widget(form.roles) }}
-		</div>
-	</div>
-	<div class="row">
-		<div class="input-field col s4">
-			<i class="fab fa-twitter prefix"></i>
-			{{ form_label(form.twitter) }}
-			{{ form_widget(form.twitter) }}
-		</div>
-		<div class="input-field col s4">
-			<i class="fab fa-facebook prefix"></i>
-			{{ form_label(form.facebook) }}
-			{{ form_widget(form.facebook) }}
-		</div>
-		<div class="input-field col s4">
-			<i class="fab fa-youtube prefix"></i>
-			{{ form_label(form.youtube) }}
-			{{ form_widget(form.youtube) }}
-		</div>
-	</div>
-	<div class="row">
-		<div class="input-field col s4">
-			<i class="fab fa-twitch prefix"></i>
-			{{ form_label(form.twitch) }}
-			{{ form_widget(form.twitch) }}
-		</div>
-		<div class="input-field col s4">
-			<i class="fab fa-discord prefix"></i>
-			{{ form_label(form.discord) }}
-			{{ form_widget(form.discord) }}
-		</div>
-		<div class="input-field col s4">
-			<i class="fab fa-instagram prefix"></i>
-			{{ form_label(form.instagram) }}
-			{{ form_widget(form.instagram) }}
-		</div>
-	</div>
-	<div class="row">
-		<div class="input-field">
-			{{ form_row(form.save) }}
-		</div>
-	</div>
-	{{ form_end(form) }}
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="input-field col s6">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email) }}
+        </div>
+        <div class="input-field col s6">
+            {{ form_label(form.displayName) }}
+            {{ form_widget(form.displayName) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            {{ form_label(form.firstname) }}
+            {{ form_widget(form.firstname) }}
+        </div>
+        <div class="input-field col s6">
+            {{ form_label(form.lastname) }}
+            {{ form_widget(form.lastname) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="file-field input-field col s6">
+            <label for="file-placeholder" class="active">Picture</label>
+            <div class="btn"><span>File</span> {{ form_widget(form.picture) }}</div>
+            <div class="file-path-wrapper"><input class="file-path" type="text" id="file-placeholder"></div>
+        </div>
+        <div class="input-field col s6">
+            {{ form_label(form.roles) }}
+            {{ form_widget(form.roles) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s4">
+            <i class="fab fa-twitter prefix"></i>
+            {{ form_label(form.twitter) }}
+            {{ form_widget(form.twitter) }}
+        </div>
+        <div class="input-field col s4">
+            <i class="fab fa-facebook prefix"></i>
+            {{ form_label(form.facebook) }}
+            {{ form_widget(form.facebook) }}
+        </div>
+        <div class="input-field col s4">
+            <i class="fab fa-youtube prefix"></i>
+            {{ form_label(form.youtube) }}
+            {{ form_widget(form.youtube) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s4">
+            <i class="fab fa-twitch prefix"></i>
+            {{ form_label(form.twitch) }}
+            {{ form_widget(form.twitch) }}
+        </div>
+        <div class="input-field col s4">
+            <i class="fab fa-discord prefix"></i>
+            {{ form_label(form.discord) }}
+            {{ form_widget(form.discord) }}
+        </div>
+        <div class="input-field col s4">
+            <i class="fab fa-instagram prefix"></i>
+            {{ form_label(form.instagram) }}
+            {{ form_widget(form.instagram) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field">
+            {{ form_row(form.save) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
 {% endblock %}
