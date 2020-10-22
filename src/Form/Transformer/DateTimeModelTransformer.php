@@ -1,19 +1,9 @@
 <?php
-/**
- * @author    Nickolay Mikhaylov <sonny@milton.pro>
- * @copyright Copyright (c) 2020, GameHer
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
 namespace App\Form\Transformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
 
-/**
- * Date time model transformer
- */
 class DateTimeModelTransformer implements DataTransformerInterface
 {
 	/**
