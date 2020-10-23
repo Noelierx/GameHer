@@ -28,7 +28,6 @@ class PostType extends AbstractType
         $this->translator = $translator;
     }
 
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
