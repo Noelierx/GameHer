@@ -130,13 +130,13 @@ class User implements UserInterface
 
     /**
      * @var Collection|Post[]
-     * @ORM\ManyToMany(targetEntity="App\Entity\Blog\Post", mappedBy="author")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Blog\Post", mappedBy="authors")
      */
     protected $posts;
 
     /**
      * @var Collection|Comment[]
-     * @ORM\OneToMany(targetEntity="App\Entity\Blog\Comment", mappedBy="authors")
+     * @ORM\OneToMany(targetEntity="App\Entity\Blog\Comment", mappedBy="author")
      */
     protected $comments;
 
