@@ -150,3 +150,8 @@ footer.menu.privacy_policy: Politique de confidentialité
 footer.menu.legal_mention: Mentions Légales
 footer.menu.login: Connexion
 footer.menu.contact_us: Contact
+
+
+#errors
+error.title: Error
+error.button.text: Revenir à l'accueil
