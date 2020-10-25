@@ -29,6 +29,10 @@ Create your database and run migrations
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 ```
+Run the database seeder if you want to generate dummy data.
+```
+php bin/console doctrine:fixtures:load
+```
 
 That's it, you are ready
 
