@@ -76,16 +76,7 @@ class DiscordAuthenticator extends SocialAuthenticator
             return $user;
         }
 
-        $user = new User();
-        $user->setEmail($discordUser->getEmail());
-        $user->setDisplayName($discordUser->getUsername());
-        $user->setDiscordId($discordUser->getId());
-        $user->setDiscord($discordUser->getUsername().'#'.$discordUser->getDiscriminator());
-        $user->setRoles([User::ROLE_DEFAULT]);
-        $this->entityManager->persist($user);
-        $this->entityManager->flush();
-
-        return $user;
+        return null;
     }
 
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
