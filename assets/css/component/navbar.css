@@ -36,6 +36,18 @@ nav .dropdown-trigger {cursor: pointer;}
 nav .dropdown-trigger i,
 nav .dropdown-trigger svg {color: var(--gh-red); }
 
+header  {
+	position: fixed;
+	width: 100%;
+	z-index: 998;
+}
+
+main {
+	padding-top: 75px;
+	@media (max-width: 993px) and (min-width: 600px) { padding-top: 70px; }
+	@media (max-width: 600px) { padding-top: 56px; }
+}
+
 header .dropdown-content {
 	left: 0;
 	right: 0;
