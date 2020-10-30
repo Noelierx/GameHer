@@ -2,6 +2,9 @@
     "behat/transliterator": {
         "version": "v1.2.0"
     },
+    "brick/math": {
+        "version": "0.9.1"
+    },
     "composer/semver": {
         "version": "1.5.0"
     },
@@ -150,6 +153,15 @@
             "./config/packages/knpu_oauth2_client.yaml"
         ]
     },
+    "laminas/laminas-code": {
+        "version": "3.4.1"
+    },
+    "laminas/laminas-eventmanager": {
+        "version": "3.3.0"
+    },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.1.1"
+    },
     "league/oauth2-client": {
         "version": "2.4.1"
     },
@@ -171,6 +183,9 @@
     "psr/container": {
         "version": "1.0.0"
     },
+    "psr/http-client": {
+        "version": "1.0.1"
+    },
     "psr/http-message": {
         "version": "1.0.1"
     },
@@ -179,6 +194,9 @@
     },
     "ralouphie/getallheaders": {
         "version": "3.0.3"
+    },
+    "ramsey/collection": {
+        "version": "1.1.1"
     },
     "ramsey/uuid": {
         "version": "3.8.0"
@@ -265,11 +283,17 @@
     "symfony/dependency-injection": {
         "version": "v4.3.2"
     },
+    "symfony/deprecation-contracts": {
+        "version": "v2.2.0"
+    },
     "symfony/doctrine-bridge": {
         "version": "v4.3.2"
     },
     "symfony/dotenv": {
         "version": "v4.3.2"
+    },
+    "symfony/error-handler": {
+        "version": "v4.4.16"
     },
     "symfony/event-dispatcher": {
         "version": "v4.3.2"
@@ -320,6 +344,9 @@
             "./src/Kernel.php"
         ]
     },
+    "symfony/http-client-contracts": {
+        "version": "v2.3.1"
+    },
     "symfony/http-foundation": {
         "version": "v4.3.2"
     },
@@ -337,6 +364,9 @@
     },
     "symfony/options-resolver": {
         "version": "v4.3.2"
+    },
+    "symfony/polyfill-intl-grapheme": {
+        "version": "v1.20.0"
     },
     "symfony/polyfill-intl-icu": {
         "version": "v1.11.0"
@@ -356,11 +386,17 @@
     "symfony/polyfill-php73": {
         "version": "v1.11.0"
     },
+    "symfony/polyfill-php80": {
+        "version": "v1.20.0"
+    },
     "symfony/process": {
         "version": "v4.3.2"
     },
     "symfony/property-access": {
         "version": "v4.3.2"
+    },
+    "symfony/property-info": {
+        "version": "v5.1.8"
     },
     "symfony/routing": {
         "version": "4.2",
@@ -406,6 +442,9 @@
     },
     "symfony/stopwatch": {
         "version": "v4.3.2"
+    },
+    "symfony/string": {
+        "version": "v5.1.8"
     },
     "symfony/swiftmailer-bundle": {
         "version": "2.5",
@@ -496,6 +535,9 @@
     },
     "twig/twig": {
         "version": "v2.11.3"
+    },
+    "webimpress/safe-writer": {
+        "version": "2.1.0"
     },
     "wohali/oauth2-discord-new": {
         "version": "v1.0.0"
