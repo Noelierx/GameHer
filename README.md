@@ -2,6 +2,7 @@
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Open Source Helpers](https://www.codetriage.com/noelierx/gameher/badges/users.svg)](https://www.codetriage.com/noelierx/gameher)
+[Version Française](README-VF.md)
 
 # GameHer
 [Gameher.fr](https://gameher.fr/) is a french association aspiring to develop gender diversity in the fields of video games, esport and streaming. It is run by [a great team of volunteers](https://gameher.fr/team/a-propos) with the goal of developing a healthy environment for all players. We want to give them the tools they need to flourish and evolve in the fields of video games, esport and streaming.
