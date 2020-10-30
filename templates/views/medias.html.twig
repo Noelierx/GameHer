@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Media kit - GameHer' %}
+{% block body_id 'medias' %}
+
+{% block main %}
+	{% include "common/titleBannerBigRed.html.twig" with {
+		className: "sectionRed",
+		mainTitle: 'Media kit',
+		color: 'white',
+		content: 'Vous trouverez ici nos logos et nos couleurs. Veillez à ne pas modifier les<br/>proportions du logo et ses couleurs. Gardez-les comme vous les avez téléchargés.',
+	} only %}
+
+	<section class="media">
+		<div class="container">
+			<h2>Logotype</h2>
+			<div class="row logos">
+				<div class="col l12 m12 logo">
+					<div class="image">
+						<img style="height: 400px" src="{{ asset('build/img/media/MASCOTTE_OFFICIELLE.png') }}">
+					</div>
+					<div class="title">Logo</div>
+					<div class="subtitle">(Usage principal)</div>
+					<div class="link">
+						<a target="_blank"
+							 href="https://www.dropbox.com/sh/t5a78o5347iyc16/AABmy-rpZBAYWBHzotwluglIa?dl=0&preview=MASCOTTE_OFFICIELLE.png"
+						>Télécharger</a>
+					</div>
+				</div>
+			</div>
+			<div class="row logos">
+				<div class="col l6 m6 logo">
+					<div class="image">
+						<img style="height: 145px" src="{{ asset('build/img/media/MASCOTTE_DECLINAISON_2.png') }}">
+					</div>
+					<div class="title">Mascotte Styx</div>
+					<div class="subtitle">(Usage secondaire)</div>
+					<div class="link">
+						<a target="_blank"
+							 href="https://www.dropbox.com/sh/t5a78o5347iyc16/AABmy-rpZBAYWBHzotwluglIa?dl=0&preview=MASCOTTE_DECLINAISON_2.png"
+						>Télécharger</a>
+					</div>
+				</div>
+				<div class="col l6 m6 logo">
+					<div class="image">
+						<img style="height: 400px" src="{{ asset('build/img/media/MASCOTTE_DECLINAISON_1.png') }}">
+					</div>
+					<div class="title">Nom</div>
+					<div class="subtitle">(Usage secondaire)</div>
+					<div class="link">
+						<a target="_blank"
+							 href="https://www.dropbox.com/sh/t5a78o5347iyc16/AABmy-rpZBAYWBHzotwluglIa?dl=0&preview=MASCOTTE_DECLINAISON_1.png"
+						>Télécharger</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col colors">
+					<div class="color">
+						<div class="box" style="background-color: #001724"></div>
+						<div class="label">HEX : #001724</div>
+					</div>
+					<div class="color">
+						<div class="box" style="background-color: #c92e4b"></div>
+						<div class="label">HEX : #c92e4b</div>
+					</div>
+					<div class="color">
+						<div class="box" style="background-color: #e7677f"></div>
+						<div class="label">HEX : #e7677f</div>
+					</div>
+					<div class="color">
+						<div class="box" style="background-color: #ef900d"></div>
+						<div class="label">HEX : #ef900d</div>
+					</div>
+					<div class="color">
+						<div class="box" style="background-color: #fbf3ab"></div>
+						<div class="label">HEX : #fbf3ab</div>
+					</div>
+					<div class="color">
+						<div class="box" style="background-color: #a4a4a4"></div>
+						<div class="label">HEX : #a4a4a4</div>
+					</div>
+					<div class="color">
+						<div class="box box-border" style="background-color: #ffffff"></div>
+						<div class="label">HEX : #ffffff</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col m12">
+					<a href="https://www.dropbox.com/sh/t5a78o5347iyc16/AABmy-rpZBAYWBHzotwluglIa?dl=0" class="btn btn-secondary">Télécharger</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<hr>
+
+{% endblock %}

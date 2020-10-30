@@ -1,0 +1,51 @@
+.media {
+	h2 {
+		color: var(--gh-red);
+		text-transform: uppercase;
+		font-family: 'headingcompressedpro-extbd', sans-serif;
+		font-size: 45px;
+	}
+	.logos {
+		margin: auto;
+		text-align: center;
+		.logo {
+		padding-top:20px;
+			.image {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 400px;
+				margin: auto;
+			}
+			.title {
+				padding-top: 10px;
+			}
+			.link {
+				color: var(--gh-red);
+			}
+		}
+	}
+	.colors {
+		display: flex;
+		text-align: center;
+		.color {
+			padding: 20px;
+			margin: auto;
+			.box {
+				width: 115px;
+				height: 115px;
+				display: block;
+				margin: auto;
+			}
+			.box-border {
+				border: #001724 solid;
+				display: block;
+			}
+			.label {
+				padding-top: 10px;
+				text-transform: uppercase;
+			}
+
+		}
+	}
+}

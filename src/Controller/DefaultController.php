@@ -98,6 +98,14 @@ class DefaultController extends AbstractController
     }
 
     /**
+     * @Route("/medias", name="medias", methods={"GET"})
+     */
+    public function medias(): Response
+    {
+        return $this->render('views/medias.html.twig');
+    }
+
+    /**
      * @Route("/partenaires", name="partners", methods={"GET"})
      */
     public function partners(PartnerRepository $partnersRepository): Response

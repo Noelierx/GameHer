@@ -1,7 +1,6 @@
 /*** HEADER BANNIERE DONATION / RECRUTEMENT ***/
-.titleBanner {
+.titleBanner, .titleBannerNoBackground {
 	display: flex;
-	background-color: var(--gh-blue);
 	height: 492px;
 	align-items: center;
 	justify-content: center;
@@ -13,6 +12,9 @@
 		.titleBanner__title {color: var(--gh-blue);}
 		.titleBanner__subtitle {color: var(--gh-yellow);}
 	}
+ }
+. titleBanner {
+	background-color: var(--gh-blue);
 }
 .titleBanner__title {
 	color: var(--gh-white);
