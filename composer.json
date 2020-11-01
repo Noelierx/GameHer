@@ -8,7 +8,7 @@
         "ext-intl": "*",
         "doctrine/doctrine-bundle": "^1.11",
         "doctrine/doctrine-migrations-bundle": "^2.0",
-        "doctrine/orm": "^2.6",
+        "doctrine/orm": "^2.5",
         "friendsofsymfony/ckeditor-bundle": "^2.1",
         "knpuniversity/oauth2-client-bundle": "^1.28",
         "ramsey/uuid-doctrine": "^1.5",
