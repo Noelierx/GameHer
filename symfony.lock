@@ -172,7 +172,7 @@
         "version": "2.2.2"
     },
     "php": {
-        "version": "7.4"
+        "version": "7.3"
     },
     "php-cs-fixer/diff": {
         "version": "v1.3.0"
@@ -538,9 +538,6 @@
     },
     "twig/twig": {
         "version": "v2.11.3"
-    },
-    "webimpress/safe-writer": {
-        "version": "2.1.0"
     },
     "wohali/oauth2-discord-new": {
         "version": "v1.0.0"
