@@ -21,25 +21,26 @@ Cloner le projet et installer ses dépendances :
 composer install
 npm install
 ```
-## TODO TRANSLATE START
-Copy the `.env.dist` file in a new `.env` file, and configure it according to your environment:
+### Configuration
+```
+cp .env .env.local
+```
+Modifier `.env.local`
+- **APP_ENV**: Symfony env, habituellement `dev` ou `prod`
+- **APP_SECRET**: Clé secrète
+- **DATABASE_URL**: url pour connexion à la base de donnée
+- **OAUTH_DISCORD_ID**: Requis pour OAuth, obtenir sur Discord (voir [configurer Discord](#configurer-discord))
+- **OAUTH_DISCORD_SECRET**: Requis pour OAuth, obtenir sur Discord (voir [configurer Discord](#configurer-discord))
 
-- **APP_ENV**: Symfony env, usually `dev` or `prod`
-- **APP_SECRET**: Your secret
-- **DATABASE_URL**: url to connect to your database
-- **OAUTH_DISCORD_ID**: Required for OAuth, get it from Discord (see [configuring Discord](#configuring-discord))
-- **OAUTH_DISCORD_SECRET**:  Required for OAuth, get it from Discord (see [configuring Discord](#configuring-discord))
-
-Create your database and run migrations
+Créer votre base de donnée et exécuter les migrations :
 ```
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 ```
 
-That's it, you are ready
-## TODO TRANSLATE END
+Voilà, vous êtes prêt!
 
-### Develop
+### Développer
 Deux options s'offre à vous :
 #### A - [Symfony CLI](https://symfony.com/download)
 `symfony server:start`
@@ -52,20 +53,17 @@ Configurer puis pointer sur le dossier `public`
 ---
 Puis allez sur `http://localhost:3000` (Symfony CLI) ou sur votre webserveur pour commener à travailler
 
-## TODO TRANSLATE START
-### Configuring Discord
+### Configurer Discord
+L'application utilise le OAuth de Discord pour gérer les utilisateur. Pour se connecter et accéder au panneau d'administration, voici comment : 
 
-The app uses Discord's OAuth server to handle user. In order to login and access the admin panel, you need to configure a Discord app.
+Visitez [Discord's Developer Portal](https://discordapp.com/developers/applications) et créez une **New Application** et saisir le nom  
+Dans l'onglet *General Information*, copiez **client ID** et **client Secret** pour ajouter à votre fichier de configuration `.env.local`  
+Dans l'onglet *OAuth2*, cliquez sur **Add Redirect** et entrez l'url de redirection de l'app. Voici le format :  
+`http://YOUR_APP_URL/connect/discord/check`  
 
-Head over to [Discord's Developer Portal](https://discordapp.com/developers/applications) and create a **New Application** and fill its name  
-On the *General Information* tab, you can retrieve the client ID and client Secret that you need to add to your `.env` file  
-On the *OAuth2* tab, click on **Add Redirect** and enter the app's redirect url. The format will be:  
-`http://YOUR_APP_URL/connect/discord/check
-`  
-In the scopes section, select `identify`, `email` and `connections`
+Dans la section scopes, sélectionnez `identify`, `email` et `connections`
 
-Finally, **Save Changes** ! You can now log into the app
-## TODO TRANSLATE END
+Finalement, **Save Changes** ! Vous pouvez maintenant vous connectez à l'application
 
 ### Extensions PHP 
 
