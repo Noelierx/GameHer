@@ -28,7 +28,7 @@ class PostRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('p')
             ->addSelect('a', 't')
-            ->innerJoin('p.author', 'a')
+            ->innerJoin('p.authors', 'a')
             ->leftJoin('p.tags', 't')
             ->where('p.publishedAt <= :now')
             ->orderBy('p.publishedAt', 'DESC')
@@ -38,7 +38,7 @@ class PostRepository extends ServiceEntityRepository
             $qb->andWhere(':tag MEMBER OF p.tags')->setParameter('tag', $options['tag']);
         }
         if ($options['author'] instanceof User) {
-            $qb->andWhere(':author MEMBER OF p.author')->setParameter('author', $options['author']);
+            $qb->andWhere(':authors MEMBER OF p.authors')->setParameter('authors', $options['authors']);
         }
 
         return (new Paginator($qb))->paginate($page);
