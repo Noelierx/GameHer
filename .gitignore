@@ -23,4 +23,5 @@ yarn-error.log
 ###> custom ignores ###
 .idea
 public/uploads/*
+docker/logs/*
 ###< custom ignores ###
