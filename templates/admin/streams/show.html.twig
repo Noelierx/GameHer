@@ -1,0 +1,21 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block content %}
+
+	<div class="row">
+		<div class="col col-12">
+			<h1>{{ stream.streamName }}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col col-12">
+			<p>{{ stream.activityName }}</p>
+		</div>
+	</div>
+	<div class="col col-3">
+		{%  if stream.picture %}
+			<img src="{{ asset('uploads/streams/' ~ stream.picture) }}" alt="{{ stream.streamName }}">
+		{%  endif %}
+	</div>
+
+{% endblock %}

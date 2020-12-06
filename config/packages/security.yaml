@@ -5,7 +5,8 @@ security:
 
     role_hierarchy:
         ROLE_REDACTEUR: [ROLE_USER]
-        ROLE_ADMIN: [ROLE_REDACTEUR]
+        ROLE_STREAMER_USER: [ROLE_REDACTEUR]
+        ROLE_ADMIN: [ROLE_STREAMER_USER]
         ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers

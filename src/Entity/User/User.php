@@ -4,6 +4,7 @@ namespace App\Entity\User;
 
 use App\Entity\Blog\Comment;
 use App\Entity\Blog\Post;
+use App\Entity\Stream;
 use App\Entity\StringUuidTrait;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -14,7 +15,6 @@ use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
-
 /**
  * @ORM\Entity(repositoryClass="App\Repository\User\UserRepository")
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
@@ -27,6 +27,7 @@ class User implements UserInterface
     const ROLE_ADMIN = 'ROLE_ADMIN';
     const ROLE_REDACTEUR = 'ROLE_REDACTEUR';
     const ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
+    const ROLE_STREAMER_USER = 'ROLE_STREAMER_USER';
 
     /**
      * @var int
@@ -133,6 +134,12 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity="App\Entity\Blog\Post", mappedBy="author")
      */
     protected $posts;
+
+	/**
+	 * @var Collection|Stream[]
+	 * @ORM\OneToMany(targetEntity="App\Entity\Stream", mappedBy="authorId")
+	 */
+	protected $streams;
 
     /**
      * @var Collection|Comment[]

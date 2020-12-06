@@ -8,6 +8,7 @@ parameters:
     members_pictures_directory: '%kernel.project_dir%/public/uploads/members'
     posts_pictures_directory: '%kernel.project_dir%/public/uploads/posts'
     streamers_picture_directory: '%kernel.project_dir%/public/uploads/streamers'
+    streams_picture_directory: '%kernel.project_dir%/public/uploads/streams'
 
 services:
     # default configuration for services in *this* file

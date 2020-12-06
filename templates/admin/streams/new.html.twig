@@ -1,0 +1,36 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block content %}
+	<h2>New Stream</h2>
+
+	{{ form_start(form) }}
+	<div class="row">
+		<div class="input-field col s12">
+			{{ form_label(form.streamName) }}
+			{{ form_widget(form.streamName) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+			{{ form_label(form.activityName) }}
+			{{ form_widget(form.activityName) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="file-field input-field col s6">
+			<label for="file-placeholder" class="active">Picture</label>
+			<div class="btn"><span>File</span> {{ form_widget(form.picture) }}</div>
+			<div class="file-path-wrapper"><input class="file-path" type="text" id="file-placeholder"></div>
+		</div>
+		<div class="input-field col s6">
+			{{ form_label(form.streamedAt) }}
+			{{ form_widget(form.streamedAt) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field">
+			{{ form_row(form.save) }}
+		</div>
+	</div>
+	{{ form_end(form) }}
+{% endblock %}
