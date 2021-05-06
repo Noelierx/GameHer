@@ -131,6 +131,14 @@ class DefaultController extends AbstractController
         return $this->render('views/mentions.html.twig');
     }
 
+     /**
+     * @Route("/medias", name="medias", methods={"GET"})
+     */
+    public function medias(): Response
+    {
+        return $this->render('views/media.html.twig');
+    }
+
     /**
      * @Route("/logout", name="logout")
      */

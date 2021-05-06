@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Média kit - GameHer' %}
+{% block body_id 'medias' %}
+
+{% block main %}
+
+	{% include "common/titleBanner.html.twig" with {
+		mainTitle: 'MEDIA KIT',
+		content: 'Vous trouverez ici nos logos et nos couleurs. Veillez à ne pas modifier les proportions du logo et ses couleurs. Gardez-les comme vous les avez téléchargés.',
+		className: 'mediaBackground',
+        color: 'var(--gh-white)',
+        subtitleClassName: 'mediaSubtitle',
+	} only %}
+
+    <section class="media">
+		<div class="container">
+			<h2>Logotypes</h2>
+            <div class="row logos">
+                <div class="col s12 m12 l6 logo">
+                    <div class="image">
+						<img src="{{ asset('build/img/media/MASCOTTE_OFFICIELLE.png') }}">
+					</div>
+					<div class="title">Logo</div>
+					<div class="subtitle">(Usage principal)</div>
+					<div class="link">
+						<a target="_blank" href="https://www.dropbox.com/sh/t5a78o5347iyc16/AABmy-rpZBAYWBHzotwluglIa?dl=0&preview=MASCOTTE_OFFICIELLE.png">Télécharger</a>
+					</div>
+                </div>
+                <div class="col s12 m12 l6 logo">
+                    <div class="image">
+                        <img src="{{ asset('build/img/media/MASCOTTE_DECLINAISON_1.png') }}">
+                    </div>
+                    <div class="title">Mascotte Styx</div>
+                    <div class="subtitle">(Usage secondaire)</div>
+                    <div class="link">
+                        <a target="_blank" href="https://www.dropbox.com/sh/t5a78o5347iyc16/AABmy-rpZBAYWBHzotwluglIa?dl=0&preview=MASCOTTE_DECLINAISON_1.png">Télécharger</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row logos">
+                <div class="col s12 logo">
+                    <div class="image">
+                        <img src="{{ asset('build/img/media/MASCOTTE_DECLINAISON_2.png') }}">
+                    </div>
+                    <div class="title">Nom</div>
+                    <div class="subtitle">(Usage secondaire)</div>
+                    <div class="link">
+                        <a target="_blank" href="https://www.dropbox.com/sh/t5a78o5347iyc16/AABmy-rpZBAYWBHzotwluglIa?dl=0&preview=MASCOTTE_DECLINAISON_2.png">Télécharger</a>
+                    </div>
+                </div>
+            </div>
+            <h2>Couleurs</h2>
+			<div class="row">
+                <div class="colour__wrap">
+                    <ul class="colour__palette">
+                        <li style="background-color:#001724;color:#F1FEFB;">
+                            <div class="colour__palette__wrap">
+                                <div class="colour__palette__title">Hex</div>
+                                <div class="colour__palette__code">
+                                    <span>#001724</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-color:#c92e4b;color:#F1FEFB;">
+                            <div class="colour__palette__wrap">
+                                <div class="colour__palette__title">Hex</div>
+                                <div class="colour__palette__code">
+                                    <span>#c92e4b</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-color:#E7677F;color:#F1FEFB;">
+                            <div class="colour__palette__wrap">
+                                <div class="colour__palette__title">Hex</div>
+                                <div class="colour__palette__code">
+                                    <span>#E7677F</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-color:#ef900d;color:#F1FEFB;">
+                            <div class="colour__palette__wrap">
+                                <div class="colour__palette__title">Hex</div>
+                                <div class="colour__palette__code">
+                                    <span>#ef900d</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-color:#fbf3ab;color:#001724;">
+                            <div class="colour__palette__wrap">
+                                <div class="colour__palette__title">Hex</div>
+                                <div class="colour__palette__code">
+                                    <span>#fbf3ab</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-color:#a4a4a4;color:#F1FEFB;">
+                            <div class="colour__palette__wrap">
+                                <div class="colour__palette__title">Hex</div>
+                                <div class="colour__palette__code">
+                                    <span>#a4a4a4</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-color:#ffffff;color:#001724; border: 2px solid #001724">
+                            <div class="colour__palette__wrap">
+                                <div class="colour__palette__title">Hex</div>
+                                <div class="colour__palette__code">
+                                    <span>#ffffff</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+			<div class="row">
+				<div class="col m12" style="text-align: center;">
+					<a href="https://www.dropbox.com/sh/t5a78o5347iyc16/AABmy-rpZBAYWBHzotwluglIa?dl=0" class="btn btn-secondary pulse">Télécharger</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<hr>
+
+{% endblock %}
