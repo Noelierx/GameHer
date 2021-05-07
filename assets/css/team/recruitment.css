@@ -38,9 +38,11 @@
 }
 .icon-block:hover .dataList-description {
 	display: block;
+	transition: all .3s ease-in-out;
 }
 .dataList-description:hover {
 	display: block;
+	transition: all .3s ease-in-out;
 }
 .fix-immonde {
     display: flex; flex-wrap: wrap;
