@@ -2,6 +2,7 @@
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Open Source Helpers](https://www.codetriage.com/noelierx/gameher/badges/users.svg)](https://www.codetriage.com/noelierx/gameher)
+[![CI](https://github.com/Noelierx/GameHer/actions/workflows/ci.yml/badge.svg)](https://github.com/Noelierx/GameHer/actions/workflows/ci.yml)
 [English version](README.md)
 
 # GameHer
