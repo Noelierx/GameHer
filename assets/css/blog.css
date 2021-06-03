@@ -55,7 +55,7 @@ input[type="text"].news__search {
 		width: 100%;
 		display: flex;
 		padding-top: 60px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    background: linear-gradient(to top, var(--gh-blue), transparent);
 
 		.links {
 			flex-grow: 1;
