@@ -1,6 +1,6 @@
 require('datatables/media/js/jquery.dataTables.min');
 require('datatables/media/css/jquery.dataTables.min.css');
-require('../css/admin.css');
+require('../css/admin.scss');
 const $ = require('jquery');
 
 $('select').formSelect();
