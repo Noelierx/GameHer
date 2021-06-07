@@ -17,6 +17,11 @@
 			<a href="{{ path('admin_tags_index') }}" class="nav-link {{ _self.activeLink('admin_tags') }}"><i class="fa fa-fw fa-tags mr-2 fa-2x"></i> Tags</a>
 		</li>
 	{% endif %}
+	{% if is_granted('ROLE_STREAMER_USER') %}
+	<li>
+		<a class="nav-link {{ _self.activeLink('admin_streams') }}" href="{{ path('admin_streams_index') }}"><i class="fa fa-fw fa-calendar mr-2 fa-2x"></i> Streams</a>
+	</li>
+	{% endif %}
 	{% if is_granted('ROLE_ADMIN') %}
 		<li>
 			<a class="nav-link {{ _self.activeLink('admin_partners') }}" href="{{ path('admin_partners_index') }}"><i class="fa fa-fw fa-handshake mr-2 fa-2x"></i> Partenaires</a>
