@@ -7,6 +7,15 @@
 	padding: 5rem 0;
 }
 
+.gameherChallenge {
+	background-image: url("../img/tournaments/GHChallenge/background-ghc.png");
+	background-position: center top;
+	background-color: var(--gh-blue);
+	background-repeat: no-repeat;
+	border-bottom: 5px solid var(--gh-red);
+	padding: 5rem 0;
+}
+
 .gameherLeague__row {
 	display: flex;
 }
@@ -20,6 +29,12 @@
 }
 
 .gameherLeague__trigger {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gameherChallenge__trigger {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -50,6 +65,13 @@
 	padding: 0 2rem;
 	img {height: 300px;}
 }
+.col.gameherChallenge__kpi {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	padding: 0 2rem;
+}
 .col.gameherLeague__kpi2 {
 	display: flex;
 	flex-direction: row;
@@ -67,3 +89,6 @@
 
 .gameherLeague__button.opened .GHshow {display: none;}
 .gameherLeague__button:not(.opened) .GHhide {display: none;}
+
+.gameherChallenge__button.opened .GHshow {display: none;}
+.gameherChallenge__button:not(.opened) .GHhide {display: none;}
