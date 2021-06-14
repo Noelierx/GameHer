@@ -53,4 +53,46 @@
 		</div>
 	</section>
 
+	<section class="gameherChallenge">
+		<div class="container">
+			<div class="row gameherLeague__row">
+				<div class="col s9">
+					<h3 class="gameherLeague__title">{{ 'tournament.ghleague.title'|trans }}</h3>
+				</div>
+				<div class="col s3 gameherChallenge__trigger">
+					<button class="btn btn-show gameherChallenge__button">
+						<span class="GHshow">{{ 'tournament.ghleague.show'|trans }}</span>
+						<span class="GHhide">{{ 'tournament.ghleague.hide'|trans }}</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="container gameherChallenge__infography">
+			<div class="row gameherLeague__introduction">
+				<div class="col s6 l3">
+					<img src="{{ asset('build/img/tournaments/GHChallenge/logo.png') }}" alt="Game'Her Challenge">
+				</div>
+				<div class="col s6 l4">
+					<p>{{ 'tournament.ghleague.description'|trans }}</p>
+				</div>
+			</div>
+			<div class="row gameherLeague__stats">
+				<div class="col s6 gameherChallenge__kpi">
+					<img src="{{ asset('build/img/tournaments/GHChallenge/players.png') }}" alt="75 Joueurs">
+				</div>
+				<div class="col s6 gameherChallenge__kpi">
+					<img src="{{ asset('build/img/tournaments/GHChallenge/teams.png') }}" alt="15 Equipes">
+				</div>
+				<div class="col s6 gameherChallenge__kpi">
+					<img src="{{ asset('build/img/tournaments/GHChallenge/matchs.png') }}" alt="68 Matchs">
+				</div>
+			</div>
+			<div class="row gameherLeague__podium">
+				<div class="col s12">
+					<img src="{{ asset('build/img/tournaments/GHChallenge/podium.png') }}" alt="Podium">
+				</div>
+			</div>
+		</div>
+	</section>
+
 {% endblock %}
