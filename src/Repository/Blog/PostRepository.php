@@ -28,7 +28,7 @@ class PostRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('p')
             ->addSelect('a', 't')
-            ->innerJoin('p.author', 'a')
+            ->innerJoin('p.authors', 'a')
             ->leftJoin('p.tags', 't')
             ->where('p.publishedAt <= :now')
             ->orderBy('p.publishedAt', 'DESC')
@@ -38,7 +38,7 @@ class PostRepository extends ServiceEntityRepository
             $qb->andWhere(':tag MEMBER OF p.tags')->setParameter('tag', $options['tag']);
         }
         if ($options['author'] instanceof User) {
-            $qb->andWhere('p.author = :author')->setParameter('author', $options['author']);
+            $qb->andWhere(':authors MEMBER OF p.authors')->setParameter('authors', $options['authors']);
         }
         if ($options['query'] !== null) {
             $qb
@@ -52,10 +52,10 @@ class PostRepository extends ServiceEntityRepository
     public function getRecommended(int $int)
     {
         return $this->createQueryBuilder('p')
-			->where('p.publishedAt <= :now')
+            ->where('p.publishedAt <= :now')
             ->orderBy('p.publishedAt', 'DESC')
             ->setMaxResults(3)
-			->setParameter('now', new DateTime())
+            ->setParameter('now', new DateTime())
             ->getQuery()
             ->getResult();
     }
