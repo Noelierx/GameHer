@@ -34,7 +34,7 @@ class DefaultController extends AbstractController
     public function blog(Request $request, int $page, PostRepository $posts, TagRepository $tags, UserRepository $users): Response
     {
         $author = $request->query->has('author') ? $users->findOneBy(['displayName' => $request->query->get('author')]) : null;
-        $tag = $request->query->has('tag') ? $tags->findOneBy(['name' => $request->query->get('tag')]) : null,
+        $tag = $request->query->has('tag') ? $tags->findOneBy(['name' => $request->query->get('tag')]) : null;
 
         $options = [
             'tag' => $tag,
