@@ -37,6 +37,7 @@ class DefaultController extends AbstractController
 
         $options = [
             'tag' => $request->query->has('tag') ? $tags->findOneBy(['name' => $request->query->get('tag')]) : null,
+            'query' => $request->query->get('query', null),
             'author' => $author,
         ];
 
