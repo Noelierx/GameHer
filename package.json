@@ -1,6 +1,6 @@
 {
     "devDependencies": {
-        "@symfony/webpack-encore": "^0.27.0",
+        "@symfony/webpack-encore": "^4.1.2",
         "core-js": "^3.6.5",
         "postcss-comment": "^2.0.0",
         "postcss-custom-properties": "^9.1.1",
