@@ -48,7 +48,7 @@ blog.tag_selection.placeholder: Sélectionner une catégorie
 blog.tag_selection.everything: Toutes
 blog.no_posts: Aucun article
 article.follow_us.title: Si notre article vous a plu
-article.follow_us.donation: 'Soutenez nous sur %link%Tipee%endlink%'
+article.follow_us.donation: '%link%Soutenez nous%endlink%'
 
 
 #esport

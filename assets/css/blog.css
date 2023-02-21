@@ -179,7 +179,7 @@ input[type="text"].news__search {
 }
 .followUs__subtitle {
 	margin: 0;
-	color: var(--gh-yellow);
+	color: var(--gh-white);
 	font-size: 1.8rem;
 	text-transform: uppercase;
 }
