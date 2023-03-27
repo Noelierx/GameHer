@@ -47,26 +47,38 @@ html {
 
 .esportTitle {
     color: #2BCA63;
+	font-family: 'FoundationSans-Roman', sans-serif;
+    font-size: 1.64rem;
 }
 
 .communicationTitle {
     color: #C82E4A;
+	font-family: 'FoundationSans-Roman', sans-serif;
+    font-size: 1.64rem;
 }
 
 .tournoiTitle {
     color: #D5D096;
+	font-family: 'FoundationSans-Roman', sans-serif;
+    font-size: 1.64rem;
 }
 
 .streamingTitle {
     color: #9C4593;
+	font-family: 'FoundationSans-Roman', sans-serif;
+    font-size: 1.64rem;
 }
 
 .graphismeTitle {
     color: #C9772E;
+	font-family: 'FoundationSans-Roman', sans-serif;
+    font-size: 1.64rem;
 }
 
 .presseTitle {
     color: #A1BCEB;
+	font-family: 'FoundationSans-Roman', sans-serif;
+    font-size: 1.64rem;
 }
 
 header, section {
