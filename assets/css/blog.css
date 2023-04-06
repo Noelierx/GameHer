@@ -178,10 +178,11 @@ input[type="text"].news__search {
 	a {color: #000;}
 }
 .followUs__subtitle {
-	margin: 0;
+	margin: 1rem 3rem;
 	color: var(--gh-white);
 	font-size: 1.8rem;
 	text-transform: uppercase;
+	a {text-decoration: underline;}
 }
 
 .author {
