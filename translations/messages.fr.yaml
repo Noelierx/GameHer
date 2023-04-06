@@ -3,7 +3,7 @@ menu.toggle_nav: Toggle_nav
 menu.homepage: Homepage
 menu.admin: Admin
 menu.redaction: Rédaction
-menu.blog: News & Articles
+menu.blog: Presse
 menu.esport: Esport
 menu.webtv: WebTV
 menu.tournaments: Tournois
@@ -15,7 +15,7 @@ menu.team.about: à propos
 menu.team.contact: Contact
 menu.team.media: Media
 menu.team.achievements: Achievements
-menu.team.recruitment: Recrutement
+menu.team.recruitment: Nous rejoindre
 menu.team.presskit: Media kit
 
 menu.user: Profil
@@ -35,13 +35,13 @@ donations:
   title: Soutenir Game'Her
   subtitle: Pourquoi et comment nous soutenir ?
 recruitment:
-  title: Recrutement
+  title: Nous rejoindre
   subtitle: Comment devenir bénévole ?
   explanation: Afin de mener à bien notre mission, nous avons une équipe de bénévoles qui s'investit au quotidien.
   titlePole: Ce que nous faisons
 
 #blog
-blog.title: News & Articles
+blog.title: Presse
 blog.subtitle: Nos articles sur le monde du jeu vidéo
 blog.search: Recherche
 blog.tag_selection.placeholder: Sélectionner une catégorie
