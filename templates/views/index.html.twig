@@ -45,46 +45,46 @@
 			</div>
 		</section>
 	</div>
-    {% include "common/dataListNoHover.html.twig" with {
+    {% include "common/dataList.html.twig" with {
         element_class: "sectionBlue",
-        explanation: "recruitment.explanation" | trans,
         title_pole: "recruitment.titlePole" | trans,
-        elements : [
+        explanation: "recruitment.explanation" | trans,
+         elements : [
             {
                 logo_url: "/build/img/recrutement/PICTO_ESPORT.png",
-                title: "Pôle Esport",
+                title: "Esport",
                 title_class: "esportTitle",
-                content: "Nous encadrons trois équipes 100% mixtes sur les jeux League of Legends et Hearthstone. Nous véhiculons notre message de mixité au travers de notre présence en LAN.",
+                content: "Nous organisons des tournois mixtes sur différents jeux (League Of Legends, Hearthstone…).",
             },
             {
                 logo_url: "/build/img/recrutement/PICTO_COMMUCATION.png",
-                title: "Pôle Communication",
+                title: "Communication",
                 title_class: "communicationTitle",
-                content: "Développement de la stratégie de communication dans l'optique de développer la visibilité de l'association sur les réseaux sociaux, au quotidien lors de nos événements ou de ceux auxquels nous participons.",
+                content: "Nous développons des stratégies de communication afin de rendre l’association et nos actions plus visibles. Nous réalisons également des campagnes de sensibilisation et d’information via les réseaux sociaux.",
             },
             {
                 logo_url: "/build/img/recrutement/PICTO_TWITCH.png",
-                title: "Pôle Streaming",
+                title: "Streaming",
                 title_class: "streamingTitle",
-                content: "Via la plateforme Twitch, nos streamers et casters proposent des lives sur divers jeux afin de divertir notre communauté et de créer de l'interaction avec l'ensemble de la communauté.",
+                content: "Sur Twitch, nous diffusons des lives jeux et des émissions sur la diversité, afin de sensibiliser et de divertir notre communauté.",
             },
             {
                 logo_url: "/build/img/recrutement/PICTO_TOURNOIS.png",
-                title: "Pôle Evénementiel",
+                title: "Événements",
                 title_class: "tournoiTitle",
-                content: "Mise en place de tournois et d'événements au nom de l'association afin de permettre aux joueurs et joueuses d'appréhender le milieu et de s'insérer dans l'esport au travers d'un environnement sain.",
+                content: "Nous organisons et participons à différents événements : conférences, tables rondes, festivals… Notre objectif est de sensibiliser le grand public aux valeurs de mixité et de diversité dans les jeux vidéo.",
             },
             {
                 logo_url: "/build/img/recrutement/PICTO_GRAPHISME.png",
-                title: "Pôle Graphisme",
+                title: "Graphisme",
                 title_class: "graphismeTitle",
-                content: "Nos graphistes produisent tous les visuels nécessaires à Game'Her pour sa communication, sa présence en ligne, ses événements, ses relations partenariales, ...",
+                content: "Nos graphistes réalisent tous les visuels liés à l’image de Game’Her et à nos actions : communication, événements, site internet, partenariats…",
             },
             {
                 logo_url: "/build/img/recrutement/PICTO_PRESSE.png",
-                title: "Pôle Presse",
+                title: "Presse",
                 title_class: "presseTitle",
-                content: "Nos rédacteurs et éditeurs réalisent des articles de presse suivant une ligne éditoriale sur les thèmes de l'esport, du jeu vidéo et de la mixité dans ces secteurs.",
+                content: "Nos rédactrices et rédacteurs rédigent des articles sur les thèmes de l'esport, des jeux vidéo ainsi que de la diversité dans ces secteurs.",
             }
         ]
     } only %}
