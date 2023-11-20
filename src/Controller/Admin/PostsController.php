@@ -48,10 +48,6 @@ class PostsController extends AbstractController
             if (($picture = $form['picture']->getData())) {
                 $post->setPicture($fileUploader->upload($picture, $this->getParameter('posts_pictures_directory')));
             }
-            if (($posted = $request->request->get('post', null))) {
-                $date = new DateTime($posted['publishedAt']);
-                $post->setPublishedAt($date);
-            }
 
             $post->setAuthor($security->getUser());
             $em = $this->getDoctrine()->getManager();
@@ -99,10 +95,7 @@ class PostsController extends AbstractController
             if (($picture = $form['picture']->getData())) {
                 $post->setPicture($fileUploader->upload($picture, $this->getParameter('posts_pictures_directory')));
             }
-            if (($posted = $request->request->get('post', null))) {
-                $date = new DateTime($posted['publishedAt']);
-                $post->setPublishedAt($date);
-            }
+
             $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash('success', 'posts.success.edit');
