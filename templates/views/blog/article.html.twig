@@ -24,7 +24,8 @@
 			<div class="col">
 				<h2 class="article__second_title">{{ article.title }}</h2>
 				<p class="article__metadata">
-					Posté par <a href="{{ path('blog', {author: article.author.displayName}) }}" class="article__author">{{ article.author.displayName }}</a> le {{ article.publishedAt |date('d M Y') }} dans<span>
+					Posté par {% for author in article.author %}<a href="{{ path('blog', {author: author.displayName}) }}" class="article__author">{{ author.displayName }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+					le {{ article.publishedAt |date('d M Y') }} dans<span>
 						{% for tag in article.tags %}<a href="{{ path('blog', {tag: tag.name}) }}" class="article__tag">{{ tag.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
 					</span>
 				</p>

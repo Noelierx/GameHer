@@ -29,7 +29,7 @@
 		<div class="col">
 			<h2 class="article__second_title">{{ post.title }}</h2>
 			<p class="article__metadata">
-				Posté par <a class="article__author">{{ post.author.displayName }}</a> le {{ post.publishedAt |date('d M Y') }} dans<span>
+				Posté par {% for author in post.author %} <a class="article__author">{{ author.displayName }}</a> {% if not loop.last %}, {% endif %}{% endfor %} le {{ post.publishedAt |date('d M Y') }} dans<span>
 						{% for tag in post.tags %}<a class="article__tag">{{ tag.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
 					</span>
 			</p>

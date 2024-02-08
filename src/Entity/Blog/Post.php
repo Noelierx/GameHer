@@ -72,10 +72,12 @@ class Post
     protected $published = false;
 
     /**
-     * @var User
-     * @ORM\ManyToOne(targetEntity="App\Entity\User\User", inversedBy="posts")
+     *
+     * @var Collection|User[]
+     * @ORM\ManyToMany(targetEntity="App\Entity\User\User", inversedBy="posts")
+     *
      */
-    protected $author;
+    protected $authors;
 
     /**
      * @var Collection|Comment[]
@@ -119,6 +121,7 @@ class Post
     {
         $this->uuid = Uuid::uuid4();
         $this->tags = new ArrayCollection();
+        $this->authors = new ArrayCollection();
         $this->comments = new ArrayCollection();
     }
 
@@ -165,14 +168,16 @@ class Post
         return $this;
     }
 
-    public function getAuthor(): User
+    public function getAuthor(): Collection
     {
-        return $this->author;
+        return $this->authors;
     }
 
-    public function setAuthor(UserInterface $author): self
+
+
+    public function addAuthor(UserInterface $authors): self
     {
-        $this->author = $author;
+        $this->authors[] = $authors;
 
         return $this;
     }

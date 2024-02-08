@@ -1,4 +1,6 @@
 {% spaceless %}
+	{% for author in author %}
+		{% if loop.first %}
 	<div class="row">
 		<div class="col s3">
 			<img src="{{ author.picture ? asset('uploads/members/' ~ author.picture) : asset('build/img/blog/WAITING.png') }}" alt="{{ author.displayName }}" class="author__picture">
@@ -38,4 +40,6 @@
 			</p>
 		</div>
 	</div>
+		{% endif %}
+		{% if not loop.last %}, {% endif %}{% endfor %}
 {% endspaceless %}
