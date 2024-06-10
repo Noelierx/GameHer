@@ -3,12 +3,10 @@
 namespace App\Form\Blog;
 
 use App\Entity\Blog\Tag;
-use DateTime;
+use App\Form\DateTimeType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\CallbackTransformer;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -49,13 +47,9 @@ class PostType extends AbstractType
                 'multiple' => true,
                 'required' => false,
             ])
-            ->add('publishedAt', DateType::class, [
-                'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd',
-                'required' => false,
-                'attr' => ['class' => 'datepicker'],
-                'label' => 'Date de publication',
-                ])
+			->add('publishedAt', DateTimeType::class, [
+				'required' => false,
+			])
             ->add('save', SubmitType::class, [
                 'label' => $this->translator->trans('default.action.save', [], 'admin'),
                 'attr' => ['class' => 'btn right'],
