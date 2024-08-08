@@ -39,6 +39,9 @@
 				<p>{{ 'about.whoarewe.description1' |trans |nl2br }}</p>
 				<p>{{ 'about.whoarewe.description2' |trans |nl2br }}</p>
 				<p>{{ 'about.whoarewe.description3' |trans |nl2br }}</p>
+				<p>{{ 'about.whoarewe.description4' |trans |nl2br }}</p>
+				<p>{{ 'about.whoarewe.description5' |trans |nl2br }}</p>
+				<p>{{ 'about.whoarewe.description6' |trans |nl2br }}</p>
 			</div>
 			<div class="col s12 l6 whoAreWe__illustration">
 				<img src="{{ asset('build/img/about/whoarewe.png') }}" alt="GameHer" class="whoAreWe__picture">
@@ -52,7 +55,6 @@
 			<a class="col memberToggle active" data-toggle="direction">{{ 'about.category.direction' |trans }}</a>
 			<a class="col memberToggle" data-toggle="administration">{{ 'about.category.administration' |trans }}</a>
 			<a class="col memberToggle" data-toggle="members">{{ 'about.category.members' |trans }}</a>
-			<a class="col memberToggle" data-toggle="esport">{{ 'about.category.esport' |trans }}</a>
 		</div>
 
 		{#	Direction	#}
@@ -68,29 +70,6 @@
 		{#	Membres	#}
 		<div class="row membersList members">
 			{% include 'views/team/_membersList.html.twig' with {members: members} %}
-		</div>
-
-		{#	Esport	#}
-		<div class="row membersList esport">
-			{% set newArray = [] %}
-			{% for member in esports %}
-				{% if member.nickname not in newArray %}
-				{% set newArray = newArray|merge([member.nickname]) %}
-				<div class="col s12 m4 l3 gameherMember">
-					<div class="gameherMember__image">
-						<img src="{{ (member.picture is not null) ? asset('uploads/members/' ~ member.picture) : asset('build/img/esport/player.png') }}" alt="{{ member.nickname }}" class="gameherMember__image">
-					</div>
-					<p class="gameherMember__name">{{ member.firstname }} <span class="gameherMember__nickname">{{ member.nickname }}</span> {{ member.lastName }}</p>
-					<p class="gameherMember__role">{{ ('esport.member.role.' ~ member.role) |trans }}</p>
-					<p class="gameherMember__social">
-						{% if member.twitch is not null %}<a href="//twitch.tv/{{ member.twitch }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitch"></i></a> {% endif %}
-						{% if member.twitter is not null %}<a href="//twitter.com/{{ member.twitter }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitter"></i></a> {% endif %}
-						{% if member.instagram is not null %}<a href="//instagram.com/{{ member.instagram }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i></a> {% endif %}
-						{% if member.facebook is not null %}<a href="//facebook.com/{{ member.facebook }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-square"></i></a> {% endif %}
-					</p>
-				</div>
-				{% endif %}
-			{% endfor %}
 		</div>
 	</section>
 	<hr>

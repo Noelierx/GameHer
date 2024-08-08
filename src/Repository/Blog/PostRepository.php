@@ -40,7 +40,12 @@ class PostRepository extends ServiceEntityRepository
         if ($options['author'] instanceof User) {
             $qb->andWhere('p.author = :author')->setParameter('author', $options['author']);
         }
-
+        if ($options['query'] !== null) {
+            $qb
+                ->andWhere('p.title LIKE :query OR p.slug LIKE :query OR p.content LIKE :query')
+                ->setParameter('query', '%'.$options['query'].'%');
+        }
+        
         return (new Paginator($qb))->paginate($page);
     }
 
