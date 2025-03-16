@@ -29,13 +29,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install PHP
+            - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ env.PHP_VERSION }}
           coverage: none
           extensions: ctype, iconv, intl
           ini-values: date.timezone=${{ env.TZ }}, memory_limit=-1, session.gc_probability=0, opcache.enable=1, opcache.enable_cli=1, opcache.memory_consumption=256, opcache.max_accelerated_files=20000, opcache.validate_timestamps=0, realpath_cache_size=4096K, realpath_cache_ttl=600
+
+      - name: Update Composer
+        run: composer self-update
 
       - name: Cache Composer dependencies
         uses: actions/cache@v3
@@ -48,10 +51,16 @@ jobs:
       - name: Install dependencies
         run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
 
+      - name: Configure Composer allow-plugins
+        run: composer config --no-interaction allow-plugins.symfony/flex true
+
+      - name: Update Symfony Flex
+        run: composer require symfony/flex --no-update
+
       - name: Tests
         run: "${{ matrix.test.script }}"
 
-  javascript:
+    javascript:
     runs-on: ubuntu-latest
     name: javascript / ${{ matrix.test.name }}
     strategy:
@@ -71,6 +80,9 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - uses: actions/checkout@v2
+
+      - name: Remove package-lock.json
+        run: rm -f package-lock.json
 
       - name: Cache node_modules
         uses: actions/cache@v3
