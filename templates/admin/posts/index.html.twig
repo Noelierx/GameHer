@@ -30,7 +30,7 @@
 					<td>
 						<div class="post__infos">
 							<p>{{ post.title }}</p>
-							<p>par <span class="post__author">{{ post.author.displayName }}</span></p>
+							<p>par	{% for author in post.author %} <span class="post__author">{{ author.displayName }}</span> {% if not loop.last %}, {% endif %}{% endfor %}</p>
 						</div>
 					</td>
 					<td>

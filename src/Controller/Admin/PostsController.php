@@ -53,7 +53,7 @@ class PostsController extends AbstractController
                 $post->setPublishedAt($date);
             }
 
-            $post->setAuthor($security->getUser());
+            $post->addAuthor($security->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();
@@ -90,7 +90,7 @@ class PostsController extends AbstractController
      * @Route("/{uuid}/edit", name="admin_posts_edit", methods={"GET", "POST"}, requirements={"uuid"="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"})
      * @Route("/{slug}/edit", name="admin_posts_edit_slug", methods={"GET", "POST"})
      */
-    public function edit(Request $request, Post $post, FileUploader $fileUploader): Response
+    public function edit(Request $request, Post $post, FileUploader $fileUploader, Security $security): Response
     {
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
@@ -103,6 +103,10 @@ class PostsController extends AbstractController
                 $date = new DateTime($posted['publishedAt']);
                 $post->setPublishedAt($date);
             }
+            $post->addAuthor($security->getUser());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($post);
+            $em->flush();
             $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash('success', 'posts.success.edit');
