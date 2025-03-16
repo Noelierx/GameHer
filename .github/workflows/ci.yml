@@ -7,7 +7,7 @@ on:
 env:
   TZ: UTC
   PHP_VERSION: 7.3
-  NODE_VERSION: 12.x
+  NODE_VERSION: 16.x # Mise à jour vers une version LTS de Node.js
 
 jobs:
   php:
@@ -26,10 +26,6 @@ jobs:
           - name: Lint Symfony's translations files
             script: bin/console lint:xliff translations
 
-          # Available in Symfony 4.4, see https://symfony.com/blog/new-in-symfony-4-4-service-container-linter
-          # - name: Lint Symfony's container
-          #  script: bin/console lint:container
-
     steps:
       - uses: actions/checkout@v2
 
@@ -42,11 +38,12 @@ jobs:
           ini-values: date.timezone=${{ env.TZ }}, memory_limit=-1, session.gc_probability=0, opcache.enable=1, opcache.enable_cli=1, opcache.memory_consumption=256, opcache.max_accelerated_files=20000, opcache.validate_timestamps=0, realpath_cache_size=4096K, realpath_cache_ttl=600
 
       - name: Cache Composer dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
-          path: $(composer config cache-files-dir)
+          path: ~/.composer/cache
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: ${{ runner.os }}-composer-
+          restore-keys: |
+            ${{ runner.os }}-composer-
 
       - name: Install dependencies
         run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
@@ -69,16 +66,16 @@ jobs:
 
     steps:
       - name: Install Node.js
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
 
       - uses: actions/checkout@v2
 
       - name: Cache node_modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
-          path: $(yarn cache dir)
+          path: ~/.yarn/cache
           key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-modules-
